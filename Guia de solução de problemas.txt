@@ -1,0 +1,8 @@
+GUIA DE SOLUÇÃO DE PROBLEMAS
+
+nA CONEXÃO:
+problema:
+unsupported on-fisk structure found 32779, support 10
+solução:
+Desistalar o interbase, ou desativá-lo.
+POis dá problema com a porta 3050.

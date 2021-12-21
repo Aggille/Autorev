@@ -1,0 +1,71 @@
+
+200.175.212.32
+
+NUMERO DE NFS DE AGOSTO
+APARICIO 516 - 1567
+OTTO  159  - 499
+GRAVATAI  284 - 806
+
+
+select C.*,
+'N' as receber,
+f.ID_FORMAS_PAGAMENTO,
+f.forma_pagamento from Creceber C
+inner join formas_pagamento f on 
+(c.Id_forma_pagamento = f.Id_formas_pagamento)
+where
+c.Status <> 'Cancelado'
+and
+c.Status<> 'Pendente'
+and 
+c.Status <> 'Recebido'
+and
+c.Status <> 'Renegociado'
+and
+c.Status <> 'Financiado'
+and
+CAST(c.numero_cv as integer) = :idNumeroCV
+
+
+select C.*,
+'N' as receber,
+f.ID_FORMAS_PAGAMENTO,
+f.forma_pagamento from Creceber C
+inner join formas_pagamento f on 
+(c.Id_forma_pagamento = f.Id_formas_pagamento)
+where
+c.Status <> 'Cancelado'
+and
+c.Status<> 'Pendente'
+and 
+c.Status <> 'Recebido'
+and
+c.Status <> 'Renegociado'
+and
+c.Status <> 'Financiado'
+and
+(cast(coalesce(c.numero_cv, '0') as integer) = :idNumeroCV)
+
+
+select C.*,
+f.ID_FORMAS_PAGAMENTO,
+f.forma_pagamento from Creceber C
+inner join formas_pagamento f on 
+(c.Id_forma_pagamento = f.Id_formas_pagamento)
+where
+c.Status <> 'Cancelado'
+and
+c.Status<> 'Pendente'
+and 
+c.Status <> 'Recebido'
+and
+c.Status <> 'Renegociado'
+and
+c.Status <> 'Financiado'
+and
+(cast(coalesce(c.numero_cv, '0') as integer) = :idNumeroCV)
+
+
+
+
+

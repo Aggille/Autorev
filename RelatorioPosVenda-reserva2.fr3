@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padr�o" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39945,4575528704" ReportOptions.Description.Text="" ReportOptions.LastChange="39945,6575790857" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403780203546F7003B00108446174617365747301010C3900000020446174615365743D2274626C52656C4174656E64696D656E746F2220446174615365744E616D653D2274626C4174656E64696D656E746F2200010C4200000020446174615365743D2274626C52656C436F6E63657373696F6E617269612220446174615365744E616D653D2274626C52656C436F6E63657373696F6E617269612200010C3400000020446174615365743D2274626C52656C506573736F61732220446174615365744E616D653D2274626C52656C506573736F6173220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxDMPPage Name="Page1" PaperWidth="215,899860564673" PaperHeight="278,87065322937" PaperSize="1" LeftMargin="2,53999835958439" RightMargin="2,53999835958439" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" FontStyle="64">
+    <TfrxPageHeader Name="PageHeader1" Height="119" Left="0" Top="17" Width="796,8">
+      <TfrxDMPMemoView Name="DMPMemo1" Left="0" Top="17" Width="796,8" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" VAlign="vaCenter" Text="YAMAVALE MOTOS"/>
+      <TfrxDMPMemoView Name="tblRelConcessionariaENDERECO" Left="19,2" Top="34" Width="403,2" Height="17" DataField="ENDERECO" DataSet="tblRelConcessionaria" DataSetName="tblRelConcessionaria" VAlign="vaCenter" Text="[tblRelConcessionaria.&#34;ENDERECO&#34;]"/>
+      <TfrxDMPMemoView Name="tblRelConcessionariaCIDADE" Left="316,8" Top="34" Width="163,2" Height="17" DataField="CIDADE" DataSet="tblRelConcessionaria" DataSetName="tblRelConcessionaria" HAlign="haCenter" VAlign="vaCenter" Text="[tblRelConcessionaria.&#34;CIDADE&#34;]"/>
+      <TfrxDMPMemoView Name="tblRelConcessionariaESTADO" Left="489,6" Top="34" Width="28,8" Height="17" DataField="ESTADO" DataSet="tblRelConcessionaria" DataSetName="tblRelConcessionaria" VAlign="vaCenter" Text="[tblRelConcessionaria.&#34;ESTADO&#34;]"/>
+      <TfrxDMPMemoView Name="tblRelConcessionariaCNPJ" Left="585,6" Top="34" Width="201,6" Height="17" DataField="CNPJ" DataSet="tblRelConcessionaria" DataSetName="tblRelConcessionaria" VAlign="vaCenter" Text="[tblRelConcessionaria.&#34;CNPJ&#34;]"/>
+      <TfrxDMPLineView Name="DMPLine1" Left="-4,8" Top="59,5" Width="806,4" Height="0"/>
+      <TfrxDMPMemoView Name="tblAtendimentoID_ATENDIMENTO" Left="192" Top="68" Width="76,8" Height="17" DataField="ID_ATENDIMENTO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" FontStyle="1" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="[tblAtendimento.&#34;ID_ATENDIMENTO&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoDATA_ENTRADA" Left="681,6" Top="68" Width="105,6" Height="17" DataField="DATA_ENTRADA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" HAlign="haCenter" VAlign="vaCenter" Text="[tblAtendimento.&#34;DATA_ENTRADA&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoDATA_SAIDA" Left="681,6" Top="85" Width="105,6" Height="17" DataField="DATA_SAIDA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" HAlign="haCenter" VAlign="vaCenter" Text="[tblAtendimento.&#34;DATA_SAIDA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo2" Left="19,2" Top="68" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="128" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Nº do atendimento:"/>
+      <TfrxDMPMemoView Name="DMPMemo3" Left="307,2" Top="68" Width="182,4" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Ordem de serviço"/>
+      <TfrxDMPMemoView Name="DMPMemo4" Left="537,6" Top="68" Width="124,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="128" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Data entrada:"/>
+      <TfrxDMPMemoView Name="DMPMemo5" Left="537,6" Top="85" Width="144" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="128" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Prometido para:"/>
+      <TfrxDMPLineView Name="DMPLine3" Left="-4,8" Top="110,5" Width="806,4" Height="0"/>
+    </TfrxPageHeader>
+    <TfrxDMPLineView Name="DMPLine2" Left="-4,8" Top="8,5" Width="806,4" Height="0"/>
+    <TfrxMasterData Name="MasterData1" Height="102" Left="0" Top="170" Width="796,8" ColumnWidth="0" ColumnGap="0" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" RowCount="0">
+      <TfrxDMPMemoView Name="DMPMemo11" Left="115,2" Top="34" Width="76,8" Height="17" DataField="ID_CLIENTES" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" HAlign="haCenter" VAlign="vaCenter" Text="[tblRelPessoas.&#34;ID_CLIENTES&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo12" Left="115,2" Top="51" Width="403,2" Height="17" DataField="NOME" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" VAlign="vaCenter" Text="[tblRelPessoas.&#34;NOME&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo13" Left="115,2" Top="68" Width="403,2" Height="17" DataField="ENDERECO" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" VAlign="vaCenter" Text="[tblRelPessoas.&#34;ENDERECO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo14" Left="518,4" Top="51" Width="403,2" Height="17" DataField="BAIRRO" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" VAlign="vaCenter" Text="[tblRelPessoas.&#34;BAIRRO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo15" Left="518,4" Top="68" Width="403,2" Height="17" DataField="CIDADE" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" VAlign="vaCenter" Text="[tblRelPessoas.&#34;CIDADE&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo16" Left="758,4" Top="68" Width="19,2" Height="17" DataField="ESTADO" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" VAlign="vaCenter" Text="[tblRelPessoas.&#34;ESTADO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo17" Left="518,4" Top="34" Width="115,2" Height="17" DataField="FONE1" DataSet="tblRelPessoas" DataSetName="tblRelPessoas" VAlign="vaCenter" Text="[tblRelPessoas.&#34;FONE1&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo18" Left="19,2" Top="34" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Sequência:"/>
+      <TfrxDMPMemoView Name="DMPMemo19" Left="19,2" Top="51" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Cliente:"/>
+      <TfrxDMPMemoView Name="DMPMemo20" Left="19,2" Top="68" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Endereço:"/>
+      <TfrxDMPMemoView Name="DMPMemo9" Left="0" Top="0" Width="796,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Dados do cliente"/>
+      <TfrxDMPLineView Name="DMPLine4" Left="-4,8" Top="93,5" Width="806,4" Height="0"/>
+      <TfrxDMPLineView Name="DMPLine5" Left="-4,8" Top="25,5" Width="806,4" Height="0"/>
+    </TfrxMasterData>
+    <TfrxDetailData Name="DetailData1" Height="102" Left="0" Top="289" Width="796,8" ColumnWidth="0" ColumnGap="0" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" RowCount="0">
+      <TfrxDMPMemoView Name="DMPMemo10" Left="0" Top="0" Width="796,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Dados do veículo"/>
+      <TfrxDMPMemoView Name="tblAtendimentoMARCA" Left="115,2" Top="34" Width="76,8" Height="17" DataField="MARCA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MARCA&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoMODELO" Left="115,2" Top="51" Width="163,2" Height="17" DataField="MODELO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MODELO&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoCHASSI" Left="115,2" Top="68" Width="163,2" Height="17" DataField="CHASSI" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;CHASSI&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoKM" Left="460,8" Top="68" Width="124,8" Height="17" DataField="KM" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;KM&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoPLACA" Left="460,8" Top="51" Width="124,8" Height="17" DataField="PLACA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;PLACA&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoCOR" Left="460,8" Top="34" Width="124,8" Height="17" DataField="COR" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;COR&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo6" Left="364,8" Top="51" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Placa:"/>
+      <TfrxDMPMemoView Name="DMPMemo7" Left="364,8" Top="68" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Km:"/>
+      <TfrxDMPMemoView Name="DMPMemo8" Left="364,8" Top="34" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Cor:"/>
+      <TfrxDMPMemoView Name="DMPMemo21" Left="19,2" Top="34" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Marca:"/>
+      <TfrxDMPMemoView Name="DMPMemo22" Left="19,2" Top="51" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Modelo:"/>
+      <TfrxDMPMemoView Name="DMPMemo23" Left="19,2" Top="68" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Chassi:"/>
+      <TfrxDMPMemoView Name="tblAtendimentoANO_FABRICACAO" Left="739,2" Top="34" Width="38,4" Height="17" DataField="ANO_FABRICACAO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;ANO_FABRICACAO&#34;]"/>
+      <TfrxDMPMemoView Name="tblAtendimentoANO_MODELO" Left="739,2" Top="51" Width="38,4" Height="17" DataField="ANO_MODELO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;ANO_MODELO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo24" Left="595,2" Top="34" Width="144" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Ano fabricação:"/>
+      <TfrxDMPMemoView Name="DMPMemo25" Left="595,2" Top="51" Width="144" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Ano modelo:"/>
+      <TfrxDMPLineView Name="DMPLine6" Left="-4,8" Top="25,5" Width="806,4" Height="0"/>
+    </TfrxDetailData>
+    <TfrxDetailData Name="DetailData2" Height="306" Left="0" Top="408" Width="796,8" ColumnWidth="0" ColumnGap="0" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" RowCount="0">
+      <TfrxDMPMemoView Name="DMPMemo26" Left="0" Top="0" Width="796,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Solicitações do cliente:"/>
+      <TfrxDMPLineView Name="DMPLine7" Left="-4,8" Top="25,5" Width="806,4" Height="0"/>
+      <TfrxDMPMemoView Name="tblAtendimentoMEMO" Left="19,2" Top="34" Width="758,4" Height="102" DataField="MEMO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" DisplayFormat.FormatStr="RichText" Text="[tblAtendimento.&#34;MEMO&#34;]"/>
+    </TfrxDetailData>
+    <TfrxDetailData Name="DetailData3" Height="136" Left="0" Top="731" Width="796,8" ColumnWidth="0" ColumnGap="0" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" RowCount="0">
+      <TfrxDMPMemoView Name="DMPMemo27" Left="19,2" Top="0" Width="115,2" Height="17" DataField="MARCA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MARCA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo28" Left="134,4" Top="0" Width="163,2" Height="17" DataField="MODELO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MODELO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo29" Left="297,6" Top="0" Width="115,2" Height="17" DataField="PLACA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;PLACA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo30" Left="19,2" Top="17" Width="374,4" Height="17" DisplayFormat.DecimalSeparator="," Text="Entregue para conserto conforme OS nº:"/>
+      <TfrxDMPMemoView Name="tblAtendimentoID_ATENDIMENTO1" Left="393,6" Top="17" Width="76,8" Height="17" DataField="ID_ATENDIMENTO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;ID_ATENDIMENTO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo31" Left="480" Top="17" Width="28,8" Height="17" DisplayFormat.DecimalSeparator="," Text="em:"/>
+      <TfrxDMPMemoView Name="tblAtendimentoDATA_ENTRADA1" Left="508,8" Top="17" Width="96" Height="17" DataField="DATA_ENTRADA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;DATA_ENTRADA&#34;]"/>
+      <TfrxDMPLineView Name="DMPLine8" Left="-4,8" Top="59,5" Width="825,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo32" Left="19,2" Top="68" Width="115,2" Height="17" DataField="MARCA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MARCA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo33" Left="134,4" Top="68" Width="163,2" Height="17" DataField="MODELO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MODELO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo34" Left="297,6" Top="68" Width="115,2" Height="17" DataField="PLACA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;PLACA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo35" Left="19,2" Top="85" Width="268,8" Height="17" DisplayFormat.DecimalSeparator="," Text="Retirada do conserto OS nº:"/>
+      <TfrxDMPMemoView Name="DMPMemo36" Left="393,6" Top="85" Width="76,8" Height="17" DataField="ID_ATENDIMENTO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;ID_ATENDIMENTO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo37" Left="480" Top="85" Width="28,8" Height="17" DisplayFormat.DecimalSeparator="," Text="em:"/>
+      <TfrxDMPMemoView Name="DMPMemo38" Left="508,8" Top="85" Width="96" Height="17" DataField="DATA_ENTRADA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;DATA_ENTRADA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo39" Left="19,2" Top="34" Width="115,2" Height="17" DisplayFormat.DecimalSeparator="," Text="Assinatura:"/>
+      <TfrxDMPMemoView Name="DMPMemo40" Left="19,2" Top="102" Width="115,2" Height="17" DisplayFormat.DecimalSeparator="," Text="Assinatura:"/>
+      <TfrxDMPLineView Name="DMPLine9" Left="-4,8" Top="127,5" Width="825,6" Height="0"/>
+    </TfrxDetailData>
+    <TfrxFooter Name="Footer1" Height="136" Left="0" Top="884" Width="796,8">
+      <TfrxDMPLineView Name="DMPLine10" Left="-4,8" Top="8,5" Width="825,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo41" Left="0" Top="17" Width="796,8" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="PROTOCOLO DE ATENDIMENTO"/>
+      <TfrxDMPLineView Name="DMPLine11" Left="-4,8" Top="42,5" Width="825,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo42" Left="192" Top="51" Width="76,8" Height="17" DataField="ID_ATENDIMENTO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" FontStyle="1" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="[tblAtendimento.&#34;ID_ATENDIMENTO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo43" Left="681,6" Top="51" Width="105,6" Height="17" DataField="DATA_ENTRADA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" HAlign="haCenter" VAlign="vaCenter" Text="[tblAtendimento.&#34;DATA_ENTRADA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo44" Left="681,6" Top="68" Width="105,6" Height="17" DataField="DATA_SAIDA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" HAlign="haCenter" VAlign="vaCenter" Text="[tblAtendimento.&#34;DATA_SAIDA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo45" Left="19,2" Top="51" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="128" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Nº do atendimento:"/>
+      <TfrxDMPMemoView Name="DMPMemo46" Left="307,2" Top="51" Width="182,4" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Ordem de serviço"/>
+      <TfrxDMPMemoView Name="DMPMemo47" Left="537,6" Top="51" Width="124,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="128" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Data entrada:"/>
+      <TfrxDMPMemoView Name="DMPMemo48" Left="537,6" Top="68" Width="144" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="128" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Prometido para:"/>
+      <TfrxDMPMemoView Name="DMPMemo49" Left="115,2" Top="85" Width="76,8" Height="17" DataField="MARCA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MARCA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo50" Left="115,2" Top="102" Width="163,2" Height="17" DataField="MODELO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;MODELO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo51" Left="115,2" Top="119" Width="163,2" Height="17" DataField="CHASSI" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;CHASSI&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo52" Left="460,8" Top="119" Width="124,8" Height="17" DataField="KM" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;KM&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo53" Left="460,8" Top="102" Width="124,8" Height="17" DataField="PLACA" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;PLACA&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo54" Left="460,8" Top="85" Width="124,8" Height="17" DataField="COR" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;COR&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo55" Left="364,8" Top="102" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Placa:"/>
+      <TfrxDMPMemoView Name="DMPMemo56" Left="364,8" Top="119" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Km:"/>
+      <TfrxDMPMemoView Name="DMPMemo57" Left="364,8" Top="85" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Cor:"/>
+      <TfrxDMPMemoView Name="DMPMemo58" Left="19,2" Top="85" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Marca:"/>
+      <TfrxDMPMemoView Name="DMPMemo59" Left="19,2" Top="102" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Modelo:"/>
+      <TfrxDMPMemoView Name="DMPMemo60" Left="19,2" Top="119" Width="96" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Chassi:"/>
+      <TfrxDMPMemoView Name="DMPMemo61" Left="739,2" Top="85" Width="38,4" Height="17" DataField="ANO_FABRICACAO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;ANO_FABRICACAO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo62" Left="739,2" Top="102" Width="38,4" Height="17" DataField="ANO_MODELO" DataSet="tblRelAtendimento" DataSetName="tblAtendimento" Text="[tblAtendimento.&#34;ANO_MODELO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo63" Left="595,2" Top="85" Width="144" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Ano fabricação:"/>
+      <TfrxDMPMemoView Name="DMPMemo64" Left="595,2" Top="102" Width="144" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" ParentFont="False" VAlign="vaCenter" Text="Ano modelo:"/>
+      <TfrxDMPMemoView Name="DMPMemo65" Left="9,6" Top="68" Width="528" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="64" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="YAMAVALE MOTOS"/>
+    </TfrxFooter>
+  </TfrxDMPPage>
+</TfrxReport>

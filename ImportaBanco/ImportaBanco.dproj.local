@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009/10/03 20:31:37.414.pas,C:\Users\Eduardo\Documents\RAD Studio\Projects\Unit2.pas=C:\Autorev\Source\ImportaBanco\Menu.pas</Transaction>
+    <Transaction>2009/10/03 20:31:37.422.dfm,C:\Users\Eduardo\Documents\RAD Studio\Projects\Unit2.dfm=C:\Autorev\Source\ImportaBanco\Menu.dfm</Transaction>
+    <Transaction>2009/10/03 20:31:43.632.dproj,C:\Users\Eduardo\Documents\RAD Studio\Projects\Project3.dproj=C:\Autorev\Source\ImportaBanco\ImportaBanco.dproj</Transaction>
+    <Transaction>2009/10/03 20:37:01.900.pas,C:\Autorev\Source\ImportaBanco\Unit1.pas=C:\Autorev\Source\ImportaBanco\FDBNovo.pas</Transaction>
+    <Transaction>2009/10/03 20:37:01.900.dfm,C:\Autorev\Source\ImportaBanco\Unit1.dfm=C:\Autorev\Source\ImportaBanco\FDBNovo.dfm</Transaction>
+    <Transaction>2009/10/03 22:02:10.590.pas,C:\Autorev\Source\ImportaBanco\FDBNovo.pas=C:\Autorev\Source\ImportaBanco\FDBVelho.pas</Transaction>
+    <Transaction>2009/10/03 22:02:10.590.dfm,C:\Autorev\Source\ImportaBanco\FDBNovo.dfm=C:\Autorev\Source\ImportaBanco\FDBVelho.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

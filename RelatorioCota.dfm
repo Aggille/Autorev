@@ -1,0 +1,210 @@
+object BoxCota: TBoxCota
+  Left = 0
+  Top = 0
+  Caption = 'Relat'#243'rio de Vendas Anuais - Ferramenta para cota'
+  ClientHeight = 326
+  ClientWidth = 660
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 660
+    Height = 326
+    Align = alClient
+    TabOrder = 0
+    object Label4: TLabel
+      Left = 15
+      Top = 17
+      Width = 98
+      Height = 13
+      Caption = 'Relat'#243'rio do ano de:'
+    end
+    object Label3: TLabel
+      Left = 15
+      Top = 44
+      Width = 72
+      Height = 13
+      Caption = 'Concession'#225'ria'
+    end
+    object StatusBar1: TStatusBar
+      Left = 1
+      Top = 306
+      Width = 658
+      Height = 19
+      Panels = <>
+    end
+    object DBGrid2: TwwDBGrid
+      Left = 15
+      Top = 71
+      Width = 626
+      Height = 229
+      Selected.Strings = (
+        'MODELO'#9'20'#9'Modelo:'#9'F'
+        'ANO_FABRICACAO'#9'10'#9'Janeiro:'#9'F'
+        'ANO_MODELO'#9'10'#9'Ano Mod.:'#9'F'
+        'COR'#9'10'#9'Cor:'#9'F'
+        'ID_CONCESSIONARIA'#9'10'#9'Estoque:'#9'F'
+        'TOTAL'#9'10'#9'Total:'#9'F'
+        'ID_CONCESSIONARIA1'#9'10'#9'Local venda:'#9'F')
+      IniAttributes.Delimiter = ';;'
+      TitleColor = clBtnFace
+      FixedCols = 0
+      ShowHorzScrollBar = True
+      TabOrder = 4
+      TitleAlignment = taCenter
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      TitleLines = 1
+      TitleButtons = False
+      UseTFields = False
+    end
+    object TotalEstoque: TEdit
+      Left = 119
+      Top = 14
+      Width = 45
+      Height = 21
+      Color = clScrollBar
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object BtnAtualiza2: TBitBtn
+      Left = 431
+      Top = 12
+      Width = 138
+      Height = 23
+      Hint = 'Atualiza grid'
+      Caption = '&Atualiza vendas'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      OnClick = BtnAtualiza2Click
+      Glyph.Data = {
+        36060000424D3606000000000000360000002800000020000000100000000100
+        1800000000000006000000000000000000000000000000000000FF00FF314B62
+        AC7D7EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FF777777BDBDBDFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF5084B20F6FE1
+        325F8CB87E7AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFABABAB9797978B8B8BC1C1C1FF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF32A0FE37A1FF
+        106FE2325F8BB67D79FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFB8B8B8BCBCBC9898988A8A8AC0C0C0FF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF37A4FE
+        379FFF0E6DDE355F89BB7F79FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFBBBBBBBCBCBC9595958B8B8BC2C2C2FF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        37A4FE359EFF0F6FDE35608BA67B7FFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFBBBBBBBABABA9696968C8C8CBABABAFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF38A5FE329DFF156DCE444F5BFF00FF9C6B65AF887BAF887EAA8075FF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFBCBCBCB9B9B99494947E7E7EFF
+        00FF979797AAAAAAABABABA5A5A5FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FF3BABFFA1CAE7AD8679A98373E0CFB1FFFFDAFFFFDDFCF8CFCCB2
+        9FA1746BFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFBEBEBED1D1D1A8A8A8A3
+        A3A3D4D4D4F1F1F1F2F2F2EBEBEBC5C5C59D9D9DFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFC0917DFCE9ACFFFFCCFFFFCFFFFFD0FFFFDEFFFF
+        FAE3D3D1996965FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFB1B1B1DD
+        DDDDEBEBEBECECECEDEDEDF2F2F2FDFDFDE3E3E3969696FF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFB08978FAD192FEF4C2FFFFD0FFFFDAFFFFF6FFFF
+        FCFFFFFCB69384FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFA9A9A9D1
+        D1D1E7E7E7EDEDEDF1F1F1FBFBFBFEFEFEFEFEFEB1B1B1FF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFB08978FEDA97EDB478FBEEBBFFFFD3FFFFDCFFFFF4FFFF
+        F4FFFFE2E9DDBCA67B73FF00FFFF00FFFF00FFFF00FFFF00FFA9A9A9D5D5D5C1
+        C1C1E3E3E3EEEEEEF1F1F1FBFBFBFBFBFBF4F4F4DCDCDCA2A2A2FF00FFFF00FF
+        FF00FFFF00FFFF00FFB18A78FFDE99E9A167F4D199FEFCCCFFFFD5FFFFDAFFFF
+        DCFFFFD7EFE6C5A97E75FF00FFFF00FFFF00FFFF00FFFF00FFA9A9A9D6D6D6B7
+        B7B7D2D2D2EBEBEBEFEFEFF1F1F1F1F1F1EFEFEFE2E2E2A4A4A4FF00FFFF00FF
+        FF00FFFF00FFFF00FFAA7F73FAE0A4F0B778EEBA7BF6DDA6FEFBCCFFFFD3FFFF
+        D1FFFFD7D9C5A7A3756CFF00FFFF00FFFF00FFFF00FFFF00FFA4A4A4D9D9D9C2
+        C2C2C3C3C3D8D8D8EBEBEBEEEEEEEDEDEDEFEFEFCECECE9E9E9EFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFCEB293FFFEDDF4D1A5EEBA7BF2C78FF8E1ABFCF0
+        BAFCFACAA3776FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC1C1C1F2
+        F2F2D7D7D7C3C3C3CDCDCDDBDBDBE3E3E3E9E9E99F9F9FFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFA1746BE1D4D3FFFEEEF7CC8CF0B473F7C788FCE3
+        A5C2A088A5776CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9D9D9DE2
+        E2E2F8F8F8CECECEC0C0C0CCCCCCDADADAB7B7B79F9F9FFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FF986865BA9587EAD7A4EAD59EE0C097A577
+        6CA5776CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF96
+        9696B3B3B3D3D3D3D0D0D0C9C9C99F9F9F9F9F9FFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFA77E70A98073A4786EFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFA2A2A2A3A3A39F9F9FFF00FFFF00FFFF00FFFF00FF}
+      NumGlyphs = 2
+    end
+    object Ambos: TRadioGroup
+      Left = 170
+      Top = 0
+      Width = 90
+      Height = 65
+      ItemIndex = 2
+      Items.Strings = (
+        'Novos'
+        'Usados'
+        'Ambos')
+      TabOrder = 0
+    end
+    object TotalVendas: TEdit
+      Left = 119
+      Top = 41
+      Width = 45
+      Height = 21
+      Color = clScrollBar
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+  end
+  object tblPedidoVeiculos: TIBQuery
+    Database = FDB1.IBDatabase
+    Transaction = FDB1.IBTransaction
+    SQL.Strings = (
+      'Select COUNT (*)'
+      'as total, pv.status, pv.modelo, pv.Data_NF, cl.Id_Concessionaria'
+      'from Pedido_Veiculos pv'
+      ''
+      'left join clientes cl on (pv.id_vendedor = cl.id_clientes)'
+      ''
+      'where'
+      '(pv.status = '#39'Faturado'#39' or pv.status = '#39'Fechado'#39')'
+      'and'
+      'pv.DATA_NF >= :DataInicial'
+      'and'
+      'pv.DATA_NF <= :DataFinal'
+      'and'
+      'cl.Id_concessionaria = :idConcessionaria'
+      ''
+      'group by '
+      'pv.modelo, cl.Id_Concessionaria, pv.Data_NF, pv.Status'
+      'order by 1')
+    Left = 328
+    Top = 144
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'DataInicial'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'DataFinal'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'idConcessionaria'
+        ParamType = ptUnknown
+      end>
+  end
+end

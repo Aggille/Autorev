@@ -1,0 +1,40 @@
+alter table Sada
+     add vBC_STRet dm_dinheiro,
+     add pST dm_percentual,
+     add vICMS_STRet dm_dinheiro,
+     add pRed_BCEfet dm_percentual,
+     add vBC_Efet dm_dinheiro,
+     add pICMS_Efet dm_percentual,
+     add vICMS_Efet dm_dinheiro;
+
+alter table Dados_NFE
+     add vBC_STRet dm_dinheiro,
+     add pST dm_percentual,
+     add vICMS_STRet dm_dinheiro,
+     add pMVAST dm_percentual,
+     add pRed_BCST dm_percentual,
+     add vBC_ST dm_dinheiro,
+     add pICMS_ST dm_percentual,
+     add vICMS_ST dm_dinheiro;
+
+alter table Veiculos
+     add vBC_STRet dm_dinheiro,
+     add pST dm_percentual,
+     add vICMS_STRet dm_dinheiro,
+     add pRed_BCST dm_percentual,
+     add vBC_ST dm_dinheiro,
+     add pICMS_ST dm_percentual,
+     add vICMS_ST dm_dinheiro;
+
+alter table pecas
+     add vBC_STRet dm_dinheiro,
+     add pST dm_percentual,
+     add vICMS_STRet dm_dinheiro,
+     add pMVAST dm_percentual,
+     add pRed_BCST dm_percentual,
+     add vBC_ST dm_dinheiro,
+     add pICMS_ST dm_percentual,
+     add vICMS_ST dm_dinheiro;
+
+SUSPENDER NFS DE BRINDES
+

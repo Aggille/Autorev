@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{c4e58469-4d3b-473a-95bf-898c25d3f36c}</ProjectGuid>
+    <MainSource>Autorev.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>Autorev.exe</DCC_DependencyCheckOutputName>
+    <DCC_UsePackage>vcl;rtl;vclx;vclactnband;dbrtl;vcldb;vcldbx;bdertl;dsnap;dsnapcon;teeUI;teedb;tee;adortl;vclib;ibxpress;dbxcds;dbexpress;DbxCommonDriver;IndyCore;IndySystem;IndyProtocols;xmlrtl;inet;IntrawebDB_90_100;Intraweb_90_100;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;rxctl;rxbde;rxdb;FIBPlus2007;PackApi;PieLib;TextPkg;Jcl;JclVcl;JvCoreD11R;JvSystemD11R;JvStdCtrlsD11R;JvAppFrmD11R;JvBandsD11R;JvDBD11R;JvDlgsD11R;JvBDED11R;JvCmpD11R;JvCryptD11R;JvCtrlsD11R;JvCustomD11R;JvDockingD11R;JvDotNetCtrlsD11R;JvEDID11R;JvGlobusD11R;JvHMID11R;JvInterpreterD11R;JvJansD11R;JvManagedThreadsD11R;JvMMD11R;JvNetD11R;JvPageCompsD11R;JvPluginD11R;JvPrintPreviewD11R;JvRuntimeDesignD11R;JvTimeFrameworkD11R;JvValidatorsD11R;JvWizardD11R;JvXPCtrlsD11R;QR4RunD2007;fs11;fsIBX11;frx11;frxIBX11;frxe11;frxADO11;frxBDE11;frxcs11;frxDB11;frxDBX11;frxTee11;fsADO11;fsBDE11;fsDB11;fsTee11;FreeBoleto_D11;ip4000v10;ip4000word2000vcl10;dclOffice2k;Rave75VCL;ACBr_NFe_CAPICOM;ACBr_VCL</DCC_UsePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_ExeOutput>c:\Autorev\Source</DCC_ExeOutput>
+    <DCC_DcuOutput>c:\Autorev\Dcu</DCC_DcuOutput>
+    <DCC_ObjOutput>c:\Autorev\Dcu</DCC_ObjOutput>
+    <DCC_HppOutput>c:\Autorev\Dcu</DCC_HppOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_ExeOutput>C:\Autorev\Source</DCC_ExeOutput>
+    <DCC_DcuOutput>C:\Autorev\Dcu</DCC_DcuOutput>
+    <DCC_ObjOutput>C:\Autorev\Dcu</DCC_ObjOutput>
+    <DCC_HppOutput>C:\Autorev\Dcu</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters><Parameters Name="RunParams">-pIDECore;IDECommon;Delphi</Parameters><Parameters Name="HostApplication">C:\Program Files\Firebird\Firebird_2_0\bin\fbserver.exe</Parameters><Parameters Name="DebugSourceDirs">C:\Autorev\Dcu</Parameters><Parameters Name="DebugCWD">C:\Autorev\Source</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1046</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">Alfredo Eduardo Kirchner</VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">Autorev.dpr</Source></Source><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\rxctl100.bpl">RX Library Component and Tools Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\rxbde100.bpl">RX Library BDE DB Component Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\rxdb100.bpl">RX Library DB Component Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\Jcl110.bpl">JEDI Code Library RTL package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JclVcl110.bpl">JEDI Code Library VCL package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvCoreD11R.bpl">JVCL Core Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvSystemD11R.bpl">JVCL System Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvStdCtrlsD11R.bpl">JVCL Standard Controls Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvAppFrmD11R.bpl">JVCL Application and Form Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvBandsD11R.bpl">JVCL Band Objects Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvDBD11R.bpl">JVCL Database Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvCtrlsD11R.bpl">JVCL Visual Controls Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvDlgsD11R.bpl">JVCL Dialog Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvCustomD11R.bpl">JVCL Custom Controls Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvCmpD11R.bpl">JVCL Non-Visual Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvCryptD11R.bpl">JVCL Encryption and Compression Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvDockingD11R.bpl">JVCL Docking Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvDotNetCtrlsD11R.bpl">JVCL DotNet Controls Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvEDID11R.bpl">JVCL EDI Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvGlobusD11R.bpl">JVCL Globus Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvHMID11R.bpl">JVCL HMI Controls Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvInterpreterD11R.bpl">JVCL Interpreter Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvJansD11R.bpl">JVCL Jans Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvManagedThreadsD11R.bpl">JVCL Managed Threads Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvMMD11R.bpl">JVCL Multimedia and Image Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvNetD11R.bpl">JVCL Network Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvPageCompsD11R.bpl">JVCL Page Style Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvPluginD11R.bpl">JVCL Plugin Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvPrintPreviewD11R.bpl">JVCL Print Preview Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvRuntimeDesignD11R.bpl">JVCL Runtime Design Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvTimeFrameworkD11R.bpl">JVCL Time Framework Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvValidatorsD11R.bpl">JVCL Validators and Error Provider Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvWizardD11R.bpl">JVCL Wizard Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvXPCtrlsD11R.bpl">JVCL XP Controls Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvBDED11R.bpl">JVCL BDE Components Runtime Package</Excluded_Packages>
+      <Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvBDED11D.bpl">JVCL BDE Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality><ModelSupport>False</ModelSupport></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="Autorev.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="Biblioteca.pas" />
+    <DCCReference Include="CadastroCategoria.pas">
+      <Form>BoxCategoria</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroCfop.pas">
+      <Form>BoxCFOP</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroConcessionaria.pas">
+      <Form>BoxConcessionaria</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroCPagar.pas">
+      <Form>BoxCPagar</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroCPagas.pas">
+      <Form>BoxCPagas</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroCreceber.pas">
+      <Form>BoxCreceber</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroCrecebid.pas">
+      <Form>BoxCrecebid</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroPecas.pas">
+      <Form>BoxPecas</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroPecasFabrica.pas">
+      <Form>BoxPecasFabrica</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroPessoas.pas">
+      <Form>BoxPessoas</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroSerieNFs.pas">
+      <Form>BoxCadastroSerieNFs</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroTMO.pas">
+      <Form>BoxTMO</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroUsuario.pas">
+      <Form>BoxUsuarios</Form>
+    </DCCReference>
+    <DCCReference Include="CadastroVeiculos.pas">
+      <Form>BoxVeiculos</Form>
+    </DCCReference>
+    <DCCReference Include="ClienteDebito.pas">
+      <Form>BoxClienteDebito</Form>
+    </DCCReference>
+    <DCCReference Include="ClientePagamentos.pas">
+      <Form>BoxClientePagamentos</Form>
+    </DCCReference>
+    <DCCReference Include="DescontoFinanceira.pas">
+      <Form>BoxDescontoFinanceira</Form>
+    </DCCReference>
+    <DCCReference Include="DevolucaoVeiculos.pas">
+      <Form>BoxDevolucaoVeiculos</Form>
+    </DCCReference>
+    <DCCReference Include="ecf.pas">
+      <Form>BoxECF</Form>
+    </DCCReference>
+    <DCCReference Include="Efuncoes.pas" />
+    <DCCReference Include="EmiteCupomFiscal.pas">
+      <Form>BoxEmiteCupomFiscal</Form>
+    </DCCReference>
+    <DCCReference Include="Empresas.pas">
+      <Form>BoxEmpresas</Form>
+    </DCCReference>
+    <DCCReference Include="Exportacao.pas">
+      <Form>BoxExportacao</Form>
+    </DCCReference>
+    <DCCReference Include="Faturamento.pas">
+      <Form>BoxFaturamento</Form>
+    </DCCReference>
+    <DCCReference Include="FaturamentoGarantia.pas">
+      <Form>BoxFaturamentoGarantia</Form>
+    </DCCReference>
+    <DCCReference Include="FaturamentoPecas.pas">
+      <Form>BoxFaturamentoPecas</Form>
+    </DCCReference>
+    <DCCReference Include="FaturamentoPosVenda.pas">
+      <Form>BoxFaturamentoPosVenda</Form>
+    </DCCReference>
+    <DCCReference Include="FaturamentoVeiculos.pas">
+      <Form>BoxFaturamentoVeiculos</Form>
+    </DCCReference>
+    <DCCReference Include="FDB.pas">
+      <Form>FDB1</Form>
+    </DCCReference>
+    <DCCReference Include="FechamentoPedidos.pas">
+      <Form>BoxFechamentoPedidos</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBanco.pas">
+      <Form>BoxFinanceiroBanco</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoEntradas.pas">
+      <Form>BoxFinanceiroBancoEntradas</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoEntradasCreceber.pas">
+      <Form>BoxFinanceiroBancoEntradasCReceber</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoEntradasDeposito.pas">
+      <Form>BoxFinanceiroBancoEntradasDeposito</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoEntradasOutros.pas">
+      <Form>BoxFinanceiroBancoEntradasOutros</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoEntradasPedidos.pas">
+      <Form>BoxFinanceiroBancoEntradasPedidos</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoResumo.pas">
+      <Form>BoxFinanceiroBancoResumo</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoSaidas.pas">
+      <Form>BoxFinanceiroBancoSaidas</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoSaidasCombustivel.pas">
+      <Form>BoxFinanceiroBancoSaidasCombustivel</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoSaidasCPagar.pas">
+      <Form>BoxFinanceiroBancoSaidasCPagar</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoSaidasGerais.pas">
+      <Form>BoxFinanceiroBancoSaidasGerais</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroBancoSaidasSaque.pas">
+      <Form>BoxFinanceiroBancoSaidasSaque</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixa.pas">
+      <Form>BoxFinanceiroCaixa</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradas.pas">
+      <Form>BoxFinanceiroCaixaEntradas</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasCReceber.pas">
+      <Form>BoxFinanceiroCaixaEntradasCreceber</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasOutros.pas">
+      <Form>BoxFinanceiroCaixaEntradasOutros</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasPedidos.pas">
+      <Form>BoxFinanceiroCaixaEntradasPedidos</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasPedidosBoleto.pas">
+      <Form>BoxFinanceiroCaixaEntradasPedidosBoleto</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasPedidosCaixa.pas">
+      <Form>BoxFinanceiroCaixaEntradasPedidosCaixa</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasPedidosCheques.pas">
+      <Form>BoxFinanceiroCaixaEntradasPedidosCheques</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaEntradasPendencias.pas">
+      <Form>BoxFinanceiroCaixaEntradasPendencias</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaResumo.pas">
+      <Form>BoxFinanceiroCaixaResumo</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaSaidas.pas">
+      <Form>BoxFinanceiroCaixaSaidas</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaSaidasCombustivel.pas">
+      <Form>BoxFinanceiroCaixaSaidasCombustivel</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaSaidasCPagar.pas">
+      <Form>BoxFinanceiroCaixaSaidasCPagar</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaSaidasDeposito.pas">
+      <Form>BoxFinanceiroCaixaSaidasDeposito</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaSaidasGerais.pas">
+      <Form>BoxFinanceiroCaixaSaidasGerais</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroCaixaSaidasTaxas.pas">
+      <Form>BoxFinanceiroCaixaSaidasTaxas</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroRenegociacao.pas">
+      <Form>BoxFinanceiroRenegociacao</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroRenegociacaoConsultar.pas">
+      <Form>BoxFinanceiroRenegociacaoConsultar</Form>
+    </DCCReference>
+    <DCCReference Include="FinanceiroRenegociacaoEfetuar.pas">
+      <Form>BoxFinanceiroRenegociacaoEfetuar</Form>
+    </DCCReference>
+    <DCCReference Include="Financiamentos.pas">
+      <Form>BoxFinanciamentos</Form>
+    </DCCReference>
+    <DCCReference Include="IniFile.pas">
+      <Form>BoxIniFile</Form>
+    </DCCReference>
+    <DCCReference Include="Leitura.pas">
+      <Form>BoxLeitura</Form>
+    </DCCReference>
+    <DCCReference Include="Login.pas">
+      <Form>BoxLogin</Form>
+    </DCCReference>
+    <DCCReference Include="Menu.pas">
+      <Form>BoxMenu</Form>
+    </DCCReference>
+    <DCCReference Include="NFE.pas">
+      <Form>BoxNFe</Form>
+    </DCCReference>
+    <DCCReference Include="NFeComplementar.pas">
+      <Form>BoxNFeComplementar</Form>
+    </DCCReference>
+    <DCCReference Include="NFeConfiguracoes.pas">
+      <Form>BoxNFeConfiguracoes</Form>
+    </DCCReference>
+    <DCCReference Include="NFeCredDebEstoque.pas">
+      <Form>BoxNFeCredDebEstoque</Form>
+    </DCCReference>
+    <DCCReference Include="NFeDevolucao.pas">
+      <Form>BoxNFeDevolucao</Form>
+    </DCCReference>
+    <DCCReference Include="NfeGerenciamento.pas">
+      <Form>BoxNFeGerenciamento</Form>
+    </DCCReference>
+    <DCCReference Include="NFeImobilizado.pas">
+      <Form>BoxNFeImobilizado</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesCompras.pas">
+      <Form>BoxCompras</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesComprasNovos.pas">
+      <Form>BoxComprasNovos</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesComprasNovosImportacao.pas">
+      <Form>BoxComprasNovosImportacao</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesComprasPecas.pas">
+      <Form>BoxComprasPecas</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesComprasPecasImportacao.pas">
+      <Form>BoxComprasPecasImportacao</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesComprasUsados.pas">
+      <Form>BoxComprasUsados</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesPosVenda.pas">
+      <Form>BoxPosVenda</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesPosVendaPecas.pas">
+      <Form>BoxPosVendaPecas</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesPosVendaServicos.pas">
+      <Form>BoxPosVendaServicos</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesVendasPecas.pas">
+      <Form>BoxVendasPecas</Form>
+    </DCCReference>
+    <DCCReference Include="OperacoesVendasVeiculos.pas">
+      <Form>BoxVendasVeiculos</Form>
+    </DCCReference>
+    <DCCReference Include="Parametros.pas">
+      <Form>BoxParametros</Form>
+    </DCCReference>
+    <DCCReference Include="PecasTrocaCodigo.pas">
+      <Form>BoxPecasTrocaCodigo</Form>
+    </DCCReference>
+    <DCCReference Include="PesquisaGeral.pas">
+      <Form>BoxPesquisar</Form>
+    </DCCReference>
+    <DCCReference Include="PrnDOS.pas" />
+    <DCCReference Include="ReemiteCF.pas">
+      <Form>BoxReemiteCF</Form>
+    </DCCReference>
+    <DCCReference Include="ReemiteNFs.pas">
+      <Form>BoxReemiteNFs</Form>
+    </DCCReference>
+    <DCCReference Include="RelatorioBoletos.pas">
+      <Form>BoxRelatorioBoleto</Form>
+    </DCCReference>
+    <DCCReference Include="RelatorioNotasFiscais.pas">
+      <Form>BoxRelatorioNotasFiscais</Form>
+    </DCCReference>
+    <DCCReference Include="RelatorioRecibo.pas">
+      <Form>BoxRelatorioRecibo</Form>
+    </DCCReference>
+    <DCCReference Include="Relatorios.pas">
+      <Form>BoxRelatorios</Form>
+    </DCCReference>
+    <DCCReference Include="RelatoriosGerenciais.pas">
+      <Form>BoxRelatoriosGerenciais</Form>
+    </DCCReference>
+    <DCCReference Include="RelatoriosGerenciaisDespesas.pas">
+      <Form>BoxRelatoriosGerenciaisDespesas</Form>
+    </DCCReference>
+    <DCCReference Include="RelatoriosGerenciaisReceitas.pas">
+      <Form>BoxRelatoriosGerenciaisReceitas</Form>
+    </DCCReference>
+    <DCCReference Include="Senha.pas">
+      <Form>BoxSenha</Form>
+    </DCCReference>
+    <DCCReference Include="SistemaSobre.pas">
+      <Form>BoxSobre</Form>
+    </DCCReference>
+    <DCCReference Include="Tabelas.pas">
+      <Form>BoxTabelas</Form>
+    </DCCReference>
+    <DCCReference Include="ufrmAguardaNFe.pas">
+      <Form>frmAguardaNFe</Form>
+    </DCCReference>
+    <None Include="ModelSupport_Autorev\Biblioteca\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroCategoria\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroCfop\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroConcessionaria\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroCPagar\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroCPagas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroCreceber\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroCrecebid\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroPecasFabrica\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroPecas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroPessoas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroSerieNFs\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroTMO\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroUsuario\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\CadastroVeiculos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\ClienteDebito\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\ClientePagamentos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\default.txvpck" />
+    <None Include="ModelSupport_Autorev\DescontoFinanceira\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\DevolucaoVeiculos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\ecf\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\eFuncoes\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\EmiteCupomFiscal\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Empresas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Exportacao\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FaturamentoGarantia\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FaturamentoPecas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FaturamentoPosVenda\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FaturamentoVeiculos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Faturamento\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FDB\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FechamentoPedidos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoEntradasCReceber\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoEntradasDeposito\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoEntradasOutros\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoEntradasPedidos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoEntradas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoResumo\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoSaidasCombustivel\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoSaidasCPagar\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoSaidasGerais\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoSaidasSaque\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBancoSaidas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroBanco\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasCReceber\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasOutros\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasPedidosBoleto\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasPedidosCaixa\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasPedidosCheques\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasPedidos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradasPendencias\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaEntradas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaResumo\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaSaidasCombustivel\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaSaidasCPagar\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaSaidasDeposito\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaSaidasGerais\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaSaidasTaxas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixaSaidas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroCaixa\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroRenegociacaoConsultar\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroRenegociacaoEfetuar\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\FinanceiroRenegociacao\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Financiamentos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\IniFile\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Leitura\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Login\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Menu\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NFeComplementar\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NFeConfiguracoes\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NFeCredDebEstoque\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NFeDevolucao\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NfeGerenciamento\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NFeImobilizado\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\NFE\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesComprasNovosImportacao\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesComprasNovos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesComprasPecas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesComprasUsados\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesCompras\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesPosVendaPecas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesPosVendaServicos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesPosVenda\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesVendasPecas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\OperacoesVendasVeiculos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Parametros\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\PecasTrocaCodigo\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\PesquisaGeral\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\PrnDOS\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\ReemiteCF\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\ReemiteNFs\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\RelatorioBoletos\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\RelatorioNotasFiscais\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\RelatorioRecibo\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\RelatoriosGerenciaisDespesas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\RelatoriosGerenciaisReceitas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\RelatoriosGerenciais\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Relatorios\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\SistemaSobre\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\Tabelas\default.txaPackage" />
+    <None Include="ModelSupport_Autorev\ufrmAguardaNFe\default.txaPackage" />
+  </ItemGroup>
+</Project>
