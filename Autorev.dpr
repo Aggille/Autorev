@@ -161,7 +161,8 @@ uses
   FinanceiroConciliacaoCartoes in 'FinanceiroConciliacaoCartoes.pas' {BoxFinanceiroConciliacaoCartoes},
   RelatorioComissoesVeiculos in 'RelatorioComissoesVeiculos.pas' {BoxComissaoVeiculos},
   RelatoriosIndividualComissoes in 'RelatoriosIndividualComissoes.pas' {BoxRelatoriosIndividualComissoes},
-  CadastroPecasFabrica in 'CadastroPecasFabrica.pas' {BoxPecasFabrica};
+  CadastroPecasFabrica in 'CadastroPecasFabrica.pas' {BoxPecasFabrica},
+  UBoxRenave in 'Renave\View\UBoxRenave.pas' {BoxRenave};
 
 {$R *.RES}
 

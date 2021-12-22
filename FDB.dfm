@@ -67,7 +67,7 @@ object FDB1: TFDB1
     Caption = 'SPC-atual.DEbitos'
   end
   object IBDatabase: TIBDatabase
-    DatabaseName = 'localhost:C:\Autorev\Database\AUTOREV.FDB'
+    DatabaseName = 'localhost/3050:C:\Autorev\Database\AUTOREV.FDB'
     Params.Strings = (
       'user_name=sysdba'
       'lc_ctype=ISO8859_1'

@@ -3,8 +3,8 @@ object BoxMenu: TBoxMenu
   Left = 0
   Top = 0
   Caption = 'AUTOREV - SD - System Dealer'
-  ClientHeight = 438
-  ClientWidth = 935
+  ClientHeight = 418
+  ClientWidth = 1319
   Color = clBtnFace
   ParentFont = True
   Icon.Data = {
@@ -123,7 +123,7 @@ object BoxMenu: TBoxMenu
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 935
+    Width = 1319
     Height = 81
     ButtonHeight = 36
     ButtonWidth = 79
@@ -221,11 +221,18 @@ object BoxMenu: TBoxMenu
       Top = 36
       Action = ActionAvaliacao
     end
+    object ToolButton1: TToolButton
+      Left = 711
+      Top = 36
+      Caption = 'RENAVE'
+      ImageIndex = 24
+      OnClick = ToolButton1Click
+    end
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 419
-    Width = 935
+    Top = 399
+    Width = 1319
     Height = 19
     Panels = <
       item
@@ -236,18 +243,18 @@ object BoxMenu: TBoxMenu
       end>
   end
   object Panel1: TPanel
-    Left = 741
+    Left = 1125
     Top = 81
     Width = 194
-    Height = 338
+    Height = 318
     Align = alRight
     TabOrder = 1
     DesignSize = (
       194
-      338)
+      318)
     object Label1: TLabel
       Left = 6
-      Top = 53
+      Top = 50
       Width = 31
       Height = 13
       Anchors = [akRight]
@@ -256,7 +263,7 @@ object BoxMenu: TBoxMenu
     end
     object Label2: TLabel
       Left = 6
-      Top = 36
+      Top = 34
       Width = 31
       Height = 13
       Anchors = [akRight]
@@ -267,16 +274,15 @@ object BoxMenu: TBoxMenu
     object Label3: TLabel
       AlignWithMargins = True
       Left = 6
-      Top = 24
+      Top = 22
       Width = 31
       Height = 13
       Anchors = [akRight]
       Caption = 'Label3'
-      ExplicitTop = 22
     end
     object DBText1: TDBText
       Left = 6
-      Top = 70
+      Top = 66
       Width = 41
       Height = 13
       Anchors = [akRight]
@@ -286,16 +292,17 @@ object BoxMenu: TBoxMenu
     end
     object Label4: TLabel
       Left = 6
-      Top = 6
+      Top = 5
       Width = 129
       Height = 13
       Anchors = [akRight]
       Caption = 'Logado na Concession'#225'ria:'
+      ExplicitTop = 6
     end
     object Label5: TLabel
       AlignWithMargins = True
       Left = 6
-      Top = 90
+      Top = 84
       Width = 14
       Height = 13
       Anchors = [akRight]
@@ -305,7 +312,7 @@ object BoxMenu: TBoxMenu
     object Label6: TLabel
       AlignWithMargins = True
       Left = 6
-      Top = 107
+      Top = 100
       Width = 31
       Height = 13
       Anchors = [akRight]
@@ -826,7 +833,7 @@ object BoxMenu: TBoxMenu
     Left = 608
     Top = 384
     Bitmap = {
-      494C01013E0044009C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013E004400A80010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000005EA660000000000000000000000000000000
@@ -2967,160 +2974,8 @@ object BoxMenu: TBoxMenu
     Left = 544
     Top = 352
   end
-  object frxPDFExport1: TfrxPDFExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    PrintOptimized = False
-    Outline = False
-    Background = False
-    HTMLTags = True
-    Quality = 95
-    Transparency = False
-    Author = 'FastReport'
-    Subject = 'FastReport PDF export'
-    Creator = 'FastReport (http://www.fast-report.com)'
-    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
-    HideToolbar = False
-    HideMenubar = False
-    HideWindowUI = False
-    FitWindow = False
-    CenterWindow = False
-    PrintScaling = False
-    PdfA = False
-    Left = 576
-    Top = 352
-  end
-  object frxHTMLExport1: TfrxHTMLExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    FixedWidth = True
-    Background = False
-    Centered = False
-    EmptyLines = True
-    Print = False
-    PictureType = gpPNG
-    Left = 608
-    Top = 352
-  end
-  object frxJPEGExport1: TfrxJPEGExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    Left = 640
-    Top = 352
-  end
-  object frxSimpleTextExport1: TfrxSimpleTextExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    Frames = False
-    EmptyLines = False
-    OEMCodepage = False
-    DeleteEmptyColumns = True
-    Left = 672
-    Top = 352
-  end
-  object frxXLSExport1: TfrxXLSExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    ExportEMF = True
-    AsText = False
-    Background = True
-    FastExport = True
-    PageBreaks = True
-    EmptyLines = True
-    SuppressPageHeadersFooters = False
-    Left = 704
-    Top = 352
-  end
-  object frxMailExport1: TfrxMailExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    ShowExportDialog = True
-    SmtpPort = 25
-    UseIniFile = True
-    TimeOut = 60
-    ConfurmReading = False
-    UseMAPI = SMTP
-    Left = 704
-    Top = 320
-  end
-  object frxCSVExport1: TfrxCSVExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    Separator = ';'
-    OEMCodepage = False
-    UTF8 = False
-    NoSysSymbols = True
-    ForcedQuotes = False
-    Left = 544
-    Top = 320
-  end
-  object frxGIFExport1: TfrxGIFExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    Left = 576
-    Top = 320
-  end
-  object frxXMLExport1: TfrxXMLExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    Background = True
-    Creator = 'FastReport'
-    EmptyLines = True
-    SuppressPageHeadersFooters = False
-    RowsCount = 0
-    Split = ssNotSplit
-    Left = 672
-    Top = 320
-  end
-  object frxODTExport1: TfrxODTExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    CreationTime = 0.000000000000000000
-    DataOnly = False
-    PictureType = gpPNG
-    Background = True
-    Creator = 'FastReport'
-    SingleSheet = False
-    Language = 'en'
-    SuppressPageHeadersFooters = False
-    Left = 640
-    Top = 320
-  end
-  object frxRTFExport1: TfrxRTFExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    PictureType = gpPNG
-    Wysiwyg = True
-    Creator = 'FastReport http://www.fast-report.com'
-    SuppressPageHeadersFooters = False
-    HeaderFooterMode = hfText
-    AutoSize = False
-    Left = 608
-    Top = 320
-  end
   object frxRecibo: TfrxReport
-    Version = '5.4.6'
+    Version = '6.4.11'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -3155,7 +3010,10 @@ object BoxMenu: TBoxMenu
       PaperHeight = 297.000000000000000000
       PaperSize = 9
       Frame.DropShadow = True
+      Frame.Typ = []
+      MirrorMode = []
       object Memo2: TfrxMemoView
+        AllowVectorExport = True
         Left = 26.456710000000000000
         Top = 117.165430000000000000
         Width = 260.787570000000000000
@@ -3166,11 +3024,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -21
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         Memo.UTF8W = (
           'Recibo N'#186' [(<Numero>)]')
         ParentFont = False
       end
       object Memo6: TfrxMemoView
+        AllowVectorExport = True
         Left = 510.236550000000000000
         Top = 117.165430000000000000
         Width = 94.488250000000000000
@@ -3181,11 +3041,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         Memo.UTF8W = (
           'Valor: ')
         ParentFont = False
       end
       object Valor: TfrxMemoView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 117.165430000000000000
         Width = 132.283550000000000000
@@ -3195,12 +3057,14 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haRight
         Memo.UTF8W = (
           '[Valor]')
         ParentFont = False
       end
       object Memo7: TfrxMemoView
+        AllowVectorExport = True
         Left = 26.456710000000000000
         Top = 143.622140000000000000
         Width = 733.228820000000000000
@@ -3223,6 +3087,7 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
       object Memo3: TfrxMemoView
+        AllowVectorExport = True
         Left = 26.456710000000000000
         Top = 328.819110000000000000
         Width = 343.937230000000000000
@@ -3233,11 +3098,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = []
+        Frame.Typ = []
         Memo.UTF8W = (
           '[(<Data>)]')
         ParentFont = False
       end
       object Memo4: TfrxMemoView
+        AllowVectorExport = True
         Left = 442.205010000000000000
         Top = 328.819110000000000000
         Width = 317.480520000000000000
@@ -3255,11 +3122,13 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
       object Picture2: TfrxPictureView
+        AllowVectorExport = True
         Left = 22.677180000000000000
         Top = 30.236240000000000000
         Width = 347.716760000000000000
         Height = 79.370130000000000000
         OnBeforePrint = 'Picture2OnBeforePrint'
+        Frame.Typ = []
         Picture.Data = {
           07544269746D6170B64C0100424DB64C01000000000036000000280000003001
           0000460000000100200000000000804C01000000000000000000000000000000
@@ -5929,6 +5798,7 @@ object BoxMenu: TBoxMenu
         TransparentColor = clWhite
       end
       object Memo1: TfrxMemoView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 68.031540000000010000
         Width = 154.960730000000000000
@@ -5939,16 +5809,19 @@ object BoxMenu: TBoxMenu
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haCenter
         Memo.UTF8W = (
           'Concession'#225'ria Autorizada')
         ParentFont = False
       end
       object Picture1: TfrxPictureView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 34.015770000000010000
         Width = 154.960730000000000000
         Height = 34.015770000000010000
+        Frame.Typ = []
         Picture.Data = {
           07544269746D617016740100424D167401000000000036000000280000005401
           0000460000000100200000000000E07301000000000000000000000000000000
@@ -8933,6 +8806,7 @@ object BoxMenu: TBoxMenu
         TransparentColor = clWhite
       end
       object Memo5: TfrxMemoView
+        AllowVectorExport = True
         Left = 22.677180000000000000
         Top = 457.323130000000000000
         Width = 260.787570000000000000
@@ -8943,11 +8817,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -21
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         Memo.UTF8W = (
           'Recibo N'#186' [(<Numero>)]')
         ParentFont = False
       end
       object Memo8: TfrxMemoView
+        AllowVectorExport = True
         Left = 506.457020000000000000
         Top = 457.323130000000000000
         Width = 94.488250000000000000
@@ -8958,11 +8834,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         Memo.UTF8W = (
           'Valor: ')
         ParentFont = False
       end
       object Memo9: TfrxMemoView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 457.323130000000000000
         Width = 132.283550000000000000
@@ -8972,12 +8850,14 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haRight
         Memo.UTF8W = (
           '[Valor]')
         ParentFont = False
       end
       object Memo10: TfrxMemoView
+        AllowVectorExport = True
         Left = 22.677180000000000000
         Top = 495.118430000000000000
         Width = 733.228820000000000000
@@ -9000,6 +8880,7 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
       object Memo11: TfrxMemoView
+        AllowVectorExport = True
         Left = 22.677180000000000000
         Top = 665.197280000000000000
         Width = 343.937230000000000000
@@ -9010,11 +8891,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = []
+        Frame.Typ = []
         Memo.UTF8W = (
           '[(<Data>)]')
         ParentFont = False
       end
       object Memo12: TfrxMemoView
+        AllowVectorExport = True
         Left = 438.425480000000000000
         Top = 665.197280000000000000
         Width = 317.480520000000000000
@@ -9032,10 +8915,12 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
       object Picture3: TfrxPictureView
+        AllowVectorExport = True
         Left = 22.677180000000000000
         Top = 374.173470000000000000
         Width = 347.716760000000000000
         Height = 79.370130000000000000
+        Frame.Typ = []
         Picture.Data = {
           07544269746D6170B64C0100424DB64C01000000000036000000280000003001
           0000460000000100200000000000804C01000000000000000000000000000000
@@ -11705,6 +11590,7 @@ object BoxMenu: TBoxMenu
         TransparentColor = clWhite
       end
       object Memo13: TfrxMemoView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 408.189240000000000000
         Width = 154.960730000000000000
@@ -11715,16 +11601,19 @@ object BoxMenu: TBoxMenu
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haCenter
         Memo.UTF8W = (
           'Concession'#225'ria Autorizada')
         ParentFont = False
       end
       object Picture4: TfrxPictureView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 374.173470000000000000
         Width = 154.960730000000000000
         Height = 34.015770000000010000
+        Frame.Typ = []
         Picture.Data = {
           07544269746D617016740100424D167401000000000036000000280000005401
           0000460000000100200000000000E07301000000000000000000000000000000
@@ -14709,6 +14598,7 @@ object BoxMenu: TBoxMenu
         TransparentColor = clWhite
       end
       object Line1: TfrxLineView
+        AllowVectorExport = True
         Left = 3.779530000000000000
         Top = 362.834880000000000000
         Width = 797.480830000000000000
@@ -14716,6 +14606,7 @@ object BoxMenu: TBoxMenu
         Frame.Typ = [ftTop]
       end
       object Memo14: TfrxMemoView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 427.086890000000000000
         Width = 154.960730000000000000
@@ -14726,12 +14617,14 @@ object BoxMenu: TBoxMenu
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haCenter
         Memo.UTF8W = (
           '2'#170' via-Caixa')
         ParentFont = False
       end
       object Memo15: TfrxMemoView
+        AllowVectorExport = True
         Left = 619.842920000000000000
         Top = 86.929190000000000000
         Width = 154.960730000000000000
@@ -14742,12 +14635,14 @@ object BoxMenu: TBoxMenu
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haCenter
         Memo.UTF8W = (
           '1'#170' via-Cliente')
         ParentFont = False
       end
       object Memo16: TfrxMemoView
+        AllowVectorExport = True
         Left = 18.897650000000000000
         Top = 812.598950000000000000
         Width = 260.787570000000000000
@@ -14758,11 +14653,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -21
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         Memo.UTF8W = (
           'Recibo N'#186' [(<Numero>)]')
         ParentFont = False
       end
       object Memo17: TfrxMemoView
+        AllowVectorExport = True
         Left = 502.677490000000000000
         Top = 812.598950000000000000
         Width = 94.488250000000000000
@@ -14773,11 +14670,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         Memo.UTF8W = (
           'Valor: ')
         ParentFont = False
       end
       object Memo18: TfrxMemoView
+        AllowVectorExport = True
         Left = 616.063390000000000000
         Top = 812.598950000000000000
         Width = 132.283550000000000000
@@ -14787,12 +14686,14 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haRight
         Memo.UTF8W = (
           '[Valor]')
         ParentFont = False
       end
       object Memo19: TfrxMemoView
+        AllowVectorExport = True
         Left = 18.897650000000000000
         Top = 850.394250000000000000
         Width = 733.228820000000000000
@@ -14815,6 +14716,7 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
       object Memo20: TfrxMemoView
+        AllowVectorExport = True
         Left = 18.897650000000000000
         Top = 1012.914040000000000000
         Width = 343.937230000000000000
@@ -14825,11 +14727,13 @@ object BoxMenu: TBoxMenu
         Font.Height = -16
         Font.Name = 'Arial'
         Font.Style = []
+        Frame.Typ = []
         Memo.UTF8W = (
           '[(<Data>)]')
         ParentFont = False
       end
       object Memo21: TfrxMemoView
+        AllowVectorExport = True
         Left = 434.645950000000000000
         Top = 1012.914040000000000000
         Width = 317.480520000000000000
@@ -14847,10 +14751,12 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
       object Picture5: TfrxPictureView
+        AllowVectorExport = True
         Left = 18.897650000000000000
         Top = 729.449290000000000000
         Width = 347.716760000000000000
         Height = 79.370130000000000000
+        Frame.Typ = []
         Picture.Data = {
           07544269746D6170B64C0100424DB64C01000000000036000000280000003001
           0000460000000100200000000000804C01000000000000000000000000000000
@@ -17520,6 +17426,7 @@ object BoxMenu: TBoxMenu
         TransparentColor = clWhite
       end
       object Memo22: TfrxMemoView
+        AllowVectorExport = True
         Left = 616.063390000000000000
         Top = 763.465060000000000000
         Width = 154.960730000000000000
@@ -17530,16 +17437,19 @@ object BoxMenu: TBoxMenu
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haCenter
         Memo.UTF8W = (
           'Concession'#225'ria Autorizada')
         ParentFont = False
       end
       object Picture6: TfrxPictureView
+        AllowVectorExport = True
         Left = 616.063390000000000000
         Top = 729.449290000000000000
         Width = 154.960730000000000000
         Height = 34.015770000000010000
+        Frame.Typ = []
         Picture.Data = {
           07544269746D617016740100424D167401000000000036000000280000005401
           0000460000000100200000000000E07301000000000000000000000000000000
@@ -20524,12 +20434,14 @@ object BoxMenu: TBoxMenu
         TransparentColor = clWhite
       end
       object Line2: TfrxLineView
+        AllowVectorExport = True
         Top = 718.110700000000000000
         Width = 797.480830000000000000
         Color = clBlack
         Frame.Typ = [ftTop]
       end
       object Memo23: TfrxMemoView
+        AllowVectorExport = True
         Left = 616.063390000000000000
         Top = 782.362710000000000000
         Width = 154.960730000000000000
@@ -20539,6 +20451,7 @@ object BoxMenu: TBoxMenu
         Font.Height = -11
         Font.Name = 'Arial'
         Font.Style = [fsBold]
+        Frame.Typ = []
         HAlign = haCenter
         Memo.UTF8W = (
           '3'#170' via-Pedido')

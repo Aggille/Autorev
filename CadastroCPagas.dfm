@@ -227,6 +227,7 @@ object BoxCPagas: TBoxCPagas
       Height = 21
       Hint = 'Digite a sequ'#234'ncia'
       TabOrder = 1
+      Text = ''
       OnExit = CodigoClienteExit
       OnKeyPress = FormKeyPress
     end
@@ -238,6 +239,7 @@ object BoxCPagas: TBoxCPagas
       DataField = 'VALOR'
       DataSource = DataSourceCPagar
       TabOrder = 6
+      EditMask = ''
       OnKeyPress = FormKeyPress
     end
     object JvDBMaskEdit1: TJvDBMaskEdit
@@ -264,6 +266,7 @@ object BoxCPagas: TBoxCPagas
       CheckOnExit = True
       DefaultToday = True
       Enabled = False
+      ShowNullDate = False
       TabOrder = 4
       OnKeyPress = FormKeyPress
     end
@@ -277,6 +280,7 @@ object BoxCPagas: TBoxCPagas
       CheckOnExit = True
       DefaultToday = True
       Enabled = False
+      ShowNullDate = False
       TabOrder = 5
       OnKeyPress = FormKeyPress
     end
@@ -289,6 +293,7 @@ object BoxCPagas: TBoxCPagas
       DataField = 'NFISCAL'
       DataSource = DataSourceCPagar
       TabOrder = 2
+      EditMask = ''
       OnKeyPress = FormKeyPress
     end
     object Documento: TMaskEdit
@@ -298,6 +303,7 @@ object BoxCPagas: TBoxCPagas
       Height = 21
       Hint = 'Digite a sequ'#234'ncia'
       TabOrder = 0
+      Text = ''
       OnExit = DocumentoExit
       OnKeyPress = FormKeyPress
     end
@@ -308,6 +314,7 @@ object BoxCPagas: TBoxCPagas
       Height = 21
       Enabled = False
       TabOrder = 8
+      EditMask = ''
     end
     object FormaPagamento: TDBLookupComboBox
       Left = 272
@@ -333,6 +340,7 @@ object BoxCPagas: TBoxCPagas
       CheckOnExit = True
       DefaultToday = True
       Enabled = False
+      ShowNullDate = False
       TabOrder = 9
       OnKeyPress = FormKeyPress
     end
@@ -344,6 +352,7 @@ object BoxCPagas: TBoxCPagas
       DataField = 'VALOR_PAGO'
       DataSource = DataSourceCPagar
       TabOrder = 10
+      EditMask = ''
       OnKeyPress = FormKeyPress
     end
   end
@@ -369,11 +378,6 @@ object BoxCPagas: TBoxCPagas
       Height = 23
       Hint = 'Consultar registro'
       Caption = 'F5-C&onsultar'
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 0
-      OnClick = ConsultarExecute
-      OnKeyPress = FormKeyPress
       Glyph.Data = {
         36060000424D3606000000000000360000002800000020000000100000000100
         1800000000000006000000000000000000000000000000000000FF00FFFF00FF
@@ -426,13 +430,18 @@ object BoxCPagas: TBoxCPagas
         FFFF00FFFF00FFFF00FFFF00FFFF00FFBFBFBFB1B1B1B1B1B1B1B1B1B1B1B1B1
         B1B1B1B1B1B1B1B1B1B1B1999999FF00FFFF00FFFF00FFFF00FF}
       NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = ConsultarExecute
+      OnKeyPress = FormKeyPress
     end
   end
   object ImageList1: TImageList
     Left = 536
     Top = 40
     Bitmap = {
-      494C01010F001400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010F001400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000A4676900A467
       6900A4676900A4676900A4676900A4676900A4676900A4676900A4676900A467
@@ -979,6 +988,8 @@ object BoxCPagas: TBoxCPagas
     AfterCancel = tblCPagarAfterCancel
     AfterDelete = tblCPagarAfterPost
     AfterPost = tblCPagarAfterPost
+    BufferChunks = 1000
+    CachedUpdates = False
     DeleteSQL.Strings = (
       'delete from CPagar'
       'where'
@@ -1044,6 +1055,8 @@ object BoxCPagas: TBoxCPagas
       '  VENCIMENTO = :VENCIMENTO'
       'where'
       '  ID_CPAGAR = :OLD_ID_CPAGAR')
+    ParamCheck = True
+    UniDirectional = False
     Left = 504
     Top = 112
     object tblCPagarID_CPAGAR: TIntegerField
@@ -1135,6 +1148,8 @@ object BoxCPagas: TBoxCPagas
     AfterCancel = tblCPagarAfterCancel
     AfterDelete = tblCPagarAfterPost
     AfterPost = tblCPagarAfterPost
+    BufferChunks = 1000
+    CachedUpdates = False
     DeleteSQL.Strings = (
       'delete from Clientes'
       'where'
@@ -1317,6 +1332,8 @@ object BoxCPagas: TBoxCPagas
       '  VENDEDOR = :VENDEDOR'
       'where'
       '  ID_CLIENTES = :OLD_ID_CLIENTES')
+    ParamCheck = True
+    UniDirectional = False
     Left = 504
     Top = 168
     object tblPessoasID_CLIENTES: TIntegerField
@@ -1643,6 +1660,9 @@ object BoxCPagas: TBoxCPagas
   object IBQuery1: TIBQuery
     Database = FDB1.IBDatabase
     Transaction = FDB1.IBTransaction
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
     SQL.Strings = (
       'Select * From Clientes'
       'where id_clientes = :idClientes')
@@ -1661,6 +1681,8 @@ object BoxCPagas: TBoxCPagas
     AfterCancel = tblCPagarAfterCancel
     AfterDelete = tblCPagarAfterPost
     AfterPost = tblCPagarAfterPost
+    BufferChunks = 1000
+    CachedUpdates = False
     DeleteSQL.Strings = (
       'delete from FORMAS_PAGAMENTO'
       'where'
@@ -1707,6 +1729,8 @@ object BoxCPagas: TBoxCPagas
       '  VEICULOS = :VEICULOS'
       'where'
       '  ID_FORMAS_PAGAMENTO = :OLD_ID_FORMAS_PAGAMENTO')
+    ParamCheck = True
+    UniDirectional = False
     Left = 568
     Top = 80
     object tblFormasPagamentoID_FORMAS_PAGAMENTO: TIntegerField

@@ -3,13 +3,14 @@ unit CadastroCPagas;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,System.UITypes,
   Dialogs, StdCtrls, Mask, ComCtrls, DBCtrls, ExtCtrls, ActnList, Buttons, DBActns,
   ImgList, DB, JvExMask, JvToolEdit, JvMaskEdit, JvDBControls, JvExComCtrls,
   JvStatusBar, ToolWin, JvToolBar, IBCustomDataSet, IBDatabase, JvExControls,
   JvXPCore, JvXPButtons, ButtonGroup, JvExStdCtrls, JvButton, JvCtrls,
   JvExButtons, JvButtons, JvExExtCtrls, JvExtComponent, JvSpeedbar, ActnMan,
-  ActnCtrls, DBClient, FMTBcd, SqlExpr, Provider, IBQuery, Wwkeycb;
+  ActnCtrls, DBClient, FMTBcd, SqlExpr, Provider, IBQuery, Wwkeycb,
+  System.Actions, System.ImageList;
 
 type
   TBoxCPagas = class(TForm)

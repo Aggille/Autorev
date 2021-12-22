@@ -2163,10 +2163,10 @@ begin
        begin
         if (tblNofisa.FieldByName('CODIGO_FISCAL').AsString = '1102') then //COMPRA
           begin
-             with Pag.Add do
+             with Pag.New do
               begin
                tPag :=  fpOutro;
-               xPag :=  'Negociação futura';
+               //xPag :=  'Negociação futura';
                vPag :=  tblNofisa.FieldByName('tot_nota').AsCurrency; //vSemPagamento
               end;
           end
@@ -2185,7 +2185,7 @@ begin
            while CURRTOSTR(Valor_Pago) <> CurrTOSTR(tblNofisa.FieldByName('tot_nota').AsCurrency) do  //true
              begin
 
-              with pag.add do
+              with pag.new do
                begin
                 if (FieldByName('id_formas_Pagamento').AsString = '1') or //financiamento
                    (FieldByName('id_formas_Pagamento').AsString = '11') or //desconto financeira
@@ -2196,11 +2196,11 @@ begin
                   end;
 
                if (FieldByName('id_formas_Pagamento').AsString = '1') then //financiamento
-                 xPag :=  'Financiamento';
+                 //xPag :=  'Financiamento';
                if (FieldByName('id_formas_Pagamento').AsString = '11') then //desconto financeira
-                 xPag :=  'Financiamento';
+                 //xPag :=  'Financiamento';
                if (FieldByName('id_formas_Pagamento').AsString = '18') then //usado
-                 xPag :=  'Usado';
+                 //xPag :=  'Usado';
 
                 if FieldByName('id_formas_Pagamento').AsString = '2' then //Duplicata
                  begin
@@ -2447,7 +2447,7 @@ begin
            if fieldByName('id_formas_pagamento').asInteger <> 12 then
            begin
             inc(i);
-            with Dup.Add do
+            with Dup.new do
              begin
               dVenc := tblNofisaFaturas.FieldByName('Vencimento').AsDateTime;
               nDup :=  StrZero(i,3,0);//tblNofisa.FieldByName('Numero').AsString + '-' + INtToStr(i);//StrZero(i,3,0); //tblNofisaFaturas.FieldByName('Fatura').AsString;

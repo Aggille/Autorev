@@ -1358,22 +1358,6 @@ object BoxVeiculos: TBoxVeiculos
     Height = 19
     Panels = <>
   end
-  object Modelo: TRxDBLookupCombo
-    Left = 11
-    Top = 212
-    Width = 144
-    Height = 21
-    DropDownCount = 8
-    Enabled = False
-    LookupField = 'MODELO'
-    LookupDisplay = 'MODELO'
-    LookupDisplayIndex = 1
-    LookupSource = DataSourceModelosVeiculos
-    TabOrder = 1
-    OnChange = ModeloChange
-    OnCloseUp = ModeloChange
-    OnKeyPress = FormKeyPress
-  end
   object DataSourceVeiculos: TDataSource
     AutoEdit = False
     DataSet = cdsVeiculos

@@ -8,7 +8,7 @@ uses Windows, Messages, Classes, Graphics, Forms, Controls, Menus,
   frxClass, frxExportPDF, frxExportText, frxExportImage, frxExportHTML,
   frxExportXLS, frxExportRTF, frxExportODF, frxExportXML, frxExportCSV,
   frxExportMail, ACBrBase, ACBrEnterTab, JvExComCtrls, JvToolBar, ACBrExtenso,
-  System.ImageList, System.Actions;
+  System.ImageList, System.Actions, frxExportBaseDialog;
 
 type
   TBoxMenu = class(TForm)
@@ -85,17 +85,6 @@ type
     MenuFaturamento: TMenuItem;
     Timer1: TTimer;
     StatusBar: TStatusBar;
-    frxPDFExport1: TfrxPDFExport;
-    frxHTMLExport1: TfrxHTMLExport;
-    frxJPEGExport1: TfrxJPEGExport;
-    frxSimpleTextExport1: TfrxSimpleTextExport;
-    frxXLSExport1: TfrxXLSExport;
-    frxMailExport1: TfrxMailExport;
-    frxCSVExport1: TfrxCSVExport;
-    frxGIFExport1: TfrxGIFExport;
-    frxXMLExport1: TfrxXMLExport;
-    frxODTExport1: TfrxODTExport;
-    frxRTFExport1: TfrxRTFExport;
     ActionDebito: TAction;
     ActionPagamentos: TAction;
     BtnDebitos: TToolButton;
@@ -175,6 +164,7 @@ type
     Cardpioreviso1: TMenuItem;
     MenuConciliacaoCartoes: TMenuItem;
     Comissaovendedores: TMenuItem;
+    ToolButton1: TToolButton;
     procedure FileExit1Execute(Sender: TObject);
     procedure HelpAbout1Execute(Sender: TObject);
     procedure ActionPecasExecute(Sender: TObject);
@@ -265,6 +255,7 @@ type
     procedure Cardpioreviso1Click(Sender: TObject);
     procedure MenuConciliacaoCartoesClick(Sender: TObject);
     procedure ComissaovendedoresClick(Sender: TObject);
+    procedure ToolButton1Click(Sender: TObject);
   private
      { Private declarations }
   public
@@ -301,7 +292,7 @@ uses SysUtils, Mapi, SistemaSobre, CadastroPecas, CadastroConcessionaria,
   RelatorioResultadoSequencia, RelEstoque, VendasDiarias, RelatorioProducaoOS,
   OperacoesSeguro, FinanceiroCaixaGeral, RelatoriosInidividualComissoes,
   uSpedBaseST, uSpedPreenchimentoBaseST, uSpedNFsErradas, CadastroCardapio,
-  FinanceiroConciliacaoCartoes, RelatorioComissoesVeiculos;
+  FinanceiroConciliacaoCartoes, RelatorioComissoesVeiculos, UBoxRenave;
 
 {$R *.dfm}
 
@@ -780,6 +771,14 @@ end;
 procedure TBoxMenu.Timer1Timer(Sender: TObject);
 begin
   StatusBar.Panels[0].Text := TimeToStr(Time);
+end;
+
+procedure TBoxMenu.ToolButton1Click(Sender: TObject);
+begin
+  if not Assigned(BoxREnave) then
+    BoxREnave := TBoxRenave.Create(Self);
+  BoxRenave.Show;
+
 end;
 
 procedure TBoxMenu.Vendasvendedor1Click(Sender: TObject);
