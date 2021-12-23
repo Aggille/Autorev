@@ -26,7 +26,7 @@ type
 implementation
 
 uses
-  Rest.JSON;
+  Rest.JSON, UConstsRenave;
 
 { TEntrarEstoqueVeiculo0KM }
 
@@ -40,17 +40,15 @@ begin
 
   try
     FConsulta.URL := aURL;
-    Fconsulta.Metodo := 'POST';
+    Fconsulta.Metodo := StrHttpPOST;
     aBody := TJson.ObjectToJsonString(FEntrada);
     Fconsulta.Body := aBody;
     Fconsulta.Consulta;
-    aCodigoREtorno := Fconsulta.CodigoRetorno;
+    aCodigoRetorno := Fconsulta.CodigoRetorno;
   finally
-    result := aCodigoRetorno = 200;
+    result := aCodigoRetorno = IntHttpCode201;
     FErro := FConsulta.Erro;
   end;
-
-
 
 end;
 

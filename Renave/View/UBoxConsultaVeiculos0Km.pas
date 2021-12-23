@@ -27,7 +27,8 @@ var
 implementation
 
 uses
-  UConsultarVeiculos0KM;
+  UConsultarVeiculos0KM, UConstsRenave;
+
 
 {$R *.dfm}
 
@@ -39,6 +40,7 @@ begin
 
   edtResultado.Lines.Clear;
 
+
   try
 
     try
@@ -49,18 +51,21 @@ begin
 
       if( aConsulta.Erro = nil ) then
         begin
-          edtResultado.Lines.Add( 'VEÍCULOS DISPONÍVEIS' );
+          edtResultado.Lines.Add( StrVeiculosDisponiveis );
           edtResultado.Lines.Add('');
           for aAux In aConsulta.ListaChassi do
             edtResultado.Lines.Add( aAux )
         end
       else
         begin
-          edtResultado.Lines.Add( 'ERRO NA CONSULTA' );
+
+          edtResultado.Lines.Add( StrErroConsulta );
           edtResultado.Lines.Add('');
-          edtResultado.Lines.Add('Título : ' + aConsulta.Erro. Titulo);
-          edtResultado.Lines.Add('Detalhe : ' + aConsulta.Erro.Detalhe );
-          edtResultado.Lines.Add('Mensagem : ' + aConsulta.Erro.Mensagem );
+          edtResultado.Lines.Add(StrTituloErro + aConsulta.Erro. Titulo);
+          edtResultado.Lines.Add(StrDetalheErro + aConsulta.Erro.Detalhe );
+          edtResultado.Lines.Add(StrMensagemErro + aConsulta.Erro.Mensagem );
+
+
         end;
 
     except

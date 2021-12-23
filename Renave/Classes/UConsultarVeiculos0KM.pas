@@ -23,7 +23,7 @@ type
 implementation
 
 uses
-  System.JSON, System.SysUtils;
+  System.JSON, System.SysUtils, UConstsRenave;
 
 
 
@@ -46,7 +46,7 @@ begin
       aURL := aURL + '\?chassi='+FChassi;
 
     FConsulta.URL := aURL;
-    Fconsulta.Metodo := 'GET';
+    Fconsulta.Metodo := StrHttpGET;
     Fconsulta.Consulta;
     aCodigoREtorno := FConsulta.CodigoRetorno;
 
@@ -69,7 +69,6 @@ begin
    FErro := FConsulta.Erro;
    result := aCodigoREtorno = 200;
   end;
-
 
 
 end;

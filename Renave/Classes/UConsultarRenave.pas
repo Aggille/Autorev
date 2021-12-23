@@ -17,8 +17,8 @@ type
       FModo:String;
       FRetorno: String;
       FUrlBase:String;
-    FMetodo: String;
-    FBody: String;
+      FMetodo: String;
+      FBody: String;
     public
       property CodigoRetorno: Integer read FCodigoRetorno write FCodigoRetorno;
       property URL: String read FURL write FURL;
@@ -36,36 +36,34 @@ implementation
 
 uses
   System.SysUtils, System.IniFiles, REST.Types, System.JSON, IdSSLOpenSSL,
-  Vcl.Forms, System.Classes, IdGlobal;
+  Vcl.Forms, System.Classes, IdGlobal, UConstsRenave;
 
 { TConsultaRenave }
 
 procedure TConsultarRenave.Consulta;
 var
-FHttp:TIDHttp;
-FHandler: TIdSSLIOHandlerSocketOpenSSL;
-iJSONStream:TStringStream;
-jValue:tJSonValue;
-aTam:Integer;
-LClient:TRestClient;
+aHttp:TIDHttp;
+aHandler: TIdSSLIOHandlerSocketOpenSSL;
+aJSONStream:TStringStream;
+aJValue:tJSonValue;
 AResponseContent: TStringStream;
 
 begin
 
   if( FURL = '' ) then
-    raise Exception.Create('Informe a URL');
+    raise Exception.Create(StrInformeAURL);
 
   if( FModo = '' ) then
-    raise exception.Create('Informe o método da consulta ( GET / POST )');
+    raise exception.Create(StrInformeMetodoConsulta);
 
   try
 
     try
 
-      FHandler := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
+      aHandler := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
       AResponseContent := TStringStream.Create('');
 
-      with FHandler do
+      with aHandler do
         begin
           SSLOptions.Method := sslvTLSv1_2;
           SSLOptions.Mode := sslmUnassigned;
@@ -75,82 +73,104 @@ begin
           SSLOptions.KeyFile := FChavePrivada;
         end;
 
-      FHttp := TIDHttp.Create(nil);
-      FHttp.ProxyParams.BasicAuthentication := False;
-      FHttp.IOHandler := FHandler;
+      aHttp := TIDHttp.Create(nil);
+      aHttp.ProxyParams.BasicAuthentication := False;
+      aHttp.IOHandler := aHandler;
 
-      with FHTTP do
+      with aHttp do
       begin
        Request.Clear;
-       Request.ContentType := 'application/json';
+       Request.ContentType := StrApplicationjson;
        ConnectTimeout:= 10000;
        FUrl := FURLBase + FURL;
 
-       iJSONStream := TStringStream.Create(FBody, TEncoding.UTF8);
+       aJSONStream := TStringStream.Create(FBody, TEncoding.UTF8);
 
-       if( FMetodo = 'POST' ) then
+       if( FMetodo = StrHttpPOST ) then
         begin
-          Post( FUrl,iJSONStream,AResponseContent);
+          Post( FUrl,aJSONStream,AResponseContent);
           FRetorno := AResponseContent.DataString;
         end
        else
           FRetorno := Get( FURL );
 
-        FCodigoRetorno := FHttp.Response.ResponseCode;
+        FCodigoRetorno := aHttp.Response.ResponseCode;
 
        if( FCodigoRetorno <> 200 ) then
        begin
-        jValue:= TJSONObject.ParseJSONValue(FRetorno);
+        aJValue:= TJSONObject.ParseJSONValue(FRetorno);
         FErro := TErroConsultaRenave.Create;
-        FErro.Data := jValue.GetValue<TDateTime>( 'dataHora' );
-        FErro.Detalhe := jValue.GetValue<String>( 'detalhe' );
-        FErro.LogIdRastreabilidade := jValue.GetValue<String>( 'logIdRastreabilidade' );
-        FErro.mensagem := jValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
-        FErro.Titulo:= jValue.GetValue<String>( 'titulo' );
+        FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
+        FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
+        FErro.LogIdRastreabilidade := aJValue.GetValue<String>( 'logIdRastreabilidade' );
+        FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
+        FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
        end;
 
       end;
     except
       on E:EIdHTTPProtocolException  do
       begin
-       if( FHttp.Response <> nil ) then
+       if( aHttp.Response <> nil ) then
        begin
         FRetorno := e.ErrorMessage;
-        jValue:= TJSONObject.ParseJSONValue(FRetorno);
+        aJValue:= TJSONObject.ParseJSONValue(FRetorno);
         FErro := TErroConsultaRenave.Create;
 
         case E.ErrorCode of
-          404,422: // erro de negócio
+          IntHttpCode401:
             begin
-              FErro.Data := jValue.GetValue<TDateTime>( 'dataHora' );
-              FErro.Detalhe := jValue.GetValue<String>( 'detalhe' );
-              FErro.mensagem := jValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
-              FErro.Titulo:= jValue.GetValue<String>( 'titulo' );
+              FErro.Data := now;
+              FErro.Detalhe := StrCodigoDoErro + e.ErrorCode.ToString;
+              FErro.mensagem := StrErroNaoAutorizado;
+              FErro.Titulo:= e.Message;
             end;
-          500:
+
+          IntHttpCode403:
             begin
-              FErro.Data := jValue.GetValue<TDateTime>( 'dataHora' );
-              FErro.Detalhe := jValue.GetValue<String>( 'detalhe' );
-              FErro.mensagem := jValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
-              FErro.Titulo:= jValue.GetValue<String>( 'titulo' );
-              FErro.LogIdRastreabilidade := jValue.GetValue<String>( 'LogIdRastreabilidade' );
+              FErro.Data := now;
+              FErro.Detalhe := StrCodigoDoErro + e.ErrorCode.ToString;
+              FErro.mensagem := StrErroAcessoNegado;
+              FErro.Titulo:= e.Message;
+            end;
+
+          IntHttpCode404:
+            begin
+              FErro.Data := now;
+              FErro.Detalhe := StrCodigoDoErro + e.ErrorCode.ToString;
+              FErro.mensagem := StrErroServicoNaoEncontrado;
+              FErro.Titulo:= e.Message;
+            end;
+
+          IntHttpCode422: // erro de negócio
+            begin
+              FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
+              FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
+              FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
+              FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
+            end;
+          IntHttpCode500:
+            begin
+              FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
+              FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
+              FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
+              FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
+              FErro.LogIdRastreabilidade := aJValue.GetValue<String>( 'LogIdRastreabilidade' );
             end
           else
             begin
               FErro.Data := now;
-              FErro.Detalhe := 'Código do erro: ' + e.ErrorCode.ToString;
-              FErro.mensagem := e.Message;
-              FErro.Titulo:= 'Erro inesperado';
+              FErro.Detalhe := StrCodigoDoErro + e.ErrorCode.ToString;
+              FErro.mensagem := e.ErrorMessage;
+              FErro.Titulo:= e.Message;
             end;
 
         end;
 
-
-
-
        end;
 
       end;
+
       on e:Exception do
       begin
         FRetorno := e.Message;
@@ -158,15 +178,15 @@ begin
         FErro.Data := now;
         FErro.Detalhe := '';
         FErro.mensagem := e.Message;
-        FErro.Titulo:= 'Erro inesperado';
+        FErro.Titulo:= StrErroInesperado;
       end;
 
-
     end;
+
   finally
-    freeAndNil( iJSONStream );
-    freeAndNil( FHandler );
-    FreeandNil( FHttp );
+    freeAndNil( aJSONStream );
+    freeAndNil( aHandler );
+    FreeandNil( aHttp );
   end;
 
 end;

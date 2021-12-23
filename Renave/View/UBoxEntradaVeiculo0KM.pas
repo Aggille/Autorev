@@ -38,7 +38,8 @@ var
 implementation
 
 uses
-  UEntradaEstoque0KM, UEntrarEstoqueVeiculo0KM;
+  UEntradaEstoque0KM, UEntrarEstoqueVeiculo0KM, UConstsRenave;
+
 
 {$R *.dfm}
 
@@ -47,7 +48,11 @@ var
 aEntrada:TEntradaEstoque0KM;
 aEntrar:TEntrarEstoqueVeiculo0KM;
 begin
+
+  edtResultado.Lines.Clear;
+
   try
+
     aEntrada := TEntradaEstoque0KM.Create;
     aEntrada.chassi := edtchassi.Text;
     aEntrada.chaveNotaFiscal := edtChaveNFe.Text;
@@ -68,13 +73,12 @@ begin
         end
       else
         begin
-          edtResultado.Lines.Add( 'ERRO NA CONSULTA' );
+          edtResultado.Lines.Add( StrErroConsulta );
           edtResultado.Lines.Add('');
-          edtResultado.Lines.Add('Título : ' + aEntrar.Erro. Titulo);
-          edtResultado.Lines.Add('Detalhe : ' + aEntrar.Erro.Detalhe );
-          edtResultado.Lines.Add('Mensagem : ' + aEntrar.Erro.Mensagem );
+          edtResultado.Lines.Add(StrTituloErro + aEntrar.Erro. Titulo);
+          edtResultado.Lines.Add(StrDetalheErro + aEntrar.Erro.Detalhe );
+          edtResultado.Lines.Add(StrMensagemErro + aEntrar.Erro.Mensagem );
         end;
-
 
   finally
     aEntrada.Free;

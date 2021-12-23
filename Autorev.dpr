@@ -169,7 +169,8 @@ uses
   UConsultarVeiculos0KM in 'Renave\Classes\UConsultarVeiculos0KM.pas',
   UEntradaEstoque0KM in 'Renave\Classes\UEntradaEstoque0KM.pas',
   UEntrarEstoqueVeiculo0KM in 'Renave\Classes\UEntrarEstoqueVeiculo0KM.pas',
-  UBoxEntradaVeiculo0KM in 'Renave\View\UBoxEntradaVeiculo0KM.pas' {BoxEntradaVeiculo0KM};
+  UBoxEntradaVeiculo0KM in 'Renave\View\UBoxEntradaVeiculo0KM.pas' {BoxEntradaVeiculo0KM},
+  UConstsRenave in 'Renave\Classes\UConstsRenave.pas';
 
 {$R *.RES}
 
