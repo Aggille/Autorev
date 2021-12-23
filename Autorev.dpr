@@ -162,7 +162,14 @@ uses
   RelatorioComissoesVeiculos in 'RelatorioComissoesVeiculos.pas' {BoxComissaoVeiculos},
   RelatoriosIndividualComissoes in 'RelatoriosIndividualComissoes.pas' {BoxRelatoriosIndividualComissoes},
   CadastroPecasFabrica in 'CadastroPecasFabrica.pas' {BoxPecasFabrica},
-  UBoxRenave in 'Renave\View\UBoxRenave.pas' {BoxRenave};
+  UBoxRenave in 'Renave\View\UBoxRenave.pas' {BoxRenave},
+  UBoxConsultaVeiculos0Km in 'Renave\View\UBoxConsultaVeiculos0Km.pas' {BoxConsultaVeiculos0KM},
+  UConsultarRenave in 'Renave\Classes\UConsultarRenave.pas',
+  UErroConsultaRenave in 'Renave\Classes\UErroConsultaRenave.pas',
+  UConsultarVeiculos0KM in 'Renave\Classes\UConsultarVeiculos0KM.pas',
+  UEntradaEstoque0KM in 'Renave\Classes\UEntradaEstoque0KM.pas',
+  UEntrarEstoqueVeiculo0KM in 'Renave\Classes\UEntrarEstoqueVeiculo0KM.pas',
+  UBoxEntradaVeiculo0KM in 'Renave\View\UBoxEntradaVeiculo0KM.pas' {BoxEntradaVeiculo0KM};
 
 {$R *.RES}
 

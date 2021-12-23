@@ -9,19 +9,30 @@ uses
 type
   TBoxRenave = class(TForm)
     Panel1: TPanel;
-    btnAptidao: TSpeedButton;
-    btnAutTransf: TSpeedButton;
-    btnConsCRLV: TSpeedButton;
+    btnVeiculos_0_Pendentes: TSpeedButton;
+    BtnEntrada_0_Estoque: TSpeedButton;
+    BtnAutoriz_0_Transf: TSpeedButton;
     btnCancTransf: TSpeedButton;
-    btnConsultaEstoque: TSpeedButton;
+    btnSaida_0_Consumidor: TSpeedButton;
     Panel2: TPanel;
     btnEntrada0km: TSpeedButton;
     btnEntradaUsado: TSpeedButton;
     btnSaida: TSpeedButton;
     btnTransfFilial: TSpeedButton;
     btnTransfEstab: TSpeedButton;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    BtnCancela_0_SaidaEstoque: TSpeedButton;
+    Panel5: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    SpeedButton6: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormShow(Sender: TObject);
+    procedure btnVeiculos_0_PendentesClick(Sender: TObject);
+    procedure BtnEntrada_0_EstoqueClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,18 +44,27 @@ var
 
 implementation
 
+uses
+  UBoxConsultaVeiculos0Km, UBoxEntradaVeiculo0KM;
+
 {$R *.dfm}
+
+procedure TBoxRenave.BtnEntrada_0_EstoqueClick(Sender: TObject);
+begin
+  Application.CreateForm( TBoxEntradaVeiculo0KM, BoxEntradaVeiculo0KM );
+  BoxEntradaVeiculo0KM.ShowModal;
+end;
+
+procedure TBoxRenave.btnVeiculos_0_PendentesClick(Sender: TObject);
+begin
+  Application.CreateForm( TBoxConsultaVeiculos0KM, BoxConsultaVeiculos0KM );
+  BoxConsultaVeiculos0KM.ShowModal;
+end;
 
 procedure TBoxRenave.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   action := caFree;
   BoxRenave := nil;
-end;
-
-procedure TBoxRenave.FormShow(Sender: TObject);
-begin
-  top := 85;
-  Left := 10;
 end;
 
 end.
