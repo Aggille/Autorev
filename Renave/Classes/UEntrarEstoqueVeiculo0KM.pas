@@ -11,20 +11,20 @@ unit UEntrarEstoqueVeiculo0KM;
 interface
 
 uses
-  UEntradaEstoque0KM, UErroConsultaRenave, UConsultarRenave, URetornoEntradaEstoque0KM;
+  UEntradaVeiculoEstoque0KM, UErroConsultaRenave, UConsultarRenave, URetornoEntradaEstoqueVeiculo0KM;
 type
   TEntrarEstoqueVeiculo0KM = class
     private
-    FEntrada: TEntradaEstoque0KM;
-    FErro: TErroConsultaRenave;
-    FConsulta:TConsultarRenave;
-    FRetorno: TRetornoEntradaEstoque0KM;
-    procedure ProcessaRetorno( aValue:String );
+      FEntrada: TEntradaEstoqueVeiculo0KM;
+      FErro: TErroConsultaRenave;
+      FConsulta:TConsultarRenave;
+      FRetorno: TRetornoEntradaEstoqueVeiculo0KM;
+      procedure ProcessaRetorno( aValue:String );
 
     public
-      property Entrada: TEntradaEstoque0KM read FEntrada write FEntrada;
+      property Entrada: TEntradaEstoqueVeiculo0KM read FEntrada write FEntrada;
       property Erro: TErroConsultaRenave read FErro write FErro;
-      property Retorno: TRetornoEntradaEstoque0KM read FRetorno write FRetorno;
+      property Retorno: TRetornoEntradaEstoqueVeiculo0KM read FRetorno write FRetorno;
       function EntraEstoque:boolean;
       constructor create;
       destructor destroy;override;
@@ -91,7 +91,8 @@ aJsonVendedor,
 aJsonEntrada:TJSonValue;
 begin
   try
-    FRetorno := TRetornoEntradaEstoque0KM.Create;
+
+    FRetorno := TRetornoEntradaEstoqueVeiculo0KM.Create;
     aJson := TJsonObject.ParseJSONValue(aValue);
     aJsonEntrada := ( aJson as TJsonObject ).GetValue('entradaEstoque');
 

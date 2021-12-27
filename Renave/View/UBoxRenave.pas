@@ -35,6 +35,7 @@ type
     procedure BtnEntrada_0_EstoqueClick(Sender: TObject);
     procedure BtnAutoriz_0_TransfClick(Sender: TObject);
     procedure btnCancTransfClick(Sender: TObject);
+    procedure btnSaida_0_ConsumidorClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,7 +49,8 @@ implementation
 
 uses
   UBoxConsultaVeiculos0Km, UBoxEntradaVeiculo0KM,
-  UBoxAutorizaTransferenciaVeiculo0KM, UBoxTransferenciaVeiculo0KM;
+  UBoxAutorizaTransferenciaVeiculo0KM, UBoxTransferenciaVeiculo0KM,
+  UBoxSaidaVeiculo0KM;
 
 {$R *.dfm}
 
@@ -68,6 +70,12 @@ procedure TBoxRenave.BtnEntrada_0_EstoqueClick(Sender: TObject);
 begin
   Application.CreateForm( TBoxEntradaVeiculo0KM, BoxEntradaVeiculo0KM );
   BoxEntradaVeiculo0KM.ShowModal;
+end;
+
+procedure TBoxRenave.btnSaida_0_ConsumidorClick(Sender: TObject);
+begin
+  Application.Createform( TBoxSaidaVeiculo0KM, BoxSaidaVeiculo0KM );
+  BoxSaidaVeiculo0KM.ShowModal;
 end;
 
 procedure TBoxRenave.btnVeiculos_0_PendentesClick(Sender: TObject);

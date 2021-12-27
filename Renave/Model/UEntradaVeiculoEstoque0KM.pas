@@ -1,8 +1,8 @@
-unit UEntradaEstoque0KM;
+unit UEntradaVeiculoEstoque0KM;
 
 interface
 type
-  TEntradaEstoque0KM = class
+  TEntradaEstoqueVeiculo0KM = class
     private
       FChassi: String;
       FChaveNotaFiscal: String;

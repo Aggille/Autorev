@@ -1,8 +1,8 @@
-unit URetornoEntradaEstoque0KM;
+unit URetornoEntradaEstoqueVeiculo0KM;
 
 interface
 type
-  TRetornoEntradaEstoque0KM = class
+  TRetornoEntradaEstoqueVeiculo0KM = class
     private
     FchaveNotaFiscalEntrada: String;
     FcpfOperadorResponsavel: String;

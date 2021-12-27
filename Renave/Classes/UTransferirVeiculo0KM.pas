@@ -1,10 +1,18 @@
+{
+Sistema: Autorev
+Data:12/2021
+Rotina: Permitir que estabelecimento realize a transferência de estoque de outro estabelecimento para seu próprio estoque
+Programador: Leandro do Couto
+}
+
 unit UTransferirVeiculo0KM;
 
 interface
 
 uses
   UTransferenciaVeiculo0KM, UErroConsultaRenave, UConsultarRenave,
-  URetornoEntradaEstoque0KM;
+  URetornoEntradaEstoqueVeiculo0KM;
+
 
 type
   TTransferirVeiculo0KM = class
@@ -12,7 +20,7 @@ type
     FTRansferencia: TTransferenciaVeiculo0KM;
     FErro: TErroConsultaRenave;
     FConsulta:TConsultarRenave;
-    FRetorno: TRetornoEntradaEstoque0KM;
+    FRetorno: TRetornoEntradaEstoqueVeiculo0KM;
     procedure ProcessaRetorno( aValue:String );
 
   published
@@ -22,7 +30,7 @@ type
     class function new:TTransferirVeiculo0KM;
     property Transferencia: TTransferenciaVeiculo0KM read FTRansferencia write FTRansferencia;
     property Erro: TErroConsultaRenave read FErro write FErro;
-    property Retorno: TRetornoEntradaEstoque0KM read FRetorno write FRetorno;
+    property Retorno: TRetornoEntradaEstoqueVeiculo0KM read FRetorno write FRetorno;
     function Transfere:boolean;
 
   end;
@@ -86,7 +94,7 @@ aJsonVendedor,
 aJsonEntrada:TJSonValue;
 begin
   try
-    FRetorno := TRetornoEntradaEstoque0KM.Create;
+    FRetorno := TRetornoEntradaEstoqueVeiculo0KM.Create;
     aJson := TJsonObject.ParseJSONValue(aValue);
     aJsonEntrada := ( aJson as TJsonObject ).GetValue('entradaEstoque');
 

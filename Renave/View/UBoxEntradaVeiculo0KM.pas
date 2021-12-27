@@ -38,14 +38,14 @@ var
 implementation
 
 uses
-  UEntradaEstoque0KM, UEntrarEstoqueVeiculo0KM, UConstsRenave;
+  UEntradaVeiculoEstoque0KM, UEntrarEstoqueVeiculo0KM, UConstsRenave;
 
 
 {$R *.dfm}
 
 procedure TBoxEntradaVeiculo0KM.btnConsultarClick(Sender: TObject);
 var
-aEntrada:TEntradaEstoque0KM;
+aEntrada:TEntradaEstoqueVeiculo0KM;
 aEntrar:TEntrarEstoqueVeiculo0KM;
 begin
 
@@ -53,7 +53,7 @@ begin
 
   try
 
-    aEntrada := TEntradaEstoque0KM.Create;
+    aEntrada := TEntradaEstoqueVeiculo0KM.Create;
     aEntrada.chassi := edtchassi.Text;
     aEntrada.chaveNotaFiscal := edtChaveNFe.Text;
     aEntrada.cpfOperadorResponsavel := edtCpfOperador.Text;
@@ -66,25 +66,25 @@ begin
     aEntrar.Entrada := aEntrada;
     aEntrar.EntraEstoque;
 
-      if( aEntrar.Retorno <> nil ) then
-        begin
-          edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aEntrar.Retorno) );
-        end;
+    if( aEntrar.Retorno <> nil ) then
+      begin
+        edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aEntrar.Retorno) );
+      end;
 
 
-      if( aEntrar.Erro = nil ) then
-        begin
-          edtResultado.Lines.Add( 'Consulta' );
+    if( aEntrar.Erro = nil ) then
+      begin
+        edtResultado.Lines.Add( 'Consulta' );
 
-        end
-      else
-        begin
-          edtResultado.Lines.Add( StrErroConsulta );
-          edtResultado.Lines.Add('');
-          edtResultado.Lines.Add(StrTituloErro + aEntrar.Erro. Titulo);
-          edtResultado.Lines.Add(StrDetalheErro + aEntrar.Erro.Detalhe );
-          edtResultado.Lines.Add(StrMensagemErro + aEntrar.Erro.Mensagem );
-        end;
+      end
+    else
+      begin
+        edtResultado.Lines.Add( StrErroConsulta );
+        edtResultado.Lines.Add('');
+        edtResultado.Lines.Add(StrTituloErro + aEntrar.Erro. Titulo);
+        edtResultado.Lines.Add(StrDetalheErro + aEntrar.Erro.Detalhe );
+        edtResultado.Lines.Add(StrMensagemErro + aEntrar.Erro.Mensagem );
+      end;
 
   finally
     aEntrada.Free;

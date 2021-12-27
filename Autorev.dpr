@@ -167,18 +167,25 @@ uses
   UConsultarRenave in 'Renave\Classes\UConsultarRenave.pas',
   UErroConsultaRenave in 'Renave\Model\UErroConsultaRenave.pas',
   UConsultarVeiculos0KM in 'Renave\Classes\UConsultarVeiculos0KM.pas',
-  UEntradaEstoque0KM in 'Renave\Model\UEntradaEstoque0KM.pas',
+  UEntradaVeiculoEstoque0KM in 'Renave\Model\UEntradaVeiculoEstoque0KM.pas',
   UEntrarEstoqueVeiculo0KM in 'Renave\Classes\UEntrarEstoqueVeiculo0KM.pas',
   UBoxEntradaVeiculo0KM in 'Renave\View\UBoxEntradaVeiculo0KM.pas' {BoxEntradaVeiculo0KM},
   UConstsRenave in 'Renave\Classes\UConstsRenave.pas',
-  URetornoEntradaEstoque0KM in 'Renave\Model\URetornoEntradaEstoque0KM.pas',
+  URetornoEntradaEstoqueVeiculo0KM in 'Renave\Model\URetornoEntradaEstoqueVeiculo0KM.pas',
   UAutorizarTransferenciaVeiculo0KM in 'Renave\Classes\UAutorizarTransferenciaVeiculo0KM.pas',
   UBoxAutorizaTransferenciaVeiculo0KM in 'Renave\View\UBoxAutorizaTransferenciaVeiculo0KM.pas' {BoxAutorizaTransferenciaVeiculo0KM},
   URetornoAutorizacaoTransferenciaVeiculo0KM in 'Renave\Model\URetornoAutorizacaoTransferenciaVeiculo0KM.pas',
   UAutorizacaoTransferenciaVeiculo0KM in 'Renave\Model\UAutorizacaoTransferenciaVeiculo0KM.pas',
   UTransferirVeiculo0KM in 'Renave\Classes\UTransferirVeiculo0KM.pas',
   UTransferenciaVeiculo0KM in 'Renave\Model\UTransferenciaVeiculo0KM.pas',
-  UBoxTransferenciaVeiculo0KM in 'Renave\View\UBoxTransferenciaVeiculo0KM.pas' {BoxTransferenciaVeiculo0KM};
+  UBoxTransferenciaVeiculo0KM in 'Renave\View\UBoxTransferenciaVeiculo0KM.pas' {BoxTransferenciaVeiculo0KM},
+  USairEstoqueVeiculo0KM in 'Renave\Classes\USairEstoqueVeiculo0KM.pas',
+  USaidaEstoqueVeiculo0KM in 'Renave\Model\USaidaEstoqueVeiculo0KM.pas',
+  URetornoSaidaEstoqueVeiculo0KM in 'Renave\Model\URetornoSaidaEstoqueVeiculo0KM.pas',
+  UPessoa in 'Renave\Model\UPessoa.pas',
+  UEndereco in 'Renave\Model\UEndereco.pas',
+  UBoxSaidaVeiculo0KM in 'Renave\View\UBoxSaidaVeiculo0KM.pas' {BoxSaidaVeiculo0KM},
+  UMunicipio in 'Renave\Model\UMunicipio.pas';
 
 {$R *.RES}
 
