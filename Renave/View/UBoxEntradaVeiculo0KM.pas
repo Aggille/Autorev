@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,Rest.Json,
   JvBaseEdits, JvSpin, Vcl.Mask, JvExMask, JvToolEdit, Vcl.ExtCtrls;
 
 type
@@ -65,6 +65,12 @@ begin
     aEntrar := TEntrarEstoqueVeiculo0KM.create;
     aEntrar.Entrada := aEntrada;
     aEntrar.Consulta;
+
+      if( aEntrar.Retorno <> nil ) then
+        begin
+          edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aEntrar.Retorno) );
+        end;
+
 
       if( aEntrar.Erro = nil ) then
         begin

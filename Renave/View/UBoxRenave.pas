@@ -33,6 +33,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVeiculos_0_PendentesClick(Sender: TObject);
     procedure BtnEntrada_0_EstoqueClick(Sender: TObject);
+    procedure BtnAutoriz_0_TransfClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,9 +46,16 @@ var
 implementation
 
 uses
-  UBoxConsultaVeiculos0Km, UBoxEntradaVeiculo0KM;
+  UBoxConsultaVeiculos0Km, UBoxEntradaVeiculo0KM,
+  UBoxAutorizaTransferenciaVeiculo0KM;
 
 {$R *.dfm}
+
+procedure TBoxRenave.BtnAutoriz_0_TransfClick(Sender: TObject);
+begin
+  Application.CreateForm(TBoxAutorizaTransferenciaVeiculo0KM, BoxAutorizaTransferenciaVeiculo0KM);
+  BoxAutorizaTransferenciaVeiculo0KM.ShowModal;
+end;
 
 procedure TBoxRenave.BtnEntrada_0_EstoqueClick(Sender: TObject);
 begin

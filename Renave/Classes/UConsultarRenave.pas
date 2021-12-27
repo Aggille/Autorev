@@ -47,7 +47,7 @@ aHandler: TIdSSLIOHandlerSocketOpenSSL;
 aJSONStream:TStringStream;
 aJValue:tJSonValue;
 AResponseContent: TStringStream;
-
+aRet:TStringList;
 begin
 
   if( FURL = '' ) then
@@ -94,9 +94,9 @@ begin
        else
           FRetorno := Get( FURL );
 
-        FCodigoRetorno := aHttp.Response.ResponseCode;
+       FCodigoRetorno := aHttp.Response.ResponseCode;
 
-       if( FCodigoRetorno <> 200 ) then
+       if( FCodigoRetorno > IntHttpCode201 ) then
        begin
         aJValue:= TJSONObject.ParseJSONValue(FRetorno);
         FErro := TErroConsultaRenave.Create;
@@ -144,10 +144,25 @@ begin
 
           IntHttpCode422: // erro de negócio
             begin
-              FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
-              FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
-              FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
-              FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
+//              FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
+//              FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
+//              FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
+//              FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
+
+
+//
+//              /// ARQUIVO CRIADO APENAS PARA TESTE..
+//              ///
+//              ///  REMOVER QUANDOFOR PARA PRODUÇÃO
+//              ///
+
+              FCodigoRetorno := IntHttpCode200;
+              aRet := TStringList.Create;
+              aRet.LoadFromFile(ExtractFilePath( Application.ExeName ) + 'retorno_teste.json' );
+              FRetorno := aRet.Text;
+              aRet.Free;
+
+
             end;
           IntHttpCode500:
             begin

@@ -1,0 +1,11 @@
+{
+  "chassi": "12345646546",
+  "cnpjEstabelecimentoAutorizador": "03333402000520",
+  "cnpjEstabelecimentoDestino": "03512840000132",
+  "cpfOperadorResponsavelAutorizacao": "62947788087",
+  "dataHoraAutorizacao": "2021-12-27T13:04:54.712Z",
+  "estadoAutorizacaoTransferencia": "CRIADA",
+  "id": 12345,
+  "idEstoque": 123456789,
+  "placaVeiculo": "ICS5059"
+}
