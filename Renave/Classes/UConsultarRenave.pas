@@ -1,3 +1,11 @@
+{
+Sistema: Autorev
+Data:12/2021
+Rotina: Permitir que estabelecimento consulte veículos pendentes de entrada em seu estoque
+Programador: Leandro do Couto
+}
+
+
 unit UConsultarRenave;
 
 interface
@@ -144,11 +152,10 @@ begin
 
           IntHttpCode422: // erro de negócio
             begin
-//              FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
-//              FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
-//              FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
-//              FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
-
+              FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
+              FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
+              FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
+              FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
 
 //
 //              /// ARQUIVO CRIADO APENAS PARA TESTE..
@@ -156,7 +163,7 @@ begin
 //              ///  REMOVER QUANDOFOR PARA PRODUÇÃO
 //              ///
 
-              FCodigoRetorno := IntHttpCode200;
+              FCodigoRetorno := IntHttpCode201;
               aRet := TStringList.Create;
               aRet.LoadFromFile(ExtractFilePath( Application.ExeName ) + 'retorno_teste.json' );
               FRetorno := aRet.Text;

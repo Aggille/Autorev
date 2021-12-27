@@ -64,7 +64,7 @@ begin
 
     aEntrar := TEntrarEstoqueVeiculo0KM.create;
     aEntrar.Entrada := aEntrada;
-    aEntrar.Consulta;
+    aEntrar.EntraEstoque;
 
       if( aEntrar.Retorno <> nil ) then
         begin

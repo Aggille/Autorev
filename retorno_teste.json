@@ -1,11 +1,65 @@
 {
-  "chassi": "12345646546",
-  "cnpjEstabelecimentoAutorizador": "03333402000520",
-  "cnpjEstabelecimentoDestino": "03512840000132",
-  "cpfOperadorResponsavelAutorizacao": "62947788087",
-  "dataHoraAutorizacao": "2021-12-27T13:04:54.712Z",
-  "estadoAutorizacaoTransferencia": "CRIADA",
-  "id": 12345,
-  "idEstoque": 123456789,
-  "placaVeiculo": "ICS5059"
+  "cancelamentoEstoque": {
+    "dataHoraCancelamentoEstoque": "2021-12-27T14:15:03.894Z",
+    "motivoCancelamentoEstoque": "DESISTENCIA"
+  },
+  "chassi": "string",
+  "codigoSegurancaCrv": "string",
+  "dataHoraMedicaoHodometro": "2021-12-27T14:15:03.894Z",
+  "entradaEstoque": {
+    "chaveNotaFiscalEntrada": "string",
+    "cpfOperadorResponsavel": "string",
+    "dataHora": "2021-12-27T14:15:03.894Z",
+    "dataHoraEnvioNotaFiscalEntrada": "2021-12-27T14:15:03.894Z",
+    "numeroTermoEntradaEstoque": 0,
+    "vendedor": {
+      "numeroDocumento": "string",
+      "tipoDocumento": "CPF"
+    }
+  },
+  "estado": "SOLICITADO",
+  "id": 0,
+  "numeroCrv": "string",
+  "origemPorCancelamentoEstoque": {
+    "idEstoqueOrigem": 0
+  },
+  "placa": "string",
+  "quilometragemHodometro": 0,
+  "renavam": "string",
+  "restricoesVeiculo": [
+    {
+      "codigoTipoRestricao": "string",
+      "tipoRestricao": "string"
+    }
+  ],
+  "saidaEstoque": {
+    "cancelamentoSaidaEstoque": {
+      "dataHoraCancelamentoSaidaEstoque": "2021-12-27T14:15:03.894Z",
+      "idEstoqueGeradoNoCancelamentoSaida": 0
+    },
+    "chaveNotaFiscalSaida": "string",
+    "comprador": {
+      "endereco": {
+        "bairro": "string",
+        "cep": "string",
+        "complemento": "string",
+        "logradouro": "string",
+        "municipio": {
+          "id": "string",
+          "nome": "string",
+          "uf": "AC"
+        },
+        "numero": "string"
+      },
+      "nome": "string",
+      "numeroDocumento": "string",
+      "tipoDocumento": "CPF"
+    },
+    "cpfOperadorResponsavel": "string",
+    "dataHora": "2021-12-27T14:15:03.894Z",
+    "dataHoraEnvioNotaFiscalSaida": "2021-12-27T14:15:03.894Z",
+    "motivo": "VENDA",
+    "numeroTermoSaidaEstoque": 0
+  },
+  "tipoCrv": "AZUL"
 }

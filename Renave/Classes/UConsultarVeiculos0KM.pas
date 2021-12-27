@@ -1,3 +1,11 @@
+{
+Sistema: Autorev
+Data:12/2021
+Rotina: Permitir que estabelecimento consulte veículos pendentes de entrada em seu estoque
+Programador: Leandro do Couto
+}
+
+
 unit UConsultarVeiculos0KM;
 
 interface
@@ -84,6 +92,8 @@ begin
   FListaChassi.Free;
   FConsulta := nil;
   freeAndNil( Fconsulta );
+  if( FErro <> nil ) then FErro.Free;
+
   inherited;
 end;
 

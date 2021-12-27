@@ -1,57 +1,50 @@
-{
-Sistema: Autorev
-Data:12/2021
-Rotina: Permitir que estabelecimento realize a entrada de veículo zero no estoque do estabelecimento solicitante
-Programador: Leandro do Couto
-}
-
-
-unit UEntrarEstoqueVeiculo0KM;
+unit UTransferirVeiculo0KM;
 
 interface
 
 uses
-  UEntradaEstoque0KM, UErroConsultaRenave, UConsultarRenave, URetornoEntradaEstoque0KM;
+  UTransferenciaVeiculo0KM, UErroConsultaRenave, UConsultarRenave,
+  URetornoEntradaEstoque0KM;
+
 type
-  TEntrarEstoqueVeiculo0KM = class
-    private
-    FEntrada: TEntradaEstoque0KM;
+  TTransferirVeiculo0KM = class
+  private
+    FTRansferencia: TTransferenciaVeiculo0KM;
     FErro: TErroConsultaRenave;
     FConsulta:TConsultarRenave;
     FRetorno: TRetornoEntradaEstoque0KM;
     procedure ProcessaRetorno( aValue:String );
 
-    public
-      property Entrada: TEntradaEstoque0KM read FEntrada write FEntrada;
-      property Erro: TErroConsultaRenave read FErro write FErro;
-      property Retorno: TRetornoEntradaEstoque0KM read FRetorno write FRetorno;
-      function EntraEstoque:boolean;
-      constructor create;
-      destructor destroy;override;
-      class function new:TEntrarEstoqueVeiculo0KM;
+  published
+  public
+    constructor create;
+    destructor destroy;override;
+    class function new:TTransferirVeiculo0KM;
+    property Transferencia: TTransferenciaVeiculo0KM read FTRansferencia write FTRansferencia;
+    property Erro: TErroConsultaRenave read FErro write FErro;
+    property Retorno: TRetornoEntradaEstoque0KM read FRetorno write FRetorno;
+    function Transfere:boolean;
+
   end;
-
-
 implementation
 
 uses
-  Rest.JSON, UConstsRenave, System.JSON ;
+  UConstsRenave, REST.Json, System.JSON;
 
-{ TEntrarEstoqueVeiculo0KM }
+{ TTransferirVeiculo0KM }
 
-function TEntrarEstoqueVeiculo0KM.EntraEstoque: boolean;
+function TTransferirVeiculo0KM.Transfere: boolean;
 var
 aCodigoRetorno:Integer;
 aBody,aURL:String;
 begin
 
-  aURL := 'entradas-estoque-zero-km';
+  aURL := 'transferencias-entre-estabelecimentos-veiculo-zero-km';
 
   try
-
     FConsulta.URL := aURL;
     Fconsulta.Metodo := StrHttpPOST;
-    aBody := TJson.ObjectToJsonString(FEntrada);
+    aBody := TJson.ObjectToJsonString(FTransferencia);
     Fconsulta.Body := aBody;
     Fconsulta.Consulta;
     aCodigoRetorno := FConsulta.CodigoRetorno;
@@ -64,14 +57,15 @@ begin
     FErro := FConsulta.Erro;
   end;
 
+
 end;
 
-constructor TEntrarEstoqueVeiculo0KM.create;
+constructor TTransferirVeiculo0KM.create;
 begin
   FConsulta := TConsultarRenave.Create;
 end;
 
-destructor TEntrarEstoqueVeiculo0KM.destroy;
+destructor TTransferirVeiculo0KM.destroy;
 begin
   FConsulta.Free;
   if( FRetorno <> nil ) then FRetorno.Free;
@@ -79,12 +73,13 @@ begin
   inherited;
 end;
 
-class function TEntrarEstoqueVeiculo0KM.new: TEntrarEstoqueVeiculo0KM;
+
+class function TTransferirVeiculo0KM.new: TTransferirVeiculo0KM;
 begin
-  result := self.create;
+  result := self.Create;
 end;
 
-procedure TEntrarEstoqueVeiculo0KM.ProcessaRetorno(aValue: String);
+procedure TTransferirVeiculo0KM.ProcessaRetorno(aValue: String);
 var
 aJson,
 aJsonVendedor,

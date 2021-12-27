@@ -1,3 +1,12 @@
+{
+Sistema: Autorev
+Data:12/2021
+Rotina: Classe que executa as consultas na base deo RENAVE e retorna uma String com o retorno da consulta,
+que deverá ser tratado pela chave que invocou a rotina.
+Programador: Leandro do Couto
+}
+
+
 unit UConstsRenave;
 
 interface

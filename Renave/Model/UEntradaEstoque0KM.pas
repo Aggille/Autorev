@@ -21,9 +21,6 @@ type
       property quilometragemHodometro: Integer read FquilometragemHodometro write FquilometragemHodometro;
   end;
 
-  TRetornoEntradaEstoque0KM = class
-
-  end;
 implementation
 
 end.

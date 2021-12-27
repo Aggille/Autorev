@@ -175,7 +175,10 @@ uses
   UAutorizarTransferenciaVeiculo0KM in 'Renave\Classes\UAutorizarTransferenciaVeiculo0KM.pas',
   UBoxAutorizaTransferenciaVeiculo0KM in 'Renave\View\UBoxAutorizaTransferenciaVeiculo0KM.pas' {BoxAutorizaTransferenciaVeiculo0KM},
   URetornoAutorizacaoTransferenciaVeiculo0KM in 'Renave\Model\URetornoAutorizacaoTransferenciaVeiculo0KM.pas',
-  UAutorizacaoTransferenciaVeiculo0KM in 'Renave\Model\UAutorizacaoTransferenciaVeiculo0KM.pas';
+  UAutorizacaoTransferenciaVeiculo0KM in 'Renave\Model\UAutorizacaoTransferenciaVeiculo0KM.pas',
+  UTransferirVeiculo0KM in 'Renave\Classes\UTransferirVeiculo0KM.pas',
+  UTransferenciaVeiculo0KM in 'Renave\Model\UTransferenciaVeiculo0KM.pas',
+  UBoxTransferenciaVeiculo0KM in 'Renave\View\UBoxTransferenciaVeiculo0KM.pas' {BoxTransferenciaVeiculo0KM};
 
 {$R *.RES}
 

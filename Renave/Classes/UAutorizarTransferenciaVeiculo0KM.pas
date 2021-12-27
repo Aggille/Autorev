@@ -1,3 +1,10 @@
+{
+Sistema: Autorev
+Data:12/2021
+Rotina: Permitir que estabelecimento realize autorização de transferência de veículo zero km
+Programador: Leandro do Couto
+}
+
 unit UAutorizarTransferenciaVeiculo0KM;
 
 interface
