@@ -185,7 +185,8 @@ uses
   UPessoa in 'Renave\Model\UPessoa.pas',
   UEndereco in 'Renave\Model\UEndereco.pas',
   UBoxSaidaVeiculo0KM in 'Renave\View\UBoxSaidaVeiculo0KM.pas' {BoxSaidaVeiculo0KM},
-  UMunicipio in 'Renave\Model\UMunicipio.pas';
+  UMunicipio in 'Renave\Model\UMunicipio.pas',
+  UConsultarMunicipio in 'Renave\Classes\UConsultarMunicipio.pas';
 
 {$R *.RES}
 

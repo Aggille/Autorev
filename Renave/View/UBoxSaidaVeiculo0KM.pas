@@ -24,13 +24,17 @@ type
     edtCep: TLabeledEdit;
     edtBairro: TLabeledEdit;
     edtComplemento: TLabeledEdit;
-    edtCodigoIbge: TLabeledEdit;
+    edtCodigoCidade: TLabeledEdit;
     btnConsultar: TBitBtn;
     btnSair: TBitBtn;
     edtResultado: TMemo;
+    edtCidade: TLabeledEdit;
+    SpeedButton1: TSpeedButton;
+    edtUF: TLabeledEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,7 +49,7 @@ implementation
 {$R *.dfm}
 
 uses URetornoSaidaEstoqueVeiculo0KM, USaidaEstoqueVeiculo0KM,USairEstoqueVeiculo0KM,
-  REST.Json, UConstsRenave;
+  REST.Json, UConstsRenave, UConsultarMunicipio, UMunicipio;
 
 procedure TBoxSaidaVeiculo0KM.btnConsultarClick(Sender: TObject);
 var
@@ -71,7 +75,7 @@ begin
     aSaida.comprador.email := edtEmail.Text;
     asaida.comprador.endereco.bairro := edtBairro.Text;
     aSaida.comprador.endereco.cep := edtCep.text;
-    aSaida.comprador.endereco.codigoMunicipio := StrToIntDef( edtCodigoIbge.Text,0);
+    aSaida.comprador.endereco.codigoMunicipio := StrToIntDef( edtCodigoCidade.Text,0);
     aSaida.comprador.endereco.complemento := edtcomplemento.text;
     aSaida.comprador.endereco.logradouro := edtLogradouro.Text;
     aSaida.comprador.endereco.numero := edtNumero.text;
@@ -128,13 +132,53 @@ begin
     edtCpfComprador.Text := '00000000191';
     edtLogradouro.text := 'Rua de Teste';
     edtNumero.Text := '123';
-    edtCodigoIbge.Text := '999';
+    edtCodigoCidade.Text := '999';
+    edtCidade.text := 'Novo Hamburgo';
     edtBairro.text := 'Bairro de Teste';
     edtCep.Text := '93300000';
+    edtUf.Text := 'RS';
   end;
 
   edtDataVenda.Date := now;
 
+
+end;
+
+procedure TBoxSaidaVeiculo0KM.SpeedButton1Click(Sender: TObject);
+var
+aConsulta:TConsultaMunicipio;
+aMunicipio:TMunicipio;
+begin
+
+  try
+
+     aConsulta := TConsultaMunicipio.Create;
+     aMunicipio := aConsulta.ConsultaPorNome( edtCidade.Text );
+
+     if( aConsulta.Erro <> nil ) then
+        ShowMessage( aConsulta.CodigoRetorno.toString
+                      +'-'
+                      +aConsulta.Erro.Mensagem )
+      else
+        begin
+
+           if( aMunicipio = nil ) then
+            begin
+              showMessage( 'Município não encontrado' );
+              edtCodigoCidade.Text := '0';
+            end
+           else
+            begin
+              edtCodigoCidade.Text := aMunicipio.Id;
+              edtUf.Text := aMunicipio.uf;
+              edtCidade.Text := aMunicipio.Nome;
+            end;
+
+        end;
+  finally
+      aConsulta.Free;
+      if( aMunicipio <> nil ) then aMunicipio.Create;
+  end;
 
 end;
 

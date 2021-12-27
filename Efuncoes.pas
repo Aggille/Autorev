@@ -7,7 +7,7 @@ uses
    Forms, Dialogs, StdCtrls, Mask, DBCtrls, DB, DBTables, pnfsConversao,
    ACBrNFSe,ACBrNFSeDANFSeClass, ACBrNFSeDANFSeFR,ACBrNFeDANFEFRDM, ACBrNFeDANFEClass,
    Empresas,AcbrDFessl, ACBrNFeDANFEFR,//acrescido em 19/02/2018 resolver nfe yamavale
-   Buttons, ExtCtrls, TabNotBk, Printers, ComCtrls, Menus;
+   Buttons, ExtCtrls, TabNotBk, Printers, ComCtrls, Menus, AcbrUtil;
    //   Variants, PrnDOS, Spin;
 
 type
@@ -129,6 +129,8 @@ function DateToText(Data: TDateTime): string;
 
 // funcao que tira os acentos
 
+function SemAcentos( aValue:String ):String;
+
 function OemToStr(AsciiStr: string): string;
 function AnsiToAscii(const AnsiStr: string): string;
 function LimpaNumero(AValue: String): String;
@@ -219,6 +221,11 @@ begin
     {$ENDIF}
        Result := Result + AValue[A];
   end ;
+end;
+
+function SemAcentos( aValue:String ):String;
+begin
+  result := AcbrUtil.TiraAcentos(aValue);
 end;
 
  //Uses eSenhae;
