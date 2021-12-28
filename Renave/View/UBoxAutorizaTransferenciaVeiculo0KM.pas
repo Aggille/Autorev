@@ -21,9 +21,11 @@ type
     BitBtn2: TBitBtn;
     Label5: TLabel;
     edtResultado: TMemo;
+    SpeedButton1: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +40,7 @@ implementation
 {$R *.dfm}
 
 uses UAutorizacaoTransferenciaVeiculo0KM,
-  UAutorizarTransferenciaVeiculo0KM, UConstsRenave;
+  UAutorizarTransferenciaVeiculo0KM, UConstsRenave, Biblioteca, FDB;
 
 procedure TBoxAutorizaTransferenciaVeiculo0KM.BitBtn1Click(
   Sender: TObject);
@@ -103,6 +105,20 @@ begin
     edtIdEstoque.Value := 123456789;
     edtValorVenda.Value := 40000;
   end;
+
+end;
+
+procedure TBoxAutorizaTransferenciaVeiculo0KM.SpeedButton1Click(
+  Sender: TObject);
+var
+aRet:String;
+begin
+ aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( Id_Estoque,0) as id_estoque'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:','', 'ID Estoque:' ],
+  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+
+  edtIdEstoque.Value := StrToIntDef( aRet,0 );
 
 end;
 

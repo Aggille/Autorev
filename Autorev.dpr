@@ -186,7 +186,23 @@ uses
   UEndereco in 'Renave\Model\UEndereco.pas',
   UBoxSaidaVeiculo0KM in 'Renave\View\UBoxSaidaVeiculo0KM.pas' {BoxSaidaVeiculo0KM},
   UMunicipio in 'Renave\Model\UMunicipio.pas',
-  UConsultarMunicipio in 'Renave\Classes\UConsultarMunicipio.pas';
+  UConsultarMunicipio in 'Renave\Classes\UConsultarMunicipio.pas',
+  UCancelarSaidaEstoqueVeiculo0KM in 'Renave\Classes\UCancelarSaidaEstoqueVeiculo0KM.pas',
+  UCancelamentoSaidaEstoqueVeiculo0KM in 'Renave\Model\UCancelamentoSaidaEstoqueVeiculo0KM.pas',
+  URetornoCancelamentoSaidaEstoqueVeiculo0KM in 'Renave\Model\URetornoCancelamentoSaidaEstoqueVeiculo0KM.pas',
+  UBoxCancelamentoSaidaVeiculo0KM in 'Renave\View\UBoxCancelamentoSaidaVeiculo0KM.pas' {BoxCancelamentoSaidaVeiculo0KM},
+  UConsultarATPV in 'Renave\Classes\UConsultarATPV.pas',
+  UBoxConsultaATPV in 'Renave\View\UBoxConsultaATPV.pas' {BoxConsultaATPV},
+  URejeitarEntradaEstoqueVeiculo0KM in 'Renave\Classes\URejeitarEntradaEstoqueVeiculo0KM.pas',
+  URejeicaoEntradaVeiculoEstoque0KM in 'Renave\Model\URejeicaoEntradaVeiculoEstoque0KM.pas',
+  UBoxRejeitaEntradaVeiculo0KM in 'Renave\View\UBoxRejeitaEntradaVeiculo0KM.pas' {BoxRejeitaEntradaVeiculo0KM},
+  UDevolverVeiculo0KM in 'Renave\Classes\UDevolverVeiculo0KM.pas',
+  UDevolucaoVeiculo0KM in 'Renave\Model\UDevolucaoVeiculo0KM.pas',
+  UBoxDevolucaoVeiculo0KM in 'Renave\View\UBoxDevolucaoVeiculo0KM.pas' {BoxDevolucaoVeiculo0KM},
+  UCancelarTransferenciaVeiculo0KM in 'Renave\Classes\UCancelarTransferenciaVeiculo0KM.pas',
+  URetornoCancelamentoTransferenciaVeiculo0KM in 'Renave\Model\URetornoCancelamentoTransferenciaVeiculo0KM.pas',
+  UCancelamentoTransferenciaVeiculo0KM in 'Renave\Model\UCancelamentoTransferenciaVeiculo0KM.pas',
+  UBoxCancelaTransferenciaVeiculo0KM in 'Renave\View\UBoxCancelaTransferenciaVeiculo0KM.pas' {BoxCancelaTransferenciaVeiculo0KM};
 
 {$R *.RES}
 

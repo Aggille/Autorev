@@ -110,7 +110,7 @@ begin
         FErro := TErroConsultaRenave.Create;
         FErro.Data := aJValue.GetValue<TDateTime>( 'dataHora' );
         FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
-        FErro.LogIdRastreabilidade := aJValue.GetValue<String>( 'logIdRastreabilidade' );
+        //FErro.LogIdRastreabilidade := aJValue.GetValue<String>( 'logIdRastreabilidade' );
         FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
         FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
        end;
@@ -121,9 +121,11 @@ begin
       begin
        if( aHttp.Response <> nil ) then
        begin
+
         FRetorno := e.ErrorMessage;
         aJValue:= TJSONObject.ParseJSONValue(FRetorno);
         FErro := TErroConsultaRenave.Create;
+        FCodigoRetorno := e.ErrorCode;
 
         case E.ErrorCode of
           IntHttpCode401:
@@ -157,17 +159,18 @@ begin
               FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
               FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
 
-//
-//              /// ARQUIVO CRIADO APENAS PARA TESTE..
-//              ///
-//              ///  REMOVER QUANDOFOR PARA PRODUÇÃO
-//              ///
-
-              FCodigoRetorno := IntHttpCode201;
-              aRet := TStringList.Create;
-              aRet.LoadFromFile(ExtractFilePath( Application.ExeName ) + 'retorno_teste.json' );
-              FRetorno := aRet.Text;
-              aRet.Free;
+              if( DebugHook <> 0 ) then
+              begin
+                /// ARQUIVO CRIADO APENAS PARA TESTE..
+                ///
+                ///  REMOVER QUANDOFOR PARA PRODUÇÃO
+                ///
+                FCodigoRetorno := IntHttpCode201 or IntHttpCode200;
+                aRet := TStringList.Create;
+                aRet.LoadFromFile(ExtractFilePath( Application.ExeName ) + 'retorno_teste.json' );
+                FRetorno := aRet.Text;
+                aRet.Free;
+              end;
 
 
             end;
@@ -177,7 +180,7 @@ begin
               FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
               FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
               FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
-              FErro.LogIdRastreabilidade := aJValue.GetValue<String>( 'LogIdRastreabilidade' );
+              //FErro.LogIdRastreabilidade := aJValue.GetValue<String>( 'LogIdRastreabilidade' );
             end
           else
             begin

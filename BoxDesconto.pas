@@ -6,6 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons, Mask, JvExMask, JvToolEdit, JvBaseEdits;
 
+
 type
   TBoxPedeDesconto = class(TForm)
     Label1: TLabel;

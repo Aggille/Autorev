@@ -1742,7 +1742,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       Top = 38
       Width = 39
       Height = 21
-      Alignment = taRightJustify
       DataField = 'ID_CLIENTES'
       DataSource = DataSourcePedidoVeiculos
       MaxLength = 6
@@ -1756,7 +1755,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       Top = 11
       Width = 40
       Height = 21
-      Alignment = taRightJustify
       DataField = 'ID_PEDIDO_VEICULOS'
       DataSource = DataSourcePedidoVeiculos
       MaxLength = 6
@@ -1770,7 +1768,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       Top = 66
       Width = 40
       Height = 21
-      Alignment = taRightJustify
       DataField = 'ID_AVALISTA'
       DataSource = DataSourcePedidoVeiculos
       MaxLength = 6
@@ -1784,7 +1781,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       Top = 92
       Width = 40
       Height = 21
-      Alignment = taRightJustify
       DataField = 'ID_VENDEDOR'
       DataSource = DataSourcePedidoVeiculos
       MaxLength = 6
@@ -1811,7 +1807,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       Top = 144
       Width = 40
       Height = 21
-      Alignment = taRightJustify
       DataField = 'ID_FINANCEIRA'
       DataSource = DataSourcePedidoVeiculos
       MaxLength = 6
@@ -1825,7 +1820,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       Top = 290
       Width = 112
       Height = 21
-      Alignment = taRightJustify
       DataField = 'VALOR_ACESSORIO'
       DataSource = DataSourcePedidoVeiculosAcessorios
       TabOrder = 24
@@ -2879,7 +2873,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       '  ID_CLIENTES = :OLD_ID_CLIENTES')
     ParamCheck = True
     UniDirectional = False
-    Active = True
     Left = 672
     object tblPessoasID_CLIENTES: TIntegerField
       FieldName = 'ID_CLIENTES'
@@ -3399,7 +3392,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         'RIOS')
     ParamCheck = True
     UniDirectional = False
-    Active = True
     Left = 512
     Top = 248
     object tblPedidoVeiculosAcessoriosID_PEDIDO_VEICULOS_ACESSORIOS: TIntegerField
@@ -3905,7 +3897,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       '  ID_PEDIDO_VEICULOS = :OLD_ID_PEDIDO_VEICULOS')
     ParamCheck = True
     UniDirectional = False
-    Active = True
     Left = 312
     Top = 72
     object tblPedidoVeiculosID_PEDIDO_VEICULOS: TIntegerField
@@ -4470,52 +4461,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
     Left = 904
     Top = 120
   end
-  object tblRelPedidoveiculos: TfrxDBDataset
-    UserName = 'tblRelPedidoveiculos'
-    CloseDataSource = False
-    FieldAliases.Strings = (
-      'ID_PEDIDO_VEICULOS=ID_PEDIDO_VEICULOS'
-      'ID_CONCESSIONARIA=ID_CONCESSIONARIA'
-      'ID_CLIENTES=ID_CLIENTES'
-      'ID_AVALISTA=ID_AVALISTA'
-      'ID_VEICULOS=ID_VEICULOS'
-      'CHASSI=CHASSI'
-      'MARCA=MARCA'
-      'ANO_MODELO=ANO_MODELO'
-      'ANO_FABRICACAO=ANO_FABRICACAO'
-      'PLACA=PLACA'
-      'VALOR=VALOR'
-      'BASE_COMISSAO=BASE_COMISSAO'
-      'NF=NF'
-      'DATA_NF=DATA_NF'
-      'STATUS=STATUS'
-      'ID_VENDEDOR=ID_VENDEDOR'
-      'ID_FINANCEIRA=ID_FINANCEIRA'
-      'VALOR_DA_VENDA=VALOR_DA_VENDA'
-      'MODELO=MODELO'
-      'VALOR_A_RECEBER=VALOR_A_RECEBER'
-      'MOTOR=MOTOR'
-      'ID_USUARIO=ID_USUARIO'
-      'USUARIO=USUARIO'
-      'COR=COR'
-      'NF_CANCELAMENTO=NF_CANCELAMENTO'
-      'DATA_NF_CANCELAMENTO=DATA_NF_CANCELAMENTO'
-      'VALOR_VIP=VALOR_VIP'
-      'VALOR_NORMAL=VALOR_NORMAL'
-      'VALOR_EXCLUSIVO=VALOR_EXCLUSIVO'
-      'VALOR_VIP2=VALOR_VIP2'
-      'VALOR_NORMAL2=VALOR_NORMAL2'
-      'VALOR_EXCLUSIVO2=VALOR_EXCLUSIVO2'
-      'RENAVAM=RENAVAM'
-      'VALOR_TAXAS=VALOR_TAXAS'
-      'ID_MODELO_VEICULO=ID_MODELO_VEICULO'
-      'NOME=NOME'
-      'NOMEFINANCEIRA=NOMEFINANCEIRA')
-    DataSet = tblPedidoVeiculos
-    BCDToCurrency = False
-    Left = 504
-    Top = 32
-  end
   object tblRelPedidoVeiculosAcessorios: TfrxDBDataset
     UserName = 'tblRelPedidoVeiculosAcessorios'
     CloseDataSource = False
@@ -4666,7 +4611,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
     Top = 64
   end
   object frxReport1: TfrxReport
-    Version = '5.4.6'
+    Version = '6.4.11'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -4699,8 +4644,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         DataSetName = 'tblRelConcessionaria'
       end
       item
-        DataSet = tblRelPedidoveiculos
-        DataSetName = 'tblRelPedidoveiculos'
       end
       item
         DataSet = tblRelPedidoVeiculosAcessorios
@@ -4728,16 +4671,21 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
+      Frame.Typ = []
+      MirrorMode = []
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 139.842610000000000000
         Top = 18.897650000000000000
         Width = 793.701300000000000000
         object Picture1: TfrxPictureView
+          AllowVectorExport = True
           Left = 582.047620000000000000
           Top = 30.236240000000000000
           Width = 154.960730000000000000
           Height = 34.015770000000000000
+          Frame.Typ = []
           Picture.Data = {
             07544269746D617016740100424D167401000000000036000000280000005401
             0000460000000100200000000000E07301000000000000000000000000000000
@@ -7722,6 +7670,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object Memo6: TfrxMemoView
+          AllowVectorExport = True
           Left = 582.047620000000000000
           Top = 64.252010000000000000
           Width = 154.960730000000000000
@@ -7732,12 +7681,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Concession'#225'ria Autorizada')
           ParentFont = False
         end
         object Memo22: TfrxMemoView
+          AllowVectorExport = True
           Left = 174.637910000000000000
           Top = 115.165430000000000000
           Width = 340.157700000000000000
@@ -7748,6 +7699,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             
@@ -7756,6 +7708,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo33: TfrxMemoView
+          AllowVectorExport = True
           Left = 582.047620000000000000
           Top = 95.826840000000000000
           Width = 52.913420000000000000
@@ -7766,16 +7719,19 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             'P'#225'gina:')
           ParentFont = False
         end
         object Picture2: TfrxPictureView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 30.236240000000000000
           Width = 347.716760000000000000
           Height = 79.370130000000000000
           OnBeforePrint = 'Picture2OnBeforePrint'
+          Frame.Typ = []
           Picture.Data = {
             07544269746D6170B64C0100424DB64C01000000000036000000280000003001
             0000460000000100200000000000804C01000000000000000000000000000000
@@ -10445,6 +10401,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object SysMemo1: TfrxSysMemoView
+          AllowVectorExport = True
           Left = 634.961040000000000000
           Top = 95.826840000000000000
           Width = 102.047310000000000000
@@ -10454,6 +10411,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[PAGE#] de [TOTALPAGES#]')
           ParentFont = False
@@ -10461,10 +10419,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Header1: TfrxHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 154.960730000000000000
         Top = 219.212740000000000000
         Width = 793.701300000000000000
         object Memo9: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 113.385900000000000000
           Width = 718.110700000000000000
@@ -10476,6 +10436,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -10485,6 +10446,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo8: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 79.370130000000010000
           Width = 718.110700000000000000
@@ -10496,6 +10458,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -10506,6 +10469,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo25: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 60.472480000000010000
           Width = 718.110700000000000000
@@ -10517,6 +10481,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             
@@ -10525,6 +10490,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo34: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 15.118120000000010000
           Width = 476.220780000000000000
@@ -10545,6 +10511,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           VAlign = vaCenter
         end
         object Memo39: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 34.015770000000010000
           Width = 718.110700000000000000
@@ -10567,6 +10534,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           VAlign = vaCenter
         end
         object Memo36: TfrxMemoView
+          AllowVectorExport = True
           Left = 495.118430000000000000
           Top = 15.118120000000010000
           Width = 241.889920000000000000
@@ -10586,18 +10554,18 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           VAlign = vaCenter
         end
         object tblRelPedidoveiculosDATA_NF: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 132.283550000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -10609,10 +10577,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Band1: TfrxPageFooter
         FillType = ftBrush
+        Frame.Typ = []
         Height = 154.960730000000000000
         Top = 714.331170000000000000
         Width = 793.701300000000000000
         object Memo43: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 79.370130000000010000
           Width = 302.362400000000000000
@@ -10622,12 +10592,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPessoas."NOME">)]')
           ParentFont = False
         end
         object Memo19: TfrxMemoView
+          AllowVectorExport = True
           Left = 453.543600000000000000
           Top = 79.370130000000010000
           Width = 302.362400000000000000
@@ -10637,6 +10609,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPedidoVeiculos."NOME">)]')
@@ -10645,22 +10618,20 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Band6: TfrxMasterData
         FillType = ftBrush
+        Frame.Typ = []
         Height = 79.370130000000000000
         Top = 396.850650000000000000
         Width = 793.701300000000000000
         Columns = 1
         ColumnWidth = 200.000000000000000000
         ColumnGap = 20.000000000000000000
-        DataSet = tblRelPedidoveiculos
-        DataSetName = 'tblRelPedidoveiculos'
         RowCount = 0
         object Memo1: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Top = 18.897650000000000000
           Width = 245.669450000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -10668,17 +10639,17 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             'Chassi: [tblRelPedidoveiculos."CHASSI"]')
           ParentFont = False
         end
         object Memo3: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Top = 37.795300000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -10686,16 +10657,16 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             'Ano modelo: [tblRelPedidoveiculos."ANO_MODELO"]')
           ParentFont = False
         end
         object Memo4: TfrxMemoView
+          AllowVectorExport = True
           Left = 234.330860000000000000
           Width = 234.330860000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           DisplayFormat.FormatStr = '%2.2m'
           Font.Charset = DEFAULT_CHARSET
@@ -10704,17 +10675,17 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             'Modelo: [tblRelPedidoveiculos."MODELO"]')
           ParentFont = False
         end
         object Memo27: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Width = 177.637910000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           DisplayFormat.FormatStr = '%g'
           Font.Charset = DEFAULT_CHARSET
@@ -10723,18 +10694,18 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             'Marca: [tblRelPedidoveiculos."MARCA"]')
           ParentFont = False
         end
         object Memo2: TfrxMemoView
+          AllowVectorExport = True
           Left = 151.181200000000000000
           Top = 37.795300000000000000
           Width = 109.606370000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           DisplayFormat.FormatStr = '%2.2m'
           Font.Charset = DEFAULT_CHARSET
@@ -10743,17 +10714,17 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             'Ano fabrica'#231#227'o: [tblRelPedidoveiculos."ANO_FABRICACAO"]')
           ParentFont = False
         end
         object Memo7: TfrxMemoView
+          AllowVectorExport = True
           Left = 377.953000000000000000
           Top = 37.795300000000000000
           Width = 90.708720000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           DisplayFormat.FormatStr = '%2.2m'
           Font.Charset = DEFAULT_CHARSET
@@ -10762,17 +10733,17 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             'Placa: [tblRelPedidoveiculos."PLACA"]')
           ParentFont = False
         end
         object Memo10: TfrxMemoView
+          AllowVectorExport = True
           Left = 302.362400000000000000
           Top = 18.897650000000000000
           Width = 166.299320000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -10780,17 +10751,17 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             'Motor: [tblRelPedidoveiculos."MOTOR"]')
           ParentFont = False
         end
         object Memo20: TfrxMemoView
+          AllowVectorExport = True
           Left = 260.787570000000000000
           Top = 37.795300000000000000
           Width = 117.165430000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           DisplayFormat.FormatStr = '%2.2m'
           Font.Charset = DEFAULT_CHARSET
@@ -10799,28 +10770,30 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             'Cor: [tblRelPedidoveiculos."COR"]')
           ParentFont = False
         end
         object tblRelPedidoveiculosNOMEFINANCEIRA: TfrxMemoView
+          AllowVectorExport = True
           Left = 151.181200000000000000
           Top = 56.692949999999990000
           Width = 411.968770000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[tblRelPedidoveiculos."NOMEFINANCEIRA"]')
           ParentFont = False
         end
         object Memo21: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Top = 56.692949999999990000
           Width = 94.488250000000000000
@@ -10831,6 +10804,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             'Agente financeiro:')
           ParentFont = False
@@ -10838,11 +10812,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object GroupHeader1: TfrxGroupHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 18.897650000000000000
         Top = 498.897960000000000000
         Width = 793.701300000000000000
         Condition = 'tblRelPedidoVeiculosAcessorios."ID_PEDIDO_VEICULOS"'
         object Memo17: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Width = 279.685220000000000000
           Height = 18.897650000000000000
@@ -10852,12 +10828,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Fill.BackColor = cl3DDkShadow
           Memo.UTF8W = (
             'Acess'#243'rios:  ')
           ParentFont = False
         end
         object Memo18: TfrxMemoView
+          AllowVectorExport = True
           Left = 336.378170000000000000
           Width = 154.960730000000000000
           Height = 18.897650000000000000
@@ -10867,6 +10845,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Fill.BackColor = cl3DDkShadow
           HAlign = haCenter
           Memo.UTF8W = (
@@ -10876,6 +10855,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
+        Frame.Typ = []
         Height = 22.677180000000000000
         Top = 540.472790000000000000
         Width = 793.701300000000000000
@@ -10883,6 +10863,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         DataSetName = 'tblRelPedidoVeiculosAcessorios'
         RowCount = 0
         object Memo11: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Top = 3.779530000000022000
           Width = 207.874150000000000000
@@ -10897,11 +10878,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosAcessorios."DESCRICAO_ACESSORIO"]')
           ParentFont = False
         end
         object Memo12: TfrxMemoView
+          AllowVectorExport = True
           Left = 264.567100000000000000
           Top = 3.779530000000022000
           Width = 226.771800000000000000
@@ -10918,6 +10901,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosAcessorios."VALOR_ACESSORIO"]')
@@ -10926,11 +10910,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object GroupHeader2: TfrxGroupHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 22.677180000000000000
         Top = 585.827150000000000000
         Width = 793.701300000000000000
         Condition = 'tblRelPedidoVeiculosRecebimento."ID_PEDIDO_VEICULOS"'
         object Memo16: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Top = 3.779530000000022000
           Width = 434.645950000000000000
@@ -10941,6 +10927,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Fill.BackColor = clInactiveCaption
           Memo.UTF8W = (
             
@@ -10951,6 +10938,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object MasterData2: TfrxMasterData
         FillType = ftBrush
+        Frame.Typ = []
         Height = 22.677180000000000000
         Top = 631.181510000000000000
         Width = 793.701300000000000000
@@ -10958,6 +10946,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         DataSetName = 'tblRelPedidoVeiculosRecebimento'
         RowCount = 0
         object Memo13: TfrxMemoView
+          AllowVectorExport = True
           Left = 56.692950000000000000
           Width = 143.622140000000000000
           Height = 18.897650000000000000
@@ -10972,12 +10961,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosRecebimento."FORMA_PAGAMENTO"]')
           ParentFont = False
         end
         object Memo14: TfrxMemoView
+          AllowVectorExport = True
           Left = 200.315090000000000000
           Width = 143.622140000000000000
           Height = 18.897650000000000000
@@ -10992,12 +10983,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosRecebimento."VENCIMENTO"]')
           ParentFont = False
         end
         object Memo15: TfrxMemoView
+          AllowVectorExport = True
           Left = 347.716760000000000000
           Width = 143.622140000000000000
           Height = 18.897650000000000000
@@ -11013,6 +11006,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosRecebimento."VALOR_DEVIDO"]')
@@ -11028,16 +11022,21 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
       object PageHeader2: TfrxPageHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 129.842610000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Picture3: TfrxPictureView
+          AllowVectorExport = True
           Left = 3.779530000000000000
           Width = 347.716760000000000000
           Height = 79.370130000000000000
           OnBeforePrint = 'Picture3OnBeforePrint'
+          Frame.Typ = []
           Picture.Data = {
             07544269746D6170B64C0100424DB64C01000000000036000000280000003001
             0000460000000100200000000000804C01000000000000000000000000000000
@@ -13707,9 +13706,11 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object Picture4: TfrxPictureView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Width = 154.960730000000000000
           Height = 34.015770000000000000
+          Frame.Typ = []
           Picture.Data = {
             07544269746D617016740100424D167401000000000036000000280000005401
             0000460000000100200000000000E07301000000000000000000000000000000
@@ -16694,6 +16695,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object Memo23: TfrxMemoView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Top = 34.015770000000010000
           Width = 154.960730000000000000
@@ -16704,12 +16706,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Concession'#225'ria Autorizada')
           ParentFont = False
         end
         object Memo24: TfrxMemoView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Top = 65.590600000000000000
           Width = 52.913420000000000000
@@ -16720,11 +16724,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             'P'#225'gina:')
           ParentFont = False
         end
         object SysMemo2: TfrxSysMemoView
+          AllowVectorExport = True
           Left = 604.724800000000000000
           Top = 65.590600000000000000
           Width = 102.047310000000000000
@@ -16734,11 +16740,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[PAGE#] de [TOTALPAGES#]')
           ParentFont = False
         end
         object Memo29: TfrxMemoView
+          AllowVectorExport = True
           Left = 173.858380000000000000
           Top = 98.267780000000000000
           Width = 370.393940000000000000
@@ -16748,6 +16756,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Or'#231'amento para emplacamento/transfer'#234'ncia:')
@@ -16756,10 +16765,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Header2: TfrxHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 83.149660000000000000
         Top = 207.874150000000000000
         Width = 718.110700000000000000
         object Memo52: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Width = 691.653990000000000000
           Height = 18.897650000000000000
@@ -16770,6 +16781,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             
@@ -16778,6 +16790,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo53: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 18.897650000000000000
           Width = 241.889920000000000000
@@ -16788,6 +16801,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Marca:[(<tblRelPedidoveiculos."MARCA">)]')
@@ -16799,6 +16813,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo54: TfrxMemoView
+          AllowVectorExport = True
           Left = 260.787570000000000000
           Top = 18.897650000000000000
           Width = 241.889920000000000000
@@ -16809,12 +16824,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Modelo:[(<tblRelPedidoveiculos."MODELO">)]')
           ParentFont = False
         end
         object Memo32: TfrxMemoView
+          AllowVectorExport = True
           Left = 468.661720000000000000
           Top = 18.897650000000000000
           Width = 241.889920000000000000
@@ -16825,12 +16842,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Chassi:[(<tblRelPedidoveiculos."CHASSI">)]')
           ParentFont = False
         end
         object Memo35: TfrxMemoView
+          AllowVectorExport = True
           Left = 260.787570000000000000
           Top = 37.795300000000000000
           Width = 241.889920000000000000
@@ -16841,12 +16860,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Cor:[(<tblRelPedidoveiculos."COR">)]')
           ParentFont = False
         end
         object Memo30: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 37.795300000000000000
           Width = 117.165430000000000000
@@ -16857,12 +16878,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Ano Modelo:[(<tblRelPedidoveiculos."ANO_MODELO">)]')
           ParentFont = False
         end
         object Memo41: TfrxMemoView
+          AllowVectorExport = True
           Left = 136.063080000000000000
           Top = 37.795300000000000000
           Width = 124.724490000000000000
@@ -16873,12 +16896,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Ano Fabrica'#231#227'o:[(<tblRelPedidoveiculos."ANO_FABRICACAO">)]')
           ParentFont = False
         end
         object Memo31: TfrxMemoView
+          AllowVectorExport = True
           Left = 502.677490000000000000
           Top = 37.795300000000000000
           Width = 207.874150000000000000
@@ -16889,12 +16914,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Placa:[(<tblRelPedidoveiculos."PLACA">)]')
           ParentFont = False
         end
         object Memo37: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 56.692949999999990000
           Width = 362.834880000000000000
@@ -16905,12 +16932,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Agente Financeiro:[(<tblRelPedidoveiculos."NOMEFINANCEIRA">)]')
           ParentFont = False
         end
         object Memo50: TfrxMemoView
+          AllowVectorExport = True
           Left = 381.732530000000000000
           Top = 56.692949999999990000
           Width = 71.811070000000000000
@@ -16921,12 +16950,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             'Despachante:')
           ParentFont = False
         end
         object Memo55: TfrxMemoView
+          AllowVectorExport = True
           Left = 453.543600000000000000
           Top = 56.692949999999990000
           Width = 257.008040000000000000
@@ -16937,6 +16968,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             '[(<tblRelConcessionaria."DESPACHANTE">)]')
@@ -16945,6 +16977,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object MasterData3: TfrxMasterData
         FillType = ftBrush
+        Frame.Typ = []
         Height = 22.897650000000000000
         Top = 355.275820000000000000
         Width = 718.110700000000000000
@@ -16952,6 +16985,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         DataSetName = 'tblRelPedidoVeiculosDespachante'
         RowCount = 0
         object Memo26: TfrxMemoView
+          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 0.220469999999977500
           Width = 302.362400000000000000
@@ -16967,12 +17001,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosDespachante."DESCRICAO_SERVICOS"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo28: TfrxMemoView
+          AllowVectorExport = True
           Left = 415.748300000000000000
           Width = 196.535560000000000000
           Height = 18.897650000000000000
@@ -16988,6 +17024,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[tblRelPedidoVeiculosDespachante."VALOR"]')
@@ -16997,10 +17034,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Footer1: TfrxFooter
         FillType = ftBrush
+        Frame.Typ = []
         Height = 468.661720000000000000
         Top = 400.630180000000000000
         Width = 718.110700000000000000
         object Memo44: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 26.456709999999990000
           Width = 684.094930000000000000
@@ -17010,12 +17049,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             #201' direito do consumidor a livre escolha de despachante.')
           ParentFont = False
         end
         object Memo45: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 49.133890000000010000
           Width = 684.094930000000000000
@@ -17025,6 +17066,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             
               '1. Pode o cliente optar pela contrata'#231#227'o de outro profissional q' +
@@ -17032,6 +17074,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo46: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 71.811070000000000000
           Width = 684.094930000000000000
@@ -17041,6 +17084,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             
               '2. Caso o cliente opte pela contrata'#231#227'o de outro despachante (di' +
@@ -17062,6 +17106,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo47: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 249.448980000000000000
           Width = 684.094930000000000000
@@ -17071,11 +17116,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             'Foi me apresentado o or'#231'amento acima.')
           ParentFont = False
         end
         object Memo49: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 347.716760000000000000
           Width = 684.094930000000000000
@@ -17085,11 +17132,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             'De acordo com o or'#231'amento, autorizado o procedimento do servi'#231'o.')
           ParentFont = False
         end
         object Memo38: TfrxMemoView
+          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 3.779530000000022000
           Width = 302.362400000000000000
@@ -17099,12 +17148,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Total dos servi'#231'os:')
           ParentFont = False
         end
         object Memo42: TfrxMemoView
+          AllowVectorExport = True
           Left = 415.748300000000000000
           Top = 3.779530000000022000
           Width = 196.535560000000000000
@@ -17116,12 +17167,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Total]')
           ParentFont = False
         end
         object Memo5: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 294.803340000000100000
           Width = 302.362400000000000000
@@ -17131,12 +17184,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPessoas."NOME">)]')
           ParentFont = False
         end
         object Memo48: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 396.850650000000000000
           Width = 302.362400000000000000
@@ -17146,12 +17201,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPessoas."NOME">)]')
           ParentFont = False
         end
         object Memo56: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 438.425480000000000000
           Width = 684.094930000000000000
@@ -17161,6 +17218,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             
@@ -17172,11 +17230,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object GroupHeader3: TfrxGroupHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 18.897650000000000000
         Top = 313.700990000000000000
         Width = 718.110700000000000000
         Condition = 'tblRelPedidoVeiculosDespachante."ID_PEDIDO_VEICULOS"'
         object Memo40: TfrxMemoView
+          AllowVectorExport = True
           Left = 113.385900000000000000
           Width = 302.362400000000000000
           Height = 18.897650000000000000
@@ -17185,12 +17245,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Servi'#231'os:')
           ParentFont = False
         end
         object Memo51: TfrxMemoView
+          AllowVectorExport = True
           Left = 415.748300000000000000
           Width = 196.535560000000000000
           Height = 18.897650000000000000
@@ -17199,6 +17261,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -12
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Valores R$:')
@@ -17345,7 +17408,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       '  ID_CONCESSIONARIA = :OLD_ID_CONCESSIONARIA')
     ParamCheck = True
     UniDirectional = False
-    Active = True
     Left = 568
     Top = 64
     object tblConcessionariaID_CONCESSIONARIA: TIntegerField
@@ -17826,7 +17888,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         'CHANTE')
     ParamCheck = True
     UniDirectional = False
-    Active = True
     Left = 440
     Top = 608
     object tblPedidoVeiculosDespachanteID_PEDIDO_VEICULOS_DESPACHANTE: TIntegerField
@@ -18001,7 +18062,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
     Top = 136
   end
   object frxReport2: TfrxReport
-    Version = '5.4.6'
+    Version = '6.4.11'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -18033,8 +18094,6 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         DataSetName = 'tblRelConcessionaria'
       end
       item
-        DataSet = tblRelPedidoveiculos
-        DataSetName = 'tblRelPedidoveiculos'
       end
       item
         DataSet = tblRelPedidoVeiculosAcessorios
@@ -18062,16 +18121,21 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
+      Frame.Typ = []
+      MirrorMode = []
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 139.842610000000000000
         Top = 18.897650000000000000
         Width = 793.701300000000000000
         object Picture1: TfrxPictureView
+          AllowVectorExport = True
           Left = 582.047620000000000000
           Top = 30.236240000000000000
           Width = 154.960730000000000000
           Height = 34.015770000000000000
+          Frame.Typ = []
           Picture.Data = {
             07544269746D617016740100424D167401000000000036000000280000005401
             0000460000000100200000000000E07301000000000000000000000000000000
@@ -21056,6 +21120,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object Memo6: TfrxMemoView
+          AllowVectorExport = True
           Left = 582.047620000000000000
           Top = 64.252010000000000000
           Width = 154.960730000000000000
@@ -21066,12 +21131,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Concession'#225'ria Autorizada')
           ParentFont = False
         end
         object Memo22: TfrxMemoView
+          AllowVectorExport = True
           Left = 174.637910000000000000
           Top = 115.165430000000000000
           Width = 340.157700000000000000
@@ -21081,12 +21148,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'DECLARA'#199#195'O:')
           ParentFont = False
         end
         object Memo33: TfrxMemoView
+          AllowVectorExport = True
           Left = 582.047620000000000000
           Top = 95.826840000000000000
           Width = 52.913420000000000000
@@ -21097,16 +21166,19 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             'P'#225'gina:')
           ParentFont = False
         end
         object Picture2: TfrxPictureView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 30.236240000000000000
           Width = 347.716760000000000000
           Height = 79.370130000000000000
           OnBeforePrint = 'Picture2OnBeforePrint'
+          Frame.Typ = []
           Picture.Data = {
             07544269746D6170B64C0100424DB64C01000000000036000000280000003001
             0000460000000100200000000000804C01000000000000000000000000000000
@@ -23776,6 +23848,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object SysMemo1: TfrxSysMemoView
+          AllowVectorExport = True
           Left = 634.961040000000000000
           Top = 95.826840000000000000
           Width = 102.047310000000000000
@@ -23785,6 +23858,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[PAGE#] de [TOTALPAGES#]')
           ParentFont = False
@@ -23792,10 +23866,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Header1: TfrxHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 453.543600000000000000
         Top = 219.212740000000000000
         Width = 793.701300000000000000
         object Memo9: TfrxMemoView
+          AllowVectorExport = True
           Left = 11.338590000000000000
           Top = 18.897650000000000000
           Width = 177.637910000000000000
@@ -23806,6 +23882,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -23818,6 +23895,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo25: TfrxMemoView
+          AllowVectorExport = True
           Left = 105.826840000000000000
           Width = 415.748300000000000000
           Height = 18.897650000000000000
@@ -23827,6 +23905,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             
@@ -23840,6 +23919,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo11: TfrxMemoView
+          AllowVectorExport = True
           Left = 241.889920000000000000
           Top = 366.614410000000100000
           Width = 204.094620000000000000
@@ -23851,11 +23931,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[(<tblRelPedidoVeiculos."DATA_NF">)].')
           ParentFont = False
         end
         object Memo12: TfrxMemoView
+          AllowVectorExport = True
           Left = 75.590599999999990000
           Width = 30.236240000000000000
           Height = 18.897650000000000000
@@ -23864,12 +23946,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Eu,')
           ParentFont = False
         end
         object Memo13: TfrxMemoView
+          AllowVectorExport = True
           Left = 521.575140000000000000
           Width = 245.669450000000000000
           Height = 18.897650000000000000
@@ -23878,12 +23962,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'portador(a) da c'#233'dula de identidade RG:')
           ParentFont = False
         end
         object Memo14: TfrxMemoView
+          AllowVectorExport = True
           Left = 188.976500000000000000
           Top = 18.897650000000000000
           Width = 143.622140000000000000
@@ -23893,12 +23979,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'inscrito no CPF sob n'#176'.')
           ParentFont = False
         end
         object Memo15: TfrxMemoView
+          AllowVectorExport = True
           Left = 332.598640000000000000
           Top = 18.897650000000000000
           Width = 158.740260000000000000
@@ -23909,6 +23997,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -23916,6 +24005,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo16: TfrxMemoView
+          AllowVectorExport = True
           Left = 491.338900000000000000
           Top = 18.897650000000000000
           Width = 275.905690000000000000
@@ -23925,23 +24015,24 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'declaro que quando da aquisi'#231#227'o do ve'#237'culo:')
           ParentFont = False
         end
         object Memo17: TfrxMemoView
+          AllowVectorExport = True
           Left = 11.338590000000000000
           Top = 37.795300000000000000
           Width = 400.630180000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -23956,6 +24047,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo18: TfrxMemoView
+          AllowVectorExport = True
           Left = 411.968770000000000000
           Top = 37.795300000000000000
           Width = 109.606370000000000000
@@ -23965,12 +24057,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             ', a concession'#225'ria')
           ParentFont = False
         end
         object Memo29: TfrxMemoView
+          AllowVectorExport = True
           Left = 11.338590000000000000
           Top = 56.692949999999990000
           Width = 755.905999999999900000
@@ -23980,6 +24074,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             
               'atendendo disposi'#231#245'es previstas na Lei n'#176' 13.111/15, me informou' +
@@ -23987,6 +24082,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo30: TfrxMemoView
+          AllowVectorExport = True
           Left = 11.338590000000000000
           Top = 75.590600000000000000
           Width = 755.905999999999900000
@@ -23996,6 +24092,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haBlock
           Memo.UTF8W = (
             
@@ -24028,6 +24125,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo1: TfrxMemoView
+          AllowVectorExport = True
           Left = 521.575140000000100000
           Top = 37.795300000000000000
           Width = 245.669450000000000000
@@ -24038,6 +24136,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -24045,6 +24144,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo10: TfrxMemoView
+          AllowVectorExport = True
           Left = 11.338590000000000000
           Top = 404.409710000000100000
           Width = 302.362400000000000000
@@ -24054,12 +24154,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPessoas."NOME">)]')
           ParentFont = False
         end
         object Memo8: TfrxMemoView
+          AllowVectorExport = True
           Left = 11.338590000000000000
           Top = 366.614410000000100000
           Width = 230.551330000000000000
@@ -24069,6 +24171,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[(<tblRelConcessionaria."CIDADE">)] ,')
           ParentFont = False
@@ -24076,10 +24179,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Band1: TfrxPageFooter
         FillType = ftBrush
+        Frame.Typ = []
         Height = 317.480520000000000000
         Top = 774.803650000000000000
         Width = 793.701300000000000000
         object Memo2: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 83.149660000000040000
           Width = 748.346940000000000000
@@ -24089,6 +24194,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haBlock
           Memo.UTF8W = (
             
@@ -24098,6 +24204,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo3: TfrxMemoView
+          AllowVectorExport = True
           Left = 105.826840000000000000
           Top = 26.456710000000040000
           Width = 415.748300000000000000
@@ -24109,6 +24216,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             
@@ -24117,6 +24225,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo7: TfrxMemoView
+          AllowVectorExport = True
           Left = 75.590600000000000000
           Top = 26.456710000000040000
           Width = 30.236240000000000000
@@ -24126,12 +24235,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Eu,')
           ParentFont = False
         end
         object Memo20: TfrxMemoView
+          AllowVectorExport = True
           Left = 185.196970000000000000
           Top = 3.779530000000022000
           Width = 340.157700000000000000
@@ -24141,12 +24252,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'AUTORIZA'#199#195'O:')
           ParentFont = False
         end
         object Memo21: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 45.133889999999950000
           Width = 177.637910000000000000
@@ -24157,6 +24270,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -24169,6 +24283,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo31: TfrxMemoView
+          AllowVectorExport = True
           Left = 521.575140000000000000
           Top = 27.236239999999950000
           Width = 245.669450000000000000
@@ -24178,12 +24293,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'portador(a) da c'#233'dula de identidade RG:')
           ParentFont = False
         end
         object Memo32: TfrxMemoView
+          AllowVectorExport = True
           Left = 196.535560000000000000
           Top = 45.133889999999950000
           Width = 143.622140000000000000
@@ -24193,12 +24310,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'inscrito no CPF sob n.')
           ParentFont = False
         end
         object Memo34: TfrxMemoView
+          AllowVectorExport = True
           Left = 340.157700000000000000
           Top = 45.133889999999950000
           Width = 158.740260000000000000
@@ -24209,6 +24328,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -24216,6 +24336,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo35: TfrxMemoView
+          AllowVectorExport = True
           Left = 498.897960000000000000
           Top = 45.354360000000040000
           Width = 90.708720000000000000
@@ -24225,12 +24346,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'domiciliado na')
           ParentFont = False
         end
         object Memo36: TfrxMemoView
+          AllowVectorExport = True
           Left = 589.606680000000000000
           Top = 45.354360000000040000
           Width = 211.653680000000000000
@@ -24241,6 +24364,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -24248,6 +24372,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo4: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 139.842610000000000000
           Width = 302.362400000000000000
@@ -24257,12 +24382,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPessoas."NOME">)]')
           ParentFont = False
         end
         object Memo5: TfrxMemoView
+          AllowVectorExport = True
           Left = 139.842610000000000000
           Top = 64.252010000000040000
           Width = 245.669450000000000000
@@ -24273,6 +24400,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -24280,6 +24408,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo26: TfrxMemoView
+          AllowVectorExport = True
           Left = 18.897650000000000000
           Top = 64.252010000000040000
           Width = 120.944960000000000000
@@ -24289,12 +24418,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'cliente da empresa')
           ParentFont = False
         end
         object Memo27: TfrxMemoView
+          AllowVectorExport = True
           Left = 385.512060000000000000
           Top = 64.252010000000040000
           Width = 381.732530000000000000
@@ -24304,6 +24435,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             'autorizo expressamente o uso de imagem minha e de minha')
@@ -24312,14 +24444,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Band6: TfrxMasterData
         FillType = ftBrush
+        Frame.Typ = []
         Height = 18.897650000000000000
         Top = 695.433520000000000000
         Width = 793.701300000000000000
         Columns = 1
         ColumnWidth = 200.000000000000000000
         ColumnGap = 20.000000000000000000
-        DataSet = tblRelPedidoveiculos
-        DataSetName = 'tblRelPedidoveiculos'
         RowCount = 0
       end
     end
@@ -24329,16 +24460,21 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       PaperSize = 9
       LeftMargin = 5.000000000000000000
       TopMargin = 20.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
       object PageHeader2: TfrxPageHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 129.842610000000000000
         Top = 18.897650000000000000
         Width = 774.803649999999900000
         object Picture3: TfrxPictureView
+          AllowVectorExport = True
           Left = 3.779530000000000000
           Width = 347.716760000000000000
           Height = 79.370130000000000000
           OnBeforePrint = 'Picture3OnBeforePrint'
+          Frame.Typ = []
           Picture.Data = {
             07544269746D6170B64C0100424DB64C01000000000036000000280000003001
             0000460000000100200000000000804C01000000000000000000000000000000
@@ -27008,9 +27144,11 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object Picture4: TfrxPictureView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Width = 154.960730000000000000
           Height = 34.015770000000000000
+          Frame.Typ = []
           Picture.Data = {
             07544269746D617016740100424D167401000000000036000000280000005401
             0000460000000100200000000000E07301000000000000000000000000000000
@@ -29995,6 +30133,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           TransparentColor = clWhite
         end
         object Memo23: TfrxMemoView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Top = 34.015770000000000000
           Width = 154.960730000000000000
@@ -30005,12 +30144,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'Concession'#225'ria Autorizada')
           ParentFont = False
         end
         object Memo24: TfrxMemoView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Top = 65.590599999999990000
           Width = 52.913420000000000000
@@ -30021,11 +30162,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             'P'#225'gina:')
           ParentFont = False
         end
         object SysMemo2: TfrxSysMemoView
+          AllowVectorExport = True
           Left = 604.724800000000000000
           Top = 65.590599999999990000
           Width = 102.047310000000000000
@@ -30035,11 +30178,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[PAGE#] de [TOTALPAGES#]')
           ParentFont = False
         end
         object Memo37: TfrxMemoView
+          AllowVectorExport = True
           Left = 181.417440000000000000
           Top = 102.047310000000000000
           Width = 340.157700000000000000
@@ -30049,6 +30194,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -16
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'DECLARA'#199#195'O:')
@@ -30057,10 +30203,12 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object Header2: TfrxHeader
         FillType = ftBrush
+        Frame.Typ = []
         Height = 238.110390000000000000
         Top = 207.874150000000000000
         Width = 774.803649999999900000
         object Memo19: TfrxMemoView
+          AllowVectorExport = True
           Top = 71.811069999999970000
           Width = 755.905999999999900000
           Height = 98.267780000000000000
@@ -30069,6 +30217,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haBlock
           Memo.UTF8W = (
             
@@ -30086,6 +30235,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo39: TfrxMemoView
+          AllowVectorExport = True
           Left = 71.811070000000000000
           Top = 15.118120000000000000
           Width = 415.748300000000000000
@@ -30096,6 +30246,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           Memo.UTF8W = (
             
@@ -30109,6 +30260,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo42: TfrxMemoView
+          AllowVectorExport = True
           Left = 487.559370000000000000
           Top = 15.118120000000000000
           Width = 268.346630000000000000
@@ -30118,12 +30270,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'inscrito no CPF/CNPJ sob n'#176'.')
           ParentFont = False
         end
         object Memo43: TfrxMemoView
+          AllowVectorExport = True
           Top = 34.015770000000000000
           Width = 158.740260000000000000
           Height = 18.897650000000000000
@@ -30133,6 +30287,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -30140,6 +30295,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo44: TfrxMemoView
+          AllowVectorExport = True
           Left = 158.740260000000000000
           Top = 34.015770000000000000
           Width = 207.874150000000000000
@@ -30149,23 +30305,24 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'adquirente, propriet'#225'rio do ve'#237'culo:')
           ParentFont = False
         end
         object Memo45: TfrxMemoView
+          AllowVectorExport = True
           Left = 366.614410000000000000
           Top = 34.015770000000000000
           Width = 389.291590000000000000
           Height = 18.897650000000000000
-          DataSet = tblRelPedidoveiculos
-          DataSetName = 'tblRelPedidoveiculos'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -30180,6 +30337,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
             end>
         end
         object Memo46: TfrxMemoView
+          AllowVectorExport = True
           Top = 52.913419999999970000
           Width = 170.078850000000000000
           Height = 18.897650000000000000
@@ -30188,12 +30346,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'adquirido na concession'#225'ria')
           ParentFont = False
         end
         object Memo48: TfrxMemoView
+          AllowVectorExport = True
           Left = 170.078850000000000000
           Top = 52.913419999999970000
           Width = 245.669450000000000000
@@ -30204,6 +30364,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -30211,6 +30372,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo38: TfrxMemoView
+          AllowVectorExport = True
           Left = 415.748300000000000000
           Top = 52.913419999999970000
           Width = 136.063080000000000000
@@ -30220,12 +30382,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             ', atrav'#233's da nota fiscal n'#176'.')
           ParentFont = False
         end
         object Memo40: TfrxMemoView
+          AllowVectorExport = True
           Left = 551.811380000000000000
           Top = 52.913419999999970000
           Width = 60.472480000000000000
@@ -30236,6 +30400,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -30243,6 +30408,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo41: TfrxMemoView
+          AllowVectorExport = True
           Left = 612.283860000000000000
           Top = 52.913419999999970000
           Width = 34.015770000000000000
@@ -30252,12 +30418,14 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             'em:')
           ParentFont = False
         end
         object Memo49: TfrxMemoView
+          AllowVectorExport = True
           Left = 646.299630000000000000
           Top = 52.913419999999970000
           Width = 109.606370000000000000
@@ -30268,6 +30436,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Color = clSilver
+          Frame.Typ = []
           Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
@@ -30275,6 +30444,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           ParentFont = False
         end
         object Memo47: TfrxMemoView
+          AllowVectorExport = True
           Left = 230.551330000000000000
           Top = 196.535560000000000000
           Width = 245.669450000000000000
@@ -30286,11 +30456,13 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[(<tblRelPedidoVeiculos."DATA_NF">)] ')
           ParentFont = False
         end
         object Memo51: TfrxMemoView
+          AllowVectorExport = True
           Top = 196.535560000000000000
           Width = 230.551330000000000000
           Height = 22.677180000000000000
@@ -30299,6 +30471,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Typ = []
           Memo.UTF8W = (
             '[(<tblRelConcessionaria."CIDADE">)] ,')
           ParentFont = False
@@ -30306,6 +30479,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
       end
       object MasterData3: TfrxMasterData
         FillType = ftBrush
+        Frame.Typ = []
         Height = 71.811070000000000000
         Top = 468.661720000000000000
         Width = 774.803649999999900000
@@ -30313,6 +30487,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
         DataSetName = 'tblRelPessoas'
         RowCount = 0
         object Memo50: TfrxMemoView
+          AllowVectorExport = True
           Top = 7.559059999999875000
           Width = 302.362400000000000000
           Height = 34.015770000000000000
@@ -30321,6 +30496,7 @@ object BoxVendasVeiculos: TBoxVendasVeiculos
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          Frame.Typ = []
           Memo.UTF8W = (
             ' _______________________________________'
             ' [(<tblRelPessoas."NOME">)]')

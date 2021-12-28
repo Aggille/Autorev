@@ -102,8 +102,6 @@ begin
         edtResultado.Lines.Add(StrMensagemErro + aSair.Erro.Mensagem );
       end;
 
-
-
   finally
     aSaida.Free;
     aSair.Free;

@@ -15,9 +15,9 @@ uses
 type
   TConsultaMunicipio = class
     private
-    FErro: TErroConsultaRenave;
-    FConsulta:TConsultarRenave;
-    FCodigoRetorno: Integer;
+      FErro: TErroConsultaRenave;
+      FConsulta:TConsultarRenave;
+      FCodigoRetorno: Integer;
     public
       function ConsultaPorNome( aNome:String ):TMunicipio;
       constructor create;
@@ -47,7 +47,7 @@ begin
     aNome := StringReplace( aNome, ' ' , '%20' , [rfReplaceAll] );
     aNome := semAcentos( aNome );
 
-    aURL := 'municipios\?nome='+aNome ;
+    aURL := 'municipios?nome='+aNome ;
     FConsulta.URL := aURL;
     Fconsulta.Metodo := StrHttpGET;
     Fconsulta.Consulta;

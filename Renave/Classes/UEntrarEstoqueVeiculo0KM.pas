@@ -98,7 +98,9 @@ begin
 
     if( aJsonEntrada <> nil ) then
     begin
+
       aJsonVendedor := ( aJsonEntrada as TJsonObject ).GetValue('vendedor');
+      FRetorno.id := TJSonValue( aJson ).getValue<Integer>('id');
       FRetorno.numeroTermoEntradaEstoque := ( aJsonEntrada as TJsonValue ).GetValue<Integer>('numeroTermoEntradaEstoque');
       FRetorno.chaveNotaFiscalEntrada := ( aJsonEntrada as TJsonValue ).GetValue<String>('chaveNotaFiscalEntrada');
       FRetorno.cpfOperadorResponsavel:= ( aJsonEntrada as TJsonValue ).GetValue<String>('cpfOperadorResponsavel');

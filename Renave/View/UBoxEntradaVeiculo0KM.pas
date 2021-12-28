@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,Rest.Json,
-  JvBaseEdits, JvSpin, Vcl.Mask, JvExMask, JvToolEdit, Vcl.ExtCtrls;
+  JvBaseEdits, JvSpin, Vcl.Mask, JvExMask, JvToolEdit, Vcl.ExtCtrls,
+  IBX.IBQuery, Data.DB, IBX.IBCustomDataSet;
 
 type
   TBoxEntradaVeiculo0KM = class(TForm)
@@ -23,9 +24,11 @@ type
     btnConsultar: TBitBtn;
     btnSair: TBitBtn;
     edtResultado: TMemo;
+    SpeedButton1: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +41,8 @@ var
 implementation
 
 uses
-  UEntradaVeiculoEstoque0KM, UEntrarEstoqueVeiculo0KM, UConstsRenave;
+  UEntradaVeiculoEstoque0KM, UEntrarEstoqueVeiculo0KM, UConstsRenave, FDB,
+  Biblioteca;
 
 
 {$R *.dfm}
@@ -69,8 +73,12 @@ begin
     if( aEntrar.Retorno <> nil ) then
       begin
         edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aEntrar.Retorno) );
+        // Grava 0 ID no resultado
+        FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_ENTRADA_ESTOQUE='
+                                            + aEntrar.Retorno.id.toString
+                                            +' WHERE CHASSI = '
+                                            + QuotedStr( edtChassi.Text  ) );
       end;
-
 
     if( aEntrar.Erro = nil ) then
       begin
@@ -113,6 +121,15 @@ begin
 
   edtDataEntrada.Date := now;
   edtDataOdometro.Date := now;
+
+end;
+
+procedure TBoxEntradaVeiculo0KM.SpeedButton1Click(Sender: TObject);
+begin
+ edtChassi.Text:= Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:',''],
+  'Descricao','Chassi',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
 
 end;
 

@@ -36,7 +36,7 @@ type
 implementation
 
 uses
-  UConstsRenave, REST.Json, System.JSON;
+  UConstsRenave, REST.Json, System.JSON, System.SysUtils;
 
 { TSairEstoqueVeiculo0KM }
 
@@ -122,7 +122,7 @@ begin
       end;
 
   finally
-
+    freeAndNil( aJson );
   end;
 
 end;

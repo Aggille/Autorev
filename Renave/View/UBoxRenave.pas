@@ -36,6 +36,11 @@ type
     procedure BtnAutoriz_0_TransfClick(Sender: TObject);
     procedure btnCancTransfClick(Sender: TObject);
     procedure btnSaida_0_ConsumidorClick(Sender: TObject);
+    procedure BtnCancela_0_SaidaEstoqueClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,7 +55,9 @@ implementation
 uses
   UBoxConsultaVeiculos0Km, UBoxEntradaVeiculo0KM,
   UBoxAutorizaTransferenciaVeiculo0KM, UBoxTransferenciaVeiculo0KM,
-  UBoxSaidaVeiculo0KM;
+  UBoxSaidaVeiculo0KM, UBoxCancelamentoSaidaVeiculo0KM, UBoxConsultaATPV,
+  UBoxRejeitaEntradaVeiculo0KM, UBoxDevolucaoVeiculo0KM,
+  UBoxCancelaTransferenciaVeiculo0KM;
 
 {$R *.dfm}
 
@@ -58,6 +65,12 @@ procedure TBoxRenave.BtnAutoriz_0_TransfClick(Sender: TObject);
 begin
   Application.CreateForm(TBoxAutorizaTransferenciaVeiculo0KM, BoxAutorizaTransferenciaVeiculo0KM);
   BoxAutorizaTransferenciaVeiculo0KM.ShowModal;
+end;
+
+procedure TBoxRenave.BtnCancela_0_SaidaEstoqueClick(Sender: TObject);
+begin
+  Application.Createform( TBoxCancelamentoSaidaVeiculo0KM, BoxCancelamentoSaidaVeiculo0KM );
+  BoxCancelamentoSaidaVeiculo0KM.ShowModal;
 end;
 
 procedure TBoxRenave.btnCancTransfClick(Sender: TObject);
@@ -88,6 +101,30 @@ procedure TBoxRenave.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   action := caFree;
   BoxRenave := nil;
+end;
+
+procedure TBoxRenave.SpeedButton1Click(Sender: TObject);
+begin
+  Application.CreateForm( TBoxConsultaATPV, BoxConsultaATPV );
+  BoxConsultaATPV.ShowModal;
+end;
+
+procedure TBoxRenave.SpeedButton2Click(Sender: TObject);
+begin
+  Application.Createform( TBoxRejeitaEntradaVeiculo0KM, BoxRejeitaEntradaVeiculo0KM );
+  BoxRejeitaEntradaVeiculo0KM.ShowModal;
+end;
+
+procedure TBoxRenave.SpeedButton3Click(Sender: TObject);
+begin
+  Application.Createform( TBoxDevolucaoVeiculo0KM, BoxDevolucaoVeiculo0KM );
+  BoxDevolucaoVeiculo0KM.showModal;
+end;
+
+procedure TBoxRenave.SpeedButton4Click(Sender: TObject);
+begin
+  Application.CreateForm( TBoxCancelaTransferenciaVeiculo0KM, BoxCancelaTransferenciaVeiculo0KM );
+  BoxCancelaTransferenciaVeiculo0KM.ShowModal;
 end;
 
 end.
