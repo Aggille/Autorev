@@ -69,32 +69,22 @@ begin
         .Strings( edtResultado.Lines )
         .ExibeRetornoVeiculo0KM;
 
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
 
     if( aAutorizar.Retorno <> nil ) then
       begin
         edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aAutorizar.Retorno) );
         // Grava 0 ID no resultado
         if( AAutorizar.Retorno.ID > 0 ) then
-          FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_AUTORIZ_TRANSF='
-                                              + aAutorizar.Retorno.id.toString
-                                              +' WHERE ID_ESTOQUE = '
-                                              + QuotedStr( edtIdEstoque.Text  ) );
-
+          FDB1
+          .IBDatabase
+          .ExecuteImmediate('UPDATE VEICULOS SET ID_AUTORIZ_TRANSF='
+                              + aAutorizar.Retorno.id.toString
+                              +' WHERE ID_ESTOQUE = '
+                              + QuotedStr( edtIdEstoque.Text  ) );
       end;
-
-//    if( aAutorizar.Erro = nil ) then
-//      begin
-//        edtResultado.Lines.Add( 'Consulta' );
-//      end
-//    else
-//      begin
-//        edtResultado.Lines.Add( StrErroConsulta );
-//        edtResultado.Lines.Add('');
-//        edtResultado.Lines.Add(StrTituloErro + aAutorizar.Erro. Titulo);
-//        edtResultado.Lines.Add(StrDetalheErro + aAutorizar.Erro.Detalhe );
-//        edtResultado.Lines.Add(StrMensagemErro + aAutorizar.Erro.Mensagem );
-//      end;
-//
 
   finally
     aAutorizacao.Free;

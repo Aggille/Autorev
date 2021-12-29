@@ -72,16 +72,17 @@ begin
         .Strings( edtResultado.Lines )
         .ExibeRetornoVeiculo0KM;
 
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
 
       if( aTransferir.Retorno <> nil ) then
         begin
-          edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aTransferir.Retorno) );
           // Grava 0 ID no resultado
-          if( aTransferir.Retorno.ID > 0 ) then
           FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_TRANSF_ESTOQUE ='
                                               + aTransferir.Retorno.id.toString
                                               +' WHERE ID_AUTORIZ_TRANSF  = '
-                                              + QuotedStr( edtId.Text  ) );
+                                              + edtId.Text);
         end;
 
 

@@ -202,7 +202,9 @@ uses
   UCancelarTransferenciaVeiculo0KM in 'Renave\Classes\UCancelarTransferenciaVeiculo0KM.pas',
   URetornoCancelamentoTransferenciaVeiculo0KM in 'Renave\Model\URetornoCancelamentoTransferenciaVeiculo0KM.pas',
   UCancelamentoTransferenciaVeiculo0KM in 'Renave\Model\UCancelamentoTransferenciaVeiculo0KM.pas',
-  UBoxCancelaTransferenciaVeiculo0KM in 'Renave\View\UBoxCancelaTransferenciaVeiculo0KM.pas' {BoxCancelaTransferenciaVeiculo0KM};
+  UBoxCancelaTransferenciaVeiculo0KM in 'Renave\View\UBoxCancelaTransferenciaVeiculo0KM.pas' {BoxCancelaTransferenciaVeiculo0KM},
+  URetornoEstoqueVeiculo0KM in 'Renave\Model\URetornoEstoqueVeiculo0KM.pas',
+  UExibeRetornoEstoque in 'Renave\UExibeRetornoEstoque.pas';
 
 {$R *.RES}
 

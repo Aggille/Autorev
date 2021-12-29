@@ -77,30 +77,18 @@ begin
         .RetornoVeiculo0KM(aEntrar.Retorno)
         .ExibeRetornoVeiculo0KM;
 
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
+
     if( aEntrar.Retorno <> nil ) then
       begin
-        edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aEntrar.Retorno) );
         // Grava 0 ID no resultado
-        if( aEntrar.Retorno.ID > 0 ) then
         FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_ENTRADA_ESTOQUE='
                                             + aEntrar.Retorno.id.toString
                                             +' WHERE CHASSI = '
                                             + QuotedStr( edtChassi.Text  ) );
       end;
-
-//    if( aEntrar.Erro = nil ) then
-//      begin
-//        edtResultado.Lines.Add( 'Consulta' );
-//
-//      end
-//    else
-//      begin
-//        edtResultado.Lines.Add( StrErroConsulta );
-//        edtResultado.Lines.Add('');
-//        edtResultado.Lines.Add(StrTituloErro + aEntrar.Erro. Titulo);
-//        edtResultado.Lines.Add(StrDetalheErro + aEntrar.Erro.Detalhe );
-//        edtResultado.Lines.Add(StrMensagemErro + aEntrar.Erro.Mensagem );
-//      end;
 
   finally
     aEntrada.Free;

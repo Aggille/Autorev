@@ -14,7 +14,9 @@ type
     BitBtn2: TBitBtn;
     Label2: TLabel;
     edtResultado: TMemo;
+    SpeedButton1: TSpeedButton;
     procedure BitBtn1Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,7 +29,7 @@ var
 implementation
 
 uses
-  UConsultarVeiculos0KM, UConstsRenave;
+  UConsultarVeiculos0KM, UConstsRenave, Biblioteca, FDB;
 
 
 {$R *.dfm}
@@ -64,9 +66,11 @@ begin
           edtResultado.Lines.Add(StrTituloErro + aConsulta.Erro. Titulo);
           edtResultado.Lines.Add(StrDetalheErro + aConsulta.Erro.Detalhe );
           edtResultado.Lines.Add(StrMensagemErro + aConsulta.Erro.Mensagem );
-
-
         end;
+
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
 
     except
 
@@ -79,6 +83,15 @@ begin
   finally
     freeAndNil( aConsulta );
   end;
+end;
+
+procedure TBoxConsultaVeiculos0KM.SpeedButton1Click(Sender: TObject);
+begin
+ edtChassi.Text:= Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:',''],
+  'Descricao','Chassi',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+
 end;
 
 end.

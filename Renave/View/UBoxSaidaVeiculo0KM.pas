@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, JvBaseEdits, Vcl.Mask, JvExMask,
-  JvToolEdit, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
+  JvToolEdit, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons, Data.DB,
+  IBX.IBCustomDataSet, IBX.IBQuery;
 
 type
   TBoxSaidaVeiculo0KM = class(TForm)
@@ -29,12 +30,17 @@ type
     btnSair: TBitBtn;
     edtResultado: TMemo;
     edtCidade: TLabeledEdit;
-    SpeedButton1: TSpeedButton;
+    btnConsultaCidade: TSpeedButton;
     edtUF: TLabeledEdit;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    qryCliente: TIBQuery;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure btnConsultaCidadeClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,7 +56,7 @@ implementation
 
 uses URetornoSaidaEstoqueVeiculo0KM, USaidaEstoqueVeiculo0KM,USairEstoqueVeiculo0KM,
   REST.Json, UConstsRenave, UConsultarMunicipio, UMunicipio,
-  UExibeRetornoEstoque;
+  UExibeRetornoEstoque, FDB, Biblioteca, Efuncoes;
 
 procedure TBoxSaidaVeiculo0KM.btnConsultarClick(Sender: TObject);
 var
@@ -90,6 +96,20 @@ begin
         .RetornoVeiculo0KM( aSair.Retorno )
         .Strings( edtResultado.Lines )
         .ExibeRetornoVeiculo0KM;
+
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
+
+    if( aSair.Retorno<> nil ) then
+      begin
+        // Grava 0 ID no resultado
+        FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_SAIDA_ESTOQUE ='
+                                            + aSair.Retorno.id.toString
+                                            +' WHERE ID_ESTOQUE = '
+                                            + edtId.Text );
+      end;
+
 
   finally
     aSaida.Free;
@@ -131,7 +151,7 @@ begin
 
 end;
 
-procedure TBoxSaidaVeiculo0KM.SpeedButton1Click(Sender: TObject);
+procedure TBoxSaidaVeiculo0KM.btnConsultaCidadeClick(Sender: TObject);
 var
 aConsulta:TConsultaMunicipio;
 aMunicipio:TMunicipio;
@@ -166,6 +186,48 @@ begin
       aConsulta.Free;
       if( aMunicipio <> nil ) then aMunicipio.Create;
   end;
+
+end;
+
+procedure TBoxSaidaVeiculo0KM.SpeedButton2Click(Sender: TObject);
+var
+aRet:String;
+begin
+ aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( Id_Estoque,0) as id_estoque'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:', 'ID Estoque:' ],
+  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+
+  edtId.Text:= aRet;
+
+end;
+
+procedure TBoxSaidaVeiculo0KM.SpeedButton3Click(Sender: TObject);
+var
+aIdCliente:Integer;
+begin
+
+  aIdCliente := Biblioteca.PesquisaGeral('Clientes','Clientes',
+                ['Nome','Id_Clientes','Codigo','Id_Concessionaria'],
+                ['Nome:','Sequência:','Código:','Concessionária:',''],
+                'Descricao','Id_Clientes',Fdb1.SQLConnection1,'CLIENTE=','T','');
+
+  qryCliente.Close;
+  qryCliente.parambyname( 'id_clientes' ).asInteger := aIdcliente;
+  qryCliente.Open;
+
+  edtNomeComprador.text := qryCliente.fieldbyname( 'nome' ).asString;
+  edtCpfComprador.Text := LimpaNumero( qryCliente.fieldbyname( 'num_cpf' ).asString )  ;
+  edtLogradouro.Text := qryCliente.fieldbyname( 'Endereco' ).asString;
+  edtBairro.Text := qryCliente.fieldbyname( 'Bairro' ).asString;
+  edtNumero.Text := '000';
+  edtCidade.Text := qryCliente.fieldbyname( 'Cidade' ).asString;
+  edtUf.Text := qryCliente.fieldbyname( 'estado' ).asString;
+  edtCep.Text := LimpaNumero( qryCliente.fieldbyname( 'cep' ).asString );
+
+  btnConsultaCidade.Click;
+
+
 
 end;
 

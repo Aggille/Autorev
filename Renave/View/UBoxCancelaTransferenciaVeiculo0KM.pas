@@ -57,6 +57,8 @@ begin
         .Strings( edtResultado.Lines )
         .ExibeRetornoVeiculo0KM;
 
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
 
   finally
     aCancelar.Free;

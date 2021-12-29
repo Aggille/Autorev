@@ -3,7 +3,7 @@ unit UBoxDevolucaoVeiculo0KM;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
   Vcl.ExtCtrls;
 
@@ -17,9 +17,11 @@ type
     Label1: TLabel;
     edtChaveNFe: TLabeledEdit;
     edtId: TLabeledEdit;
+    SpeedButton1: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +34,7 @@ var
 implementation
 
 uses
-  UDevolverVeiculo0KM, UConstsRenave;
+  UDevolverVeiculo0KM, UConstsRenave, FDB, System.SysUtils, Biblioteca;
 
 {$R *.dfm}
 
@@ -55,6 +57,14 @@ begin
 
       begin
         edtResultado.Lines.Add( 'Devolução efetuada' );
+        FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET MOTIVO_DEVOLUCAO_MONTADORA ='
+                                            + QuotedStr( edtMotivo.Text )
+                                            + ','
+                                            + 'DATA_DEVOLUCAO_MONTADORA ='
+                                            + QuotedStr( FormatDateTime( 'mm-dd-yyyy' , now ) )
+                                            +' WHERE ID_ESTOQUE = '
+                                            + edtId.Text );
+
       end;
 
 
@@ -71,6 +81,10 @@ begin
         edtResultado.Lines.Add(StrDetalheErro + aDevolver.Erro.Detalhe );
         edtResultado.Lines.Add(StrMensagemErro + aDevolver.Erro.Mensagem );
       end;
+
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
 
   finally
     aDevolver.Free;
@@ -100,6 +114,19 @@ begin
 
       edtMotivo.ItemIndex := 0;
     end;
+
+end;
+
+procedure TBoxDevolucaoVeiculo0KM.SpeedButton1Click(Sender: TObject);
+var
+aRet:String;
+begin
+ aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( Id_Estoque,0) as id_estoque'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:', 'ID Estoque:' ],
+  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+
+  edtId.Text:= aRet;
 
 end;
 

@@ -139,6 +139,7 @@ begin
   if( FRetorno0KM is TRetornoSaidaEstoqueVeiculo0KM ) then ExibeRetorno( TRetornoSaidaEstoqueVeiculo0KM( FRetorno0KM ) );
   if( FRetorno0KM is TRetornoCancelamentoSaidaEstoqueVeiculo0KM ) then ExibeRetorno( TRetornoCancelamentoSaidaEstoqueVeiculo0KM( FRetorno0KM ) ) ;
   if( FRetorno0KM is TRetornoCancelamentoTransferenciaVeiculo0KM ) then ExibeRetorno( TRetornoCancelamentoTransferenciaVeiculo0KM( FRetorno0KM ) );
+
 end;
 
 class function TExibeRetornoEstoque.new: IExibeRetornoEstoque;

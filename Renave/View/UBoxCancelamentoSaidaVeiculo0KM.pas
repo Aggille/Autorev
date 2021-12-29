@@ -33,7 +33,7 @@ implementation
 
 uses
   UCancelarSaidaEstoqueVeiculo0KM, REST.Json, UConstsRenave,
-  UExibeRetornoEstoque;
+  UExibeRetornoEstoque, FDB;
 
 {$R *.dfm}
 
@@ -59,6 +59,20 @@ begin
         .Erro(aCancelar.Erro)
         .RetornoVeiculo0KM(aCancelar.Retorno)
         .ExibeRetornoVeiculo0KM;
+
+    edtResultado.SelStart:=0;
+    edtResultado.SelLength:=1;
+
+
+    if( aCancelar.Retorno<> nil ) then
+      begin
+        // Grava 0 ID no resultado
+        FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_CANCEL_SAIDA_ESTOQUE ='
+                                            + aCancelar.Retorno.id.toString
+                                            +' WHERE ID_SAIDA_ESTOQUE = '
+                                            + edtId.Text );
+      end;
+
 
   finally
     aCancelar.Free;
