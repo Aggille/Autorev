@@ -42,7 +42,7 @@ implementation
 
 uses
   UEntradaVeiculoEstoque0KM, UEntrarEstoqueVeiculo0KM, UConstsRenave, FDB,
-  Biblioteca;
+  Biblioteca, UExibeRetornoEstoque;
 
 
 {$R *.dfm}
@@ -70,29 +70,37 @@ begin
     aEntrar.Entrada := aEntrada;
     aEntrar.EntraEstoque;
 
+    TExibeRetornoEstoque
+      .new
+        .Strings(edtResultado.Lines)
+        .Erro(aEntrar.Erro)
+        .RetornoVeiculo0KM(aEntrar.Retorno)
+        .ExibeRetornoVeiculo0KM;
+
     if( aEntrar.Retorno <> nil ) then
       begin
         edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aEntrar.Retorno) );
         // Grava 0 ID no resultado
+        if( aEntrar.Retorno.ID > 0 ) then
         FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_ENTRADA_ESTOQUE='
                                             + aEntrar.Retorno.id.toString
                                             +' WHERE CHASSI = '
                                             + QuotedStr( edtChassi.Text  ) );
       end;
 
-    if( aEntrar.Erro = nil ) then
-      begin
-        edtResultado.Lines.Add( 'Consulta' );
-
-      end
-    else
-      begin
-        edtResultado.Lines.Add( StrErroConsulta );
-        edtResultado.Lines.Add('');
-        edtResultado.Lines.Add(StrTituloErro + aEntrar.Erro. Titulo);
-        edtResultado.Lines.Add(StrDetalheErro + aEntrar.Erro.Detalhe );
-        edtResultado.Lines.Add(StrMensagemErro + aEntrar.Erro.Mensagem );
-      end;
+//    if( aEntrar.Erro = nil ) then
+//      begin
+//        edtResultado.Lines.Add( 'Consulta' );
+//
+//      end
+//    else
+//      begin
+//        edtResultado.Lines.Add( StrErroConsulta );
+//        edtResultado.Lines.Add('');
+//        edtResultado.Lines.Add(StrTituloErro + aEntrar.Erro. Titulo);
+//        edtResultado.Lines.Add(StrDetalheErro + aEntrar.Erro.Detalhe );
+//        edtResultado.Lines.Add(StrMensagemErro + aEntrar.Erro.Mensagem );
+//      end;
 
   finally
     aEntrada.Free;

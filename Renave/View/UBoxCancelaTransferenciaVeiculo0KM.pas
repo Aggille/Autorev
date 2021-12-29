@@ -30,7 +30,8 @@ var
 implementation
 
 uses
-  UCancelarTransferenciaVeiculo0KM, REST.Json, UConstsRenave;
+  UCancelarTransferenciaVeiculo0KM, REST.Json, UConstsRenave,
+  UExibeRetornoEstoque;
 
 {$R *.dfm}
 
@@ -49,24 +50,12 @@ begin
     aCancelar.Cancelamento.idAutorizacao := edtId.AsInteger;
     aCancelar.Cancela;
 
-    if( aCancelar.Retorno <> nil ) then
-      begin
-        edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aCancelar.Retorno) );
-      end;
-
-
-    if( aCancelar.Erro = nil ) then
-      begin
-        edtResultado.Lines.Add( 'Consulta' );
-      end
-    else
-      begin
-        edtResultado.Lines.Add( StrErroConsulta );
-        edtResultado.Lines.Add('');
-        edtResultado.Lines.Add(StrTituloErro + aCancelar.Erro. Titulo);
-        edtResultado.Lines.Add(StrDetalheErro + aCancelar.Erro.Detalhe );
-        edtResultado.Lines.Add(StrMensagemErro + aCancelar.Erro.Mensagem );
-      end;
+    TExibeRetornoEstoque
+      .new
+        .Erro( aCancelar.Erro )
+        .RetornoVeiculo0KM( aCancelar.Retorno )
+        .Strings( edtResultado.Lines )
+        .ExibeRetornoVeiculo0KM;
 
 
   finally

@@ -40,7 +40,8 @@ implementation
 {$R *.dfm}
 
 uses UAutorizacaoTransferenciaVeiculo0KM,
-  UAutorizarTransferenciaVeiculo0KM, UConstsRenave, Biblioteca, FDB;
+  UAutorizarTransferenciaVeiculo0KM, UConstsRenave, Biblioteca, FDB,
+  UExibeRetornoEstoque;
 
 procedure TBoxAutorizaTransferenciaVeiculo0KM.BitBtn1Click(
   Sender: TObject);
@@ -61,26 +62,39 @@ begin
     aAutorizar.Autorizacao := aAutorizacao;
     aAutorizar.Autoriza;
 
+    TExibeRetornoEstoque
+      .new
+        .Erro( aAutorizar.Erro )
+        .RetornoVeiculo0KM( aAutorizar.Retorno )
+        .Strings( edtResultado.Lines )
+        .ExibeRetornoVeiculo0KM;
+
 
     if( aAutorizar.Retorno <> nil ) then
       begin
         edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aAutorizar.Retorno) );
+        // Grava 0 ID no resultado
+        if( AAutorizar.Retorno.ID > 0 ) then
+          FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_AUTORIZ_TRANSF='
+                                              + aAutorizar.Retorno.id.toString
+                                              +' WHERE ID_ESTOQUE = '
+                                              + QuotedStr( edtIdEstoque.Text  ) );
+
       end;
 
-    if( aAutorizar.Erro = nil ) then
-      begin
-        edtResultado.Lines.Add( 'Consulta' );
-
-      end
-    else
-      begin
-        edtResultado.Lines.Add( StrErroConsulta );
-        edtResultado.Lines.Add('');
-        edtResultado.Lines.Add(StrTituloErro + aAutorizar.Erro. Titulo);
-        edtResultado.Lines.Add(StrDetalheErro + aAutorizar.Erro.Detalhe );
-        edtResultado.Lines.Add(StrMensagemErro + aAutorizar.Erro.Mensagem );
-      end;
-
+//    if( aAutorizar.Erro = nil ) then
+//      begin
+//        edtResultado.Lines.Add( 'Consulta' );
+//      end
+//    else
+//      begin
+//        edtResultado.Lines.Add( StrErroConsulta );
+//        edtResultado.Lines.Add('');
+//        edtResultado.Lines.Add(StrTituloErro + aAutorizar.Erro. Titulo);
+//        edtResultado.Lines.Add(StrDetalheErro + aAutorizar.Erro.Detalhe );
+//        edtResultado.Lines.Add(StrMensagemErro + aAutorizar.Erro.Mensagem );
+//      end;
+//
 
   finally
     aAutorizacao.Free;
@@ -115,7 +129,7 @@ aRet:String;
 begin
  aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
   ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( Id_Estoque,0) as id_estoque'],
-  ['Modelo:','Sequência:','Chassi:','Concessionária:','', 'ID Estoque:' ],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:', 'ID Estoque:' ],
   'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
 
   edtIdEstoque.Value := StrToIntDef( aRet,0 );

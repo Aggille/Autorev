@@ -1,9 +1,12 @@
 unit URetornoAutorizacaoTransferenciaVeiculo0KM;
 
 interface
+
+uses
+  URetornoEstoqueVeiculo0KM;
 type
 
-  TRetornoAutorizacaoTransferenciaVeiculo0KM = class
+  TRetornoAutorizacaoTransferenciaVeiculo0KM = class(TRetornoEstoqueVeiculo0KM)
     private
       Fchassi: String;
       FcnpjEstabelecimentoAutorizador: String;
@@ -11,7 +14,6 @@ type
       FcpfOperadorResponsavelAutorizacao: String;
       FdataHoraAutorizacao: TDateTime;
       FestadoAutorizacaoTransferencia: String;
-      Fid: Integer;
       FidEstoque: Integer;
       FplacaVeiculo: String;
     published
@@ -21,7 +23,6 @@ type
       property cpfOperadorResponsavelAutorizacao: String read FcpfOperadorResponsavelAutorizacao write FcpfOperadorResponsavelAutorizacao;
       property dataHoraAutorizacao: TDateTime read FdataHoraAutorizacao write FdataHoraAutorizacao;
       property estadoAutorizacaoTransferencia: String read FestadoAutorizacaoTransferencia write FestadoAutorizacaoTransferencia;
-      property id: Integer read Fid write Fid;
       property idEstoque: Integer read FidEstoque write FidEstoque;
       property placaVeiculo: String read FplacaVeiculo write FplacaVeiculo;
 

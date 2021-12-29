@@ -21,9 +21,11 @@ type
     btnSair: TBitBtn;
     edtResultado: TMemo;
     edtID: TLabeledEdit;
+    SpeedButton1: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnConsultarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,7 +38,8 @@ var
 implementation
 
 uses
-  UTransferenciaVeiculo0KM, UTransferirVeiculo0KM, UConstsRenave;
+  UTransferenciaVeiculo0KM, UTransferirVeiculo0KM, UConstsRenave, FDB,
+  Biblioteca, UExibeRetornoEstoque;
 
 {$R *.dfm}
 
@@ -62,25 +65,25 @@ begin
     aTransferir.Transferencia := aTransferencia;
     aTransferir.TRansfere;
 
+    TExibeRetornoEstoque
+      .new
+        .Erro( aTransferir.Erro )
+        .RetornoVeiculo0KM( aTransferir.Retorno )
+        .Strings( edtResultado.Lines )
+        .ExibeRetornoVeiculo0KM;
+
+
       if( aTransferir.Retorno <> nil ) then
         begin
           edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aTransferir.Retorno) );
+          // Grava 0 ID no resultado
+          if( aTransferir.Retorno.ID > 0 ) then
+          FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_TRANSF_ESTOQUE ='
+                                              + aTransferir.Retorno.id.toString
+                                              +' WHERE ID_AUTORIZ_TRANSF  = '
+                                              + QuotedStr( edtId.Text  ) );
         end;
 
-
-      if( aTransferir.Erro = nil ) then
-        begin
-          edtResultado.Lines.Add( 'Consulta' );
-
-        end
-      else
-        begin
-          edtResultado.Lines.Add( StrErroConsulta );
-          edtResultado.Lines.Add('');
-          edtResultado.Lines.Add(StrTituloErro + aTransferir.Erro. Titulo);
-          edtResultado.Lines.Add(StrDetalheErro + aTransferir.Erro.Detalhe );
-          edtResultado.Lines.Add(StrMensagemErro + aTransferir.Erro.Mensagem );
-        end;
 
   finally
     aTransferencia.Free;
@@ -108,6 +111,19 @@ begin
   end;
 
   edtDataOdometro.Date := now;
+
+end;
+
+procedure TBoxTransferenciaVeiculo0KM.SpeedButton1Click(Sender: TObject);
+var
+aRet:String;
+begin
+ aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( ID_AUTORIZ_TRANSF,0) as id_estoque'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:','ID Aut.Transf.:' ],
+  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+
+  edtId.Text:= aRet;
 
 end;
 

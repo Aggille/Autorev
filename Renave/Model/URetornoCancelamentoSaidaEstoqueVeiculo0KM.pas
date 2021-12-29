@@ -1,9 +1,12 @@
 unit URetornoCancelamentoSaidaEstoqueVeiculo0KM;
 
 interface
+
+uses
+  URetornoEstoqueVeiculo0KM;
 type
 
-  TRetornoCancelamentoSaidaEstoqueVeiculo0KM = class
+  TRetornoCancelamentoSaidaEstoqueVeiculo0KM = class(TRetornoEstoqueVeiculo0KM)
     private
       FdataHoraCancelamentoSaidaEstoque: TDateTime;
       FidEstoqueGeradoNoCancelamentoSaida: Integer;

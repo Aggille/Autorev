@@ -22,11 +22,12 @@ resourcestring
   StrErroNaoAutorizado = 'Não autorizado';
   StrErroAcessoNegado = 'Acesso negado';
   StrErroServicoNaoEncontrado = 'Serviço não encontrado';
-  StrErroConsulta = 'ERRO NA CONSULTA';
+  StrErroConsulta = '*** ERRO NA CONSULTA';
   StrTituloErro = 'Título : ';
   StrDetalheErro = 'Detalhe : ';
   StrMensagemErro = 'Mensagem : ';
   StrVeiculosDisponiveis = 'VEÍCULOS DISPONÍVEIS';
+  StrResultadoConsulta = '*** RESULTADO DA CONSULTA';
 
 const
   IntHttpCode200 = 200;

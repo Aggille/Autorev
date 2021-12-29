@@ -51,7 +51,7 @@ begin
     aDevolver.Devolucao.cpfOperadorResponsavel := edtCpfOperador.Text;
     aDevolver.Devolucao.motivoDevolucaoMontadora := edtMotivo.Text;
 
-    if( aDevolver.Devolve) then
+    if( aDevolver.Devolve ) then
 
       begin
         edtResultado.Lines.Add( 'Devolução efetuada' );

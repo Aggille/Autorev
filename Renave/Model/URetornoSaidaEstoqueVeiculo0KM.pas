@@ -1,15 +1,14 @@
 unit URetornoSaidaEstoqueVeiculo0KM;
 
 interface
-uses UPessoa;
+uses UPessoa, URetornoEstoqueVeiculo0KM;
 
 type
 
-  TRetornoSaidaEstoqueVeiculo0KM = class
+  TRetornoSaidaEstoqueVeiculo0KM = class(TRetornoEstoqueVeiculo0KM)
     private
       FchaveNotaFiscalSaida: String;
       Fcomprador: TPessoa;
-      FcpfOperadorResponsavel: String;
       FdataHora: TDateTime;
       FdataHoraEnvioNotaFiscalSaida: TDateTime;
       Fmotivo: String;
@@ -17,7 +16,6 @@ type
     published
       property chaveNotaFiscalSaida: String read FchaveNotaFiscalSaida write FchaveNotaFiscalSaida;
       property comprador: TPessoa read Fcomprador write Fcomprador;
-      property cpfOperadorResponsavel: String read FcpfOperadorResponsavel write FcpfOperadorResponsavel;
       property dataHora: TDateTime read FdataHora write FdataHora;
       property dataHoraEnvioNotaFiscalSaida: TDateTime read FdataHoraEnvioNotaFiscalSaida write FdataHoraEnvioNotaFiscalSaida;
       property motivo: String read Fmotivo write Fmotivo;

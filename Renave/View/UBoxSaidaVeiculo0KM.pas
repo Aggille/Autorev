@@ -49,7 +49,8 @@ implementation
 {$R *.dfm}
 
 uses URetornoSaidaEstoqueVeiculo0KM, USaidaEstoqueVeiculo0KM,USairEstoqueVeiculo0KM,
-  REST.Json, UConstsRenave, UConsultarMunicipio, UMunicipio;
+  REST.Json, UConstsRenave, UConsultarMunicipio, UMunicipio,
+  UExibeRetornoEstoque;
 
 procedure TBoxSaidaVeiculo0KM.btnConsultarClick(Sender: TObject);
 var
@@ -83,24 +84,12 @@ begin
     aSair.Saida := aSaida;
     aSair.SaiEstoque;
 
-    if( aSair.Retorno <> nil ) then
-      begin
-        edtResultado.Lines.Add( 'Retorno:' + TJson.ObjectToJsonString(aSair.Retorno) );
-      end;
-
-
-    if( aSair.Erro = nil ) then
-      begin
-        edtResultado.Lines.Add( 'Consulta' );
-      end
-    else
-      begin
-        edtResultado.Lines.Add( StrErroConsulta );
-        edtResultado.Lines.Add('');
-        edtResultado.Lines.Add(StrTituloErro + aSair.Erro. Titulo);
-        edtResultado.Lines.Add(StrDetalheErro + aSair.Erro.Detalhe );
-        edtResultado.Lines.Add(StrMensagemErro + aSair.Erro.Mensagem );
-      end;
+    TExibeRetornoEstoque
+      .new
+        .Erro( aSair.Erro )
+        .RetornoVeiculo0KM( aSair.Retorno )
+        .Strings( edtResultado.Lines )
+        .ExibeRetornoVeiculo0KM;
 
   finally
     aSaida.Free;
