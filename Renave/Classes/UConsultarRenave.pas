@@ -44,7 +44,7 @@ implementation
 
 uses
   System.SysUtils, System.IniFiles, REST.Types, System.JSON, IdSSLOpenSSL,
-  Vcl.Forms, System.Classes, IdGlobal, UConstsRenave;
+  Vcl.Forms, System.Classes, IdGlobal, UConstsRenave, FDB;
 
 { TConsultaRenave }
 
@@ -219,23 +219,24 @@ end;
 constructor TConsultarRenave.create;
 var
 aIni:TIniFile;
-aNomeIni:String;
+aSecao,aNomeIni:String;
 aux:TREstClient;
 begin
   try
 
     aNomeIni := ExtractFilePath( Application.Exename ) +  '\Autorev.ini';
+    aSecao := 'renave_' + FDB1.IBDataSetConcessionaria.fieldbyname( 'cnpj' ).asString;
 
     if( not FileExists( aNomeIni ) ) then
       raise Exception.Create('Arquivo autorev.ini não encontrado');
 
     aIni := TIniFile.Create( aNomeIni );
-    FModo := aIni.readString( 'renave' , 'modo' , 'H' );
-    FCertificado := aIni.ReadString( 'renave' , 'certificado' , '' );
-    FSenhaCertificado := aIni.ReadString('renave' , 'senha_certificado' , '' );
-    FCertificadoSeguranca := aIni.ReadString( 'renave' , 'certificado_seguranca' , '' );
-    FChavePublica := aIni.ReadString( 'renave' , 'chave_publica' , '' );
-    FChavePrivada := aIni.ReadString( 'renave' , 'chave_privada' , '' );
+    FModo := aIni.readString( asecao , 'modo' , 'H' );
+    FCertificado := aIni.ReadString( asecao , 'certificado' , '' );
+    FSenhaCertificado := aIni.ReadString( asecao , 'senha_certificado' , '' );
+    FCertificadoSeguranca := aIni.ReadString( asecao , 'certificado_seguranca' , '' );
+    FChavePublica := aIni.ReadString( asecao , 'chave_publica' , '' );
+    FChavePrivada := aIni.ReadString( asecao , 'chave_privada' , '' );
 
     if( FModo = 'P' ) then
       FUrlBase := 'https://renave.estaleiro.serpro.gov.br/renave-ws/api/'
