@@ -1,4 +1,4 @@
-unit UBoxConsultaVeiculos0Km;
+unit UBoxConsultaEstoqueVeiculos0Km;
 
 interface
 
@@ -7,17 +7,17 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
-  TBoxConsultaVeiculos0KM = class(TForm)
+  TBoxConsultaEstoqueVeiculo0KM = class(TForm)
     Label1: TLabel;
+    Label2: TLabel;
+    SpeedButton1: TSpeedButton;
     edtchassi: TEdit;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    Label2: TLabel;
     edtResultado: TMemo;
-    SpeedButton1: TSpeedButton;
-    procedure BitBtn1Click(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,19 +25,18 @@ type
   end;
 
 var
-  BoxConsultaVeiculos0KM: TBoxConsultaVeiculos0KM;
+  BoxConsultaEstoqueVeiculo0KM: TBoxConsultaEstoqueVeiculo0KM;
 
 implementation
 
 uses
-  UConsultarVeiculos0KM, UConstsRenave, Biblioteca, FDB;
-
+  UConsultarEstoquesVeiculos0KM, UConstsRenave;
 
 {$R *.dfm}
 
-procedure TBoxConsultaVeiculos0KM.BitBtn1Click(Sender: TObject);
+procedure TBoxConsultaEstoqueVeiculo0KM.BitBtn1Click(Sender: TObject);
 var
-aConsulta : TConsultarVeiculos0KM;
+aConsulta : TConsultarEstoqueVeiculos0KM;
 aAux:String;
 begin
 
@@ -48,7 +47,7 @@ begin
 
     try
 
-      aConsulta := TConsultarVeiculos0KM.new;
+      aConsulta := TConsultarEstoqueVeiculos0KM.new;
       aConsulta.Chassi := edtChassi.Text;
       aConsulta.Consulta;
 
@@ -84,21 +83,23 @@ begin
   finally
     freeAndNil( aConsulta );
   end;
+
 end;
 
-procedure TBoxConsultaVeiculos0KM.FormClose(Sender: TObject;
+procedure TBoxConsultaEstoqueVeiculo0KM.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
   action := caFree;
-  BoxConsultaVeiculos0KM := nil;
+  BoxConsultaEstoqueVeiculo0KM := nil;
+
 end;
 
-procedure TBoxConsultaVeiculos0KM.SpeedButton1Click(Sender: TObject);
+procedure TBoxConsultaEstoqueVeiculo0KM.FormShow(Sender: TObject);
 begin
- edtChassi.Text:= Biblioteca.PesquisaGeral('Veículos','Veiculos',
-  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria'],
-  ['Modelo:','Sequência:','Chassi:','Concessionária:',''],
-  'Descricao','Chassi',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+  if( DebugHook <> 0 ) then
+  begin
+    EdtChassi.Text := '9C6RG3850N0016141';
+  end;
 
 end;
 

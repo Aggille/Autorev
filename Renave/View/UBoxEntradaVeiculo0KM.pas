@@ -108,11 +108,11 @@ begin
 
   if( DebugHook <> 0 ) then
   begin
-    EdtChassi.Text := 'KNAJT814BC7323816';
-    edtChaveNFe.Text := '43170290205691000152550010000430171000430172';
-    edtCpfOperador.Text := '62947788087';
-    edtQuilometragem.Value := 50000;
-    edtValorDaCompra.Value := 40000;
+    EdtChassi.Text := '9C6RG3850N0016141';
+    edtChaveNFe.Text := '13220104817052000106550010020067191871240110';
+    edtCpfOperador.Text := '54500168087';
+    edtQuilometragem.Value := 0;
+    edtValorDaCompra.Value := 12346.85;
   end;
 
   edtDataEntrada.Date := now;
