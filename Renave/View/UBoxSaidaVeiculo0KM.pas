@@ -35,12 +35,16 @@ type
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
     qryCliente: TIBQuery;
+    qryNota: TIBQuery;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);
     procedure btnConsultaCidadeClick(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
+    procedure carregaCliente( aCodigo:Integer );
+    procedure edtChaveNFeExit(Sender: TObject);
+    procedure carregaVeiculo( aChassi:String );
   private
     { Private declarations }
   public
@@ -89,6 +93,7 @@ begin
 
     aSair.Saida := aSaida;
     aSair.SaiEstoque;
+    edtREsultado.Lines.Clear;
 
     TExibeRetornoEstoque
       .new
@@ -118,6 +123,50 @@ begin
 
 end;
 
+procedure TBoxSaidaVeiculo0KM.carregaCliente(aCodigo: Integer);
+begin
+
+  qryCliente.Close;
+  qryCliente.parambyname( 'id_clientes' ).asInteger := aCodigo;
+  qryCliente.Open;
+
+  edtNomeComprador.text := Trim( qryCliente.fieldbyname( 'nome' ).asString );
+  edtCpfComprador.Text := LimpaNumero( qryCliente.fieldbyname( 'num_cpf' ).asString )  ;
+  edtLogradouro.Text := Trim( qryCliente.fieldbyname( 'Endereco' ).asString );
+  edtBairro.Text := Trim( qryCliente.fieldbyname( 'Bairro' ).asString );
+  edtNumero.Text := '000';
+  edtCidade.Text := Trim( qryCliente.fieldbyname( 'Cidade' ).asString );
+  edtUf.Text := Trim( qryCliente.fieldbyname( 'estado' ).asString );
+  edtCep.Text := LimpaNumero( qryCliente.fieldbyname( 'cep' ).asString );
+
+  btnConsultaCidade.Click;
+
+end;
+
+procedure TBoxSaidaVeiculo0KM.carregaVeiculo(aChassi: String);
+begin
+  with qryNota do
+  begin
+    close;
+    parambyname( 'chassi' ).asString := aChassi;
+    Open;
+    edtId.Text := fieldbyname( 'id_estoque' ).asString;
+    edtChavenfe.Text := fieldbyname( 'chave' ).asString;
+    edtDataVenda.Date := fieldbyname( 'emissao' ).asDateTime;
+    edtValorVenda.Value := fieldbyname( 'tot_nota' ).asFloat;
+    carregaCliente( fieldbyname( 'id_clientes' ).asInteger );
+  end;
+
+end;
+
+procedure TBoxSaidaVeiculo0KM.edtChaveNFeExit(Sender: TObject);
+begin
+  qryNota.close;
+  qryNota.parambyname( 'chave' ).asString := edtChaveNFe.Text;
+  qryNota.Open;
+  carregaCliente( qryNota.fieldbyname( 'id_cliente' ).asInteger );
+end;
+
 procedure TBoxSaidaVeiculo0KM.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
@@ -132,7 +181,7 @@ begin
   begin
     edtId.Text := '123456789';
     edtChaveNFe.Text := '43170290205691000152550010000430171000430172';
-    edtCpfOperador.Text := '62947788087';
+    edtCpfOperador.Text := '53880064091';
     edtValorVenda.Value := 40000;
     edtEmail.Text := 'aggille@aggille.com.br';
     edtNomeComprador.Text := 'Fulano de tal';
@@ -193,12 +242,14 @@ procedure TBoxSaidaVeiculo0KM.SpeedButton2Click(Sender: TObject);
 var
 aRet:String;
 begin
+
  aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
   ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( Id_Estoque,0) as id_estoque'],
   ['Modelo:','Sequência:','Chassi:','Concessionária:', 'ID Estoque:' ],
-  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+  'Descricao','Chassi',Fdb1.SQLConnection1,'Status <>','EM TRÂNSITO','');
 
-  edtId.Text:= aRet;
+  carregaVeiculo( aRet );
+
 
 end;
 
@@ -212,22 +263,7 @@ begin
                 ['Nome:','Sequência:','Código:','Concessionária:',''],
                 'Descricao','Id_Clientes',Fdb1.SQLConnection1,'CLIENTE=','T','');
 
-  qryCliente.Close;
-  qryCliente.parambyname( 'id_clientes' ).asInteger := aIdcliente;
-  qryCliente.Open;
-
-  edtNomeComprador.text := qryCliente.fieldbyname( 'nome' ).asString;
-  edtCpfComprador.Text := LimpaNumero( qryCliente.fieldbyname( 'num_cpf' ).asString )  ;
-  edtLogradouro.Text := qryCliente.fieldbyname( 'Endereco' ).asString;
-  edtBairro.Text := qryCliente.fieldbyname( 'Bairro' ).asString;
-  edtNumero.Text := '000';
-  edtCidade.Text := qryCliente.fieldbyname( 'Cidade' ).asString;
-  edtUf.Text := qryCliente.fieldbyname( 'estado' ).asString;
-  edtCep.Text := LimpaNumero( qryCliente.fieldbyname( 'cep' ).asString );
-
-  btnConsultaCidade.Click;
-
-
+  carregaCliente( aidCliente );
 
 end;
 

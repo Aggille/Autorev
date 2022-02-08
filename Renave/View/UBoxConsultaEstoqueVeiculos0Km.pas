@@ -62,7 +62,8 @@ begin
           for aRetornoEstoque In aConsulta.Retorno do
             begin
               edtResultado.Lines.Add( 'Chassi: ' + aRetornoEstoque.chassi
-                                    + ' ID: ' + aRetornoEstoque.id.toString );
+                                    + ' ID: ' + aRetornoEstoque.id.toString
+                                    + ' STATUS: ' + aRetornoEstoque.estado );
 
               if( edtAtualiza.Checked ) and ( aRetornoEstoque.id.toString <> '' ) then
                 begin

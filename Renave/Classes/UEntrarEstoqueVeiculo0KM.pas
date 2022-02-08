@@ -35,7 +35,7 @@ type
 implementation
 
 uses
-  Rest.JSON, UConstsRenave, System.JSON ;
+  Rest.JSON, UConstsRenave, System.JSON, System.SysUtils, System.Variants ;
 
 { TEntrarEstoqueVeiculo0KM }
 
@@ -89,6 +89,7 @@ var
 aJson,
 aJsonVendedor,
 aJsonEntrada:TJSonValue;
+
 begin
   try
 
@@ -101,13 +102,16 @@ begin
 
       aJsonVendedor := ( aJsonEntrada as TJsonObject ).GetValue('vendedor');
       FRetorno.id := TJSonValue( aJson ).getValue<Integer>('id');
-      FRetorno.numeroTermoEntradaEstoque := ( aJsonEntrada as TJsonValue ).GetValue<Integer>('numeroTermoEntradaEstoque');
+
+      if ( aJsonEntrada as TJsonValue ).GetValue<String>('numeroTermoEntradaEstoque') <> '' then
+        FRetorno.numeroTermoEntradaEstoque := ( aJsonEntrada as TJsonValue ).GetValue<Integer>('numeroTermoEntradaEstoque');
+
       FRetorno.chaveNotaFiscalEntrada := ( aJsonEntrada as TJsonValue ).GetValue<String>('chaveNotaFiscalEntrada');
       FRetorno.cpfOperadorResponsavel:= ( aJsonEntrada as TJsonValue ).GetValue<String>('cpfOperadorResponsavel');
       FRetorno.dataHora := ( aJsonEntrada as TJsonValue ).GetValue<TDateTime>('dataHora');
       FRetorno.dataHoraEnvioNotaFiscalEntrada := ( aJsonEntrada as TJsonValue ).GetValue<TDatetime>('dataHoraEnvioNotaFiscalEntrada');
 
-      if( aJsonVendedor <> nil ) then
+      if( not aJsonVendedor.Null ) then
       begin
         FRetorno.numeroDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('numeroDocumento');
         FRetorno.tipoDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('tipoDocumento');
