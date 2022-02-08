@@ -8,7 +8,7 @@ uses Windows, Messages, Classes, Graphics, Forms, Controls, Menus,
   frxClass, frxExportPDF, frxExportText, frxExportImage, frxExportHTML,
   frxExportXLS, frxExportRTF, frxExportODF, frxExportXML, frxExportCSV,
   frxExportMail, ACBrBase, ACBrEnterTab, JvExComCtrls, JvToolBar, ACBrExtenso,
-  System.ImageList, System.Actions, frxExportBaseDialog;
+  System.ImageList, System.Actions;
 
 type
   TBoxMenu = class(TForm)
