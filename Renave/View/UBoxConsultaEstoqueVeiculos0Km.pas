@@ -15,9 +15,11 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     edtResultado: TMemo;
+    edtAtualiza: TCheckBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,13 +32,15 @@ var
 implementation
 
 uses
-  UConsultarEstoquesVeiculos0KM, UConstsRenave;
+  UConsultarEstoquesVeiculos0KM, UConstsRenave, URetornoEstoqueVeiculo0KM,
+  FDB, Biblioteca;
 
 {$R *.dfm}
 
 procedure TBoxConsultaEstoqueVeiculo0KM.BitBtn1Click(Sender: TObject);
 var
 aConsulta : TConsultarEstoqueVeiculos0KM;
+aRetornoEstoque:TRetornoEstoqueVeiculo0KM;
 aAux:String;
 begin
 
@@ -55,8 +59,22 @@ begin
         begin
           edtResultado.Lines.Add( StrVeiculosDisponiveis );
           edtResultado.Lines.Add('');
-          for aAux In aConsulta.ListaChassi do
-            edtResultado.Lines.Add( aAux )
+          for aRetornoEstoque In aConsulta.Retorno do
+            begin
+              edtResultado.Lines.Add( 'Chassi: ' + aRetornoEstoque.chassi
+                                    + ' ID: ' + aRetornoEstoque.id.toString );
+
+              if( edtAtualiza.Checked ) and ( aRetornoEstoque.id.toString <> '' ) then
+                begin
+                  // Grava 0 ID no resultado
+                  FDB1.IBDatabase.ExecuteImmediate('UPDATE VEICULOS SET ID_Estoque ='
+                                                      + aRetornoEstoque.id.toString
+                                                      +' WHERE CHASSI = '
+                                                      + QuotedStr( aRetornoEstoque.chassi ) );
+                end;
+
+
+            end;
         end
       else
         begin
@@ -101,6 +119,14 @@ begin
     EdtChassi.Text := '9C6RG3850N0016141';
   end;
 
+end;
+
+procedure TBoxConsultaEstoqueVeiculo0KM.SpeedButton1Click(Sender: TObject);
+begin
+ edtChassi.Text:= Biblioteca.PesquisaGeral('Veículos','Veiculos',
+  ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria'],
+  ['Modelo:','Sequência:','Chassi:','Concessionária:',''],
+  'Descricao','Chassi',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
 end;
 
 end.

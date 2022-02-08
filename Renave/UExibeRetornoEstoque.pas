@@ -28,6 +28,7 @@ type
       procedure ExibeRetorno( aValue:TRetornoSaidaEstoqueVeiculo0KM );overload;
       procedure ExibeRetorno( aValue:TRetornoCancelamentoSaidaEstoqueVeiculo0KM );overload;
       procedure ExibeRetorno( aValue:TRetornoCancelamentoTransferenciaVeiculo0KM );overload;
+      procedure ExibeRetorno( aValue:TRetornoEstoqueVeiculo0KM );overload;
     public
       constructor create;
       destructor destroy;override;
@@ -139,7 +140,7 @@ begin
   if( FRetorno0KM is TRetornoSaidaEstoqueVeiculo0KM ) then ExibeRetorno( TRetornoSaidaEstoqueVeiculo0KM( FRetorno0KM ) );
   if( FRetorno0KM is TRetornoCancelamentoSaidaEstoqueVeiculo0KM ) then ExibeRetorno( TRetornoCancelamentoSaidaEstoqueVeiculo0KM( FRetorno0KM ) ) ;
   if( FRetorno0KM is TRetornoCancelamentoTransferenciaVeiculo0KM ) then ExibeRetorno( TRetornoCancelamentoTransferenciaVeiculo0KM( FRetorno0KM ) );
-
+  if( FRetorno0KM is TRetornoEstoqueVeiculo0KM ) then ExibeRetorno( TRetornoEstoqueVeiculo0KM( FRetorno0KM ) ) ;
 end;
 
 class function TExibeRetornoEstoque.new: IExibeRetornoEstoque;
@@ -180,6 +181,21 @@ begin
     FStrings.Add( 'Estado da Autorização: ' + aValue.estadoAutorizacaoTransferencia );
     FStrings.Add( 'ID do Estoque: ' + IntToStr( aValue.idEstoque ) );
     FStrings.Add( 'Placa do veículo: ' + aValue.placaVeiculo );
+  end;
+end;
+
+procedure TExibeRetornoEstoque.ExibeRetorno(aValue: TRetornoEstoqueVeiculo0KM);
+begin
+  if( FRetorno0KM <> nil ) then
+  begin
+    FStrings.Add( 'Chassi :' +   aValue.chassi );
+//    FStrings.Add( 'CNPJ Estab.Autorizador: ' + aValue.cnpjEstabelecimentoAutorizador );
+//    FStrings.Add( 'CNPJ Estab.Destino: ' + aValue.cnpjEstabelecimentoDestino );
+//    fStrings.Add( 'CPF Respons.Autorização: ' +  aValue.cpfOperadorResponsavelAutorizacao );
+//    FStrings.Add( 'Data / Hora da Autorização: ' +  FormatDateTime( 'dd/mm/yyyy hh:mm:ss',aValue.dataHoraAutorizacao  ));
+//    FStrings.Add( 'Estado da Autorização: ' + aValue.estadoAutorizacaoTransferencia );
+    FStrings.Add( 'ID do Estoque: ' + IntToStr( aValue.idEntradaEstoque ) );
+//    FStrings.Add( 'Placa do veículo: ' + aValue.placaVeiculo );
   end;
 end;
 

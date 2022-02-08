@@ -22,7 +22,7 @@ type
       property numeroTermoSaidaEstoque: Integer read FnumeroTermoSaidaEstoque write FnumeroTermoSaidaEstoque;
     public
       constructor create;
-      destructor destroy;override;
+      destructor destroy;
   end;
 
 implementation

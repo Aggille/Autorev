@@ -206,7 +206,8 @@ uses
   URetornoEstoqueVeiculo0KM in 'Renave\Model\URetornoEstoqueVeiculo0KM.pas',
   UExibeRetornoEstoque in 'Renave\UExibeRetornoEstoque.pas',
   UConsultarEstoquesVeiculos0KM in 'Renave\Classes\UConsultarEstoquesVeiculos0KM.pas',
-  UBoxConsultaEstoqueVeiculos0Km in 'Renave\View\UBoxConsultaEstoqueVeiculos0Km.pas' {BoxConsultaEstoqueVeiculo0KM};
+  UBoxConsultaEstoqueVeiculos0Km in 'Renave\View\UBoxConsultaEstoqueVeiculos0Km.pas' {BoxConsultaEstoqueVeiculo0KM},
+  URestricaoVeiculo0KM in 'Renave\Model\URestricaoVeiculo0KM.pas';
 
 {$R *.RES}
 

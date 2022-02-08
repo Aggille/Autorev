@@ -99,7 +99,6 @@ begin
   ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria'],
   ['Modelo:','Sequência:','Chassi:','Concessionária:',''],
   'Descricao','Chassi',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
-
 end;
 
 end.
