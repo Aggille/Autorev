@@ -22,6 +22,8 @@ type
     edtResultado: TMemo;
     edtID: TLabeledEdit;
     SpeedButton1: TSpeedButton;
+    edtData: TJvDateEdit;
+    Label1: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnConsultarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -60,6 +62,7 @@ begin
     aTransferencia.valorCompra := edtValorDaCompra.Value;
     aTransferencia.dataHoraMedicaoHodometro := edtDataOdometro.Date;
     aTransferencia.quilometragemHodometro := edtQuilometragem.asInteger;
+    aTransferencia.dataTransferenciaEstoque := edtData.Date;
 
     aTransferir := TTransferirVeiculo0KM.create;
     aTransferir.Transferencia := aTransferencia;
@@ -112,6 +115,7 @@ begin
   end;
 
   edtDataOdometro.Date := now;
+  edtData.Date := now;
 
 end;
 

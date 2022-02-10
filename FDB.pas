@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, IBDatabase, IBQuery, IBCustomDataSet, IBTable, IBSQL,
   IBDatabaseInfo, WideStrings, SqlExpr, FMTBcd, DBClient, Provider, IBStoredProc,
-  ExtCtrls, StdCtrls, DBXDynalink;
+  DBTables, ExtCtrls, StdCtrls, DBXDynalink;
 
 type
   TFDB1 = class(TForm)

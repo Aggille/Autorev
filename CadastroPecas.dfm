@@ -490,7 +490,7 @@ object BoxPecas: TBoxPecas
     Top = 37
     Width = 910
     Height = 358
-    ActivePage = TabSheetMovimentacao
+    ActivePage = TabSheetDadosGerais
     Align = alClient
     TabOrder = 1
     object TabSheetDadosGerais: TTabSheet
@@ -1110,8 +1110,8 @@ object BoxPecas: TBoxPecas
         Top = 111
         Width = 88
         Height = 21
-        Date = 41587.000000000000000000
-        Time = 0.747711944437469400
+        Date = 41587.747711944440000000
+        Time = 41587.747711944440000000
         TabOrder = 4
         DropDownDate = 39793.000000000000000000
         DataField = 'ULT_COMPRA'
@@ -1127,6 +1127,216 @@ object BoxPecas: TBoxPecas
         DataSource = DataSourceEstoque
         Enabled = False
         TabOrder = 5
+      end
+      object wwDBGrid1: TwwDBGrid
+        Left = 200
+        Top = 30
+        Width = 581
+        Height = 210
+        ControlType.Strings = (
+          'NOME;CustomEdit;edtConcessionaria;F')
+        Selected.Strings = (
+          'NOME'#9'66'#9'Concession'#225'ria'#9#9
+          'QUANTIDADE'#9'24'#9'Qtde.'#9#9)
+        IniAttributes.Delimiter = ';;'
+        IniAttributes.UnicodeIniFile = False
+        TitleColor = clBtnFace
+        FixedCols = 0
+        ShowHorzScrollBar = True
+        DataSource = dtsEstMinimo
+        KeyOptions = [dgEnterToTab, dgAllowDelete, dgAllowInsert]
+        Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgWordWrap]
+        TabOrder = 6
+        TitleAlignment = taLeftJustify
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        TitleLines = 1
+        TitleButtons = False
+      end
+      object wwDBNavigator1: TwwDBNavigator
+        Left = 556
+        Top = 246
+        Width = 225
+        Height = 25
+        DataSource = dtsEstMinimo
+        RepeatInterval.InitialDelay = 500
+        RepeatInterval.Interval = 100
+        object wwDBNavigator1First: TwwNavButton
+          Left = 0
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Move to first record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1First'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 0
+          Style = nbsFirst
+        end
+        object wwDBNavigator1PriorPage: TwwNavButton
+          Left = 25
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Move backward 10 records'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1PriorPage'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 1
+          Style = nbsPriorPage
+        end
+        object wwDBNavigator1Prior: TwwNavButton
+          Left = 50
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Move to prior record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Prior'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 2
+          Style = nbsPrior
+        end
+        object wwDBNavigator1Next: TwwNavButton
+          Left = 75
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Move to next record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Next'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 3
+          Style = nbsNext
+        end
+        object wwDBNavigator1NextPage: TwwNavButton
+          Left = 100
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Move forward 10 records'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1NextPage'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 4
+          Style = nbsNextPage
+        end
+        object wwDBNavigator1Last: TwwNavButton
+          Left = 125
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Move to last record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Last'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 5
+          Style = nbsLast
+        end
+        object wwDBNavigator1Insert: TwwNavButton
+          Left = 150
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Insert new record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Insert'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 6
+          Style = nbsInsert
+        end
+        object wwDBNavigator1Delete: TwwNavButton
+          Left = 175
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Delete current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Delete'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 7
+          Style = nbsDelete
+        end
+        object wwDBNavigator1Edit: TwwNavButton
+          Left = 200
+          Top = 0
+          Width = 25
+          Height = 25
+          Hint = 'Edit current record'
+          ImageIndex = -1
+          NumGlyphs = 2
+          Spacing = 4
+          Transparent = False
+          Caption = 'wwDBNavigator1Edit'
+          Enabled = False
+          DisabledTextColors.ShadeColor = clGray
+          DisabledTextColors.HighlightColor = clBtnHighlight
+          Index = 8
+          Style = nbsEdit
+        end
+      end
+      object edtConcessionaria: TwwDBLookupCombo
+        Left = 560
+        Top = 309
+        Width = 121
+        Height = 21
+        DropDownAlignment = taLeftJustify
+        Selected.Strings = (
+          'EMPRESA'#9'50'#9'EMPRESA'#9'F')
+        DataField = 'ID_CONCESSIONARIA'
+        DataSource = dtsEstMinimo
+        LookupTable = tblConcessionarias
+        LookupField = 'ID_CONCESSIONARIA'
+        Options = [loColLines, loRowLines, loTitles]
+        TabOrder = 8
+        AutoDropDown = True
+        ShowButton = True
+        PreciseEditRegion = False
+        AllowClearKey = False
+        ShowMatchText = True
       end
     end
     object TabSheetTributacao: TTabSheet
@@ -1340,7 +1550,7 @@ object BoxPecas: TBoxPecas
     Left = 456
     Top = 24
     Bitmap = {
-      494C01010F001400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010F001400300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000A4676900A467
       6900A4676900A4676900A4676900A4676900A4676900A4676900A4676900A467
@@ -3197,6 +3407,7 @@ object BoxPecas: TBoxPecas
       'from Concessionaria')
     ParamCheck = True
     UniDirectional = False
+    Active = True
     Left = 384
     Top = 312
     object tblConcessionariasEMPRESA: TIBStringField

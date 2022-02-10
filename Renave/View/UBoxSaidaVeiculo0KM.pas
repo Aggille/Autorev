@@ -43,7 +43,6 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure carregaCliente( aCodigo:Integer );
-    procedure edtChaveNFeExit(Sender: TObject);
     procedure carregaVeiculo( aChassi:String );
   private
     { Private declarations }
@@ -157,14 +156,6 @@ begin
     carregaCliente( fieldbyname( 'id_clientes' ).asInteger );
   end;
 
-end;
-
-procedure TBoxSaidaVeiculo0KM.edtChaveNFeExit(Sender: TObject);
-begin
-  qryNota.close;
-  qryNota.parambyname( 'chave' ).asString := edtChaveNFe.Text;
-  qryNota.Open;
-  carregaCliente( qryNota.fieldbyname( 'id_cliente' ).asInteger );
 end;
 
 procedure TBoxSaidaVeiculo0KM.FormClose(Sender: TObject;

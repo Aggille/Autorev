@@ -2,8 +2,8 @@ object BoxComprasNovos: TBoxComprasNovos
   Left = 15
   Top = 145
   Caption = 'Entrada de compras de ve'#237'culos novos'
-  ClientHeight = 172
-  ClientWidth = 590
+  ClientHeight = 392
+  ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,10 +20,12 @@ object BoxComprasNovos: TBoxComprasNovos
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 590
-    Height = 153
+    Width = 650
+    Height = 373
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 590
+    ExplicitHeight = 153
     object Label5: TLabel
       Left = 12
       Top = 12
@@ -65,7 +67,7 @@ object BoxComprasNovos: TBoxComprasNovos
       OnKeyPress = FormKeyPress
     end
     object BtnConfirmaChave: TBitBtn
-      Left = 171
+      Left = 35
       Top = 115
       Width = 222
       Height = 30
@@ -205,10 +207,12 @@ object BoxComprasNovos: TBoxComprasNovos
   end
   object JvStatusBar1: TJvStatusBar
     Left = 0
-    Top = 153
-    Width = 590
+    Top = 373
+    Width = 650
     Height = 19
     Panels = <>
+    ExplicitTop = 153
+    ExplicitWidth = 590
   end
   object tblNofi: TIBDataSet
     Database = FDB1.IBDatabase
