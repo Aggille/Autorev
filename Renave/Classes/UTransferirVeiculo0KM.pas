@@ -98,7 +98,7 @@ begin
     aJson := TJsonObject.ParseJSONValue(aValue);
     aJsonEntrada := ( aJson as TJsonObject ).GetValue('entradaEstoque');
 
-    if( aJsonEntrada <> nil ) then
+    if( not aJsonEntrada.null ) then
     begin
       aJsonVendedor := ( aJsonEntrada as TJsonObject ).GetValue('vendedor');
       FRetorno.numeroTermoEntradaEstoque := ( aJsonEntrada as TJsonValue ).GetValue<Integer>('numeroTermoEntradaEstoque');
@@ -107,7 +107,7 @@ begin
       FRetorno.dataHora := ( aJsonEntrada as TJsonValue ).GetValue<TDateTime>('dataHora');
       FRetorno.dataHoraEnvioNotaFiscalEntrada := ( aJsonEntrada as TJsonValue ).GetValue<TDatetime>('dataHoraEnvioNotaFiscalEntrada');
 
-      if( aJsonVendedor <> nil ) then
+      if( not aJsonVendedor.null ) then
       begin
         FRetorno.numeroDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('numeroDocumento');
         FRetorno.tipoDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('tipoDocumento');

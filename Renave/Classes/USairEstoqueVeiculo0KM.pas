@@ -73,13 +73,13 @@ begin
       aJsonSaida := ( aJson as TJsonObject ).GetValue('saidaEstoque');
 
 
-      if( aJsonSaida <> nil ) then
+      if( not aJsonSaida.null ) then
       begin
 
         aJsonComprador := TJsonObject( aJsonSaida ).GetValue( 'comprador' );
 
 
-        if( aJsonComprador <> nil ) then
+        if( not aJsonComprador.null ) then
           aJsonEndereco := TJsonObject( aJsonComprador ).getValue( 'endereco' );
 
         FRetorno.chaveNotaFiscalSaida := TJsonObject( aJsonSaida ).GetValue<String>('chaveNotaFiscalSaida' );
@@ -89,13 +89,13 @@ begin
         FRetorno.motivo := TJsonObject( aJsonSaida ).GetValue<String>('motivo' );
         FRetorno.numeroTermoSaidaEstoque := TJsonObject( aJsonSaida ).GetValue<Integer>('numeroTermoSaidaEstoque' );
 
-        if( aJsonComprador <> nil ) then
+        if( not aJsonComprador.null ) then
         begin
           FRetorno.Comprador.Nome := TJsonObject( aJsonComprador ).GetValue<String>('nome' );
           FRetorno.Comprador.numeroDocumento := TJsonObject( aJsonComprador ).GetValue<String>('numeroDocumento' );
           FRetorno.Comprador.tipoDocumento:= TJsonObject( aJsonComprador ).GetValue<String>('tipoDocumento' );
 
-          if( aJsonEndereco <> nil ) then
+          if( not aJsonEndereco.null ) then
           begin
 
             aJsonMunicipio := TJsonObject( AJsonEndereco ).GetValue( 'municipio' );
@@ -106,7 +106,7 @@ begin
             FRetorno.Comprador.Endereco.logradouro:= TJsonObject( aJsonEndereco ).GetValue<String>('logradouro');
             FRetorno.Comprador.Endereco.numero:= TJsonObject( aJsonEndereco ).GetValue<String>('numero');
 
-            if( aJsonMunicipio <> nil ) then
+            if( not aJsonMunicipio.null ) then
             begin
               FRetorno.Comprador.Endereco.Municipio.id := TJsonObject( aJsonMunicipio ).GetValue<String>('id' );
               FRetorno.Comprador.Endereco.Municipio.nome:= TJsonObject( aJsonMunicipio ).GetValue<String>('nome' );

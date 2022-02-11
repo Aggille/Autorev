@@ -92,7 +92,7 @@ begin
     FRetorno := TRetornoAutorizacaoTransferenciaVeiculo0KM.Create;
     aJson := TJsonObject.ParseJSONValue(aValue);
 
-    if( aJson <> nil ) then
+    if( not aJson.null ) then
     begin
       FRetorno.chassi := TJsonObject( aJson ).getValue<String>( 'chassi' );
       FRetorno.cnpjEstabelecimentoAutorizador := TJsonObject( aJson ).getValue<String>( 'cnpjEstabelecimentoAutorizador' );

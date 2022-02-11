@@ -11,8 +11,12 @@ unit UConsultarEstoquesVeiculos0KM;
 interface
 
 uses
-  System.Classes, UErroConsultaRenave, UConsultarRenave,
-  URetornoEstoqueVeiculo0KM, System.Generics.Collections;
+  System.Classes, UErroConsultaRenave,
+  URetornoEstoqueVeiculo0KM,
+  UConsultarRenave,Variants,System.Generics.Collections,
+  System.JSON, UConstsRenave, System.SysUtils, UEntradaVeiculoEstoque0KM,
+  USaidaEstoqueVeiculo0KM;
+
 
 type
   TConsultarEstoqueVeiculos0KM = class
@@ -36,9 +40,6 @@ type
 
 implementation
 
-uses
-  System.JSON, UConstsRenave, System.SysUtils;
-
 { TConsultarEstoqueVeiculos0KM }
 
 function TConsultarEstoqueVeiculos0KM.Consulta: boolean;
@@ -50,9 +51,11 @@ jObject:TJsonObject;
 i:Integer;
 aJson,
 aJsonVendedor,
+aJsonSaida,
 aJsonEntrada:TJSonValue;
 aRetornoEstoque:TRetornoEstoqueVeiculo0KM;
-
+aEntradaEstoque:TEntradaEstoqueVeiculo0KM;
+aSaidaEstoque:TSaidaEstoqueVeiculo0KM;
 begin
 
   try
@@ -76,11 +79,14 @@ begin
      for i := 0 to jArray.Size - 1 do
      begin
 
+      aEntradaEstoque := TEntradaEstoqueVeiculo0KM.Create;
+      aSaidaEstoque := TSaidaEstoqueVeiculo0KM.Create;
       aRetornoEstoque := TRetornoEstoqueVeiculo0KM.Create;
 
       jObject := jArray.Get(i) as TJsonObject;
 
       aJsonEntrada := TJsonObject( jObject ).GetValue( 'entradaEstoque' );
+      aJsonSaida := TJsonObject( jObject ).GetValue( 'saidaEstoque' );
 
       aRetornoEstoque.id := jObject.GetValue<integer>('id');
       aRetornoEstoque.estado := jObject.GetValue<string>('estado');
@@ -92,11 +98,20 @@ begin
       aRetornoEstoque.renavam := jObject.GetValue<string>('renavam');
       aRetornoEstoque.tipoCRV:= jObject.GetValue<string>('tipoCrv');
 
-      if( aJsonEntrada <> nil ) then
+      if( not aJsonEntrada.null ) then
         begin
-          //aRetornoEstoque.idEntradaEstoque := aJsonEntrada.getValue<Integer>('id' );
+          aEntradaEstoque.cpfOperadorResponsavel := aJsonEntrada.getValue<String>('cpfOperadorResponsavel' );
+          aEntradaEstoque.chaveNotaFiscal := aJsonEntrada.getValue<String>('chaveNotaFiscalEntrada' );
+          aEntradaEstoque.dataEntradaEstoque := aJsonEntrada.getValue<TDateTime>('dataHora' );
         end;
 
+      if( not aJsonSaida.Null ) then
+        begin
+          aSaidaEstoque.cpfOperadorResponsavel := aJsonSaida.getValue<String>('cpfOperadorResponsavel' );
+          aSaidaEstoque.chaveNotaFiscal := aJsonSaida.getValue<String>('chaveNotaFiscalSaida' );
+          aSaidaEstoque.Motivo := aJsonSaida.getValue<String>('motivo' );
+          aSaidaEstoque.dataVenda := aJsonSaida.getValue<TDateTime>('dataHora' );
+        end;
 
       FREtorno.Add( aRetornoEstoque );
 
