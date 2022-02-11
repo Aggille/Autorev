@@ -29,16 +29,17 @@ type
 implementation
 
 uses
-  UConstsRenave, System.JSON, System.SysUtils;
+  UConstsRenave, System.JSON, System.SysUtils, ACBrUtil;
 
 { TConsultaMunicipio }
 
 function TConsultaMunicipio.ConsultaPorNome(aNome: String): TMunicipio;
 var
-aRetorno,aURL:String;
+aNomeJson,aRetorno,aURL:String;
 aMunicipio:TMunicipio;
 ajArray:TJsonArray;
 aJson:TJsonValue;
+i:Integer;
 
 begin
 
@@ -46,7 +47,7 @@ begin
 
     aNome := StringReplace( aNome, ' ' , '%20' , [rfReplaceAll] );
     aNome := semAcentos( aNome );
-
+    aNome := Upper( aNome );
     aURL := 'municipios?nome='+aNome ;
     FConsulta.URL := aURL;
     Fconsulta.Metodo := StrHttpGET;
@@ -58,15 +59,34 @@ begin
 
       aRetorno := FConsulta.Retorno;
       aJArray :=  TJSONObject.ParseJSONValue(aRetorno) as TJSONArray;
-
-      if( aJArray.Count > 0 ) then
+      aNome := StringReplace( aNome , '%20' , ' ' , [rfReplaceAll] );
+      for i := 0 to aJArray.Size - 1 do
       begin
-        aJson := ajArray.Get(0) as TJsonObject;
-        aMunicipio := TMunicipio.Create;
-        aMunicipio.id := aJson.GetValue<String>('id');
-        aMunicipio.nome := aJson.GetValue<String>('nome');
-        aMunicipio.uf:= aJson.GetValue<String>('uf');
+
+          aJson := aJArray.Get(i) as TJsonObject;
+          aNomeJson := aJson.GetValue<String>('nome');
+          aNomeJson := semAcentos( aNomeJson );
+
+          if( Upper( aNome ) = Upper( aNomeJson ) ) then
+          begin
+            aMunicipio := TMunicipio.Create;
+            aMunicipio.id := aJson.GetValue<String>('id');
+            aMunicipio.nome := aJson.GetValue<String>('nome');
+            aMunicipio.uf:= aJson.GetValue<String>('uf');
+            break
+          end;
+
+
       end;
+//
+//      if( aJArray.Count > 0 ) then
+//      begin
+//        aJson := ajArray.Get(0) as TJsonObject;
+//        aMunicipio := TMunicipio.Create;
+//        aMunicipio.id := aJson.GetValue<String>('id');
+//        aMunicipio.nome := aJson.GetValue<String>('nome');
+//        aMunicipio.uf:= aJson.GetValue<String>('uf');
+//      end;
 
     end;
 

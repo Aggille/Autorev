@@ -15,6 +15,7 @@ type
       FcpfOperadorResponsavel: String;
       FidEstoque: Integer;
       FemailEstabelecimento: String;
+    FMotivo: String;
     published
       property chaveNotaFiscal: String read FchaveNotaFiscal write FchaveNotaFiscal;
       property comprador: TPessoa read Fcomprador write FComprador;
@@ -23,6 +24,7 @@ type
       property emailEstabelecimento: String read FemailEstabelecimento write FemailEstabelecimento;
       property idEstoque: Integer read FidEstoque write FidEstoque;
       property valorVenda: double read FvalorVenda write FvalorVenda;
+      property Motivo: String read FMotivo write FMotivo;
     public
       constructor create;
       destructor destroy;override;

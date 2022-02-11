@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls, ComCtrls, ImgList, frxClass, Buttons,
-  JvExStdCtrls, JvCombobox, Mask, rxToolEdit, frxADOComponents,
+  JvExStdCtrls, JvCombobox, Mask, rxToolEdit,
   DB, IBCustomDataSet, frxDBSet, frxChart, frxCross, System.ImageList;
 
 type
