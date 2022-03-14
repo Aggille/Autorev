@@ -7,8 +7,7 @@ uses
   Dialogs, DB, IBDatabase, StdCtrls, Buttons, wwdbdatetimepicker, ACBrUtil,ACBrEPCBlocos,
   IBCustomDataSet, ActnList, ComCtrls, wwdblook, DBClient,ACBrSpedFiscal,
   ACBrEFDBlocos, ACBrTXTClass, Grids, Wwdbigrd, Wwdbgrid, ExtCtrls, IBQuery,
-  ACBrSpedPisCofins,AcbrSped, System.Actions, ACBrBase, ACBrEFDImportar,
-  Vcl.Mask, JvExMask, JvToolEdit, JvMaskEdit;
+  ACBrSpedPisCofins,AcbrSped, System.Actions, ACBrBase;
 
 type
   TBoxSped = class(TForm)
@@ -129,6 +128,7 @@ type
     qryItemNfUNIDADE: TIBStringField;
     qryItemNfCST: TIBStringField;
     qryItemNfSUBST: TIBStringField;
+    qryItemNfALIQ_ICMS: TIBBCDField;
     qryItemNfICMS: TIBBCDField;
     qryItemNfCUSTO: TIBBCDField;
     qryItemNfPRECO: TIBBCDField;
@@ -204,7 +204,9 @@ type
     qryFilialDIVIDIR_NF_GARANTIA: TIBStringField;
     qryFilialID_BANCO_CONCESSIONARIA: TIntegerField;
     qryTotItemBASE_ICMS: TIBBCDField;
+    qryTotItemICMS: TIBBCDField;
     qryTotItemTOTAL: TIBBCDField;
+    qryTotItemALIQ_ICMS: TIBBCDField;
     qryTotItemCST: TIBStringField;
     qryTotItemCFOP: TIBStringField;
     qryNfe: TIBQuery;
@@ -223,6 +225,7 @@ type
     qryNfeCOMISSAO: TIBBCDField;
     qryNfeSAIDA: TDateField;
     qryNfeHORA: TIBStringField;
+    qryNfeCFOP: TIBStringField;
     qryNfeNAT_OP: TIBStringField;
     qryNfeIE_SUBS: TIBStringField;
     qryNfeDESC_PEC: TIBBCDField;
@@ -502,6 +505,7 @@ type
     IBStringField4: TIBStringField;
     IBStringField5: TIBStringField;
     IBStringField6: TIBStringField;
+    IBBCDField1: TIBBCDField;
     IBBCDField2: TIBBCDField;
     IBBCDField3: TIBBCDField;
     IBBCDField4: TIBBCDField;
@@ -531,7 +535,9 @@ type
     dtsItemNFT: TDataSource;
     qryTotItemNFT: TIBQuery;
     IBBCDField7: TIBBCDField;
+    IBBCDField8: TIBBCDField;
     IBBCDField9: TIBBCDField;
+    IBBCDField10: TIBBCDField;
     IBStringField27: TIBStringField;
     IBStringField28: TIBStringField;
     dtsTotItemNFT: TDataSource;
@@ -680,105 +686,6 @@ type
     qryItemNfVBC_EFET: TIBBCDField;
     qryItemNfPICMS_EFET: TIBBCDField;
     qryItemNfVICMS_EFET: TIBBCDField;
-    tblveiculos4ID_PEDIDO_VEICULOS: TIntegerField;
-    tblveiculos4ID_AVALISTA: TIntegerField;
-    tblveiculos4ID_FINANCEIRA: TIntegerField;
-    tblveiculos4VALOR: TIBBCDField;
-    tblveiculos4BASE_COMISSAO: TIBBCDField;
-    tblveiculos4NF: TIBStringField;
-    tblveiculos4DATA_NF: TDateField;
-    tblveiculos4VALOR_DA_VENDA: TIBBCDField;
-    tblveiculos4VALOR_A_RECEBER: TIBBCDField;
-    tblveiculos4ID_USUARIO: TIntegerField;
-    tblveiculos4USUARIO: TIBStringField;
-    tblveiculos4NF_CANCELAMENTO: TIBStringField;
-    tblveiculos4DATA_NF_CANCELAMENTO: TDateField;
-    tblveiculos4VALOR_VIP: TIBBCDField;
-    tblveiculos4VALOR_NORMAL: TIBBCDField;
-    tblveiculos4VALOR_EXCLUSIVO: TIBBCDField;
-    tblveiculos4VALOR_VIP2: TIBBCDField;
-    tblveiculos4VALOR_NORMAL2: TIBBCDField;
-    tblveiculos4VALOR_EXCLUSIVO2: TIBBCDField;
-    tblveiculos4VALOR_TAXAS: TIBBCDField;
-    tblveiculos4FORMA_VISITA: TIBStringField;
-    tblveiculos4ID_VEICULO_USADO: TIntegerField;
-    tblveiculos4ID_VEICULOS1: TIntegerField;
-    tblveiculos4ID_CONCESSIONARIA1: TIntegerField;
-    tblveiculos4ID_CLIENTES1: TIntegerField;
-    tblveiculos4ID_MODELO_VEICULO1: TIntegerField;
-    tblveiculos4CHASSI1: TIBStringField;
-    tblveiculos4MARCA1: TIBStringField;
-    tblveiculos4MODELO1: TIBStringField;
-    tblveiculos4COR1: TIBStringField;
-    tblveiculos4ANO_FABRICACAO1: TIBStringField;
-    tblveiculos4ANO_MODELO1: TIBStringField;
-    tblveiculos4PLACA1: TIBStringField;
-    tblveiculos4RENAVAM1: TIBStringField;
-    tblveiculos4MOTOR1: TIBStringField;
-    tblveiculos4STATUS1: TIBStringField;
-    tblveiculos4DATA_RECEBIMENTO: TDateField;
-    tblveiculos4NCM: TIBStringField;
-    tblveiculos4COM_AVARIA: TIBStringField;
-    tblveiculos4CODIGO: TIBStringField;
-    tblveiculos4VBC_STRET: TIBBCDField;
-    tblveiculos4PST: TIBBCDField;
-    tblveiculos4VICMS_STRET: TIBBCDField;
-    tblveiculos4PRED_BCST: TIBBCDField;
-    tblveiculos4VBC_ST: TIBBCDField;
-    tblveiculos4PICMS_ST: TIBBCDField;
-    tblveiculos4VICMS_ST: TIBBCDField;
-    tblveiculos4ID_CLIENTES2: TIntegerField;
-    tblveiculos4ID_CLIENTES3: TIntegerField;
-    tblVeiculos2VBC_ST: TIBBCDField;
-    tblVeiculos2VBC_STRET: TIBBCDField;
-    tblVeiculos2VICMS_ST: TIBBCDField;
-    tblVeiculos2VICMS_STRET: TIBBCDField;
-    qryNfeCFOP: TIBStringField;
-    qryItemNfeVBC_STRET: TIBBCDField;
-    qryItemNfePST: TIBBCDField;
-    qryItemNfeVICMS_STRET: TIBBCDField;
-    qryItemNfePMVAST: TIBBCDField;
-    qryItemNfePRED_BCST: TIBBCDField;
-    qryItemNfeVBC_ST: TIBBCDField;
-    qryItemNfePICMS_ST: TIBBCDField;
-    qryItemNfeVICMS_ST: TIBBCDField;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    CheckBoxH20VeiculosZerado: TCheckBox;
-    OpenDialog1: TOpenDialog;
-    SpeedButton1: TSpeedButton;
-    spedImportar: TACBrSpedFiscalImportar;
-    Edit3: TEdit;
-    ProgressBar1: TProgressBar;
-    Label8: TLabel;
-    Label9: TLabel;
-    qryItemNfALIQ_ICMS: TIBBCDField;
-    qryItemNfICMS_SUBSTITUTO: TIBBCDField;
-    qryTotItemALIQ_ICMS: TIBBCDField;
-    qryTotItemICMS: TFMTBCDField;
-    qryItemNFTALIQ_ICMS: TIBBCDField;
-    qryItemNFTVL_PIS: TIBBCDField;
-    qryItemNFTCST_PIS: TIBStringField;
-    qryItemNFTVL_BC_PIS: TIBBCDField;
-    qryItemNFTALIQ_PIS_PERC: TIBBCDField;
-    qryItemNFTVL_COFINS: TIBBCDField;
-    qryItemNFTCST_COFINS: TIBStringField;
-    qryItemNFTVL_BC_COFINS: TIBBCDField;
-    qryItemNFTALIQ_COFINS_PERC: TIBBCDField;
-    qryItemNFTOUTRO_VALOR: TIBBCDField;
-    qryItemNFTVBC_STRET: TIBBCDField;
-    qryItemNFTPST: TIBBCDField;
-    qryItemNFTVICMS_STRET: TIBBCDField;
-    qryItemNFTPRED_BCEFET: TIBBCDField;
-    qryItemNFTVBC_EFET: TIBBCDField;
-    qryItemNFTPICMS_EFET: TIBBCDField;
-    qryItemNFTVICMS_EFET: TIBBCDField;
-    qryItemNFTICMS_SUBSTITUTO: TIBBCDField;
-    qryTotItemNFTALIQ_ICMS: TIBBCDField;
-    qryTotItemNFTICMS: TFMTBCDField;
-    QryEstoqueSUBST_TRIB: TIBStringField;
-    CheckBoxH20PecasZerado: TCheckBox;
-    CheckBoxDeterminacaoFisco: TCheckBox;
     procedure btnFechar_PClick(Sender: TObject);
     procedure btnGerar_PClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -794,8 +701,6 @@ type
     procedure GeraBlocoK();
     procedure GeraBlocoH();
     procedure GeraBloco0();
-    procedure SpeedButton1Click(Sender: TObject);
-    procedure percorreArquivoTexto ( nomeDoArquivo: String );
   private
     { Private declarations }
   public
@@ -1049,7 +954,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecas.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecas.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC'; //trim( tblPecas.fieldbyname('Unidade' ).asString ); //'PC'
+               UNID_INV    := trim( tblPecas.fieldbyname('Unidade' ).asString ); //'PC'
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecas.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
@@ -1078,7 +983,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecasE.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecasE.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC'; //trim( tblPecasE.fieldbyname('Unidade' ).asString );
+               UNID_INV    := trim( tblPecasE.fieldbyname('Unidade' ).asString );
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecasE.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
@@ -1107,7 +1012,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecasT.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecasT.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC';//trim( tblPecasT.fieldbyname('Unidade' ).asString );
+               UNID_INV    := trim( tblPecasT.fieldbyname('Unidade' ).asString );
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecasT.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
@@ -1330,8 +1235,8 @@ begin
 
               with Registro0190New do
               begin
-                 UNID  := 'PC';         //UN
-                 DESCR := 'PECA'; //Unidades
+                 UNID  := 'UN';
+                 DESCR := 'Unidade'
               end;
 
              with Registro0500New do
@@ -1403,7 +1308,7 @@ begin
                        DESCR_ITEM   := fieldbyname( 'descricao' ).asString;
                        COD_BARRA    := '';
                        COD_ANT_ITEM := '';
-                       UNID_INV     := 'PC';
+                       UNID_INV     := 'UN';
                   end;
                   next;
                 end;
@@ -1447,29 +1352,21 @@ begin
 
               with RegistroA100New do
               begin
-
                  IND_OPER      := itoPrestado;//itoContratado;
                  IND_EMIT      := iedfProprio;
                  COD_PART      := fieldbyname( 'id_clientes' ).asString;//
                  COD_SIT       := sdfRegular;
-
                  SER           := '';//fieldbyname( 'serienf').asString;
                  SUB           := '';
-
                  NUM_DOC       := fieldbyname( 'numero' ).asString;
-
                  if  (BoxEmpresas.ID_ConcessionariaEmUso.Text = '4') then
                     NUM_DOC := IntToStr(StrToInt(Substr(FieldByName('Numero_NFSE').AsString,5,11)));
-
                  CHV_NFSE      := '';
                  DT_DOC        := fieldbyname( 'emissao' ).asDateTime;
-
                  DT_EXE_SERV   := fieldbyname( 'emissao' ).asDateTime;
-
                  VL_DOC        := fieldbyname( 'tot_nota').asCurrency;
 //                 IND_PGTO      := TSped.tpSemPagamento;
                  VL_DESC       := 0;
-
                  VL_BC_PIS     := VL_DOC;
                  VL_PIS        := VL_DOC * 0.0165;
                  VL_BC_COFINS  := VL_DOC;
@@ -1499,7 +1396,6 @@ begin
                       VL_DESC          := 0;
                       NAT_BC_CRED      := bccOutrasOpeComDirCredito;
                       IND_ORIG_CRED    := opcMercadoInterno;
-
                       CST_PIS          := ACBrEPCBlocos.stpisValorAliquotaNormal;//stpisValorAliquotaDiferenciada; //comentei para compilar sped pis e cofins
                       VL_BC_PIS        := VL_ITEM;
                       ALIQ_PIS         := 1.65;
@@ -1508,7 +1404,7 @@ begin
                       VL_BC_COFINS     := VL_ITEM;
                       ALIQ_COFINS      := 7.6;
                       VL_COFINS        := VL_ITEM * ALIQ_COFINS / 100 ;
-                      COD_CTA           := '1022|||6||||PC||5933|1|1|'+
+                      COD_CTA           := '1022|||6||||UN||5933|1|1|'+
                         qryFilial.FieldByName('Codigo_Municipio').AsString+'|1|'+CurrToStr(VL_ITEM)+'|||'+
                         IntToStr(qryFilial.FieldByName('aliquota_iss').AsInteger * 100) + //ALIQ ISS
                         CurrToStr(vl_item *  qryFilial.FieldByName('aliquota_iss').AsCurrency) + //vl_iss
@@ -2058,140 +1954,60 @@ begin
                      COD_CTA           := '';
                      mCOD_CTA          := '';
 
-//                     if (qryItemNF.FieldByName('CST').AsString = '051') and
-//                        (qryItemNF.FieldByName('Descricao').AsString = 'Motocicleta') then
- //                         mCOD_CTA           := '2001|||4||||||||||||'; //mexi menos um
+                     if (qryItemNF.FieldByName('CST').AsString = '051') and
+                        (qryItemNF.FieldByName('Descricao').AsString = 'Motocicleta') then
+                        COD_CTA           := '2001|4||||||||||||||||';
                      if QryNF.FieldByName('ENT_SAI').AsString = 'E' then
-                          mCOD_CTA          := '|||||||||||||||'; //mexi menos um
-                     if (QryNF.FieldByName('ENT_SAI').AsString = 'E') and
-                        (QryNF.FieldByName('Origem').AsString = 'G') and
-                        (QryNF.FieldByName('Codigo_Fiscal').AsString = '1949') then
-                          mCOD_CTA          := '|||||||||||||||||';
-
+                        mCOD_CTA           := '||||||||||||||||';
                      if (QryNF.FieldByName('ENT_SAI').AsString = 'E') and
                         (QryNF.FieldByName('Origem').AsString = 'U') and
                         (QryNF.FieldByName('Codigo_Fiscal').AsString = '1102') then
-                          mCOD_CTA        := '2001||4||||||||||||||'; //mexi menos um
+                          mCOD_CTA           := '2001|4|||||||||||||||';
                      if (QryNF.FieldByName('ENT_SAI').AsString = 'E') and
                         (QryNF.FieldByName('Origem').AsString = 'P') then
-                          mCOD_CTA        := '1057||1||||||||||||||';//mexi menos um
+                          mCOD_CTA           := '1057|1|||||||||||||||';
                      if (QryNF.FieldByName('ENT_SAI').AsString = 'E') and
                         (QryNF.FieldByName('Origem').AsString = 'N') and
                         (QryNF.FieldByName('Codigo_Fiscal').AsString = '1411') then
-                          mCOD_CTA        := '1057||1||||||||||||||'; //mexi menos um
+                          mCOD_CTA           := '1057|1|||||||||||||||';
                      if (QryNF.FieldByName('ENT_SAI').AsString = 'E') and
                         (QryNF.FieldByName('Origem').AsString = 'N') and
                         (QryNF.FieldByName('Codigo_Fiscal').AsString = '1949') then
-                          mCOD_CTA        := '302|||303|||||||||||||'; //mexi menos um
+                          mCOD_CTA           := '302||303||||||||||||||';
                      if (CFOP = '6949') and (qryNF.FieldByName('Origem').AsString = 'G')then
                        begin
-                          mCOD_CTA        := '11463|||11463|||||||||||||01';//conta da remessa
+                         COD_CTA         := '11463||11463||||||||||||||||01';//conta da remessa
 //                         COD_CTA         := '|11463|11463|||||||||||||||01';//conta da remessa
 
                        end;
-
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNF.FieldByName('Origem').AsString = 'N') then
-                        begin
-                           if (qryNf.FieldBYName('CODIGO_FISCAL').AsString = '5409') or
-                              (qryNf.FieldBYName('CODIGO_FISCAL').AsString = '5152/5409') or
-                              (qryNf.FieldBYName('CODIGO_FISCAL').AsString = '5152') then
-                              mCOD_CTA := '302|'
-                           else
-                          mCOD_CTA := '1007|';
-                        end;
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNF.FieldByName('Origem').AsString = 'P') then
-                         begin
-                           if (qryNf.FieldBYName('CODIGO_FISCAL').AsString = '5409') or
-                              (qryNf.FieldBYName('CODIGO_FISCAL').AsString = '5152/5409') or
-                              (qryNf.FieldBYName('CODIGO_FISCAL').AsString = '5152') then
-                              mCOD_CTA := '302|'
-                           else
-                              mCOD_CTA := '1006|';
-                         end;
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNF.FieldByName('Origem').AsString = 'O') then
-                          mCOD_CTA := '1006|';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNF.FieldByName('Origem').AsString = 'U') then
-                          mCOD_CTA := '1008|';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNF.FieldByName('Origem').AsString = 'G') and
-                        (qryNF.FieldByName('Codigo_fiscal').AsString <> '6949') then
-                          mCOD_CTA := '1006|';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNF.FieldByName('Origem').AsString = 'G') and
-                        (qryNF.FieldByName('Codigo_fiscal').AsString = '6949') then
-                          mCOD_CTA := '11463|';   //codigo do cliente
-
-
-
-                     if (CFOP = '5409') OR (CFOP = '5152') OR (CFOP = '5949') then
-//                          mCOD_CTA           := '|||||||||||||||';
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-
-
         //Agregado na data de 31/01/2019
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = null) then //financiamento
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 1) then //financiamento
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 2) then //duplicata
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 3) then //cheque
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 4) then //cheque nov dez
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 5) then //cartao visa
-                          mCOD_CTA           := mCOD_CTA + '||93167||||||||||||';
+                          mCOD_CTA           := '||93167||||||||||||||';
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 9) then //cartao master
-                          mCOD_CTA           := mCOD_CTA + '||95872||||||||||||';
+                          mCOD_CTA           := '||95872||||||||||||||';
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 10) then //Hiper
-                          mCOD_CTA           := mCOD_CTA + '||95909||||||||||||';
+                          mCOD_CTA           := '||95909||||||||||||||';
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 13) then //Banricompras
-                          mCOD_CTA           := mCOD_CTA + '||95947||||||||||||';
+                          mCOD_CTA           := '||95947||||||||||||||';
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 14) then //Cartao Elo
-                          mCOD_CTA           := mCOD_CTA + '||95867||||||||||||';
+                          mCOD_CTA           := '||95867||||||||||||||';
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 15) then //Cartao Dinners
-                          mCOD_CTA           := mCOD_CTA + '||93167||||||||||||';
+                          mCOD_CTA           := '||93167||||||||||||||';
                      if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
                         (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 16) then //Cartao Amex
-                          mCOD_CTA           := mCOD_CTA + '||93167||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 17) then //cartao bndes
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 18) then //usadas
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 20) then //cartao cabal
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 21) then //cartao sicredi
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (QryDupl.FieldByName('ID_Formas_Pagamento').AsInteger = 22) then //cartao verde card
-                          mCOD_CTA           := mCOD_CTA + '||||||||||||||';
-                     if (qryNF.FieldByName('ENT_SAI').AsString = 'S') and
-                        (qryNf.FieldByName('Codigo_fiscal').AsString = '6949') then
-                          mCOD_CTA           := mCOD_CTA + '||11463||||||||||||'; //nfs de remessa de garantia
+                          mCOD_CTA           := '||93167||||||||||||||';
 
             //agregado na data de 28/03/2019
                      if qryItemNf.FieldByName('VICMS_Efet').AsCurrency > 0 then
                       begin
                                    //com ICMS ST EFET
-                          mCOD_CTA  := mCOD_CTA + '2|01';
+                          mCOD_CTA  := mCOD_CTA + '004|01';
                       end
                      else
                       begin
@@ -2403,7 +2219,6 @@ begin
                      if CFOP = '5152' then
                        CFOP := '1152';
 
-
                      COD_NAT           := '';
                      if qryItemNFT.FieldByName('Subst').AsString = 'T' then
                        ALIQ_ICMS       := 0
@@ -2445,12 +2260,7 @@ begin
                      QUANT_BC_COFINS   := 0;
                      ALIQ_COFINS_R     := 0;
 
-                     COD_CTA           := '||302||306||||||||||||4||01';
-//                   COD_CTA           := '||952||323|||||||||||||01';
-                                        //   001||3dd||||||||||||4|||01
-//                  mCOD_CTA           := '  001||3dd|||||||||||||4|||01';
-
-                                        //2001||3||60013|||||||||||4|||01
+                     COD_CTA           := '302||306|||||||||||||||01';
                      with tblAux190 do
                      begin
 
@@ -2563,7 +2373,7 @@ begin
                            qryNFe.FieldByName('Val_IPI').AsCurrency;// +
   //                         qryNFe.FieldByName('Val_PIS').AsCurrency +
     //                       qryNFe.FieldByName('Val_COFINS').AsCurrency;
-                                                  //                                AQUI
+
              COD_PART      := 'F' + qryNFe.FieldByName('id_Clientes').AsString;
              if qryNFe.FieldByName('Id_Clientes').AsInteger = 22669 then
                COD_PART    := 'F60013';
@@ -2733,9 +2543,6 @@ begin
                   if (qryItemNFe.FieldByName('CFOP').AsString = '5.405') or
                      (qryItemNFe.FieldByName('CFOP').AsString = '5405') then
                      CFOP := '1403';
-                  if (qryItemNFe.FieldByName('CFOP').AsString = '5.655') or
-                     (qryItemNFe.FieldByName('CFOP').AsString = '5655') then
-                     CFOP := '1652';
                   if (qryItemNFe.FieldByName('CFOP').AsString = '6.101') or
                      (qryItemNFe.FieldByName('CFOP').AsString = '6101') then
                      CFOP := '2102';
@@ -2758,21 +2565,19 @@ begin
                      CFOP := '2652';
                   COD_NAT           := '';
                   ALIQ_ICMS       := qryItemNFe.FieldByName('Aliq_ICMS').AsCurrency * 100;
-                  VL_BC_ICMS      := qryItemNFe.FieldByName('vlr_unit').AsCurrency *
-                                     qryItemNFe.FieldByName('Qtde').asFloat;
+                  VL_BC_ICMS      := qryItemNFe.FieldByName('vlr_unit').AsCurrency * qryItemNFe.FieldByName('Qtde').asFloat;
                   VL_ICMS         := qryItemNFe.FieldByName('VLR_ICMS').AsCurrency;
-                  if (CST_ICMS = '060') or (CST_ICMS = '160') or (CST_ICMS = '260') then //alterado em 27/06/2019
+                  if (CST_ICMS = '060') or (CST_ICMS = '260') then
                    begin
                      vl_ICMS := 0;
                      vl_BC_ICMS := 0;
                      ALIQ_ICMS := 0;
                    end;
-                  VL_BC_ICMS_ST     := qryItemNfe.FieldByName('VBC_STRET').AsCurrency;
+                  VL_BC_ICMS_ST     := 0; // BASE ICMS S.T.
                   ALIQ_ST           := 0; // ALIQ. ICMS S.T.
-                  if (CST_ICMS = '060') or (CST_ICMS = '160') or (CST_ICMS = '260') then
-                     VL_ICMS_ST        := qryItemNfe.FieldByName('VLR_ICMS').AsCurrency + qryItemNFe.FieldByName('ICMS_SUBST').AsCurrency
-                  else
-                     VL_ICMS_ST := 0;
+                  VL_ICMS_ST        := 0;//qryItemNFe.FieldByName('ICMS_SUBST').AsCurrency;
+  //                if qryNFe.FieldByName('Origem').AsString = 'N' then
+//                  VL_ICMS_ST        := qryItemNFe.FieldByName('VAL_ICMS_S').AsCurrency;
                   IND_APUR          := iaMensal;
 
                   CST_IPI           := '02'; //CST DO IPI - 52 = SAIDA ISENTA
@@ -2789,6 +2594,13 @@ begin
 
                   Valor_Frete       := (VL_BC_PIS * VL_FRT) / (VL_MERC);//StrToCurr(FloatToStrF((VL_BC_PIS * VL_FRT) / (VL_MERC),ffNumber,16,2));
                   Valor_Seguro      := (VL_BC_PIS * VL_SEG) / (VL_MERC);//StrToCurr(FloatToStrF((VL_BC_PIS * VL_SEG) / (VL_MERC),ffNumber,16,2));
+//                  if total_itens = IItens then
+//                    begin
+//                      Valor_Frete    := Saldo_valor_Frete;
+//                      Valor_Seguro   := Saldo_Valor_seguro;
+//                    end;
+//                  Saldo_Valor_Frete := Saldo_Valor_Frete - Valor_Frete;
+//                  Saldo_Valor_Seguro := Saldo_Valor_Seguro - Valor_Seguro;
 
                   VL_BC_PIS         := (qryItemNFe.FieldByName('vlr_unit').AsCurrency * qryItemNFe.FieldByName('Qtde').asFloat) +
                                        (qryItemNFe.FieldByName('ICMS_SUBST').AsCurrency + qryItemNFe.FieldByName('VLR_IPI').AsCurrency) +
@@ -2817,7 +2629,7 @@ begin
                                        ( 7.6 / 100 );
 
 
-                  mCOD_CTA           := '2001||1|||||||||';//||||||||01';
+                  COD_CTA           := '2001|1||||||||';//||||||||01';
 
                   if (qryItemNFe.FieldByName('ST_COFINS').AsString = 'T') or  //entrada de pecas substituicao PIS/COFINS
                      (qryNFe.FieldByName('Origem').AsString = 'N') then
@@ -2834,26 +2646,25 @@ begin
                       VL_COFINS_ST      := qryNFe.FieldByName('Cofins').AsCurrency;
 
 
-                      mCOD_CTA           := '2001||2|||||||||'; //posicao 47
+                      COD_CTA           := '2001|2||||||||';
                       if qryNFe.FieldByName('Origem').AsString = 'N' then
-                        mCOD_CTA           := '2001||3|||||||||';//||||||04';
+                        COD_CTA           := '2001|3||||||||';//||||||04';
                     end;
                   if qryNFe.FieldByName('Id_Clientes').AsInteger = 22669 then
                     begin
-                     mCOD_CTA           := '2001||3||60013|||||||';//9||||||04';
-
+                     COD_CTA           := '2001|3|60013|||||||';//9||||||04';
                     end;
-                  if qryNFe.FieldByName('Origem').AsString = 'P' then           //VERIFICAR ICMS SUBST
+                  if qryNFe.FieldByName('Origem').AsString = 'N' then
+                    COD_CTA :=  COD_CTA + '||||||||04';
+                  if qryNFe.FieldByName('Origem').AsString = 'P' then
                    begin
                     mOUTDESP := qryItemNFe.FieldByName('ICMS_SUBST').AsCurrency +
                     qryItemNFe.FieldByName('vlr_ipi').AsCurrency;
-                    mCOD_CTA :=  mCOD_CTA + CurrToSTr(mOUTDESP) +//qryItemNFe.FieldByName('ICMS_SUBST').AsString
-                                 '||||4|||01'; //ultima posicao 55
+                    COD_CTA :=  COD_CTA + CurrToSTr(mOUTDESP) +//qryItemNFe.FieldByName('ICMS_SUBST').AsString
+                                 '||||||||01';
                    end
                   else
-                    mCOD_CTA :=  mCOD_CTA + '||||4|||01';
-
-                  COD_CTA := mCOD_CTA;
+                    COD_CTA :=  COD_CTA + '||||||||01';
 
                   Total_Produtos :=  Total_Produtos + VL_ITEM;
 
@@ -3175,261 +2986,6 @@ begin
   result := trim(c);
 end;
 
-procedure TBoxSped.SpeedButton1Click(Sender: TObject);
-//var
-//i : Integer;
-//n : Integer;
-begin
-   PErcorreArquivoTexto(Edit3.Text);
-//  spedIm.Free;
-//  OpenDialog1.Title := 'Selecione arquivo para refazer';
- // OpenDialog1.DefaultExt := '*.TXT';
-//  OpenDialog1.Filter := 'Arquivos TXT (*.TXT)|*.TXT|Todos os Arquivos (*.*)|*.*';
-//  if OpenDialog1.Execute then
-//    spedImportar.Importar;
-//  n := sped.Bloco_H.RegistroH020Count;
-
-  //sped.Bloco_H.FieldAddress()
-//  for i := 1 to n;
-   //     sped.bloBloco_H.registr
- //  end;
-end;
- //       IniciaGeracao();
-   //   GeraBloco0();
-     //
-//      GeraBlocoK();
-     // GeraBlocoH();
-//      GeraBlocoC();
-    //  SaveFileTXT;
-//end;
-procedure TBoxSped.percorreArquivoTexto ( nomeDoArquivo: String );
-var arq: TextFile;
-    linha: String;
-    I: integer;
-    arq2 : TextFile;
-    pos : integer;
-    delim : integer;
-    h10 : integer;
-    quant : Extended;//    integer;
-    pos2 : integer;
-    pos3 : integer;
-    compr : Integer;
-    compr2 : integer;
-    base : String;
-    ICMS : String;
-    Alinha : String;
-    Base3 : Extended;
-    ICMS2 : Extended;
-begin
- AssignFile ( arq, nomedoArquivo );
- AssignFile (arq2, 'C:\contabil\Sped_saida.txt');
- ReWrite (arq2);
-// Append (arq2);
- Reset ( arq );
-//  Showmessage('a4');
- ReadLn ( arq, linha );
- Label2.Caption := 'Gravando Registros. Aguarde...';
- I:=0;
- while not Eof ( arq ) do
-  begin
- inc(i);
-{ Processe a linha lida aqui. }
-  if (Copy(Linha,2,4) = '0000') or
-    (Copy(Linha,2,4) = '0001') or
-    (Copy(Linha,2,4) = '0005') or
-    (Copy(Linha,2,4) = '0100') or
-    (Copy(Linha,2,4) = '0190') or
-    (Copy(Linha,2,4) = '0200') or
-    (Copy(Linha,2,4) = '0990') or
-    (Copy(Linha,2,4) = 'H001') or
-    (Copy(Linha,2,4) = 'H005')
-    then
-   writeln( arq2, linha);
-  if Copy(linha,2,4) = '0990' then
-   begin
-    Writeln( arq2,'|C001|1|');
-    Writeln( arq2,'|C990|2|');
-    Writeln( arq2,'|D001|1|');
-    Writeln( arq2,'|D990|2|');
-    Writeln( arq2,'|E001|1|');
-    Writeln( arq2,'|E990|2|');
-    Writeln( arq2,'|G001|1|');
-    Writeln( arq2,'|G990|2|');
-   end;
-
-  if Copy(Linha,2,4) = 'H010'then
-   begin
-     pos := 0;
-     delim := 0;
-     h10 := 0;
-     while (Copy(linha, pos,1) <> '') and (h10 = 0) do
-     begin
-      if Copy(linha,pos,1) = '|' then
-         delim := delim + 1;
-      if (delim = 5) and (h10 = 0) then
-       begin
-         h10 := 1;
-      //   showmessage(Copy(linha, pos+1,5));
-      //   showmessage(linha);
-         if Trunc(StrtoFloat(Copy(linha, pos+1,5))) = 1 then//StrtoInt(Copy(linha, pos+1, 5))= 1 then
-           begin
-             Writeln(arq2, linha);
-             ReadLn ( arq, linha );
-             inc (i);
-             Writeln(arq2, linha);
-           end
-         else
-  //       showmessage((Copy(linha, pos+1,5)));
-//         if Trunc(StrToFloat(Copy(linha, pos+1,5))) > 1 then //StrtoInt(Copy(linha, pos+1, 5)) > 1 then
-           begin
-            //recalcular o valor
-  //          showmessage(Copy(linha, pos+1,5));
-            quant := StrToFloat((Copy(linha, pos+1,5)));//Trunc(StrToFloat(Copy(linha, pos+1,5)));
-            Writeln(arq2, linha);
-            ReadLn ( arq, linha );
-            inc (i);
-            Alinha := Copy(linha,1,10);// inicio do registro H020
-            pos2 := 11;
-            compr := 0;
-            compr2 := 0;
-            while (Copy(linha, pos2,1) <> '') and (compr = 0)  do
-             begin
-               if Copy(linha,pos2,1) = '|' then
-                 compr := pos2 - 11;
-               pos2 := pos2 + 1;
-             end;
-            pos3 := pos2;
-            Base := Copy(linha, 11, compr);
-//            Base2.Text := FloatToStr(StrToFloat(Base)/quant);
-//            Base3 := StrToFloat(FormatFloat('##0.00',StrToFloat(Base)/quant));
-            Base3 := StrToFloat(Base)/quant;
-            //dividir Base pela quant
-//            showmessage(base);
-//  showmessage(FormatFloat('##0.00',base3));
-//            showmessage(base2.Text);
-            while (Copy(linha, pos2,1) <> '') and (compr2 = 0)  do
-             begin
-               if Copy(linha,pos2,1) = '|' then
-                 compr2 := pos2 - 12 - compr;
-               pos2 := pos2 + 1;
-             end;
-            ICMS := Copy(linha, pos3, compr2);
-            ICMS2 := StrToFloat(ICMS)/quant;
-            //dividir icms pela quant
-//            showmessage(FormatFloat('##0.00',ICMS2));
-            Alinha := Alinha + FormatFloat('##0.00',Base3) + '|' + FormatFloat('##0.00',ICMS2) + '|';
-            Writeln(arq2, Alinha);
-           end;
-       end;
-      pos := pos + 1;
-     end;
-   end;
-
-
-  Label8.Caption := Copy(linha,2,4);
-//  Label4.Caption := IntToStr(tblPecyam.Recno);
-{  with tblPecYam do
-    begin
-      Insert;
-      FieldByName('Codigo').AsString := Copy(Linha,1,12);
-      if LEN(RTrim(FieldByName('Codigo').AsString))<12 then
-        FieldByName('Codigo').AsString :=
-         Substr(RTrim(FieldByName('Codigo').AsString)+ '000000000000',1,12);
-      FieldByName('Descricao').AsString := Copy(Linha,13,30);
-      FieldByName('Codigo_Novo').AsString := Copy(Linha,43,12);
-      if LEN(RTrim(FieldByName('Codigo_Novo').AsString))<12 then
-        FieldByName('Codigo_Novo').AsString :=
-         Substr(RTrim(FieldByName('Codigo_Novo').AsString)+ '000000000000',1,12);
-      FieldByName('Origem').AsString := Copy(Linha,55,1);
-      FieldByName('Custo').AsString := Copy(Linha,56,11);
-      FieldByName('Custo').AsVariant := FieldByName('Custo').AsVariant/100;
-      FieldByName('Peso').AsString :=Copy(Linha,67,7);
-      FieldByName('Qtde_Embal').AsString := Copy(Linha,74,5);
-      FieldByName('IPI').AsString := Copy(Linha,79,3);
-      FieldByName('Reajuste').AsString := Copy(Linha,82,5);
-      FieldByName('Preco_Garan').AsString := Copy(Linha,87,12);
-      FieldByName('Preco_Garan').AsVariant := FieldByName('Preco_Garan').AsVariant/100;
-      FieldByName('PPS').AsString := Copy(Linha,99,12);
-      FieldByName('PPS').AsVariant := FieldByName('PPS').AsVariant/100;
-      FieldByName('Reservado').AsString := Copy(Linha,111,1);
-      FieldByName('NCM').AsString := Copy(linha,112,8);
-      Post;
-    end;                 }
-{ Para particionar a linha lida em pedaços, use a função Copy. }
-
-  if Copy(linha,2,4) = 'H990' then
-   begin
-    Writeln( arq2, linha);
-    Writeln( arq2,'|K001|1|');
-    Writeln( arq2,'|K990|2|');
-    Writeln( arq2,'|1001|1|');
-    Writeln( arq2,'|1990|2|');
-    Writeln( arq2,'|9001|0|');
-    Writeln( arq2,'|9900|0000|1|');
-    Writeln( arq2,'|9900|0001|1|');
-    Writeln( arq2,'|9900|0005|1|');
-    Writeln( arq2,'|9900|0100|1|');
-   end;
-  if Copy(linha,2,9) = '9900|0190' then
-   begin
-    Writeln( arq2, linha);
-   end;
-  if Copy(linha,2,9) = '9900|0200' then
-   begin
-    Writeln( arq2, linha);
-    Writeln( arq2,'|9900|0990|1|');
-    Writeln( arq2,'|9900|C001|1|');
-    Writeln( arq2,'|9900|C990|1|');
-    Writeln( arq2,'|9900|D001|1|');
-    Writeln( arq2,'|9900|D990|1|');
-    Writeln( arq2,'|9900|E001|1|');
-    Writeln( arq2,'|9900|E990|1|');
-    Writeln( arq2,'|9900|G001|1|');
-    Writeln( arq2,'|9900|G990|1|');
-    Writeln( arq2,'|9900|H001|1|');
-    Writeln( arq2,'|9900|H005|1|');
-   end;
-  if Copy(linha,2,9) = '9900|H010' then
-   begin
-    Writeln( arq2, linha);
-   end;
-  if Copy(linha,2,9) = '9900|H020' then
-   begin
-    Writeln( arq2, linha);
-    Writeln( arq2,'|9900|H990|1|');
-    Writeln( arq2,'|9900|K001|1|');
-    Writeln( arq2,'|9900|K990|1|');
-    Writeln( arq2,'|9900|1001|1|');
-    Writeln( arq2,'|9900|1990|1|');
-    Writeln( arq2,'|9900|9001|1|');
-   end;
-  if Copy(linha,2,9) = '9900|9900' then
-   begin
-    Writeln( arq2, linha);
-    Writeln( arq2,'|9900|9990|1|');
-    Writeln( arq2,'|9900|9999|1|');
-   end;
-  if Copy(linha,2,4) = '9990' then
-   begin
-    Writeln( arq2, linha);
-   end;
-  if Copy(linha,2,4) = '9999' then
-   begin
-    Writeln( arq2, linha);
-   end;
-
-
-
-  ReadLn ( arq, linha );
-
- end;
- Writeln(arq2, linha);
-CloseFile ( arq );
-CloseFile (arq2);
-Showmessage('Dados gravados.');
-end;
-
-
 procedure TBoxSped.BtnInventarioClick(Sender: TObject);
 begin
 begin
@@ -3543,16 +3099,12 @@ end;
 procedure TBoxSped.GeraBlocoH;
 var
 vlr:Currency;
-VLR2 : cURRENCY;
-vlr3 : Currency;
 //totalLinhas : Integer;
 begin
 
 //  if( not edtGeraBlocoH.Checked ) then exit;
 
   vlr := 0;
-  vlr2 := 0;
-  vlr3 := 0;
  if checkBoxPecas.Checked then
   begin
     while not qryEstoque.Eof do
@@ -3588,7 +3140,7 @@ begin
       begin
         DT_INV := edtDF.Date; //o valor informado no campo deve ser menor ou igual ao valor no campo DT_FIN do registro 0000
         VL_INV := vlr;
-        if CheckBoxDeterminacaoFisco.checked then //usar tipo 5
+        if CheckBoxH020.checked then //usar tipo 5
           MOT_INV := miDeterminacaoFiscos
         else
           MOT_INV := miFinalPeriodo;//miDeterminacaoFiscos;//válido somente para o inventário de 01/01/2019 depois
@@ -3604,7 +3156,7 @@ begin
              with RegistroH010New do
              begin
               COD_ITEM := qryEstoque.fieldbyname( 'codigo' ).asString;
-              UNID := 'PC';//qryEstoque.fieldbyname( 'unidade' ).asString;
+              UNID := qryEstoque.fieldbyname( 'unidade' ).asString;
               QTD := qryEstoque.fieldbyname( 'estoque' ).asFloat;
               VL_UNIT := qryEstoque.fieldbyname( 'cst_medio' ).asCurrency;
               VL_ITEM := (qryEstoque.fieldbyname( 'cst_medio' ).asCurrency) *
@@ -3614,48 +3166,16 @@ begin
               TXT_COMPL := '';
               COD_CTA := '302';   //         ver aqui
              if CheckBoxH020.Checked then
-                begin
+               begin
                   with RegistroH020new do
                   begin
-                    if qryEstoque.FieldByName('Subst_trib').AsString = 'T' then
-                      begin
-                        CST_ICMS := qryEstoque.FieldByName('CST').AsString;
-                        BC_ICMS := 0;
-                        vl_ICMS := 0;
-                      end
-                    else
-                    begin
-                     CST_ICMS := qryEstoque.FieldByName('CST').AsString;
-                     BC_ICMS  := (qryEstoque.FieldByName('vBC_ST').AsCurrency +
-                                qryEstoque.FieldByName('vBC_STret').AsCurrency);// *
-//                                qryEstoque.fieldbyname( 'estoque' ).AsInteger;
-                     VL_ICMS := (qryEstoque.FieldByName('vICMS_ST').AsCurrency +
-                               qryEstoque.FieldByName('vICMS_STret').AsCurrency); //*
-//                               qryEstoque.fieldbyname( 'estoque' ).AsInteger;
-                     if (VL_ICMS/qryEstoque.fieldbyname( 'estoque' ).AsInteger) > 1000 then
-                      begin
-                        VL_ICMS := VL_ICMS/100;
-                        BC_ICMS := BC_ICMS/100;
-                      end;
-                     if VL_ICMS = 0 then
-                      begin
-                        BC_ICMS := ((qryEstoque.fieldbyname( 'cst_medio' ).asCurrency) *
-                         (qryEstoque.fieldbyname( 'estoque' ).asInteger))*1.4;
-                        VL_ICMS :=  BC_ICMS * 0.18;
-                      end;
-                      if checkBoxH20PecasZerado.Checked then
-                       begin
-                         BC_ICMS := 0;
-                         VL_ICMS := 0;
-                       end
-                      else
-                       begin
-                        BC_ICMS := VL_ICMS / 0.18;
-                        vlr2 := vlr2 + (vl_ICMS * qryEstoque.fieldbyname( 'estoque' ).AsInteger);
-                       end;
-                    end;
+                    CST_ICMS := qryEstoque.FieldByName('CST').AsString;
+                    BC_ICMS  := qryEstoque.FieldByName('vBC_ST').AsCurrency +
+                                qryEstoque.FieldByName('vBC_STret').AsCurrency;
+                    VL_ICMS := qryEstoque.FieldByName('vICMS_ST').AsCurrency +
+                               qryEstoque.FieldByName('vICMS_STret').AsCurrency;
                   end;
-                end;
+               end;
              end;
             end;
             qryEstoque.Next;
@@ -3689,24 +3209,15 @@ begin
                   COD_CTA := '302';//ver aqui
               end;
 
-             if (CheckBoxH020.Checked) then
+             if CheckBoxH020.Checked then
                begin
                   with RegistroH020new do
                   begin
                     CST_ICMS := tblVeiculos2.FieldByName('CST').AsString;
-                    if (CheckBoxH20VeiculosZerado.Checked) then
-                     begin
-                        BC_ICMS := 0;
-                        VL_ICMS := 0;
-                     end
-                    else
-                     begin
-                        BC_ICMS  := tblVeiculos2.FieldByName('vBC_ST').AsCurrency +
-                                    tblVeiculos2.FieldByName('vBC_STret').AsCurrency;
-                        VL_ICMS := tblVeiculos2.FieldByName('vICMS_ST').AsCurrency +
-                                   tblVeiculos2.FieldByName('vICMS_STret').AsCurrency;
-                        vlr3 := vlr3 + vl_ICMS;
-                     end;
+                    BC_ICMS  := tblVeiculos2.FieldByName('vBC_ST').AsCurrency +
+                                tblVeiculos2.FieldByName('vBC_STret').AsCurrency;
+                    VL_ICMS := tblVeiculos2.FieldByName('vICMS_ST').AsCurrency +
+                               tblVeiculos2.FieldByName('vICMS_STret').AsCurrency;
                   end;
                end;
              end;
@@ -3748,7 +3259,6 @@ begin
                                 tblVeiculos4.FieldByName('vBC_STret').AsCurrency;
                     VL_ICMS := tblVeiculos4.FieldByName('vICMS_ST').AsCurrency +
                                tblVeiculos4.FieldByName('vICMS_STret').AsCurrency;
-                    vlr3 := vlr3 + vl_icms;
                   end;
                end;
              end;
@@ -3761,8 +3271,6 @@ begin
 
       end;
     end;
-    edit1.Text := CurrToSTr(vlr2);
-    edit2.Text := CurrTOStr(vlr3);
   end;
 end;
 
@@ -3878,7 +3386,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecas2.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecas2.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC';//trim( tblPecas2.fieldbyname('Unidade' ).asString ); //'PC'
+               UNID_INV    := trim( tblPecas2.fieldbyname('Unidade' ).asString ); //'PC'
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecas2.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );

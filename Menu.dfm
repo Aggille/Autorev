@@ -3,7 +3,7 @@ object BoxMenu: TBoxMenu
   Left = 0
   Top = 0
   Caption = 'AUTOREV - SD - System Dealer'
-  ClientHeight = 418
+  ClientHeight = 454
   ClientWidth = 1319
   Color = clBtnFace
   ParentFont = True
@@ -231,7 +231,7 @@ object BoxMenu: TBoxMenu
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 399
+    Top = 435
     Width = 1319
     Height = 19
     Panels = <
@@ -241,20 +241,22 @@ object BoxMenu: TBoxMenu
       item
         Width = 50
       end>
+    ExplicitTop = 399
   end
   object Panel1: TPanel
     Left = 1125
     Top = 81
     Width = 194
-    Height = 318
+    Height = 354
     Align = alRight
     TabOrder = 1
+    ExplicitHeight = 318
     DesignSize = (
       194
-      318)
+      354)
     object Label1: TLabel
       Left = 6
-      Top = 50
+      Top = 56
       Width = 31
       Height = 13
       Anchors = [akRight]
@@ -263,46 +265,46 @@ object BoxMenu: TBoxMenu
     end
     object Label2: TLabel
       Left = 6
-      Top = 34
+      Top = 39
       Width = 31
       Height = 13
       Anchors = [akRight]
       Caption = 'Label2'
       ExplicitLeft = 23
-      ExplicitTop = 39
     end
     object Label3: TLabel
       AlignWithMargins = True
       Left = 6
-      Top = 22
+      Top = 25
       Width = 31
       Height = 13
       Anchors = [akRight]
       Caption = 'Label3'
+      ExplicitTop = 22
     end
     object DBText1: TDBText
       Left = 6
-      Top = 66
+      Top = 74
       Width = 41
       Height = 13
       Anchors = [akRight]
       AutoSize = True
       DataField = 'LOGIN'
       DataSource = DataSource1
+      ExplicitTop = 66
     end
     object Label4: TLabel
       Left = 6
-      Top = 5
+      Top = 6
       Width = 129
       Height = 13
       Anchors = [akRight]
       Caption = 'Logado na Concession'#225'ria:'
-      ExplicitTop = 6
     end
     object Label5: TLabel
       AlignWithMargins = True
       Left = 6
-      Top = 84
+      Top = 94
       Width = 14
       Height = 13
       Anchors = [akRight]
@@ -312,7 +314,7 @@ object BoxMenu: TBoxMenu
     object Label6: TLabel
       AlignWithMargins = True
       Left = 6
-      Top = 100
+      Top = 112
       Width = 31
       Height = 13
       Anchors = [akRight]
@@ -833,7 +835,7 @@ object BoxMenu: TBoxMenu
     Left = 608
     Top = 384
     Bitmap = {
-      494C01013E004400AC0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013E004400B40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000005EA660000000000000000000000000000000
@@ -20400,5 +20402,59 @@ object BoxMenu: TBoxMenu
         ParentFont = False
       end
     end
+  end
+  object frxMailExport1: TfrxMailExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    ShowExportDialog = True
+    SmtpPort = 25
+    UseIniFile = True
+    TimeOut = 60
+    ConfurmReading = False
+    UseMAPI = SMTP
+    Left = 816
+    Top = 360
+  end
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Quality = 95
+    Transparency = False
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    PdfA = False
+    Left = 856
+    Top = 360
+  end
+  object frxJPEGExport1: TfrxJPEGExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    Left = 904
+    Top = 360
+  end
+  object frxBMPExport1: TfrxBMPExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    Left = 952
+    Top = 360
   end
 end

@@ -165,6 +165,10 @@ type
     MenuConciliacaoCartoes: TMenuItem;
     Comissaovendedores: TMenuItem;
     ToolButton1: TToolButton;
+    frxMailExport1: TfrxMailExport;
+    frxPDFExport1: TfrxPDFExport;
+    frxJPEGExport1: TfrxJPEGExport;
+    frxBMPExport1: TfrxBMPExport;
     procedure FileExit1Execute(Sender: TObject);
     procedure HelpAbout1Execute(Sender: TObject);
     procedure ActionPecasExecute(Sender: TObject);
@@ -775,9 +779,12 @@ end;
 
 procedure TBoxMenu.ToolButton1Click(Sender: TObject);
 begin
-  if not Assigned(BoxREnave) then
-    BoxREnave := TBoxRenave.Create(Self);
-  BoxRenave.Show;
+ if (FDB1.IBDataSetLoginADM.AsString = 'T') then
+  begin
+   if not Assigned(BoxREnave) then
+     BoxREnave := TBoxRenave.Create(Self);
+   BoxRenave.Show;
+  end;
 
 end;
 

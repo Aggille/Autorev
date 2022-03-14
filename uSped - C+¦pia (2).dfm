@@ -2,7 +2,7 @@ object BoxSped: TBoxSped
   Left = 15
   Top = 85
   Caption = 'Gerar Sped'
-  ClientHeight = 544
+  ClientHeight = 523
   ClientWidth = 651
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -97,15 +97,15 @@ object BoxSped: TBoxSped
     OnClick = SpeedButton1Click
   end
   object Label8: TLabel
-    Left = 485
-    Top = 490
+    Left = 493
+    Top = 468
     Width = 31
     Height = 13
     Caption = 'Label2'
   end
   object Label9: TLabel
-    Left = 419
-    Top = 490
+    Left = 427
+    Top = 468
     Width = 60
     Height = 13
     Caption = 'Atualizando:'
@@ -207,7 +207,7 @@ object BoxSped: TBoxSped
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 525
+    Top = 504
     Width = 651
     Height = 19
     Panels = <>
@@ -215,7 +215,7 @@ object BoxSped: TBoxSped
   end
   object progresso: TProgressBar
     Left = 0
-    Top = 509
+    Top = 488
     Width = 651
     Height = 16
     Align = alBottom
@@ -359,27 +359,11 @@ object BoxSped: TBoxSped
   end
   object ProgressBar1: TProgressBar
     Left = 8
-    Top = 486
+    Top = 464
     Width = 389
     Height = 17
     Max = 10000
     TabOrder = 19
-  end
-  object CheckBoxH20PecasZerado: TCheckBox
-    Left = 336
-    Top = 452
-    Width = 153
-    Height = 17
-    Caption = 'Zerar H020 para pe'#231'as'
-    TabOrder = 20
-  end
-  object CheckBoxDeterminacaoFisco: TCheckBox
-    Left = 495
-    Top = 452
-    Width = 148
-    Height = 17
-    Caption = 'Motivo Determina'#231#227'o fisco'
-    TabOrder = 21
   end
   object ACBrSpedFiscal1: TACBrSPEDFiscal
     Path = '.\'
@@ -1553,17 +1537,17 @@ object BoxSped: TBoxSped
       Precision = 18
       Size = 2
     end
-    object qryTotItemALIQ_ICMS: TIBBCDField
-      FieldName = 'ALIQ_ICMS'
-      Origin = '"SADA"."ALIQ_ICMS"'
-      Precision = 9
-      Size = 3
-    end
     object qryTotItemTOTAL: TIBBCDField
       FieldName = 'TOTAL'
       ProviderFlags = []
       Precision = 18
       Size = 2
+    end
+    object qryTotItemALIQ_ICMS: TIBBCDField
+      FieldName = 'ALIQ_ICMS'
+      Origin = '"SADA"."ALIQ_ICMS"'
+      Precision = 9
+      Size = 3
     end
     object qryTotItemCST: TIBStringField
       FieldName = 'CST'
@@ -1577,9 +1561,7 @@ object BoxSped: TBoxSped
     end
     object qryTotItemICMS: TFMTBCDField
       FieldName = 'ICMS'
-      ProviderFlags = []
-      Precision = 18
-      Size = 5
+      Size = 4
     end
   end
   object qryTotServicosNf: TIBQuery
@@ -2021,12 +2003,6 @@ object BoxSped: TBoxSped
       Precision = 18
       Size = 2
     end
-    object qryItemNfeALIQ_ICMS: TIBBCDField
-      FieldName = 'ALIQ_ICMS'
-      Origin = '"DADOS_NFE"."ALIQ_ICMS"'
-      Precision = 9
-      Size = 2
-    end
     object qryItemNfeVLR_ICMS: TIBBCDField
       FieldName = 'VLR_ICMS'
       Origin = '"DADOS_NFE"."VLR_ICMS"'
@@ -2176,6 +2152,17 @@ object BoxSped: TBoxSped
       Origin = '"DADOS_NFE"."VICMS_ST"'
       Precision = 18
       Size = 2
+    end
+    object qryItemNfeALIQ_ICMS: TIBBCDField
+      FieldName = 'ALIQ_ICMS'
+      Origin = '"DADOS_NFE"."ALIQ_ICMS"'
+      Precision = 9
+      Size = 2
+    end
+    object qryItemNfeCOD_ITEM_FORNEC: TIBStringField
+      FieldName = 'COD_ITEM_FORNEC'
+      Origin = '"DADOS_NFE"."COD_ITEM_FORNEC"'
+      Size = 30
     end
   end
   object qryTotItemE: TIBQuery
@@ -3990,10 +3977,9 @@ object BoxSped: TBoxSped
     Top = 248
     ParamData = <
       item
-        DataType = ftInteger
+        DataType = ftUnknown
         Name = 'ID_NOFISA'
         ParamType = ptUnknown
-        Size = 4
       end>
     object IBBCDField7: TIBBCDField
       FieldName = 'BASE_ICMS'
@@ -4001,22 +3987,22 @@ object BoxSped: TBoxSped
       Precision = 18
       Size = 2
     end
-    object qryTotItemNFTALIQ_ICMS: TIBBCDField
-      FieldName = 'ALIQ_ICMS'
-      Origin = '"SADA"."ALIQ_ICMS"'
-      Precision = 9
-      Size = 3
-    end
-    object qryTotItemNFTICMS: TFMTBCDField
+    object IBBCDField8: TIBBCDField
       FieldName = 'ICMS'
       ProviderFlags = []
       Precision = 18
-      Size = 5
+      Size = 4
     end
     object IBBCDField9: TIBBCDField
       FieldName = 'TOTAL'
       ProviderFlags = []
       Precision = 18
+      Size = 2
+    end
+    object IBBCDField10: TIBBCDField
+      FieldName = 'ALIQ_ICMS'
+      Origin = '"SADA"."ALIQ_ICMS"'
+      Precision = 9
       Size = 2
     end
     object IBStringField27: TIBStringField
@@ -4301,7 +4287,6 @@ object BoxSped: TBoxSped
       'p.VICMS_ST, '
       'p.VICMS_STRET,'
       'p.CST,'
-      'p.SUBST_TRIB,'
       'PE.*'
       ''
       'FROM '
@@ -4446,12 +4431,6 @@ object BoxSped: TBoxSped
       FieldName = 'CST'
       Origin = '"PECAS"."CST"'
       Size = 3
-    end
-    object QryEstoqueSUBST_TRIB: TIBStringField
-      FieldName = 'SUBST_TRIB'
-      Origin = '"PECAS"."SUBST_TRIB"'
-      FixedChar = True
-      Size = 1
     end
   end
   object tblPecas2: TIBQuery

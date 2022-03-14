@@ -3636,7 +3636,7 @@ object BoxPosVenda: TBoxPosVenda
     PrintOptions.Printer = 'Padr'#227'o'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 39945.457552870400000000
-    ReportOptions.LastChange = 40441.953531423610000000
+    ReportOptions.LastChange = 44622.506062083330000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -3676,7 +3676,7 @@ object BoxPosVenda: TBoxPosVenda
         FillType = ftBrush
         Height = 119.000000000000000000
         Top = 17.000000000000000000
-        Width = 796.800000000000100000
+        Width = 796.800000000000000000
         object DMPMemo1: TfrxDMPMemoView
           Top = 17.000000000000000000
           Width = 796.800000000000000000
@@ -3865,14 +3865,14 @@ object BoxPosVenda: TBoxPosVenda
         FillType = ftBrush
         Height = 102.000000000000000000
         Top = 170.000000000000000000
-        Width = 796.800000000000100000
+        Width = 796.800000000000000000
         DataSet = tblRelPessoas
         DataSetName = 'tblRelPessoas'
         RowCount = 0
         object DMPMemo11: TfrxDMPMemoView
           Left = 115.200000000000000000
           Top = 34.000000000000000000
-          Width = 451.200000000000000000
+          Width = 86.400000000000000000
           Height = 17.000000000000000000
           DataField = 'ID_CLIENTES'
           DataSet = tblRelPessoas
@@ -3883,9 +3883,9 @@ object BoxPosVenda: TBoxPosVenda
           VAlign = vaCenter
         end
         object DMPMemo12: TfrxDMPMemoView
-          Left = 115.200000000000000000
+          Left = 96.000000000000000000
           Top = 51.000000000000000000
-          Width = 441.600000000000000000
+          Width = 691.200000000000000000
           Height = 17.000000000000000000
           DataField = 'NOME'
           DataSet = tblRelPessoas
@@ -3896,9 +3896,9 @@ object BoxPosVenda: TBoxPosVenda
           VAlign = vaCenter
         end
         object DMPMemo13: TfrxDMPMemoView
-          Left = 115.200000000000000000
+          Left = 105.600000000000000000
           Top = 68.000000000000000000
-          Width = 403.200000000000000000
+          Width = 326.400000000000000000
           Height = 17.000000000000000000
           DataField = 'ENDERECO'
           DataSet = tblRelPessoas
@@ -3909,9 +3909,9 @@ object BoxPosVenda: TBoxPosVenda
           VAlign = vaCenter
         end
         object DMPMemo14: TfrxDMPMemoView
-          Left = 556.800000000000000000
-          Top = 51.000000000000000000
-          Width = 432.000000000000000000
+          Left = 432.000000000000000000
+          Top = 68.000000000000000000
+          Width = 105.600000000000000000
           Height = 17.000000000000000000
           DataField = 'BAIRRO'
           DataSet = tblRelPessoas
@@ -3922,9 +3922,9 @@ object BoxPosVenda: TBoxPosVenda
           VAlign = vaCenter
         end
         object DMPMemo15: TfrxDMPMemoView
-          Left = 518.400000000000000000
+          Left = 537.600000000000000000
           Top = 68.000000000000000000
-          Width = 403.200000000000000000
+          Width = 384.000000000000000000
           Height = 17.000000000000000000
           DataField = 'CIDADE'
           DataSet = tblRelPessoas
@@ -3976,7 +3976,7 @@ object BoxPosVenda: TBoxPosVenda
         object DMPMemo19: TfrxDMPMemoView
           Left = 19.200000000000000000
           Top = 51.000000000000000000
-          Width = 96.000000000000000000
+          Width = 76.800000000000000000
           Height = 17.000000000000000000
           DisplayFormat.DecimalSeparator = ','
           FontStyle = [fsxWide]
@@ -3989,7 +3989,7 @@ object BoxPosVenda: TBoxPosVenda
         object DMPMemo20: TfrxDMPMemoView
           Left = 19.200000000000000000
           Top = 68.000000000000000000
-          Width = 96.000000000000000000
+          Width = 86.400000000000000000
           Height = 17.000000000000000000
           DisplayFormat.DecimalSeparator = ','
           FontStyle = [fsxWide]
@@ -4023,12 +4023,36 @@ object BoxPosVenda: TBoxPosVenda
           Width = 806.400000000000000000
           Color = clBlack
         end
+        object DMPMemo69: TfrxDMPMemoView
+          Left = 268.800000000000000000
+          Top = 34.000000000000000000
+          Width = 182.400000000000000000
+          Height = 17.000000000000000000
+          DataSet = tblRelPessoas
+          DataSetName = 'tblRelPessoas'
+          Memo.UTF8W = (
+            '[tblRelPessoas."NUM_CPF"]')
+          TruncOutboundText = False
+          VAlign = vaCenter
+        end
+        object DMPMemo70: TfrxDMPMemoView
+          Left = 230.400000000000000000
+          Top = 34.000000000000000000
+          Width = 38.400000000000000000
+          Height = 17.000000000000000000
+          FontStyle = [fsxWide]
+          Memo.UTF8W = (
+            'CPF:')
+          ParentFont = False
+          TruncOutboundText = False
+          VAlign = vaCenter
+        end
       end
       object DetailData1: TfrxDetailData
         FillType = ftBrush
         Height = 102.000000000000000000
         Top = 289.000000000000000000
-        Width = 796.800000000000100000
+        Width = 796.800000000000000000
         DataSet = tblRelAtendimento
         DataSetName = 'tblAtendimento'
         RowCount = 0
@@ -4255,7 +4279,7 @@ object BoxPosVenda: TBoxPosVenda
         FillType = ftBrush
         Height = 306.000000000000000000
         Top = 408.000000000000000000
-        Width = 796.800000000000100000
+        Width = 796.800000000000000000
         DataSet = tblRelAtendimento
         DataSetName = 'tblAtendimento'
         RowCount = 0
@@ -4393,7 +4417,7 @@ object BoxPosVenda: TBoxPosVenda
         FillType = ftBrush
         Height = 136.000000000000000000
         Top = 731.000000000000000000
-        Width = 796.800000000000100000
+        Width = 796.800000000000000000
         DataSet = tblRelAtendimento
         DataSetName = 'tblAtendimento'
         RowCount = 0
@@ -4591,7 +4615,7 @@ object BoxPosVenda: TBoxPosVenda
         FillType = ftBrush
         Height = 136.000000000000000000
         Top = 884.000000000000000000
-        Width = 796.800000000000100000
+        Width = 796.800000000000000000
         object DMPLine10: TfrxDMPLineView
           Left = -4.800000000000000000
           Top = 8.500000000000000000
@@ -8014,5 +8038,43 @@ object BoxPosVenda: TBoxPosVenda
       Origin = '"CLIENTES"."FOTO"'
       Size = 8
     end
+  end
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Quality = 95
+    Transparency = False
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    PdfA = False
+    Left = 176
+    Top = 525
+  end
+  object frxMailExport1: TfrxMailExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    ShowExportDialog = True
+    SmtpPort = 25
+    UseIniFile = True
+    TimeOut = 60
+    ConfurmReading = False
+    UseMAPI = SMTP
+    Left = 224
+    Top = 525
   end
 end

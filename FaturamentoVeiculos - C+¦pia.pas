@@ -82,6 +82,37 @@ type
     ValorParaFaturamento: TCurrencyEdit;
     DataSourceNofisa: TDataSource;
     tblNofisa: TIBDataSet;
+    tblNofisaID_NOFISA: TIntegerField;
+    tblNofisaID_CONCESSIONARIA: TIntegerField;
+    tblNofisaID_CLIENTES: TIntegerField;
+    tblNofisaEMISSAO: TDateField;
+    tblNofisaORIGEM: TIBStringField;
+    tblNofisaENT_SAI: TIBStringField;
+    tblNofisaSAIDA: TDateField;
+    tblNofisaHORA: TIBStringField;
+    tblNofisaIE_SUBS: TIBStringField;
+    tblNofisaDESC_PEC: TIBBCDField;
+    tblNofisaDESC_OFI: TIBBCDField;
+    tblNofisaBASE_ICMS: TIBBCDField;
+    tblNofisaVAL_ICMS: TIBBCDField;
+    tblNofisaBASE_ICM_S: TIBBCDField;
+    tblNofisaVAL_ICMS_S: TIBBCDField;
+    tblNofisaVAL_FRETE: TIBBCDField;
+    tblNofisaVAL_SEGURO: TIBBCDField;
+    tblNofisaVAL_OUTROS: TIBBCDField;
+    tblNofisaVAL_IPI: TIBBCDField;
+    tblNofisaVAL_SERV: TIBBCDField;
+    tblNofisaISSQN: TIBBCDField;
+    tblNofisaVAL_ISS: TIBBCDField;
+    tblNofisaTOT_PROD: TIBBCDField;
+    tblNofisaTOT_NOTA: TIBBCDField;
+    tblNofisaPIS: TIBBCDField;
+    tblNofisaCOFINS: TIBBCDField;
+    tblNofisaCOD_TRANS: TIBStringField;
+    tblNofisaFRETE_TIPO: TIBStringField;
+    tblNofisaPLACA: TIBStringField;
+    tblNofisaQTDE_PROD: TIntegerField;
+    tblNofisaSTATUS: TIBStringField;
     Label10: TLabel;
     CodigoFinanceira: TMaskEdit;
     SpeedButton2: TSpeedButton;
@@ -109,6 +140,7 @@ type
     tblVeiculosPLACA: TIBStringField;
     tblVeiculosCNY: TIBStringField;
     tblVeiculosKM: TIntegerField;
+    tblVeiculosRENAVAM: TIBStringField;
     tblVeiculosCLASSIF_FISCAL: TIBStringField;
     tblVeiculosNOTA_ENT: TIBStringField;
     tblVeiculosDATA_ENT: TDateField;
@@ -132,6 +164,32 @@ type
     tblSadaID_SADA: TIntegerField;
     tblSadaID_NOFISA: TIntegerField;
     tblSadaID_CONCESSIONARIA: TIntegerField;
+    tblSadaNF: TIBStringField;
+    tblSadaCODIGO: TIBStringField;
+    tblSadaDESCRICAO: TIBStringField;
+    tblSadaQTDE: TSmallintField;
+    tblSadaUNIDADE: TIBStringField;
+    tblSadaCST: TIBStringField;
+    tblSadaSUBST: TIBStringField;
+    tblSadaALIQ_ICMS: TIBBCDField;
+    tblSadaICMS: TIBBCDField;
+    tblSadaPRECO: TIBBCDField;
+    tblSadaCFOP: TIBStringField;
+    tblSadaST_COFINS: TIBStringField;
+    tblSadaANO_MODELO: TIBStringField;
+    tblSadaANO_FABRICACAO: TIBStringField;
+    tblSadaRENAVAM: TIBStringField;
+    tblSadaPOTENCIA: TIBStringField;
+    tblSadaCOR: TIBStringField;
+    tblSadaCOMBUSTIVEL: TIBStringField;
+    tblSadaPLACA: TIBStringField;
+    tblSadaCHASSI: TIBStringField;
+    tblSadaCUSTO: TIBBCDField;
+    tblSadaMARCA: TIBStringField;
+    tblSadaMODELO: TIBStringField;
+    tblSadaSTATUS: TIBStringField;
+    tblNofisaNUMERO: TIntegerField;
+    tblNofisaVENDEDOR: TIntegerField;
     DataSourceSerieNF: TDataSource;
     tblSerieNF: TIBDataSet;
     tblSerieNFID_SERIENF: TIntegerField;
@@ -141,7 +199,9 @@ type
     tblVeiculosORIGEM: TIBStringField;
     Label14: TLabel;
     Observacao: TEdit;
+    tblSadaNAT_OP: TIBStringField;
     tblVeiculosCOMBUSTIVEL: TIBStringField;
+    tblNofisaOBS: TIBStringField;
     tblCreceber: TIBDataSet;
     DataSourceCreceber: TDataSource;
     tblCreceberID_CRECEBER: TIntegerField;
@@ -218,7 +278,9 @@ type
     tblPessoasREF_AG_BANC: TIBStringField;
     tblPessoasREF_CTA_BANC: TIBStringField;
     tblPessoasFOTO: TIBStringField;
+    tblCreceberHISTORICO: TIBStringField;
     Label13: TLabel;
+    tblNofisaSERIENF: TIBStringField;
     tblNofisaFaturasID_FORMAS_PAGAMENTO: TIntegerField;
     tblNofisaFaturasFORMA_PAGAMENTO: TStringField;
     tblFormasPagamento: TIBDataSet;
@@ -244,22 +306,33 @@ type
     BtnReceber: TBitBtn;
     BtnImprimir: TBitBtn;
     tblCreceberID_PEDIDO_VEICULOS: TIntegerField;
+    tblNofisaCODIGO_FISCAL: TIBStringField;
+    tblNofisaDESCRICAO_CODIGO_FISCAL: TIBStringField;
     tblCreceberID_FORMA_PAGAMENTO: TIntegerField;
     tblCreceberBOLETO_EMITIDO: TIBStringField;
     tblVeiculosID_COMPRADOR: TIntegerField;
     tblVeiculosCST: TIBStringField;
     tblPedidoVeiculosRecebimentoID_CONCESSIONARIA: TIntegerField;
     tblPedidoVeiculosRecebimentoID_CRECEBER: TIntegerField;
+    tblSadaMOTOR: TIBStringField;
     IBQuery3: TIBQuery;
     tblVeiculosID_MODELO_VEICULO: TIntegerField;
+    tblNofisaDADOS_AD01: TIBStringField;
+    tblNofisaDADOS_AD02: TIBStringField;
+    tblNofisaDADOS_AD03: TIBStringField;
+    tblNofisaDADOS_AD04: TIBStringField;
     tblPedidoVeiculosMOTOR: TIBStringField;
     tblPessoasFABRICANTE: TIBStringField;
     tblPessoasCODIGO_MUNICIPIO: TIBStringField;
+    tblNofisaFORMA_PAGAMENTO: TIBStringField;
+    tblSadaBASE_ICMS: TIBBCDField;
+    tblSadaDESCONTO: TIBBCDField;
     Label18: TLabel;
     DadosAd01: TEdit;
     DadosAd02: TEdit;
     DadosAd03: TEdit;
     DadosAd04: TEdit;
+    tblNofisaDADOS_AD05: TIBStringField;
     tblSerieNF1: TIBDataSet;
     IntegerField1: TIntegerField;
     IntegerField2: TIntegerField;
@@ -267,95 +340,6 @@ type
     IntegerField3: TIntegerField;
     DataSourceSerieNF1: TDataSource;
     IBQuery4: TIBQuery;
-    Panel2: TPanel;
-    Frete: TRadioGroup;
-    IdSMTP1: TIdSMTP;
-    IdMessage1: TIdMessage;
-    Label19: TLabel;
-    Brindes: TCurrencyEdit;
-    Label20: TLabel;
-    DescontoUsadas: TCurrencyEdit;
-    IBQuery5: TIBQuery;
-    IBQuery6: TIBQuery;
-    tblDescontoFinanceira: TIBDataSet;
-    DataSourceDescontoFinanceira: TDataSource;
-    tblDescontoFinanceiraID_DESCONTO_FINANCEIRA: TIntegerField;
-    tblDescontoFinanceiraID_CLIENTES: TIntegerField;
-    tblDescontoFinanceiraID_PEDIDO: TIntegerField;
-    tblDescontoFinanceiraVALOR: TIBBCDField;
-    tblDescontoFinanceiraNUMERO_NF: TIntegerField;
-    tblDescontoFinanceiraDATA_NF: TDateField;
-    tblDescontoFinanceiraID_NOFISA: TIntegerField;
-    tblVeiculosDATA_RECEBIMENTO: TDateField;
-    tblVeiculosNCM: TIBStringField;
-    tblPedidoVeiculosID_USUARIO: TIntegerField;
-    tblPedidoVeiculosUSUARIO: TIBStringField;
-    tblPedidoVeiculosCOR: TIBStringField;
-    tblPedidoVeiculosNF_CANCELAMENTO: TIBStringField;
-    tblPedidoVeiculosDATA_NF_CANCELAMENTO: TDateField;
-    tblPedidoVeiculosVALOR_VIP: TIBBCDField;
-    tblPedidoVeiculosVALOR_NORMAL: TIBBCDField;
-    tblPedidoVeiculosVALOR_EXCLUSIVO: TIBBCDField;
-    tblPedidoVeiculosVALOR_VIP2: TIBBCDField;
-    tblPedidoVeiculosVALOR_NORMAL2: TIBBCDField;
-    tblPedidoVeiculosVALOR_EXCLUSIVO2: TIBBCDField;
-    tblPedidoVeiculosVALOR_TAXAS: TIBBCDField;
-    tblPedidoVeiculosID_MODELO_VEICULO: TIntegerField;
-    tblPedidoVeiculosCILINDRADAS: TIntegerField;
-    tblPessoasVENDEDOR_YNOVA: TIBStringField;
-    tblPessoasNOME_VENDEDOR: TIBStringField;
-    tblPessoasCODIGOSGS: TIntegerField;
-    tblPessoasFATURA_COM_DEBITOS: TIBStringField;
-    tblPessoasNUMERO: TIBStringField;
-    tblPessoasCOMPLEMENTO: TIBStringField;
-    Label21: TLabel;
-    Grupo: TMaskEdit;
-    Label22: TLabel;
-    Cota: TMaskEdit;
-    tblCreceberID_CRECEBER_RENEGOCIADO: TIntegerField;
-    tblCreceberHISTORICO: TIBStringField;
-    tblNofisaID_NOFISA: TIntegerField;
-    tblNofisaID_CONCESSIONARIA: TIntegerField;
-    tblNofisaID_CLIENTES: TIntegerField;
-    tblNofisaNUMERO: TIntegerField;
-    tblNofisaSERIENF: TIBStringField;
-    tblNofisaEMISSAO: TDateField;
-    tblNofisaORIGEM: TIBStringField;
-    tblNofisaENT_SAI: TIBStringField;
-    tblNofisaVENDEDOR: TIntegerField;
-    tblNofisaSAIDA: TDateField;
-    tblNofisaHORA: TIBStringField;
-    tblNofisaIE_SUBS: TIBStringField;
-    tblNofisaDESC_PEC: TIBBCDField;
-    tblNofisaDESC_OFI: TIBBCDField;
-    tblNofisaBASE_ICMS: TIBBCDField;
-    tblNofisaVAL_ICMS: TIBBCDField;
-    tblNofisaBASE_ICM_S: TIBBCDField;
-    tblNofisaVAL_ICMS_S: TIBBCDField;
-    tblNofisaVAL_FRETE: TIBBCDField;
-    tblNofisaVAL_SEGURO: TIBBCDField;
-    tblNofisaVAL_OUTROS: TIBBCDField;
-    tblNofisaVAL_IPI: TIBBCDField;
-    tblNofisaVAL_SERV: TIBBCDField;
-    tblNofisaISSQN: TIBBCDField;
-    tblNofisaVAL_ISS: TIBBCDField;
-    tblNofisaTOT_PROD: TIBBCDField;
-    tblNofisaTOT_NOTA: TIBBCDField;
-    tblNofisaPIS: TIBBCDField;
-    tblNofisaCOFINS: TIBBCDField;
-    tblNofisaCOD_TRANS: TIBStringField;
-    tblNofisaFRETE_TIPO: TIBStringField;
-    tblNofisaPLACA: TIBStringField;
-    tblNofisaDADOS_AD01: TIBStringField;
-    tblNofisaDADOS_AD02: TIBStringField;
-    tblNofisaDADOS_AD03: TIBStringField;
-    tblNofisaDADOS_AD04: TIBStringField;
-    tblNofisaOBS: TIBStringField;
-    tblNofisaQTDE_PROD: TIntegerField;
-    tblNofisaSTATUS: TIBStringField;
-    tblNofisaCODIGO_FISCAL: TIBStringField;
-    tblNofisaDESCRICAO_CODIGO_FISCAL: TIBStringField;
-    tblNofisaFORMA_PAGAMENTO: TIBStringField;
     tblNofisaCHAVE: TIBStringField;
     tblNofisaRECIBO: TIBStringField;
     tblNofisaPROTOCOLO: TIBStringField;
@@ -363,92 +347,19 @@ type
     tblNofisaXML: TBlobField;
     tblNofisaPROTOCOLO_CANCELAMENTO: TIBStringField;
     tblNofisaMOTIVO_CANCELAMENTO: TIBStringField;
-    tblNofisaDADOS_AD05: TIBStringField;
-    tblNofisaRECEBIMENTO_TRANSFERENCIA: TDateField;
-    tblNofisaTRANSFERENCIA_PENDENTE: TIBStringField;
-    tblNofisaID_MECANICO: TIntegerField;
-    tblNofisaID_ATENDENTE: TIntegerField;
-    tblNofisaQUANTIDADE_VOLUMES: TIntegerField;
-    tblNofisaNFE_REFERENCIADA: TIBStringField;
-    tblNofisaNUMERO_NFSE: TIBStringField;
-    tblNofisaCODIGO_NFSE: TIBStringField;
-    tblNofisaARQ_XML_RPS: TIBStringField;
-    tblNofisaARQ_XML_NFSE: TIBStringField;
-    tblNofisaXML_NFSE: TWideMemoField;
-    tblNofisaXML_RPS: TWideMemoField;
-    tblSadaNF: TIBStringField;
-    tblSadaCODIGO: TIBStringField;
-    tblSadaDESCRICAO: TIBStringField;
-    tblSadaQTDE: TSmallintField;
-    tblSadaUNIDADE: TIBStringField;
-    tblSadaCST: TIBStringField;
-    tblSadaSUBST: TIBStringField;
-    tblSadaICMS: TIBBCDField;
-    tblSadaCUSTO: TIBBCDField;
-    tblSadaPRECO: TIBBCDField;
-    tblSadaCFOP: TIBStringField;
-    tblSadaNAT_OP: TIBStringField;
-    tblSadaST_COFINS: TIBStringField;
-    tblSadaANO_MODELO: TIBStringField;
-    tblSadaANO_FABRICACAO: TIBStringField;
-    tblSadaCOR: TIBStringField;
-    tblSadaCOMBUSTIVEL: TIBStringField;
-    tblSadaPLACA: TIBStringField;
-    tblSadaMOTOR: TIBStringField;
-    tblSadaCHASSI: TIBStringField;
-    tblSadaMARCA: TIBStringField;
-    tblSadaMODELO: TIBStringField;
-    tblSadaSTATUS: TIBStringField;
-    tblSadaBASE_ICMS: TIBBCDField;
-    tblSadaDESCONTO: TIBBCDField;
-    tblSadaID_PECAS: TIntegerField;
-    tblSadaNCM: TIBStringField;
-    tblSadaCILINDRADAS: TIntegerField;
-    tblSadaVL_PIS: TIBBCDField;
-    tblSadaCST_PIS: TIBStringField;
-    tblSadaVL_BC_PIS: TIBBCDField;
-    tblSadaALIQ_PIS_PERC: TIBBCDField;
-    tblSadaVL_COFINS: TIBBCDField;
-    tblSadaCST_COFINS: TIBStringField;
-    tblSadaVL_BC_COFINS: TIBBCDField;
-    tblSadaALIQ_COFINS_PERC: TIBBCDField;
-    tblSadaOUTRO_VALOR: TIBBCDField;
-    tblSadaPOTENCIA: TIBStringField;
-    tblVeiculosRENAVAM: TIBStringField;
-    tblVeiculosCOM_AVARIA: TIBStringField;
-    tblVeiculosCODIGO: TIBStringField;
-    tblSadaRENAVAM: TIBStringField;
-    tblPedidoVeiculosRENAVAM: TIBStringField;
-    tblPedidoVeiculosFORMA_VISITA: TIBStringField;
-    tblPedidoVeiculosID_VEICULO_USADO: TIntegerField;
-    tblPedidoVeiculosDATA_PEDIDO: TDateField;
-    IBQuery7: TIBQuery;
-    IBQuery7TOT_NOTA: TIBBCDField;
-    tblPedidoVeiculosNUM_CPF: TIBStringField;
-    tblSadaVBC_STRET: TIBBCDField;
-    tblSadaPST: TIBBCDField;
-    tblSadaVICMS_STRET: TIBBCDField;
-    tblSadaPRED_BCEFET: TIBBCDField;
-    tblSadaVBC_EFET: TIBBCDField;
-    tblSadaPICMS_EFET: TIBBCDField;
-    tblSadaVICMS_EFET: TIBBCDField;
-    tblVeiculosVBC_STRET: TIBBCDField;
-    tblVeiculosPST: TIBBCDField;
-    tblVeiculosVICMS_STRET: TIBBCDField;
-    tblVeiculosPRED_BCST: TIBBCDField;
-    tblVeiculosVBC_ST: TIBBCDField;
-    tblVeiculosPICMS_ST: TIBBCDField;
-    tblVeiculosVICMS_ST: TIBBCDField;
-    tblNofisaFaturasNUMERO_CV: TIBStringField;
-    tblCreceberNUMERO_CV: TIBStringField;
-    tblPedidoVeiculosRecebimentoNUMERO_CV: TIBStringField;
-    tblSadaALIQ_ICMS: TIBBCDField;
-    tblSadaICMS_SUBSTITUTO: TIBBCDField;
+    Panel2: TPanel;
+    Frete: TRadioGroup;
+    IdSMTP1: TIdSMTP;
+    IdMessage1: TIdMessage;
+    Label19: TLabel;
+    CurrencyEdit1: TCurrencyEdit;
+    Label20: TLabel;
+    CurrencyEdit2: TCurrencyEdit;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormShow(Sender: TObject);
     procedure PedidoExit(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
-    procedure GerarFaturas;
+    procedure ValorParaFaturamentoExit(Sender: TObject);
     procedure tblPedidoVeiculosAfterCancel(DataSet: TDataSet);
     procedure tblPedidoVeiculosAfterPost(DataSet: TDataSet);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -468,10 +379,6 @@ type
     procedure BtnReceberClick(Sender: TObject);
     procedure BtnImprimirClick(Sender: TObject);
     procedure CriarNFDesconto;
-    procedure ObservacaoExit(Sender: TObject);
-    procedure DescontoUsadasExit(Sender: TObject);
-    procedure GravarTabelaDesconto;
-    procedure GrupoExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -487,8 +394,6 @@ type
     ValorDesconto : Extended;
     DataVelha : Variant;
     NFGerada : Boolean;
-    GeradoFaturas : Boolean;
-    Cilindradas : Integer;
 //    SerieNotaFiscal : String;
 //    Dados_ad01 : String;
 //    Dados_ad02 : String;
@@ -505,7 +410,6 @@ type
     procedure CancelaFaturamento; virtual;
     procedure GeraNf; virtual;
     procedure CFOP(StrTexto : String);
-    procedure CalculaValordeFaturamento;
   end;
 
 var
@@ -514,7 +418,7 @@ var
 
 implementation
 
-uses FaturamentoPosVenda, FDB, Biblioteca, Empresas, efuncoes,
+uses FaturamentoPosVenda, FDB, Biblioteca, Empresas,
   FinanceiroCaixaEntradasPedidos, RelatorioNotasFiscais, ReemiteNFs,
   NfeGerenciamento, DescontoFinanceira;
 
@@ -540,14 +444,10 @@ begin
   Cfop1 := IBQuery2.FieldByName('CFOP1').AsString;
   Cfop2 := IBQuery2.FieldByName('CFOP2').AsString;
   DescricaoCodigoFiscal := IBQuery2.FieldByName('DESCRICAO').AsString;
-  Dadosad01.Text := Substr( IBQuery2.FieldByName('Dados_ad01').AsString,1,50 );
-  Dadosad02.Text := Substr( IBQuery2.FieldByName('Dados_ad02').AsString,1,50 );
-  if tblVeiculos.FieldByName('Origem').AsString = 'U' then
-     DadosAd03.text := Substr('NF de entr.: ' +
-       tblveiculos.FieldByName('Nota_ent').AsString +' de: ' +
-       tblVeiculos.FieldByName('Data_ent').AsString,1,50);
-
-//  Dadosad03.Text := IBQuery2.FieldByName('Dados_ad03').AsString;
+  Dadosad01.Text := IBQuery2.FieldByName('Dados_ad01').AsString;
+  Dadosad02.Text := IBQuery2.FieldByName('Dados_ad02').AsString;
+  Dadosad03.Text := IBQuery2.FieldByName('Dados_ad03').AsString;
+  Dadosad04.Text := IBQuery2.FieldByName('Dados_ad04').AsString;
 end;
 
 procedure TBoxFaturamentoVeiculos.FormClose(Sender: TObject;
@@ -613,10 +513,8 @@ if CodigoFinanceira.Text = '' then
 idFinanceira := StrToInt(CodigoFinanceira.Text);
 if StrtoInt(CodigoFinanceira.Text) = 0 then
   begin
-//   ValorParaFaturamento.Enabled := True;
-  // ValorParaFaturamento.SetFocus;
-    Observacao.Enabled := True;
-    Observacao.SetFocus;
+   ValorParaFaturamento.Enabled := True;
+   ValorParaFaturamento.SetFocus;
   end
 else
   begin
@@ -646,7 +544,7 @@ else
          Nomefinanceira.Text := FieldbyName('Nome').Text;
          EnableDisableButtons(False, True);
          if NomeFinanceira.Text <> '' then
-            Observacao.Text := Substr('Alienação fiduciária a ' + trim(  FieldbyName('Nome').Text),1,60);
+            Observacao.Text := 'Alienação fiduciária a ' + FieldbyName('Nome').Text;
          Observacao.SetFocus;
       end;
   end;
@@ -669,20 +567,16 @@ end;
 
 procedure TBoxFaturamentoVeiculos.FormShow(Sender: TObject);
 begin
-
-//  Showmessage('Caso a financeira esteja exigindo uma NF'+ #13 + 'de valor superior ao do financiamento' + #13 +
-//    'Registre uma fatura de' + #13 + 'DESCONTO FINANCEIRA' + #13+ 'do valor que está sendo emitido a maior.');
-  GeradoFaturas := False;
+  Showmessage('Caso a financeira esteja exigindo uma NF'+ #13 + 'de valor superior ao do financiamento' + #13 +
+    'Registre uma fatura de' + #13 + 'DESCONTO FINANCEIRA' + #13+ 'do valor que está sendo emitido a maior.');
   NFGerada := False;
   EnableDisableButtons(False, False);
   AbrirDs;
   Pedido.Setfocus;
-
 end;
 
 procedure TBoxFaturamentoVeiculos.PedidoExit(Sender: TObject);
 begin
-
 NFGerada := False;
 if Pedido.Text = '' then
    Pedido.Text := '0';
@@ -703,6 +597,8 @@ else
           ParamByName('IdConcessionaria').AsInteger :=
             StrToInt(BoxEmpresas.ID_ConcessionariaEmUso.Text);
           Open;
+          Last;
+          First;
           if recordcount = 0  then
             begin
              showmessage('Pedido inexistente.');
@@ -749,11 +645,6 @@ else
          end;
       end;
    end;
-   Dadosad04.Text := 'CPF do vendedor:' + tblPedidoVeiculos.FieldByName('Num_CPF').AsString;//cpf do vendedor //IBQuery2.FieldByName('Dados_ad04').AsString;
-   if tblVeiculos.FieldByName('Origem').AsString = 'N' then
-       CFOP('N')
-   else
-       CFOP('U');
     With tblPedidoVeiculosRecebimento do
      begin
        Financiado := False;
@@ -784,43 +675,8 @@ else
        Pedido.SetFocus;
       end;
 
-        IBQuery2.Close;
-        IBQuery2.SQL.Clear;
-        IBQuery2.Sql.Add('select sum(Pedido_Veiculos_Recebimento.valor_devido) as Valor');
-        IBQuery2.SQL.Add('from Pedido_Veiculos_recebimento');
-        IBQuery2.SQL.Add('where Pedido_Veiculos_recebimento.Id_Pedido_veiculos =');
-        IBQuery2.Sql.Add(':idPedidoVeiculos');
-        IBQuery2.Parambyname('idPedidoVeiculos').AsString := Pedido.Text; //IntToStr(IdNofisa);
-        IBQuery2.Open;
-        ValorParaFaturamento.Text := IBQuery2.FieldByName('Valor').AsString;
-        if  (FDB1.IBDataSetLoginacesso99.AsString = 'T') or
-            (FDB1.IBDataSetLoginADM.AsString = 'T') then
-            ValorParaFaturamento.Enabled := True
-        else
-            ValorParaFaturamento.Enabled := False;
+    ValorParaFaturamento.Text := tblPedidoVeiculos.FieldByName('Valor_a_receber').AsString;
     CodigoFinanceira.SetFocus;
-    Cilindradas := tblPedidoveiculos.FieldByName('cilindradas').AsInteger;
-end;
-
-procedure TBoxFaturamentoVeiculos.CalculaValordeFaturamento;
-begin
-  with IBQuery5 do
-   begin
-    Close;
-    ParamByName('idPedidoVeiculos').AsInteger := idPedido;
-    Open;
-    Brindes.Value := FieldByName('Valor').AsCurrency;
-   end;
-  With IBQuery6 do
-   begin
-    Close;
-    ParamByName('idNofisa').AsInteger := idNofisa;
-    Open;
-   end;
-  ValorParaFaturamento.Value := tblPedidoVeiculos.FieldByName('Valor_a_receber').AsCurrency -
-      DescontoUsadas.Value -  //Desconto de usadas
-      IBQuery6.FieldByName('Valor').AsCurrency; // valor do desconto de financeira
-//      IBQuery5.FieldByName('Valor').AsCurrency + //Valor dos brindes
 
 end;
 
@@ -835,12 +691,7 @@ begin
        ParamByName('id').AsInteger := StrToInt(BoxEmpresas.ID_ConcessionariaEmUso.Text);
        Open;
     end;
-   if SerieNF.Text <> 'e' then
-    begin
-     showmessage('Série inválida');
-     SerieNF.SetFocus;
-    end
-//  BtnConfirma.SetFocus;
+  BtnConfirma.SetFocus;
 end;
 
 procedure TBoxFaturamentoVeiculos.SpeedButton1Click(Sender: TObject);
@@ -895,7 +746,7 @@ begin
   Fdb1.IBTransaction.CommitRetaining;
 end;
 
-procedure TBoxFaturamentoVeiculos.GerarFaturas;
+procedure TBoxFaturamentoVeiculos.ValorParaFaturamentoExit(Sender: TObject);
 var
   I: Integer;
 begin
@@ -917,8 +768,6 @@ begin
            FieldByName('Vencimento').AsDateTime;
          tblNofisaFaturas.FieldByName('Valor').AsCurrency :=
            FieldByName('Valor_devido').AsCurrency;
-         tblNofisaFaturas.FieldByName('Numero_CV').AsString :=
-           FieldByName('Numero_CV').AsString;
          tblNofisaFaturas.Post;
          Next;
        end;
@@ -926,13 +775,6 @@ begin
      tblNofisaFaturas.ParamByName('id').AsInteger := IdNofisa;
      tblNofisafaturas.Open;   
   end;
-end;
-
-procedure TBoxFaturamentoVeiculos.ObservacaoExit(Sender: TObject);
-begin
-  if not GeradoFaturas then
-    GerarFaturas;
-  GeradoFaturas := True;
 end;
 
 procedure TBoxFaturamentoVeiculos.VencimentoExit(Sender: TObject);
@@ -943,11 +785,9 @@ end;
 procedure TBoxFaturamentoVeiculos.BtnConfirmaClick(Sender: TObject);
 var
   Gerar : Boolean;
-  Cancelar : Boolean;
-//  mcusto : Extended;
 begin
   if (Copy(BoxEmpresas.CNPJ,1,8) = Copy(CNPJ,1,8)) then
-     Showmessage('Não é possivel fazer faturamento para mesmo CNPJ.')
+     Showmessage('Não é possivel fazer faturamento para mesmo CNPJ.') 
   else
     begin
 
@@ -982,39 +822,21 @@ begin
         IBQuery2.Parambyname('idNofisa').AsString := IntToStr(IdNofisa);
         IBQuery2.Open;
         GErar := True;
-        with tblVeiculos do
-          begin
-            Close;
-            ParamByName('Id').AsInteger := tblPedidoveiculos.FieldByName('id_veiculos').AsInteger;
-            Open;
-          end;
-        with IBQuery7 do
-          begin
-            Close;
-            ParamByName('idNumero').AsString := tblVeiculos.FieldByName('Nota_ent').AsString;
-            ParamByName('idConcessionaria').AsInteger :=  tblVeiculos.FieldByName('id_Concessionaria').AsInteger;
-            Open;
-          end;
-        Cancelar := False;
-        if (tblVeiculos.FieldByName('Origem').AsString = 'U') then//acrescentado em 29/06/2020
-         begin
-          if ((StrToInt(ValorParaFaturamento.Text)-1950 > IBQuery7.FieldByName('TOT_NOTA').AsInteger) and //tblVeiculos.FieldByName('Custo').AsInteger) and
-           (tblVeiculos.FieldByName('Origem').AsString = 'U')) or
-           ((StrToInt(ValorParaFaturamento.Text) <= IBQuery7.FieldByName('TOT_NOTA').AsInteger) and //tblVeiculos.FieldByName('Custo').AsInteger) and
-           (tblVeiculos.FieldByName('Origem').AsString = 'U')) then
-          begin
-           Showmessage('Faturamento de motocicleta usada em desacordo.'+#13+'Valor de venda inferior ao custo.'+#13+
-             'Faturamento cancelado.');
-           Cancelar := True;
-          end;
-         end;
-
-//        else
-        if not Cancelar then
-        begin
+            with tblVeiculos do
+            begin
+              Close;
+              ParamByName('Id').AsInteger := tblPedidoveiculos.FieldByName('id_veiculos').AsInteger;
+              Open;
+            end;
+        if (StrToInt(ValorParaFaturamento.Text)-250 < tblVeiculos.FieldByName('Custo').AsInteger) and
+           (tblVeiculos.FieldByName('Origem').AsString = 'U') then
+          Showmessage('Faturamento de motocicleta usada em desacordo.'+#13+'Valor de venda inferior ao custo.'+#13+
+             'Faturamento cancelado.')
+        else
          if IBQuery2.FieldByName('Valor').AsString =
            (ValorParaFaturamento.Text) then
            begin
+        //     EnableDisableButtons(False, False);
              case MessageDlg('Confirma geração da NF?', mtConfirmation, [mbYes,mbNo], 0) of
                mrYes:
                begin
@@ -1026,7 +848,6 @@ begin
                         if (FieldByName('Vencimento').AsDateTime > DataAtual) and
                            (FieldByName('Id_Formas_Pagamento').AsInteger <> 5) and
                            (FieldByName('Id_Formas_Pagamento').AsInteger <> 9) and
-                           (FieldByName('Id_Formas_Pagamento').AsInteger <> 13) and
                            (FieldByName('Id_Formas_Pagamento').AsInteger <> 10) then
                           if FDB1.ClienteComDebito(StrToInt(CodigoCliente.Text)) then
                            begin
@@ -1045,15 +866,14 @@ begin
              end;
              BtnImprimir.SetFocus;
            end
-         else
+        else
            begin
              showmessage('A soma das faturas não confere com o total da nota.');
              BtnNovo.SetFocus;
            end;
-        end
-        else
+       end
+      else
         showmessage('Não há NF para gerar');
-       end;
       end;
       end;
      end;
@@ -1156,7 +976,6 @@ begin
      else  {veiculos usado}
         begin
          CFOP('U');
-//         showmessage(FloatToStr(BoxEmpresas.Aliquota_ICMS1.Value));
          FieldByName('Base_ICMS').AsFloat := (ValorParaFaturamento.Value *
           (100-StrToFloat(Reducao_de_base)))/100;
          FieldByName('Val_ICMS').AsFloat := FieldByName('Base_ICMS').AsFloat *
@@ -1168,32 +987,24 @@ begin
        FieldByName('Codigo_Fiscal').AsString := CFOP1
      else
        FieldByName('Codigo_fiscal').AsString := CFOP2;
-     FieldByName('Descricao_codigo_fiscal').AsString := Trim( DescricaoCodigoFiscal ) ;
-
-
+     FieldByName('Descricao_codigo_fiscal').AsString := DescricaoCodigoFiscal;
      FieldByName('Frete_Tipo').AsString := IntToStr(Frete.ItemIndex + 1);
-     FieldByName('Dados_Ad01').AsString := Substr( Dadosad01.Text,1,50 ) ;
-     FieldByName('Dados_Ad02').AsString := Substr( Dadosad02.Text,1,50 );
-     FieldByName('Dados_Ad03').AsString := Substr( DadosAd03.Text,1,50 );
-
-     FieldByName('Dados_Ad04').AsString := Substr( DadosAd04.Text,1,50 ) ;
-     FieldByName('Dados_Ad05').AsString := Substr('Sequência do cliente:'+ FieldByName('Id_Clientes').AsString,1,50);
+     FieldByName('Dados_Ad01').AsString := Dadosad01.Text;
+     FieldByName('Dados_Ad02').AsString := Dadosad02.Text;
+     FieldByName('Dados_Ad03').AsString := DadosAd03.Text;
+     FieldByName('Dados_Ad04').AsString := DadosAd04.Text;
+     FieldByName('Dados_Ad05').AsString := 'Sequência do cliente:'+ FieldByName('Id_Clientes').AsString;
      if tblVeiculos.FieldByName('Origem').AsString = 'N' then
-       FieldByName('Dados_Ad03').AsString := trim( DadosAd03.Text )
+       FieldByName('Dados_Ad03').AsString := DadosAd03.Text
      else
-         FieldByName('Dados_Ad03').AsString := Substr('NF de entr.: ' +
+//       if tblVeiculos.FieldByName('Origem').AsString = 'M' then
+  //       FieldByName('Dados_Ad03').AsString := 'Motor de popa'
+    //   else
+         FieldByName('Dados_Ad03').AsString := 'NF de entr.: ' +
            tblveiculos.FieldByName('Nota_ent').AsString +' de: ' +
-           tblVeiculos.FieldByName('Data_ent').AsString,1,50);
-     FieldByName('Dados_Ad04').AsString := Substr(DadosAd04.Text,1,50);
-
-    /// showmessage( '01 '+ inttostr( length( fieldbyname( 'dados_ad01' ).asString ) ));
-    // showmessage( '02 '+ inttostr( length( fieldbyname( 'dados_ad02' ).asString ) ));
-    // showmessage( '03 '+ inttostr( length( fieldbyname( 'dados_ad03' ).asString ) ));
-    // showmessage( '04 '+ inttostr( length( fieldbyname( 'dados_ad04' ).asString ) ));
-   //  showmessage( '05 '+ inttostr( length( fieldbyname( 'dados_ad05' ).asString ) ));
-   //  showmessage( 'obs '+ inttostr( length( Observacao.Text ) ));
-
-     FieldByName('Obs').AsString := Substr( Observacao.Text,1,60 ) ;
+           tblVeiculos.FieldByName('Data_ent').AsString;
+     FieldByName('Dados_Ad04').AsString := DadosAd04.Text;
+     FieldByName('Obs').AsString := Observacao.Text;
      FieldByName('Qtde_prod').AsInteger := 1;
      FieldByName('Status').AsString := 'Processado';
      Post;
@@ -1210,12 +1021,10 @@ begin
     else
        FieldByName('CFOP').AsString := CFOP2;
     FieldByName('NF').AsInteger := IdNumeroNotaFiscal;
-    FieldByName('NCM').AsString := tblveiculos.FieldByName('NCM').AsString;
     FieldByName('Descricao').AsString := 'Motocicleta';
     FieldByName('Qtde').AsInteger := 1;
     FieldByName('Unidade').AsString := 'UN';
     FieldByName('NAT_OP').AsString := DescricaoCodigoFiscal;
-    FieldByName('Cilindradas').AsInteger := Cilindradas;
     matriz[1] := 'Marca';
     matriz[2] := 'Modelo';
     matriz[3] := 'Placa';
@@ -1239,33 +1048,12 @@ begin
        begin
          FieldByName('Subst').AsString := 'T';
          FieldByName('ST_Cofins').AsString := 'T';
-         //acrescido em função ICMS_ST em vigor 01/01/2019
-         //Campos para atacado
-         fieldByName('vBC_STRet').AsCurrency := tblVeiculos.fieldByName('vBC_STRet').AsCurrency;
-         fieldByName('pST').AsCurrency := tblVeiculos.fieldByName('pST').AsCurrency;
-         fieldByName('vICMS_STRet').AsCurrency := tblVeiculos.fieldByName('vICMS_STRet').AsCurrency;
-//                                                                 tblVeiculos.fieldByName('ICMS').AsCurrency;
-         //Campos para consumidor final
-         fieldByName('pRed_BCEfet').AsCurrency := tblVeiculos.fieldByName('pRed_BCST').AsCurrency;
-         fieldByName('vBC_Efet').AsCurrency := ((100 - tblVeiculos.fieldByName('pRed_BCST').AsCurrency)/100) *
-                                               ValorParaFaturamento.Value;
-         fieldByName('pICMS_Efet').AsCurrency := BoxEmpresas.Aliquota_ICMS1.Value;
-         fieldByName('vICMS_Efet').AsCurrency := ValorParaFaturamento.Value * 0.12;//fieldByName('vBC_Efet').AsCurrency *
-//                                                 fieldByName('pICMS_Efet').AsCurrency;
        end;
     if (tblVeiculos.FieldByName('Origem').AsString = 'U') or
        (tblVeiculos.FieldByName('Origem').AsString = 'M') then
        begin
          FieldByName('Subst').AsString := 'F';
          FieldByName('ST_Cofins').AsString := 'F';
-         if (tblVeiculos.FieldByName('Origem').AsString = 'U') then
-           begin
-             FieldByName('Base_ICMS').AsFloat := (ValorParaFaturamento.Value *
-              (100-StrToFloat(Reducao_de_base)))/100;
-             FieldByName('ICMS').AsFloat := FieldByName('Base_ICMS').AsFloat *
-              (BoxEmpresas.Aliquota_ICMS1.Value);
-             FieldByName('Aliq_ICMs').AsFloat := StrToFloat(BoxEmpresas.Aliquota_ICMS1.EditText);//17/100;
-           end;
        end;
     Post;
  end;
@@ -1353,16 +1141,15 @@ begin
       tblCreceber.FieldByName('Emissao').AsDateTime :=
         tblNofisa.FieldByName('Emissao').AsDateTime;
       if tblVeiculos.FieldByName('Origem').AsString = 'N' then
-        tblCreceber.FieldByName('Historico').AsString := Substr('Vlr.ref.venda motoc.0Km - ' +
-          tblPessoas.FieldByName('Nome').AsString,1,60);
+        tblCreceber.FieldByName('Historico').AsString := 'Vlr.ref.venda motoc.0Km - ' +
+          tblPessoas.FieldByName('Nome').AsString;
       if tblVeiculos.FieldByName('Origem').AsString = 'U' then
-        tblCreceber.FieldByName('Historico').AsString := Substr('Vlr.ref.venda motoc.usada - ' +
-         tblPessoas.FieldByName('Nome').AsString,1,60);
+        tblCreceber.FieldByName('Historico').AsString := 'Vlr.ref.venda motoc.usada - ' +
+         tblPessoas.FieldByName('Nome').AsString;
       if tblVeiculos.FieldByName('Origem').AsString = 'M' then
-        tblCreceber.FieldByName('Historico').AsString := Substr('Vlr.ref.venda motor de popa - ' +
-         tblPessoas.FieldByName('Nome').AsString,1,60);
+        tblCreceber.FieldByName('Historico').AsString := 'Vlr.ref.venda motor de popa - ' +
+         tblPessoas.FieldByName('Nome').AsString;
       tblCreceber.FieldByName('Status').AsString := 'Pendente';
-      tblCreceber.FieldByName('Numero_CV').AsString := tblPedidoVeiculosRecebimento.FieldByName('Numero_CV').AsString;
       tblCreceber.Post;
       tblPedidoVeiculosRecebimento.Edit;
       tblPedidoVeiculosRecebimento.FieldByName('id_Creceber').AsInteger := idCreceber;
@@ -1375,8 +1162,7 @@ begin
   {Criar NF de Desconto}
    if CriarNFdeDesconto then
      begin
-//       CriarNFDesconto;
-       GravarTabelaDesconto;
+       CriarNFDesconto;//(InttoStr(idNumeroNotaFiscal),ValorDesconto);
      end;
     {Voltar SQL da tblSerienf}
   with tblSerieNF do
@@ -1537,29 +1323,6 @@ begin
   end;
 end;
 
-procedure TBoxFaturamentoVeiculos.GravarTabelaDesconto;
-begin
-  with tblDescontoFinanceira do
-   begin
-     Insert;
-     FieldByName('Id_pedido').AsInteger := tblPedidoVeiculos.FieldByName('id_Pedido_Veiculos').AsInteger;
-     FieldByName('Id_Clientes').AsInteger := tblPedidoVeiculos.FieldByName('id_Clientes').AsInteger;
-     FieldByName('Id_Nofisa').AsInteger := idNofisa;
-     FieldByName('Numero_NF').AsInteger := idNumeroNotaFiscal;
-     FieldByName('Data_NF').AsDateTime := DataVelha;
-     FieldByName('Valor').AsCurrency :=  ValorDesconto;
-     Post;
-   end;
-end;
-
-procedure TBoxFaturamentoVeiculos.GrupoExit(Sender: TObject);
-begin
-  If (StrToInt(Grupo.text) > 0) or (StrToInt(cota.Text) > 0) then
-   DadosAd03.text := 'Grupo: ' + Grupo.text + ' Cota: ' + cota.text
-  else
-   DadosAd03.text := '';
-end;
-
 procedure TBoxFaturamentoVeiculos.BtnExcluiClick(Sender: TObject);
 begin
   Showmessage('Esta operação só excluirá a fatura da NF. Para excluir do contas a receber altere o pedido.');
@@ -1570,7 +1333,6 @@ begin
      end;
     end;
   BtnNovo.SetFocus;
-//  CalculaValorDeFaturamento;
 end;
 
 procedure TBoxFaturamentoVeiculos.BtnImprimirClick(Sender: TObject);
@@ -1617,33 +1379,16 @@ procedure TBoxFaturamentoVeiculos.DBGrid2KeyPress(Sender: TObject;
   var Key: Char);
 begin
    {: se apertou ESC, fecha janela}
- { if Key = #27 then
+  if Key = #27 then
     begin
      Close;
     end;
-  {: troca ENTER por TAB}
-{  if key = #13 then
-  begin
-    Perform (CM_DialogKey, VK_TAB, 0);
-    key:=#0;
-//    if (ataSourceNofisaFaturas.State in [dsEdit]) then
-    if (dts2.State in [dsEdit]) then
-      tblAuxFaturas2.Post
-    else
-      tblAuxFaturas2.Edit;
-  end;}
-end;
-
-procedure TBoxFaturamentoVeiculos.DescontoUsadasExit(Sender: TObject);
-begin
-//  CalculaValorDeFaturamento;
 end;
 
 procedure TBoxFaturamentoVeiculos.DoAfterClose;
 begin
   DataSourceSada.Dataset.Close;
   DataSourceCreceber.Dataset.Close;
-  DataSourceDescontoFinanceira.Dataset.Close;
   DataSourceNofisa.Dataset.Close;
   DataSourceNofisaFaturas.Dataset.Close;
   DataSourcePedidoVeiculos.Dataset.Close;
@@ -1661,7 +1406,6 @@ end;
 procedure TBoxFaturamentoVeiculos.AbrirDs;
 begin
   DataSourceSada.Dataset.Open;
-  DataSourceDescontoFinanceira.Dataset.Open;
   DataSourceCreceber.Dataset.Open;
   DataSourceNofisa.Dataset.Open;
   DataSourceNofisaFaturas.Dataset.Open;
@@ -1677,7 +1421,7 @@ begin
   BtnExclui.Enabled := Value;
   BtnConfirma.Enabled := Value;
   BtnConfirmaPagamento.Enabled := Value;
-//  ValorParaFaturamento.Enabled := Value1;
+  ValorParaFaturamento.Enabled := Value1;
   Frete.Enabled := Value1;
   Observacao.Enabled := Value1;
 end;

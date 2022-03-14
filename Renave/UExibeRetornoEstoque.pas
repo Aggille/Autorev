@@ -100,8 +100,8 @@ begin
     FStrings.Add( 'Chave NFe Entrada: ' + aValue.chaveNotaFiscalEntrada );
     FStrings.Add( 'Data/Hora da NFe: ' + FormatDateTime( 'dd/mm/yyyy' , aValue.dataHoraEnvioNotaFiscalEntrada ) ) ;
     FStrings.Add( 'Nº Termo de Entrada: ' + aValue.numeroTermoEntradaEstoque.ToString );
-    FStrings.Add( 'Nº Documento do Vendedor: ' + aValue.numeroDocumentoVendedor );
-    FStrings.Add( 'Tipo Documento do Vendedor: ' + aValue.tipoDocumentoVendedor );
+  //  FStrings.Add( 'Nº Documento do Vendedor: ' + aValue.numeroDocumentoVendedor );           alterado pelo Eduardo-comentado
+  //  FStrings.Add( 'Tipo Documento do Vendedor: ' + aValue.tipoDocumentoVendedor );
   end;
 end;
 

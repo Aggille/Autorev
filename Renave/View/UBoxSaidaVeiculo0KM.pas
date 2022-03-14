@@ -36,6 +36,7 @@ type
     SpeedButton3: TSpeedButton;
     qryCliente: TIBQuery;
     qryNota: TIBQuery;
+    RadioGroup1: TRadioGroup;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);
@@ -81,7 +82,10 @@ begin
 
     aSaida.comprador.nome := edtNomeComprador.Text;
     aSaida.Comprador.numeroDocumento := edtCpfComprador.Text;
-    aSaida.comprador.tipoDocumento := 'CPF';
+    if RadioGroup1.ItemIndex = 0 then
+       aSaida.comprador.tipoDocumento := 'CPF'
+    else
+       aSaida.comprador.tipoDocumento := 'CNPJ';
     aSaida.comprador.email := edtEmail.Text;
     asaida.comprador.endereco.bairro := edtBairro.Text;
     aSaida.comprador.endereco.cep := edtCep.text;

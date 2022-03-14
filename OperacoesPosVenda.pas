@@ -7,7 +7,7 @@ uses
   Dialogs, ComCtrls, ExtCtrls, StdCtrls, DBCtrls, DB, Buttons, ToolWin,
   IBCustomDataSet, Mask, JvExMask, JvToolEdit, JvDBControls, Grids, DBGrids,
   JvMaskEdit, IBQuery, JvExControls, JvDBLookup, frxClass, frxDBSet, frxRich,
-  frxCross;
+  frxCross, frxExportPDF, frxExportMail;
 
 type
   TBoxPosVenda = class(TForm)
@@ -502,6 +502,8 @@ type
     IBStringField106: TIBStringField;
     IBStringField107: TIBStringField;
     IBStringField108: TIBStringField;
+    frxPDFExport1: TfrxPDFExport;
+    frxMailExport1: TfrxMailExport;
     procedure AbrirDs;
     procedure FecharDs;
     procedure FormKeyPress(Sender: TObject; var Key: Char);

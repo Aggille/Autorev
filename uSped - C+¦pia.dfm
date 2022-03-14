@@ -2,8 +2,8 @@ object BoxSped: TBoxSped
   Left = 15
   Top = 85
   Caption = 'Gerar Sped'
-  ClientHeight = 544
-  ClientWidth = 651
+  ClientHeight = 468
+  ClientWidth = 649
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -24,8 +24,8 @@ object BoxSped: TBoxSped
     Caption = 'Per'#237'odo'
   end
   object Label3: TLabel
-    Left = 135
-    Top = 37
+    Left = 136
+    Top = 40
     Width = 6
     Height = 13
     Caption = 'a'
@@ -87,28 +87,6 @@ object BoxSped: TBoxSped
     Height = 30
     Caption = 'Gerar Invent'#225'rio'
     OnClick = BtnInventarioClick
-  end
-  object SpeedButton1: TSpeedButton
-    Left = 8
-    Top = 428
-    Width = 105
-    Height = 30
-    Caption = 'Refazer Invent'#225'rio'
-    OnClick = SpeedButton1Click
-  end
-  object Label8: TLabel
-    Left = 485
-    Top = 490
-    Width = 31
-    Height = 13
-    Caption = 'Label2'
-  end
-  object Label9: TLabel
-    Left = 419
-    Top = 490
-    Width = 60
-    Height = 13
-    Caption = 'Atualizando:'
   end
   object edtDI: TwwDBDateTimePicker
     Left = 8
@@ -207,16 +185,16 @@ object BoxSped: TBoxSped
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 525
-    Width = 651
+    Top = 449
+    Width = 649
     Height = 19
     Panels = <>
     SimplePanel = True
   end
   object progresso: TProgressBar
     Left = 0
-    Top = 509
-    Width = 651
+    Top = 433
+    Width = 649
     Height = 16
     Align = alBottom
     TabOrder = 10
@@ -324,62 +302,6 @@ object BoxSped: TBoxSped
     Height = 17
     Caption = 'Incluir Ve'#237'culos no Invent'#225'rio'
     TabOrder = 14
-  end
-  object Edit1: TEdit
-    Left = 504
-    Top = 360
-    Width = 121
-    Height = 21
-    TabOrder = 15
-    Text = 'Edit1'
-  end
-  object Edit2: TEdit
-    Left = 504
-    Top = 392
-    Width = 121
-    Height = 21
-    TabOrder = 16
-    Text = 'Edit2'
-  end
-  object CheckBoxH20VeiculosZerado: TCheckBox
-    Left = 336
-    Top = 429
-    Width = 153
-    Height = 17
-    Caption = 'Zerar H020 para ve'#237'culos'
-    TabOrder = 17
-  end
-  object Edit3: TEdit
-    Left = 119
-    Top = 433
-    Width = 180
-    Height = 21
-    TabOrder = 18
-    Text = 'C:\Contabil\SPED.txt'
-  end
-  object ProgressBar1: TProgressBar
-    Left = 8
-    Top = 486
-    Width = 389
-    Height = 17
-    Max = 10000
-    TabOrder = 19
-  end
-  object CheckBoxH20PecasZerado: TCheckBox
-    Left = 336
-    Top = 452
-    Width = 153
-    Height = 17
-    Caption = 'Zerar H020 para pe'#231'as'
-    TabOrder = 20
-  end
-  object CheckBoxDeterminacaoFisco: TCheckBox
-    Left = 495
-    Top = 452
-    Width = 148
-    Height = 17
-    Caption = 'Motivo Determina'#231#227'o fisco'
-    TabOrder = 21
   end
   object ACBrSpedFiscal1: TACBrSPEDFiscal
     Path = '.\'
@@ -959,6 +881,12 @@ object BoxSped: TBoxSped
       Origin = '"SADA"."SUBST"'
       Size = 1
     end
+    object qryItemNfALIQ_ICMS: TIBBCDField
+      FieldName = 'ALIQ_ICMS'
+      Origin = '"SADA"."ALIQ_ICMS"'
+      Precision = 9
+      Size = 2
+    end
     object qryItemNfICMS: TIBBCDField
       FieldName = 'ICMS'
       Origin = '"SADA"."ICMS"'
@@ -1182,18 +1110,6 @@ object BoxSped: TBoxSped
     object qryItemNfVICMS_EFET: TIBBCDField
       FieldName = 'VICMS_EFET'
       Origin = '"SADA"."VICMS_EFET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNfALIQ_ICMS: TIBBCDField
-      FieldName = 'ALIQ_ICMS'
-      Origin = '"SADA"."ALIQ_ICMS"'
-      Precision = 9
-      Size = 3
-    end
-    object qryItemNfICMS_SUBSTITUTO: TIBBCDField
-      FieldName = 'ICMS_SUBSTITUTO'
-      Origin = '"SADA"."ICMS_SUBSTITUTO"'
       Precision = 18
       Size = 2
     end
@@ -1542,13 +1458,24 @@ object BoxSped: TBoxSped
     Top = 65528
     ParamData = <
       item
-        DataType = ftInteger
+        DataType = ftUnknown
         Name = 'ID_NOFISA'
         ParamType = ptUnknown
-        Size = 4
       end>
     object qryTotItemBASE_ICMS: TIBBCDField
       FieldName = 'BASE_ICMS'
+      ProviderFlags = []
+      Precision = 18
+      Size = 2
+    end
+    object qryTotItemICMS: TIBBCDField
+      FieldName = 'ICMS'
+      ProviderFlags = []
+      Precision = 18
+      Size = 4
+    end
+    object qryTotItemTOTAL: TIBBCDField
+      FieldName = 'TOTAL'
       ProviderFlags = []
       Precision = 18
       Size = 2
@@ -1557,12 +1484,6 @@ object BoxSped: TBoxSped
       FieldName = 'ALIQ_ICMS'
       Origin = '"SADA"."ALIQ_ICMS"'
       Precision = 9
-      Size = 3
-    end
-    object qryTotItemTOTAL: TIBBCDField
-      FieldName = 'TOTAL'
-      ProviderFlags = []
-      Precision = 18
       Size = 2
     end
     object qryTotItemCST: TIBStringField
@@ -1574,12 +1495,6 @@ object BoxSped: TBoxSped
       FieldName = 'CFOP'
       Origin = '"SADA"."CFOP"'
       Size = 4
-    end
-    object qryTotItemICMS: TFMTBCDField
-      FieldName = 'ICMS'
-      ProviderFlags = []
-      Precision = 18
-      Size = 5
     end
   end
   object qryTotServicosNf: TIBQuery
@@ -1723,6 +1638,12 @@ object BoxSped: TBoxSped
       Origin = '"NOFI"."HORA"'
       FixedChar = True
       Size = 5
+    end
+    object qryNfeCFOP: TIBStringField
+      FieldName = 'CFOP'
+      Origin = '"NOFI"."CFOP"'
+      FixedChar = True
+      Size = 14
     end
     object qryNfeNAT_OP: TIBStringField
       FieldName = 'NAT_OP'
@@ -1942,12 +1863,6 @@ object BoxSped: TBoxSped
       Origin = '"NOFI"."PROTOCOLO_CONSULTA"'
       Size = 60
     end
-    object qryNfeCFOP: TIBStringField
-      FieldName = 'CFOP'
-      Origin = '"NOFI"."CFOP"'
-      FixedChar = True
-      Size = 14
-    end
   end
   object qryItemNfe: TIBQuery
     Database = FDB1.IBDatabase
@@ -1962,7 +1877,6 @@ object BoxSped: TBoxSped
       'FROM DADOS_NFE dn'
       ''
       'LEFT JOIN pecas p ON p.ID_pecas = dn.ID_peca'
-      ''
       ''
       'WHERE'
       'dn.ID_NOFI = :ID_NOFI'
@@ -2128,54 +2042,6 @@ object BoxSped: TBoxSped
       Origin = '"PECAS"."ST_COFINS"'
       FixedChar = True
       Size = 1
-    end
-    object qryItemNfeVBC_STRET: TIBBCDField
-      FieldName = 'VBC_STRET'
-      Origin = '"DADOS_NFE"."VBC_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNfePST: TIBBCDField
-      FieldName = 'PST'
-      Origin = '"DADOS_NFE"."PST"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNfeVICMS_STRET: TIBBCDField
-      FieldName = 'VICMS_STRET'
-      Origin = '"DADOS_NFE"."VICMS_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNfePMVAST: TIBBCDField
-      FieldName = 'PMVAST'
-      Origin = '"DADOS_NFE"."PMVAST"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNfePRED_BCST: TIBBCDField
-      FieldName = 'PRED_BCST'
-      Origin = '"DADOS_NFE"."PRED_BCST"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNfeVBC_ST: TIBBCDField
-      FieldName = 'VBC_ST'
-      Origin = '"DADOS_NFE"."VBC_ST"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNfePICMS_ST: TIBBCDField
-      FieldName = 'PICMS_ST'
-      Origin = '"DADOS_NFE"."PICMS_ST"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNfeVICMS_ST: TIBBCDField
-      FieldName = 'VICMS_ST'
-      Origin = '"DADOS_NFE"."VICMS_ST"'
-      Precision = 18
-      Size = 2
     end
   end
   object qryTotItemE: TIBQuery
@@ -3716,6 +3582,12 @@ object BoxSped: TBoxSped
       Origin = '"SADA"."SUBST"'
       Size = 1
     end
+    object IBBCDField1: TIBBCDField
+      FieldName = 'ALIQ_ICMS'
+      Origin = '"SADA"."ALIQ_ICMS"'
+      Precision = 9
+      Size = 2
+    end
     object IBBCDField2: TIBBCDField
       FieldName = 'ICMS'
       Origin = '"SADA"."ICMS"'
@@ -3848,112 +3720,6 @@ object BoxSped: TBoxSped
       FixedChar = True
       Size = 1
     end
-    object qryItemNFTALIQ_ICMS: TIBBCDField
-      FieldName = 'ALIQ_ICMS'
-      Origin = '"SADA"."ALIQ_ICMS"'
-      Precision = 9
-      Size = 3
-    end
-    object qryItemNFTVL_PIS: TIBBCDField
-      FieldName = 'VL_PIS'
-      Origin = '"SADA"."VL_PIS"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTCST_PIS: TIBStringField
-      FieldName = 'CST_PIS'
-      Origin = '"SADA"."CST_PIS"'
-      Size = 3
-    end
-    object qryItemNFTVL_BC_PIS: TIBBCDField
-      FieldName = 'VL_BC_PIS'
-      Origin = '"SADA"."VL_BC_PIS"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTALIQ_PIS_PERC: TIBBCDField
-      FieldName = 'ALIQ_PIS_PERC'
-      Origin = '"SADA"."ALIQ_PIS_PERC"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNFTVL_COFINS: TIBBCDField
-      FieldName = 'VL_COFINS'
-      Origin = '"SADA"."VL_COFINS"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTCST_COFINS: TIBStringField
-      FieldName = 'CST_COFINS'
-      Origin = '"SADA"."CST_COFINS"'
-      Size = 3
-    end
-    object qryItemNFTVL_BC_COFINS: TIBBCDField
-      FieldName = 'VL_BC_COFINS'
-      Origin = '"SADA"."VL_BC_COFINS"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTALIQ_COFINS_PERC: TIBBCDField
-      FieldName = 'ALIQ_COFINS_PERC'
-      Origin = '"SADA"."ALIQ_COFINS_PERC"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNFTOUTRO_VALOR: TIBBCDField
-      FieldName = 'OUTRO_VALOR'
-      Origin = '"SADA"."OUTRO_VALOR"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTVBC_STRET: TIBBCDField
-      FieldName = 'VBC_STRET'
-      Origin = '"SADA"."VBC_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTPST: TIBBCDField
-      FieldName = 'PST'
-      Origin = '"SADA"."PST"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNFTVICMS_STRET: TIBBCDField
-      FieldName = 'VICMS_STRET'
-      Origin = '"SADA"."VICMS_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTPRED_BCEFET: TIBBCDField
-      FieldName = 'PRED_BCEFET'
-      Origin = '"SADA"."PRED_BCEFET"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNFTVBC_EFET: TIBBCDField
-      FieldName = 'VBC_EFET'
-      Origin = '"SADA"."VBC_EFET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTPICMS_EFET: TIBBCDField
-      FieldName = 'PICMS_EFET'
-      Origin = '"SADA"."PICMS_EFET"'
-      Precision = 9
-      Size = 2
-    end
-    object qryItemNFTVICMS_EFET: TIBBCDField
-      FieldName = 'VICMS_EFET'
-      Origin = '"SADA"."VICMS_EFET"'
-      Precision = 18
-      Size = 2
-    end
-    object qryItemNFTICMS_SUBSTITUTO: TIBBCDField
-      FieldName = 'ICMS_SUBSTITUTO'
-      Origin = '"SADA"."ICMS_SUBSTITUTO"'
-      Precision = 18
-      Size = 2
-    end
   end
   object dtsItemNFT: TDataSource
     DataSet = qryItemNFT
@@ -3990,10 +3756,9 @@ object BoxSped: TBoxSped
     Top = 248
     ParamData = <
       item
-        DataType = ftInteger
+        DataType = ftUnknown
         Name = 'ID_NOFISA'
         ParamType = ptUnknown
-        Size = 4
       end>
     object IBBCDField7: TIBBCDField
       FieldName = 'BASE_ICMS'
@@ -4001,22 +3766,22 @@ object BoxSped: TBoxSped
       Precision = 18
       Size = 2
     end
-    object qryTotItemNFTALIQ_ICMS: TIBBCDField
-      FieldName = 'ALIQ_ICMS'
-      Origin = '"SADA"."ALIQ_ICMS"'
-      Precision = 9
-      Size = 3
-    end
-    object qryTotItemNFTICMS: TFMTBCDField
+    object IBBCDField8: TIBBCDField
       FieldName = 'ICMS'
       ProviderFlags = []
       Precision = 18
-      Size = 5
+      Size = 4
     end
     object IBBCDField9: TIBBCDField
       FieldName = 'TOTAL'
       ProviderFlags = []
       Precision = 18
+      Size = 2
+    end
+    object IBBCDField10: TIBBCDField
+      FieldName = 'ALIQ_ICMS'
+      Origin = '"SADA"."ALIQ_ICMS"'
+      Precision = 9
       Size = 2
     end
     object IBStringField27: TIBStringField
@@ -4198,8 +3963,8 @@ object BoxSped: TBoxSped
     Delimitador = '|'
     TrimString = True
     CurMascara = '#0.00'
-    Left = 184
-    Top = 72
+    Left = 160
+    Top = 8
   end
   object tblTmo: TIBQuery
     Database = FDB1.IBDatabase
@@ -4301,7 +4066,6 @@ object BoxSped: TBoxSped
       'p.VICMS_ST, '
       'p.VICMS_STRET,'
       'p.CST,'
-      'p.SUBST_TRIB,'
       'PE.*'
       ''
       'FROM '
@@ -4447,12 +4211,6 @@ object BoxSped: TBoxSped
       Origin = '"PECAS"."CST"'
       Size = 3
     end
-    object QryEstoqueSUBST_TRIB: TIBStringField
-      FieldName = 'SUBST_TRIB'
-      Origin = '"PECAS"."SUBST_TRIB"'
-      FixedChar = True
-      Size = 1
-    end
   end
   object tblPecas2: TIBQuery
     Database = FDB1.IBDatabase
@@ -4534,11 +4292,7 @@ object BoxSped: TBoxSped
       'V.NCM,'
       'V.CLASSIF_FISCAL,'
       'V.STATUS,'
-      'V.ID_CONCESSIONARIA,'
-      'v.VBC_ST,'
-      'V.VBC_STRET,'
-      'V.VICMS_ST,'
-      'V.VICMS_STRET'
+      'V.ID_CONCESSIONARIA'
       ''
       'FROM '
       'VEICULOS V'
@@ -4624,30 +4378,6 @@ object BoxSped: TBoxSped
     object tblVeiculos2CUSTO_ICMS: TIBBCDField
       FieldName = 'CUSTO_ICMS'
       Origin = '"VEICULOS"."CUSTO_ICMS"'
-      Precision = 18
-      Size = 2
-    end
-    object tblVeiculos2VBC_ST: TIBBCDField
-      FieldName = 'VBC_ST'
-      Origin = '"VEICULOS"."VBC_ST"'
-      Precision = 18
-      Size = 2
-    end
-    object tblVeiculos2VBC_STRET: TIBBCDField
-      FieldName = 'VBC_STRET'
-      Origin = '"VEICULOS"."VBC_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object tblVeiculos2VICMS_ST: TIBBCDField
-      FieldName = 'VICMS_ST'
-      Origin = '"VEICULOS"."VICMS_ST"'
-      Precision = 18
-      Size = 2
-    end
-    object tblVeiculos2VICMS_STRET: TIBBCDField
-      FieldName = 'VICMS_STRET'
-      Origin = '"VEICULOS"."VICMS_STRET"'
       Precision = 18
       Size = 2
     end
@@ -5067,268 +4797,5 @@ object BoxSped: TBoxSped
       FieldName = 'DATA_PEDIDO'
       Origin = '"PEDIDO_VEICULOS"."DATA_PEDIDO"'
     end
-    object tblveiculos4ID_PEDIDO_VEICULOS: TIntegerField
-      FieldName = 'ID_PEDIDO_VEICULOS'
-      Origin = '"PEDIDO_VEICULOS"."ID_PEDIDO_VEICULOS"'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
-    end
-    object tblveiculos4ID_AVALISTA: TIntegerField
-      FieldName = 'ID_AVALISTA'
-      Origin = '"PEDIDO_VEICULOS"."ID_AVALISTA"'
-    end
-    object tblveiculos4ID_FINANCEIRA: TIntegerField
-      FieldName = 'ID_FINANCEIRA'
-      Origin = '"PEDIDO_VEICULOS"."ID_FINANCEIRA"'
-    end
-    object tblveiculos4VALOR: TIBBCDField
-      FieldName = 'VALOR'
-      Origin = '"PEDIDO_VEICULOS"."VALOR"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4BASE_COMISSAO: TIBBCDField
-      FieldName = 'BASE_COMISSAO'
-      Origin = '"PEDIDO_VEICULOS"."BASE_COMISSAO"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4NF: TIBStringField
-      FieldName = 'NF'
-      Origin = '"PEDIDO_VEICULOS"."NF"'
-      Size = 8
-    end
-    object tblveiculos4DATA_NF: TDateField
-      FieldName = 'DATA_NF'
-      Origin = '"PEDIDO_VEICULOS"."DATA_NF"'
-    end
-    object tblveiculos4VALOR_DA_VENDA: TIBBCDField
-      FieldName = 'VALOR_DA_VENDA'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_DA_VENDA"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_A_RECEBER: TIBBCDField
-      FieldName = 'VALOR_A_RECEBER'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_A_RECEBER"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4ID_USUARIO: TIntegerField
-      FieldName = 'ID_USUARIO'
-      Origin = '"PEDIDO_VEICULOS"."ID_USUARIO"'
-    end
-    object tblveiculos4USUARIO: TIBStringField
-      FieldName = 'USUARIO'
-      Origin = '"PEDIDO_VEICULOS"."USUARIO"'
-    end
-    object tblveiculos4NF_CANCELAMENTO: TIBStringField
-      FieldName = 'NF_CANCELAMENTO'
-      Origin = '"PEDIDO_VEICULOS"."NF_CANCELAMENTO"'
-      Size = 8
-    end
-    object tblveiculos4DATA_NF_CANCELAMENTO: TDateField
-      FieldName = 'DATA_NF_CANCELAMENTO'
-      Origin = '"PEDIDO_VEICULOS"."DATA_NF_CANCELAMENTO"'
-    end
-    object tblveiculos4VALOR_VIP: TIBBCDField
-      FieldName = 'VALOR_VIP'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_VIP"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_NORMAL: TIBBCDField
-      FieldName = 'VALOR_NORMAL'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_NORMAL"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_EXCLUSIVO: TIBBCDField
-      FieldName = 'VALOR_EXCLUSIVO'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_EXCLUSIVO"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_VIP2: TIBBCDField
-      FieldName = 'VALOR_VIP2'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_VIP2"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_NORMAL2: TIBBCDField
-      FieldName = 'VALOR_NORMAL2'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_NORMAL2"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_EXCLUSIVO2: TIBBCDField
-      FieldName = 'VALOR_EXCLUSIVO2'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_EXCLUSIVO2"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4VALOR_TAXAS: TIBBCDField
-      FieldName = 'VALOR_TAXAS'
-      Origin = '"PEDIDO_VEICULOS"."VALOR_TAXAS"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4FORMA_VISITA: TIBStringField
-      FieldName = 'FORMA_VISITA'
-      Origin = '"PEDIDO_VEICULOS"."FORMA_VISITA"'
-    end
-    object tblveiculos4ID_VEICULO_USADO: TIntegerField
-      FieldName = 'ID_VEICULO_USADO'
-      Origin = '"PEDIDO_VEICULOS"."ID_VEICULO_USADO"'
-    end
-    object tblveiculos4ID_VEICULOS1: TIntegerField
-      FieldName = 'ID_VEICULOS1'
-      Origin = '"VEICULOS"."ID_VEICULOS"'
-      Required = True
-    end
-    object tblveiculos4ID_CONCESSIONARIA1: TIntegerField
-      FieldName = 'ID_CONCESSIONARIA1'
-      Origin = '"VEICULOS"."ID_CONCESSIONARIA"'
-      Required = True
-    end
-    object tblveiculos4ID_CLIENTES1: TIntegerField
-      FieldName = 'ID_CLIENTES1'
-      Origin = '"VEICULOS"."ID_CLIENTES"'
-    end
-    object tblveiculos4ID_MODELO_VEICULO1: TIntegerField
-      FieldName = 'ID_MODELO_VEICULO1'
-      Origin = '"VEICULOS"."ID_MODELO_VEICULO"'
-    end
-    object tblveiculos4CHASSI1: TIBStringField
-      FieldName = 'CHASSI1'
-      Origin = '"VEICULOS"."CHASSI"'
-    end
-    object tblveiculos4MARCA1: TIBStringField
-      FieldName = 'MARCA1'
-      Origin = '"VEICULOS"."MARCA"'
-      Size = 10
-    end
-    object tblveiculos4MODELO1: TIBStringField
-      FieldName = 'MODELO1'
-      Origin = '"VEICULOS"."MODELO"'
-    end
-    object tblveiculos4COR1: TIBStringField
-      FieldName = 'COR1'
-      Origin = '"VEICULOS"."COR"'
-      FixedChar = True
-      Size = 10
-    end
-    object tblveiculos4ANO_FABRICACAO1: TIBStringField
-      FieldName = 'ANO_FABRICACAO1'
-      Origin = '"VEICULOS"."ANO_FABRICACAO"'
-      FixedChar = True
-      Size = 4
-    end
-    object tblveiculos4ANO_MODELO1: TIBStringField
-      FieldName = 'ANO_MODELO1'
-      Origin = '"VEICULOS"."ANO_MODELO"'
-      FixedChar = True
-      Size = 4
-    end
-    object tblveiculos4PLACA1: TIBStringField
-      FieldName = 'PLACA1'
-      Origin = '"VEICULOS"."PLACA"'
-      Size = 7
-    end
-    object tblveiculos4RENAVAM1: TIBStringField
-      FieldName = 'RENAVAM1'
-      Origin = '"VEICULOS"."RENAVAM"'
-      Size = 15
-    end
-    object tblveiculos4MOTOR1: TIBStringField
-      FieldName = 'MOTOR1'
-      Origin = '"VEICULOS"."MOTOR"'
-      Size = 15
-    end
-    object tblveiculos4STATUS1: TIBStringField
-      FieldName = 'STATUS1'
-      Origin = '"VEICULOS"."STATUS"'
-    end
-    object tblveiculos4DATA_RECEBIMENTO: TDateField
-      FieldName = 'DATA_RECEBIMENTO'
-      Origin = '"VEICULOS"."DATA_RECEBIMENTO"'
-    end
-    object tblveiculos4NCM: TIBStringField
-      FieldName = 'NCM'
-      Origin = '"VEICULOS"."NCM"'
-      Size = 10
-    end
-    object tblveiculos4COM_AVARIA: TIBStringField
-      FieldName = 'COM_AVARIA'
-      Origin = '"VEICULOS"."COM_AVARIA"'
-      FixedChar = True
-      Size = 1
-    end
-    object tblveiculos4CODIGO: TIBStringField
-      FieldName = 'CODIGO'
-      Origin = '"VEICULOS"."CODIGO"'
-      Size = 12
-    end
-    object tblveiculos4VBC_STRET: TIBBCDField
-      FieldName = 'VBC_STRET'
-      Origin = '"VEICULOS"."VBC_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4PST: TIBBCDField
-      FieldName = 'PST'
-      Origin = '"VEICULOS"."PST"'
-      Precision = 9
-      Size = 2
-    end
-    object tblveiculos4VICMS_STRET: TIBBCDField
-      FieldName = 'VICMS_STRET'
-      Origin = '"VEICULOS"."VICMS_STRET"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4PRED_BCST: TIBBCDField
-      FieldName = 'PRED_BCST'
-      Origin = '"VEICULOS"."PRED_BCST"'
-      Precision = 9
-      Size = 2
-    end
-    object tblveiculos4VBC_ST: TIBBCDField
-      FieldName = 'VBC_ST'
-      Origin = '"VEICULOS"."VBC_ST"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4PICMS_ST: TIBBCDField
-      FieldName = 'PICMS_ST'
-      Origin = '"VEICULOS"."PICMS_ST"'
-      Precision = 9
-      Size = 2
-    end
-    object tblveiculos4VICMS_ST: TIBBCDField
-      FieldName = 'VICMS_ST'
-      Origin = '"VEICULOS"."VICMS_ST"'
-      Precision = 18
-      Size = 2
-    end
-    object tblveiculos4ID_CLIENTES2: TIntegerField
-      FieldName = 'ID_CLIENTES2'
-      Origin = '"CLIENTES"."ID_CLIENTES"'
-      Required = True
-    end
-    object tblveiculos4ID_CLIENTES3: TIntegerField
-      FieldName = 'ID_CLIENTES3'
-      Origin = '"CLIENTES"."ID_CLIENTES"'
-      Required = True
-    end
-  end
-  object OpenDialog1: TOpenDialog
-    Left = 568
-    Top = 408
-  end
-  object spedImportar: TACBrSpedFiscalImportar
-    ACBrSpedFiscal = sped
-    Left = 200
-    Top = 272
   end
 end

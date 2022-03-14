@@ -126,7 +126,7 @@ begin
  aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
   ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( ID_AUTORIZ_TRANSF,0) as id_estoque'],
   ['Modelo:','Sequência:','Chassi:','Concessionária:','ID Aut.Transf.:' ],
-  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'','','');//'Status <>','VENDIDO','');
 
   edtId.Text:= aRet;
 

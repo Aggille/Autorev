@@ -120,7 +120,7 @@ begin
  aRet := Biblioteca.PesquisaGeral('Veículos','Veiculos',
   ['Modelo','Id_Veiculos','Chassi','Id_Concessionaria', 'coalesce( Id_Estoque,0) as id_estoque'],
   ['Modelo:','Sequência:','Chassi:','Concessionária:', 'ID Estoque:' ],
-  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'Status <>','VENDIDO','');
+  'Descricao','ID_Estoque',Fdb1.SQLConnection1,'','',''); //'Status <>','VENDIDO','');
 
   edtIdEstoque.Value := StrToIntDef( aRet,0 );
 

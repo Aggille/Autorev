@@ -271,7 +271,6 @@ type
     qryItemNfeCFOP: TIntegerField;
     qryItemNfeVLR_UNIT: TFMTBCDField;
     qryItemNfeBASE_ICMS: TIBBCDField;
-    qryItemNfeALIQ_ICMS: TIBBCDField;
     qryItemNfeVLR_ICMS: TIBBCDField;
     qryItemNfeICMS_SUBST: TIBBCDField;
     qryItemNfeVLR_IPI: TIBBCDField;
@@ -531,7 +530,9 @@ type
     dtsItemNFT: TDataSource;
     qryTotItemNFT: TIBQuery;
     IBBCDField7: TIBBCDField;
+    IBBCDField8: TIBBCDField;
     IBBCDField9: TIBBCDField;
+    IBBCDField10: TIBBCDField;
     IBStringField27: TIBStringField;
     IBStringField28: TIBStringField;
     dtsTotItemNFT: TDataSource;
@@ -754,8 +755,8 @@ type
     Label9: TLabel;
     qryItemNfALIQ_ICMS: TIBBCDField;
     qryItemNfICMS_SUBSTITUTO: TIBBCDField;
-    qryTotItemALIQ_ICMS: TIBBCDField;
-    qryTotItemICMS: TFMTBCDField;
+    qryItemNfeALIQ_ICMS: TIBBCDField;
+    qryItemNfeCOD_ITEM_FORNEC: TIBStringField;
     qryItemNFTALIQ_ICMS: TIBBCDField;
     qryItemNFTVL_PIS: TIBBCDField;
     qryItemNFTCST_PIS: TIBStringField;
@@ -774,11 +775,8 @@ type
     qryItemNFTPICMS_EFET: TIBBCDField;
     qryItemNFTVICMS_EFET: TIBBCDField;
     qryItemNFTICMS_SUBSTITUTO: TIBBCDField;
-    qryTotItemNFTALIQ_ICMS: TIBBCDField;
-    qryTotItemNFTICMS: TFMTBCDField;
-    QryEstoqueSUBST_TRIB: TIBStringField;
-    CheckBoxH20PecasZerado: TCheckBox;
-    CheckBoxDeterminacaoFisco: TCheckBox;
+    qryTotItemALIQ_ICMS: TIBBCDField;
+    qryTotItemICMS: TFMTBCDField;
     procedure btnFechar_PClick(Sender: TObject);
     procedure btnGerar_PClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -1049,7 +1047,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecas.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecas.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC'; //trim( tblPecas.fieldbyname('Unidade' ).asString ); //'PC'
+               UNID_INV    := trim( tblPecas.fieldbyname('Unidade' ).asString ); //'PC'
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecas.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
@@ -1078,7 +1076,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecasE.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecasE.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC'; //trim( tblPecasE.fieldbyname('Unidade' ).asString );
+               UNID_INV    := trim( tblPecasE.fieldbyname('Unidade' ).asString );
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecasE.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
@@ -1107,7 +1105,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecasT.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecasT.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC';//trim( tblPecasT.fieldbyname('Unidade' ).asString );
+               UNID_INV    := trim( tblPecasT.fieldbyname('Unidade' ).asString );
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecasT.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
@@ -1330,8 +1328,8 @@ begin
 
               with Registro0190New do
               begin
-                 UNID  := 'PC';         //UN
-                 DESCR := 'PECA'; //Unidades
+                 UNID  := 'UN';
+                 DESCR := 'Unidade'
               end;
 
              with Registro0500New do
@@ -1403,7 +1401,7 @@ begin
                        DESCR_ITEM   := fieldbyname( 'descricao' ).asString;
                        COD_BARRA    := '';
                        COD_ANT_ITEM := '';
-                       UNID_INV     := 'PC';
+                       UNID_INV     := 'UN';
                   end;
                   next;
                 end;
@@ -1447,29 +1445,21 @@ begin
 
               with RegistroA100New do
               begin
-
                  IND_OPER      := itoPrestado;//itoContratado;
                  IND_EMIT      := iedfProprio;
                  COD_PART      := fieldbyname( 'id_clientes' ).asString;//
                  COD_SIT       := sdfRegular;
-
                  SER           := '';//fieldbyname( 'serienf').asString;
                  SUB           := '';
-
                  NUM_DOC       := fieldbyname( 'numero' ).asString;
-
                  if  (BoxEmpresas.ID_ConcessionariaEmUso.Text = '4') then
                     NUM_DOC := IntToStr(StrToInt(Substr(FieldByName('Numero_NFSE').AsString,5,11)));
-
                  CHV_NFSE      := '';
                  DT_DOC        := fieldbyname( 'emissao' ).asDateTime;
-
                  DT_EXE_SERV   := fieldbyname( 'emissao' ).asDateTime;
-
                  VL_DOC        := fieldbyname( 'tot_nota').asCurrency;
 //                 IND_PGTO      := TSped.tpSemPagamento;
                  VL_DESC       := 0;
-
                  VL_BC_PIS     := VL_DOC;
                  VL_PIS        := VL_DOC * 0.0165;
                  VL_BC_COFINS  := VL_DOC;
@@ -1499,7 +1489,6 @@ begin
                       VL_DESC          := 0;
                       NAT_BC_CRED      := bccOutrasOpeComDirCredito;
                       IND_ORIG_CRED    := opcMercadoInterno;
-
                       CST_PIS          := ACBrEPCBlocos.stpisValorAliquotaNormal;//stpisValorAliquotaDiferenciada; //comentei para compilar sped pis e cofins
                       VL_BC_PIS        := VL_ITEM;
                       ALIQ_PIS         := 1.65;
@@ -1508,7 +1497,7 @@ begin
                       VL_BC_COFINS     := VL_ITEM;
                       ALIQ_COFINS      := 7.6;
                       VL_COFINS        := VL_ITEM * ALIQ_COFINS / 100 ;
-                      COD_CTA           := '1022|||6||||PC||5933|1|1|'+
+                      COD_CTA           := '1022|||6||||UN||5933|1|1|'+
                         qryFilial.FieldByName('Codigo_Municipio').AsString+'|1|'+CurrToStr(VL_ITEM)+'|||'+
                         IntToStr(qryFilial.FieldByName('aliquota_iss').AsInteger * 100) + //ALIQ ISS
                         CurrToStr(vl_item *  qryFilial.FieldByName('aliquota_iss').AsCurrency) + //vl_iss
@@ -2563,7 +2552,7 @@ begin
                            qryNFe.FieldByName('Val_IPI').AsCurrency;// +
   //                         qryNFe.FieldByName('Val_PIS').AsCurrency +
     //                       qryNFe.FieldByName('Val_COFINS').AsCurrency;
-                                                  //                                AQUI
+
              COD_PART      := 'F' + qryNFe.FieldByName('id_Clientes').AsString;
              if qryNFe.FieldByName('Id_Clientes').AsInteger = 22669 then
                COD_PART    := 'F60013';
@@ -3588,7 +3577,7 @@ begin
       begin
         DT_INV := edtDF.Date; //o valor informado no campo deve ser menor ou igual ao valor no campo DT_FIN do registro 0000
         VL_INV := vlr;
-        if CheckBoxDeterminacaoFisco.checked then //usar tipo 5
+        if CheckBoxH020.checked then //usar tipo 5
           MOT_INV := miDeterminacaoFiscos
         else
           MOT_INV := miFinalPeriodo;//miDeterminacaoFiscos;//válido somente para o inventário de 01/01/2019 depois
@@ -3604,7 +3593,7 @@ begin
              with RegistroH010New do
              begin
               COD_ITEM := qryEstoque.fieldbyname( 'codigo' ).asString;
-              UNID := 'PC';//qryEstoque.fieldbyname( 'unidade' ).asString;
+              UNID := qryEstoque.fieldbyname( 'unidade' ).asString;
               QTD := qryEstoque.fieldbyname( 'estoque' ).asFloat;
               VL_UNIT := qryEstoque.fieldbyname( 'cst_medio' ).asCurrency;
               VL_ITEM := (qryEstoque.fieldbyname( 'cst_medio' ).asCurrency) *
@@ -3614,48 +3603,31 @@ begin
               TXT_COMPL := '';
               COD_CTA := '302';   //         ver aqui
              if CheckBoxH020.Checked then
-                begin
+               begin
                   with RegistroH020new do
                   begin
-                    if qryEstoque.FieldByName('Subst_trib').AsString = 'T' then
-                      begin
-                        CST_ICMS := qryEstoque.FieldByName('CST').AsString;
-                        BC_ICMS := 0;
-                        vl_ICMS := 0;
-                      end
-                    else
-                    begin
-                     CST_ICMS := qryEstoque.FieldByName('CST').AsString;
-                     BC_ICMS  := (qryEstoque.FieldByName('vBC_ST').AsCurrency +
+                    CST_ICMS := qryEstoque.FieldByName('CST').AsString;
+                    BC_ICMS  := (qryEstoque.FieldByName('vBC_ST').AsCurrency +
                                 qryEstoque.FieldByName('vBC_STret').AsCurrency);// *
 //                                qryEstoque.fieldbyname( 'estoque' ).AsInteger;
-                     VL_ICMS := (qryEstoque.FieldByName('vICMS_ST').AsCurrency +
+                    VL_ICMS := (qryEstoque.FieldByName('vICMS_ST').AsCurrency +
                                qryEstoque.FieldByName('vICMS_STret').AsCurrency); //*
 //                               qryEstoque.fieldbyname( 'estoque' ).AsInteger;
-                     if (VL_ICMS/qryEstoque.fieldbyname( 'estoque' ).AsInteger) > 1000 then
-                      begin
+                    if (VL_ICMS/qryEstoque.fieldbyname( 'estoque' ).AsInteger) > 1000 then
+                     begin
                         VL_ICMS := VL_ICMS/100;
                         BC_ICMS := BC_ICMS/100;
-                      end;
-                     if VL_ICMS = 0 then
-                      begin
+                     end;
+                    if VL_ICMS = 0 then
+                     begin
                         BC_ICMS := ((qryEstoque.fieldbyname( 'cst_medio' ).asCurrency) *
                          (qryEstoque.fieldbyname( 'estoque' ).asInteger))*1.4;
                         VL_ICMS :=  BC_ICMS * 0.18;
-                      end;
-                      if checkBoxH20PecasZerado.Checked then
-                       begin
-                         BC_ICMS := 0;
-                         VL_ICMS := 0;
-                       end
-                      else
-                       begin
-                        BC_ICMS := VL_ICMS / 0.18;
-                        vlr2 := vlr2 + (vl_ICMS * qryEstoque.fieldbyname( 'estoque' ).AsInteger);
-                       end;
-                    end;
+                     end;
+                     BC_ICMS := VL_ICMS / 0.18;
+                    vlr2 := vlr2 + (vl_ICMS * qryEstoque.fieldbyname( 'estoque' ).AsInteger);
                   end;
-                end;
+               end;
              end;
             end;
             qryEstoque.Next;
@@ -3878,7 +3850,7 @@ begin
             begin
                COD_ITEM    := trim( tblPecas2.fieldbyname('codigo').asString );
                DESCR_ITEM  := trim( tblPecas2.fieldbyname('Descricao').asString );
-               UNID_INV    := 'PC';//trim( tblPecas2.fieldbyname('Unidade' ).asString ); //'PC'
+               UNID_INV    := trim( tblPecas2.fieldbyname('Unidade' ).asString ); //'PC'
                TIPO_ITEM   := tiMercadoriaRevenda;    // 00 – Mercadoria para Revenda
                COD_NCM     := StringReplace( tblPecas2.fieldbyname( 'ncm' ).asString, '.' , '' , [rfReplaceAll]);
                COD_GEN     := copy( cod_ncm , 1 , 2  );
