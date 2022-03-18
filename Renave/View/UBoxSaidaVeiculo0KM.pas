@@ -245,7 +245,6 @@ begin
 
   carregaVeiculo( aRet );
 
-
 end;
 
 procedure TBoxSaidaVeiculo0KM.SpeedButton3Click(Sender: TObject);

@@ -111,11 +111,11 @@ begin
       FRetorno.dataHora := ( aJsonEntrada as TJsonValue ).GetValue<TDateTime>('dataHora');
       FRetorno.dataHoraEnvioNotaFiscalEntrada := ( aJsonEntrada as TJsonValue ).GetValue<TDatetime>('dataHoraEnvioNotaFiscalEntrada');
 
-      if( aJsonVendedor.value <> '' ) then
-      begin
-        FRetorno.numeroDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('numeroDocumento');
-        FRetorno.tipoDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('tipoDocumento');
-      end;
+//      if( aJsonVendedor.value <> '' ) then
+//      begin
+//        FRetorno.numeroDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('numeroDocumento');
+//        FRetorno.tipoDocumentoVendedor := ( aJsonVendedor as TJsonValue ).GetValue<String>('tipoDocumento');
+//      end;
 
     end;
 

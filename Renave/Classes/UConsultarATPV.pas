@@ -34,7 +34,7 @@ type
 implementation
 
 uses
-  System.SysUtils, System.Classes, UConstsRenave;
+  System.SysUtils, System.Classes, UConstsRenave, System.JSON;
 
 { TConsultaATPV }
 
@@ -89,7 +89,9 @@ end;
 
 procedure TConsultaATPV.processaUrl(aUrl: String);
 var
-aRetorno:String;
+aPDF,aRetorno:String;
+aJson:TJSonValue;
+
 begin
 
   try
@@ -97,10 +99,11 @@ begin
     Fconsulta.Metodo := StrHttpGET;
     FConsulta.Consulta;
     aRetorno := Fconsulta.Retorno;
-
-    if( FConsulta = nil ) then
+    aJson := TJsonObject.ParseJSONValue(aRetorno);
+    if( FConsulta <> nil ) then
     begin
-      geraPdf( aRetorno );
+      aPDF := TJsonObject( aJson ).getValue<String>( 'pdfAtpvBase64' );
+      geraPdf( aPDF );
     end;
 
   finally
