@@ -57,7 +57,6 @@ begin
         aConsulta.ConsultaPorPlacaRenavan(edtPlaca.Text, edtRenavan.Text, aArq );
       end;
 
-
     if( aConsulta.Erro = nil ) then
       begin
         ShellExecute(0, nil, Pchar(aArq), nil, PChar( ExtractFilePath( Application.ExeName ) ) , SW_SHOWMAXIMIZED );

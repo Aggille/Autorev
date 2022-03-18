@@ -101,7 +101,7 @@ begin
     if( not aJsonEntrada.null ) then
     begin
       aJsonVendedor := ( aJsonEntrada as TJsonObject ).GetValue('vendedor');
-      FRetorno.numeroTermoEntradaEstoque := ( aJsonEntrada as TJsonValue ).GetValue<Integer>('numeroTermoEntradaEstoque');
+//      FRetorno.numeroTermoEntradaEstoque := ( aJsonEntrada as TJsonValue ).GetValue<Integer>('numeroTermoEntradaEstoque');
       FRetorno.chaveNotaFiscalEntrada := ( aJsonEntrada as TJsonValue ).GetValue<String>('chaveNotaFiscalEntrada');
       FRetorno.cpfOperadorResponsavel:= ( aJsonEntrada as TJsonValue ).GetValue<String>('cpfOperadorResponsavel');
       FRetorno.dataHora := ( aJsonEntrada as TJsonValue ).GetValue<TDateTime>('dataHora');

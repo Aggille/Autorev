@@ -87,7 +87,7 @@ begin
         FRetorno.dataHora := TJsonObject( aJsonSaida ).GetValue<TDateTime>('dataHora' );
         FRetorno.dataHoraEnvioNotaFiscalSaida:= TJsonObject( aJsonSaida ).GetValue<TDatetime>('dataHoraEnvioNotaFiscalSaida' );
         FRetorno.motivo := TJsonObject( aJsonSaida ).GetValue<String>('motivo' );
-        FRetorno.numeroTermoSaidaEstoque := TJsonObject( aJsonSaida ).GetValue<Integer>('numeroTermoSaidaEstoque' );
+        //FRetorno.numeroTermoSaidaEstoque := TJsonObject( aJsonSaida ).GetValue<Integer>('numeroTermoSaidaEstoque' );
 
         if( not aJsonComprador.null ) then
         begin
