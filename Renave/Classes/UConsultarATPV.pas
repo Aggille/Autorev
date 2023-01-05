@@ -27,8 +27,6 @@ type
       destructor destroy;override;
       property Erro: TErroConsultaRenave read FErro write FErro;
       property CodigoRetorno: Integer read FCodigoRetorno write FCodigoRetorno;
-
-
   end;
 
 implementation
