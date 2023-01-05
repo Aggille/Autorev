@@ -158,19 +158,19 @@ begin
               FErro.Detalhe := aJValue.GetValue<String>( 'detalhe' );
               FErro.mensagem := aJValue.GetValue<String>( 'mensagemParaUsuarioFinal' );
               FErro.Titulo:= aJValue.GetValue<String>( 'titulo' );
-
-              if( DebugHook <> 0 ) then
-              begin
-                /// ARQUIVO CRIADO APENAS PARA TESTE..
-                ///
-                ///  REMOVER QUANDOFOR PARA PRODUÇÃO
-                ///
-                FCodigoRetorno := IntHttpCode201 or IntHttpCode200;
-                aRet := TStringList.Create;
-                aRet.LoadFromFile(ExtractFilePath( Application.ExeName ) + 'retorno_teste.json' );
-                FRetorno := aRet.Text;
-                aRet.Free;
-              end;
+//
+//              if( DebugHook <> 0 ) then
+//              begin
+//                /// ARQUIVO CRIADO APENAS PARA TESTE..
+//                ///
+//                ///  REMOVER QUANDOFOR PARA PRODUÇÃO
+//                ///
+//                FCodigoRetorno := IntHttpCode201 or IntHttpCode200;
+//                aRet := TStringList.Create;
+//                aRet.LoadFromFile(ExtractFilePath( Application.ExeName ) + 'retorno_teste.json' );
+//                FRetorno := aRet.Text;
+//                aRet.Free;
+//              end;
 
 
             end;

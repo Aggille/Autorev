@@ -42,6 +42,7 @@ type
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
+    procedure SpeedButton6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,7 +59,8 @@ uses
   UBoxAutorizaTransferenciaVeiculo0KM, UBoxTransferenciaVeiculo0KM,
   UBoxSaidaVeiculo0KM, UBoxCancelamentoSaidaVeiculo0KM, UBoxConsultaATPV,
   UBoxRejeitaEntradaVeiculo0KM, UBoxDevolucaoVeiculo0KM,
-  UBoxCancelaTransferenciaVeiculo0KM, UBoxConsultaEstoqueVeiculos0Km;
+  UBoxCancelaTransferenciaVeiculo0KM, UBoxConsultaEstoqueVeiculos0Km,
+  UBoxConsultaTransferencias;
 
 {$R *.dfm}
 
@@ -132,6 +134,13 @@ procedure TBoxRenave.SpeedButton5Click(Sender: TObject);
 begin
   Application.CreateForm( TBoxConsultaEstoqueVeiculo0KM, BoxConsultaEstoqueVeiculo0KM );
   BoxConsultaEstoqueVeiculo0KM.ShowModal;
+end;
+
+procedure TBoxRenave.SpeedButton6Click(Sender: TObject);
+begin
+  Application.CreateForm( TBoxConsultaTransferencias, BoxConsultaTransferencias );
+  BoxConsultaTransferencias.ShowModal;
+
 end;
 
 end.

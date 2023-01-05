@@ -52,17 +52,28 @@ end;
 procedure TBoxIniFile.LeBanco();
 var
   BancoDados : Tinifile;
+  UsuarioBanco,
+  SenhaBanco,
   LocalBanco : STRING;
+
 begin
   //BancoDados := Tinifile.Create('c:\autorev-sd\autorev.ini');
-  BancoDados := Tinifile.Create(ExtractFilePath( Application.Exename ) + '\autorev.ini');
-  LocalBanco := BancoDados.ReadString('BancoDeDados','path','');
-  PathLogo   := BancoDados.ReadString('BancoDeDados','pathlogo','');
+  BancoDados    := Tinifile.Create(ExtractFilePath( Application.Exename ) + '\autorev.ini');
+  LocalBanco    := BancoDados.ReadString('BancoDeDados','path','');
+  PathLogo      := BancoDados.ReadString('BancoDeDados','pathlogo','');
+  UsuarioBanco  := BancoDados.ReadString('BancoDeDados','username','SYSDBA');
+  SenhaBanco    := BancoDados.ReadString('BancoDeDados','password','masterkey');
 //LocalBanco := 'localhost:c:\autorev\database\autorev.fdb';
  // showmessage(localbanco);
   ip.Text := localbanco;
   FDB1.IBDatabase.DatabaseName := LocalBanco;
-  FDB1.SQLConnection1.Params[8] := 'Database=' + LocalBanco;
+  FDB1.IBDatabase.Params.Values['password'] := SenhaBanco;
+  FDB1.IBDatabase.Params.Values['user_name'] := UsuarioBanco;
+
+  //FDB1.SQLConnection1.Params[8] := 'Database=' + LocalBanco;
+  FDB1.SQLConnection1.Params.Values['Database'] := LocalBanco;
+  FDB1.SQLConnection1.Params.Values['Password'] := SenhaBanco;
+  FDB1.SQLConnection1.Params.Values['User_Name'] := UsuarioBanco;
 end;
 
 end.

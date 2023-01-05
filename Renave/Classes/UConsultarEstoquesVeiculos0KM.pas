@@ -76,7 +76,8 @@ begin
       aRetorno := FConsulta.Retorno;
       jArray :=  TJSONObject.ParseJSONValue(aRetorno) as TJSONArray;
 
-     for i := 0 to jArray.Size - 1 do
+     for i := jArray.Size - 1 downto 0 do // ordem invertida para salvar sempre as ultimas informacoes
+
      begin
 
       aEntradaEstoque := TEntradaEstoqueVeiculo0KM.Create;

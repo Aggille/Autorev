@@ -157,7 +157,6 @@ uses
   uSpedPreenchimentoBaseST in 'uSpedPreenchimentoBaseST.pas' {BoxSpedPreenchimentoBaseST},
   OperacoesComprasPecasImportacao in 'OperacoesComprasPecasImportacao.pas' {BoxComprasPecasImportacao},
   uSpedNFsErradas in 'uSpedNFsErradas.pas' {BoxReemissaoICMS},
-  ACBrNFeDANFEFRDM in 'C:\AcBr\trunk2\Fontes\ACBrDFe\ACBrNFe\DANFE\NFe\Fast\ACBrNFeDANFEFRDM.pas',
   FinanceiroConciliacaoCartoes in 'FinanceiroConciliacaoCartoes.pas' {BoxFinanceiroConciliacaoCartoes},
   RelatorioComissoesVeiculos in 'RelatorioComissoesVeiculos.pas' {BoxComissaoVeiculos},
   RelatoriosIndividualComissoes in 'RelatoriosIndividualComissoes.pas' {BoxRelatoriosIndividualComissoes},
@@ -207,7 +206,9 @@ uses
   UExibeRetornoEstoque in 'Renave\UExibeRetornoEstoque.pas',
   UConsultarEstoquesVeiculos0KM in 'Renave\Classes\UConsultarEstoquesVeiculos0KM.pas',
   UBoxConsultaEstoqueVeiculos0Km in 'Renave\View\UBoxConsultaEstoqueVeiculos0Km.pas' {BoxConsultaEstoqueVeiculo0KM},
-  URestricaoVeiculo0KM in 'Renave\Model\URestricaoVeiculo0KM.pas';
+  URestricaoVeiculo0KM in 'Renave\Model\URestricaoVeiculo0KM.pas',
+  UBoxConsultaTransferencias in 'Renave\View\UBoxConsultaTransferencias.pas' {BoxConsultaTransferencias},
+  UConsultarTransferencias in 'Renave\Classes\UConsultarTransferencias.pas';
 
 {$R *.RES}
 
@@ -244,6 +245,7 @@ begin
   Application.CreateForm(TBoxComissaoVeiculos, BoxComissaoVeiculos);
   Application.CreateForm(TBoxRelatoriosIndividualComissoes, BoxRelatoriosIndividualComissoes);
   Application.CreateForm(TBoxPecasFabrica, BoxPecasFabrica);
+  Application.CreateForm(TBoxConsultaTransferencias, BoxConsultaTransferencias);
   //  Application.CreateForm(TBoxReemissaoICMS, BoxForm2);
   //  Application.CreateForm(TBoxRelatorioAnomalias, BoxRelatorioAnomalias);
 //  Application.CreateForm(TBoxMeusClientes, BoxMeusClientes);

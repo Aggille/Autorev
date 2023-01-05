@@ -5,3 +5,8 @@ __history
 *.~dsk
 _.git
 *.pdf
+Bin/ArqINI/
+Bin/SchemasNFSe/
+Dcu/
+Bin/
+/firebird.log

@@ -1688,6 +1688,16 @@ begin
 try
     with nfs do
     begin
+
+
+        if BoxEmpresas.CodigoMunicipio = '4309209' then //GRAVATAI 4309209
+         begin
+            nfs.Configuracoes.Geral.SenhaWeb := 'Ynova@22';
+            nfs.Configuracoes.Geral.UserWeb := '09175240000282';
+         end;
+
+
+
      tblSeda.Close;
      tblSeda.ParamByName('idnofisa').AsInteger :=
      tblNofisa.FieldByName('id_nofisa').AsInteger;
@@ -1764,12 +1774,12 @@ try
 
         // TnfseStatusRPS = ( srNormal, srCancelado );
         Status := srNormal;
-
-        if BoxEmpresas.CodigoMunicipio = '4309209' then //GRAVATAI 4309209
-         begin
-          Servico.ItemServico.Items[0].Codigo := '14.01';
-//          Servico.ItemListaServico := '14.01';
-         end;
+//
+//        if BoxEmpresas.CodigoMunicipio = '4309209' then //GRAVATAI 4309209
+//         begin
+//          Servico.ItemServico.Items[0].Codigo := '14.01';
+////          Servico.ItemListaServico := '14.01';
+//         end;
 
         with prestador do
         begin
@@ -1978,6 +1988,7 @@ begin
             frmAguardaNfe.btnOk.Enabled := true;
             frmAguardaNFe.BtnOk.SetFocus;
             nfs.NotasFiscais.Clear;
+            abort;
           end;
         end;
 
@@ -1988,6 +1999,7 @@ begin
             frmAguardaNfe.btnOk.Enabled := true;
             frmAguardaNFe.BtnOk.SetFocus;
             nfs.NotasFiscais.Clear;
+            abort;
   end;
 
  end;

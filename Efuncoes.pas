@@ -5,7 +5,7 @@ interface
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls,   pcnconversao,
    Forms, Dialogs, StdCtrls, Mask, DBCtrls, DB, DBTables, pnfsConversao,
-   ACBrNFSe,ACBrNFSeDANFSeClass, ACBrNFSeDANFSeFR,ACBrNFeDANFEFRDM, ACBrNFeDANFEClass,
+   ACBrNFSe,ACBrNFSeDANFSeClass, ACBrNFSeDANFSeFR, ACBrNFeDANFEClass,
    Empresas,AcbrDFessl, ACBrNFeDANFEFR,//acrescido em 19/02/2018 resolver nfe yamavale
    Buttons, ExtCtrls, TabNotBk, Printers, ComCtrls, Menus, AcbrUtil;
    //   Variants, PrnDOS, Spin;
