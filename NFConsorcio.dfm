@@ -24,7 +24,6 @@ object BoxNFConsorcio: TBoxNFConsorcio
     Height = 205
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 187
     object Label13: TLabel
       Left = 7
       Top = 44
@@ -139,7 +138,6 @@ object BoxNFConsorcio: TBoxNFConsorcio
       Width = 666
       Height = 19
       Panels = <>
-      ExplicitTop = 167
     end
     object SerieNF: TComboBox
       Left = 72

@@ -580,6 +580,9 @@ type
     tblSadaICMS_SUBSTITUTO: TIBBCDField;
     tblNofisaPESO_BRUTO: TIBBCDField;
     tblSadaALIQ_ICMS: TIBBCDField;
+    BtnRENAVE: TBitBtn;
+    qryVeiculos: TIBQuery;
+    tblNofisaID_VEICULOS: TIntegerField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure AbrirDs;
@@ -620,6 +623,7 @@ type
     procedure DBGrid1KeyPress(Sender: TObject; var Key: Char);
     procedure DBGrid1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure BitBtn7Click(Sender: TObject);
+    procedure BtnRENAVEClick(Sender: TObject);
   private
     procedure enviaNfs;
     procedure enviaNfs2;
@@ -645,7 +649,8 @@ var
 
 implementation
 
-uses FDB, Empresas, Biblioteca, Efuncoes, ufrmAguardaNFe, NFE, ReemiteNFs;
+uses FDB, Empresas, Biblioteca, Efuncoes, ufrmAguardaNFe, NFE, ReemiteNFs,
+  UBoxSaidaVeiculo0KM, UBoxAutorizaTransferenciaVeiculo0KM;
 
 {$R *.dfm}
 
@@ -691,10 +696,10 @@ begin
      CheckBox2.Enabled := True;
      CheckBox3.Enabled := True;
      CheckBox4.Enabled := True;
-//     CheckBox7.Enabled := True;
      CheckBox8.Enabled := True;
      CheckBox10.Enabled := True;
      bitbtn6.enabled := True;
+     BtnRENAVE.Enabled := True;
     end;
 
     CheckBox7.Enabled := True;
@@ -1688,16 +1693,6 @@ begin
 try
     with nfs do
     begin
-
-
-        if BoxEmpresas.CodigoMunicipio = '4309209' then //GRAVATAI 4309209
-         begin
-            nfs.Configuracoes.Geral.SenhaWeb := 'Ynova@22';
-            nfs.Configuracoes.Geral.UserWeb := '09175240000282';
-         end;
-
-
-
      tblSeda.Close;
      tblSeda.ParamByName('idnofisa').AsInteger :=
      tblNofisa.FieldByName('id_nofisa').AsInteger;
@@ -1774,12 +1769,12 @@ try
 
         // TnfseStatusRPS = ( srNormal, srCancelado );
         Status := srNormal;
-//
-//        if BoxEmpresas.CodigoMunicipio = '4309209' then //GRAVATAI 4309209
-//         begin
-//          Servico.ItemServico.Items[0].Codigo := '14.01';
-////          Servico.ItemListaServico := '14.01';
-//         end;
+
+        if BoxEmpresas.CodigoMunicipio = '4309209' then //GRAVATAI 4309209
+         begin
+          Servico.ItemServico.Items[0].Codigo := '14.01';
+//          Servico.ItemListaServico := '14.01';
+         end;
 
         with prestador do
         begin
@@ -1938,7 +1933,6 @@ try
                                                //      Showmessage('a3');
 
             tblNofisa.Post;
-                                //         Showmessage('a4');
 
             nfs.NotasFiscais.items[0].Imprimir();
             frmAguardaNfe.Mensagens.Lines.Add( 'Processo concluído com sucesso...' );
@@ -1988,7 +1982,6 @@ begin
             frmAguardaNfe.btnOk.Enabled := true;
             frmAguardaNFe.BtnOk.SetFocus;
             nfs.NotasFiscais.Clear;
-            abort;
           end;
         end;
 
@@ -1999,7 +1992,6 @@ begin
             frmAguardaNfe.btnOk.Enabled := true;
             frmAguardaNFe.BtnOk.SetFocus;
             nfs.NotasFiscais.Clear;
-            abort;
   end;
 
  end;
@@ -2193,7 +2185,6 @@ begin
   //          while not eof do
       //      For i := 0 to RecordCount -1 do
            Valor_Pago := 0;
-//showmessage(CurrToSTR(tblNofisa.fieldByName('tot_nota').ASCurrency));
            while CURRTOSTR(Valor_Pago) <> CurrTOSTR(tblNofisa.FieldByName('tot_nota').AsCurrency) do  //true
              begin
 
@@ -2300,7 +2291,6 @@ begin
                  end;
 
                  Valor_Pago := Valor_Pago + FieldByName('Valor').AsCurrency;
-//                 showmessage(CurrtoSTR(valor_pago));
                  next;
                end;
              end;
@@ -2697,7 +2687,6 @@ begin
               Comb.descANP   := 'OUTROS OLEOS LUBRIFICANTES AUTOMOTIVOS';
               Comb.UFcons    := dest.EnderDest.UF;//tblPessoas.FieldByName('Estado').AsString;//'EX';//tbl'RS';
            end;
-//                showmessage(tblSada.FieldByName('CFOP').AsString);
         if (tblPessoas.FieldByName('CPF').AsString = 'CPF') and (tblPessoas.FieldByName('Estado').AsString <> 'RS') then
              if (tblSada.FieldByName('CFOP').AsString = '6404') then //or (tblSada.FieldByName('CFOP').AsString = '6656') then
                 begin
@@ -2948,8 +2937,6 @@ begin
        VL_COFINS := (ROUND(VL_COFINS*100))/100;
        VL_BC_PIS := (ROUND(VL_BC_PIS*100))/100;
        VL_BC_COFINS := (ROUND(VL_BC_COFINS*100))/100;
-                                      //                   SHOWMESSAGE(CURRTOSTR(VL_PIS));
-//       showmessage(currtostr(tot_pis));
        with imposto.PIS do
          begin
            if CST_PIS = '01' then
@@ -3166,8 +3153,6 @@ begin
            begin
             if not tblNofisa.fieldByName('Peso_bruto').isNull then
              begin
-  //             Showmessage('pesobruto');
-//               Showmessage(tblNofisa.fieldbyname( 'Peso_bruto' ).asString);
               pesoB                    := tblNofisa.fieldbyname( 'peso_bruto' ).asCurrency;
              end;
             if not tblNofisa.fieldbyname( 'quantidade_volumes' ).IsNull then
@@ -3630,11 +3615,9 @@ begin
 
          // if tblnofisa.fieldByName('xml_rps').asString <> null then
 
-           // showmessage('falta xml');
         //  end;
   //        nfs.NotasFiscais.loadFromStream( mRps );
       //mNfs := TStringStream.Create( boxNfeGerenciamento.tblNofisa.fieldbyname( 'xml_nfse' ).asString );
-                          //     Showmessage('b2');
 
 // ESTE FUNCIONA PARA QUANDO TEM XML
 
@@ -3668,7 +3651,6 @@ begin
 //ATE AQUI QUANDO NAO TEM XML
 
               tblNofisa.Edit;
-                                        //           Showmessage('b4');
               if atualiza_nfs( nfs, tblNofisa ) then
                 begin
                   frmAguardaNfe.Mensagens.Lines.Add( 'Número :' + nfs.notasfiscais.items[0].nfse.Numero );
@@ -3995,6 +3977,8 @@ begin
   else
     ACBrNFe1.configuracoes.certificados.numeroserie := BoxEmpresas.Certificado;
   ACBrNfe1.configuracoes.Arquivos.PathSchemas := 'C:\Autorev-SD\Schemas';
+  Chave := tblNofisa.FieldByName('Chave').AsString;
+
   if not(InputQuery('WebServices Eventos: Carta de Correção', 'Chave da NF-e', Chave)) then
      exit;
   Chave := Trim((Chave));
@@ -4052,6 +4036,53 @@ begin
 
 
      end;
+
+end;
+
+procedure TBoxNFeGerenciamento.BtnRENAVEClick(Sender: TObject);
+begin
+ if (tblNofisa.FieldByName('Origem').AsString = 'N') and
+    (tblNofisa.FieldByName('Ent_sai').AsString = 'S') then
+  begin
+  if (tblNofisa.FieldByName('Codigo_fiscal').AsString = '5405') or  //Venda
+     (tblNofisa.FieldByName('Codigo_fiscal').AsString = '6404') then
+   begin
+     tblSada.Close;
+     tblSada.ParamByName('idnofisa').AsInteger :=
+       tblNofisa.FieldByName('id_nofisa').AsInteger;
+      tblSada.Open;
+
+     Application.Createform( TBoxSaidaVeiculo0KM, BoxSaidaVeiculo0KM );
+     BoxSaidaVeiculo0KM.carregaVeiculo(trim(tblSada.FieldByName('Chassi').AsString));
+     BoxSaidaVeiculo0KM.carregaCliente(tblNofisa.FieldByName('id_clientes').AsInteger);
+     BoxSaidaVeiculo0KM.edtEmail.Text := BoxEmpresas.email_RENAVE;
+     BoxSaidaVeiculo0KM.edtCpfOperador.Text := BoxEmpresas.CPF_RENAVE;
+     BoxSaidaVeiculo0KM.edtNF.Text := tblNofisa.FieldByName('Numero').AsString;
+     BoxSaidaVeiculo0Km.edtDataVenda.Date := tblNofisa.FieldByName('Emissao').AsDateTime;
+     BoxSaidaVeiculo0KM.edtValorVenda.Value := tblNofisa.FieldByName('TOT_NOTA').AsFloat;
+     BoxSaidaVeiculo0KM.edtChaveNFe.Text := tblNofisa.FieldByName('Chave').AsString;
+     BoxSaidaVeiculo0KM.ShowModal;
+   end;
+
+  if tblNofisa.FieldByName('Codigo_fiscal').AsString = '5409' then //transferencia
+    begin
+
+      Application.CreateForm(TBoxAutorizaTransferenciaVeiculo0KM, BoxAutorizaTransferenciaVeiculo0KM);
+      with qryVeiculos do
+      begin
+        Close;
+//        ParamByName('idConcessionaria').AsString := tblNofisa.FieldByName('ID_Concessionaria').AsString;
+        ParamByName('idVeiculos').AsString := tblNofisa.FieldByName('Id_veiculos').AsString;
+        Open;
+      end;
+      BoxAutorizaTransferenciaveiculo0KM.edtCnpj.Text := TiraPontoseBarrasCPF(tblNofisa.fieldByName('NUM_CPF').AsString);
+      BoxAutorizaTransferenciaVeiculo0KM.edtCpf.Text := BoxEmpresas.CPF_RENAVE;
+      BoxAutorizaTransferenciaVeiculo0KM.edtIdEstoque.Text := qryVeiculos.FieldByName('ID_Estoque').AsString;
+      BoxAutorizaTransferenciaVeiculo0KM.edtValorVenda.Value := tblNofisa.FieldByName('TOT_NOTA').AsFloat;
+      BoxAutorizaTransferenciaVeiculo0KM.ShowModal;
+
+    end;
+  end;
 
 end;
 

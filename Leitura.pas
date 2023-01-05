@@ -827,14 +827,14 @@ while not Eof ( arq ) do
       FieldByName('Custo').AsVariant := FieldByName('Custo').AsVariant/100;
       FieldByName('Peso').AsString :=Copy(Linha,67,7);
       FieldByName('Qtde_Embal').AsString := Copy(Linha,74,5);
-      FieldByName('IPI').AsString := Copy(Linha,79,3);
-      FieldByName('Reajuste').AsString := Copy(Linha,82,5);
-      FieldByName('Preco_Garan').AsString := Copy(Linha,87,12);
+      FieldByName('IPI').AsString := Copy(Linha,79,4);   // acrescer uma posicao ao ipi e todos
+      FieldByName('Reajuste').AsString := Copy(Linha,83,5);      //os campos seguintes
+      FieldByName('Preco_Garan').AsString := Copy(Linha,88,12);      //até o final
       FieldByName('Preco_Garan').AsVariant := FieldByName('Preco_Garan').AsVariant/100;
-      FieldByName('PPS').AsString := Copy(Linha,99,12);
+      FieldByName('PPS').AsString := Copy(Linha,100,12);
       FieldByName('PPS').AsVariant := FieldByName('PPS').AsVariant/100;
-      FieldByName('Reservado').AsString := Copy(Linha,111,1);
-      FieldByName('NCM').AsString := Copy(linha,112,8);
+      FieldByName('Reservado').AsString := Copy(Linha,112,1);
+      FieldByName('NCM').AsString := Copy(linha,113,8);
       Post;
     end;
  { Para particionar a linha lida em pedaços, use a função Copy. }

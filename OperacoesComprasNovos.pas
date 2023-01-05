@@ -69,6 +69,9 @@ type
     DBEdit2: TDBEdit;
     Label4: TLabel;
     DBEdit3: TDBEdit;
+    Label3: TLabel;
+    edtChassi: TEdit;
+    BtnRENAVE: TBitBtn;
     procedure FecharDs;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure tblConhecimentoAfterPost(DataSet: TDataSet);
@@ -78,6 +81,7 @@ type
     procedure BtnConfirmaChaveClick(Sender: TObject);
     procedure BtnConsultaClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtnRENAVEClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -100,7 +104,7 @@ implementation
 
 uses FDB, Empresas, PesquisaGeral, Biblioteca, SystemException,
   OperacoesComprasUsados, OperacoesComprasPecas,
-  OperacoesComprasNovosImportacao;
+  OperacoesComprasNovosImportacao, UBoxEntradaVeiculo0KM;
 
 {$R *.dfm}
 
@@ -135,6 +139,16 @@ begin
     if not Assigned(BoxComprasNovosImportacao) then
     BoxComprasNovosImportacao := TBoxComprasNovosImportacao.Create(Self);
   BoxComprasNovosImportacao.Show;
+end;
+
+procedure TBoxComprasNovos.BtnRENAVEClick(Sender: TObject);
+begin
+  Application.CreateForm( TBoxEntradaVeiculo0KM, BoxEntradaVeiculo0KM );
+  BoxEntradaVeiculo0KM.carregaVeiculo(edtChassi.Text);
+  BoxEntradaVeiculo0km.edtCpfOperador.Text := BoxEmpresas.CPF_RENAVE;
+  BoxEntradaVeiculo0KM.EdtChassi.Text := edtChassi.Text;
+  BoxEntradaVeiculo0KM.ShowModal;
+  Chave.SetFocus;
 end;
 
 procedure TBoxComprasNovos.tblConhecimentoAfterCancel(DataSet: TDataSet);
@@ -176,29 +190,33 @@ try
      if FieldByName('Status').AsString = 'Fechado' then
       showmessage('Nota fiscal já recebida.')
      else
-      begin
-       idFornecedor := FieldByName('Id_Clientes').AsInteger;
-       idNota := FieldByName('Numero').AsString;
-       Edit;
-       FieldByName('Status').AsString := 'Fechado';
-       FieldByName('Saida').AsDateTime := DataAtual;
-       Post;
-       with tblveiculos do
-       begin
-        Close;
-        ParamByName('idFornecedor').AsInteger := IdFornecedor;
-        PAramByName('idNota').AsString := IdNota;
-        Open;
-        while not eof do
+       if FieldByName('id_Concessionaria').AsString <> BoxEmpresas.ID_ConcessionariaEmUso.Text then
+         Showmessage('NF pertence à outra concessionária.')
+       else
         begin
-          Edit;
-          FieldByName('Status').AsString := FieldByName('Estoque').AsString;
-          Post;
-          Next;
-        end;
-       end;
-       Showmessage('Recebimento com sucesso.');
-      end
+         idFornecedor := FieldByName('Id_Clientes').AsInteger;
+         idNota := FieldByName('Numero').AsString;
+         Edit;
+         FieldByName('Status').AsString := 'Fechado';
+         FieldByName('Saida').AsDateTime := DataAtual;
+         Post;
+         with tblveiculos do
+         begin
+          Close;
+          ParamByName('idFornecedor').AsInteger := IdFornecedor;
+          PAramByName('idNota').AsString := IdNota;
+          Open;
+          while not eof do
+          begin
+            Edit;
+            FieldByName('Status').AsString := FieldByName('Estoque').AsString;
+            edtChassi.Text := FieldByName('Chassi').AsString;
+            Post;
+            Next;
+          end;
+         end;
+         Showmessage('Recebimento com sucesso.');
+        end
     else
       Showmessage('Nota fiscal não localizada.'+#13+
        'Importe o XML primeiro.');
@@ -211,7 +229,7 @@ except
      exit;
    end;
 end;
-  Chave.SetFocus;
+  BtnRENAVE.SetFocus; //chave.setfocus;
 end;
 
 procedure TBoxComprasNovos.FecharDs;

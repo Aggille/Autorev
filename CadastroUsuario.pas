@@ -335,6 +335,7 @@ type
     DBCheckBox120: TDBCheckBox;
     DBCheckBox121: TDBCheckBox;
     DBCheckBox122: TDBCheckBox;
+    DBCheckBox123: TDBCheckBox;
     procedure NovoExecute(Sender: TObject);
     procedure SalvarExecute(Sender: TObject);
     function FieldsWrithe (DtSrc: TDataSource): Boolean;

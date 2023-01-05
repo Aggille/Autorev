@@ -2436,7 +2436,9 @@ object BoxVeiculos: TBoxVeiculos
       
         '   SAIDA, SERIENF, STATUS, TOT_NOTA, TOT_PROD, VAL_FRETE, VAL_IC' +
         'MS, VAL_ICMS_S, '
-      '   VAL_IPI, VAL_ISS, VAL_OUTROS, VAL_SEGURO, VAL_SERV, VENDEDOR)'
+      
+        '   VAL_IPI, VAL_ISS, VAL_OUTROS, VAL_SEGURO, VAL_SERV, VENDEDOR,' +
+        ' ID_VEICULOS)'
       'values'
       
         '  (:BASE_ICM_S, :BASE_ICMS, :COD_TRANS, :CODIGO_FISCAL, :COFINS,' +
@@ -2456,7 +2458,7 @@ object BoxVeiculos: TBoxVeiculos
       
         '   :VAL_ICMS, :VAL_ICMS_S, :VAL_IPI, :VAL_ISS, :VAL_OUTROS, :VAL' +
         '_SEGURO, '
-      '   :VAL_SERV, :VENDEDOR)')
+      '   :VAL_SERV, :VENDEDOR, :ID_VEICULOS)')
     RefreshSQL.Strings = (
       'Select '
       '  ID_NOFISA,'
@@ -2499,7 +2501,8 @@ object BoxVeiculos: TBoxVeiculos
       '  QTDE_PROD,'
       '  STATUS,'
       '  CODIGO_FISCAL,'
-      '  DESCRICAO_CODIGO_FISCAL'
+      '  DESCRICAO_CODIGO_FISCAL,'
+      '  ID_VEICULOS'
       'from Nofisa '
       'where'
       '  ID_NOFISA = :ID_NOFISA')
@@ -2548,7 +2551,8 @@ object BoxVeiculos: TBoxVeiculos
       '  VAL_OUTROS = :VAL_OUTROS,'
       '  VAL_SEGURO = :VAL_SEGURO,'
       '  VAL_SERV = :VAL_SERV,'
-      '  VENDEDOR = :VENDEDOR'
+      '  VENDEDOR = :VENDEDOR,'
+      '   ID_VEICULOS = :ID_VEICULOS'
       'where'
       '  ID_NOFISA = :OLD_ID_NOFISA')
     ParamCheck = True
@@ -2780,6 +2784,10 @@ object BoxVeiculos: TBoxVeiculos
       Origin = '"NOFISA"."DADOS_AD04"'
       FixedChar = True
       Size = 50
+    end
+    object tblNofisaID_VEICULOS: TIntegerField
+      FieldName = 'ID_VEICULOS'
+      Origin = '"NOFISA"."ID_VEICULOS"'
     end
   end
   object DataSourceNofisa: TDataSource

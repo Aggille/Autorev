@@ -1562,7 +1562,7 @@ object BoxFaturamentoVeiculos: TBoxFaturamentoVeiculos
       
         '   TOT_PROD, VAL_FRETE, VAL_ICMS, VAL_ICMS_S, VAL_IPI, VAL_ISS, ' +
         'VAL_OUTROS, '
-      '   VAL_SEGURO, VAL_SERV, VENDEDOR, XML)'
+      '   VAL_SEGURO, VAL_SERV, VENDEDOR, XML, ID_VEICULOS)'
       'values'
       
         '  (:ARQUIVO, :BASE_ICM_S, :BASE_ICMS, :CHAVE, :COD_TRANS, :CODIG' +
@@ -1588,7 +1588,7 @@ object BoxFaturamentoVeiculos: TBoxFaturamentoVeiculos
       
         '   :VAL_ICMS_S, :VAL_IPI, :VAL_ISS, :VAL_OUTROS, :VAL_SEGURO, :V' +
         'AL_SERV, '
-      '   :VENDEDOR, :XML)')
+      '   :VENDEDOR, :XML, :ID_VEICULOS)')
     RefreshSQL.Strings = (
       'Select '
       '  ID_NOFISA,'
@@ -1640,7 +1640,8 @@ object BoxFaturamentoVeiculos: TBoxFaturamentoVeiculos
       '  XML,'
       '  PROTOCOLO_CANCELAMENTO,'
       '  MOTIVO_CANCELAMENTO,'
-      '  DADOS_AD05'
+      '  DADOS_AD05,'
+      '  ID_VEICULOS'
       'from Nofisa '
       'where'
       '  ID_NOFISA = :ID_NOFISA')
@@ -1698,7 +1699,8 @@ object BoxFaturamentoVeiculos: TBoxFaturamentoVeiculos
       '  VAL_SEGURO = :VAL_SEGURO,'
       '  VAL_SERV = :VAL_SERV,'
       '  VENDEDOR = :VENDEDOR,'
-      '  XML = :XML'
+      '  XML = :XML,'
+      '  ID_VEICULOS = :ID_VEICULOS'
       'where'
       '  ID_NOFISA = :OLD_ID_NOFISA')
     ParamCheck = True
@@ -2039,6 +2041,22 @@ object BoxFaturamentoVeiculos: TBoxFaturamentoVeiculos
       ProviderFlags = [pfInUpdate]
       BlobType = ftWideMemo
       Size = 8
+    end
+    object tblNofisaCONSUMIDOR_FINAL: TIBStringField
+      FieldName = 'CONSUMIDOR_FINAL'
+      Origin = '"NOFISA"."CONSUMIDOR_FINAL"'
+      FixedChar = True
+      Size = 1
+    end
+    object tblNofisaPESO_BRUTO: TIBBCDField
+      FieldName = 'PESO_BRUTO'
+      Origin = '"NOFISA"."PESO_BRUTO"'
+      Precision = 18
+      Size = 2
+    end
+    object tblNofisaID_VEICULOS: TIntegerField
+      FieldName = 'ID_VEICULOS'
+      Origin = '"NOFISA"."ID_VEICULOS"'
     end
   end
   object tblPessoas: TIBDataSet

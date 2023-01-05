@@ -5490,7 +5490,8 @@ object FDB1: TFDB1
         'RVICO, '
       
         '   LOGO_PREFEITURA, ATIVA, DESPACHANTE, FIPE, OBRIGAR_ICMS_ST_NF' +
-        'E)'
+        'E, EMAIL_RENAVE, '
+      '   CPF_RENAVE)'
       'values'
       
         '  (:ID_CONCESSIONARIA, :EMPRESA, :ENDERECO, :CIDADE, :ESTADO, :C' +
@@ -5510,7 +5511,9 @@ object FDB1: TFDB1
       
         '   :FEIRA, :ENDERECO_FEIRA, :DIVIDIR_NF_SERVICO, :LOGO_PREFEITUR' +
         'A, :ATIVA, '
-      '   :DESPACHANTE, :FIPE, :OBRIGAR_ICMS_ST_NFE)')
+      
+        '   :DESPACHANTE, :FIPE, :OBRIGAR_ICMS_ST_NFE, :EMAIL_RENAVE, :CP' +
+        'F_RENAVE)')
     RefreshSQL.Strings = (
       'Select '
       '  ID_CONCESSIONARIA,'
@@ -5550,7 +5553,9 @@ object FDB1: TFDB1
       '  ATIVA,'
       '  DESPACHANTE,'
       '  FIPE,'
-      '  OBRIGAR_ICMS_ST_NFE'
+      '  OBRIGAR_ICMS_ST_NFE,'
+      '  EMAIL_RENAVE,'
+      '  CPF_RENAVE'
       'from CONCESSIONARIA '
       'where'
       '  ID_CONCESSIONARIA = :ID_CONCESSIONARIA')
@@ -5596,7 +5601,9 @@ object FDB1: TFDB1
       '  ATIVA = :ATIVA,'
       '  DESPACHANTE = :DESPACHANTE,'
       '  FIPE = :FIPE,'
-      '  OBRIGAR_ICMS_ST_NFE = :OBRIGAR_ICMS_ST_NFE'
+      '  OBRIGAR_ICMS_ST_NFE = :OBRIGAR_ICMS_ST_NFE,'
+      '  EMAIL_RENAVE = :EMAIL_RENAVE,'
+      '  CPF_RENAVE = :CPF_RENAVE'
       'where'
       '  ID_CONCESSIONARIA = :OLD_ID_CONCESSIONARIA')
     ParamCheck = True
@@ -5801,6 +5808,16 @@ object FDB1: TFDB1
       Origin = '"CONCESSIONARIA"."ALIQUOTA_ICMS1"'
       Precision = 9
       Size = 4
+    end
+    object IBDataSetConcessionariaEMAIL_RENAVE: TIBStringField
+      FieldName = 'EMAIL_RENAVE'
+      Origin = '"CONCESSIONARIA"."EMAIL_RENAVE"'
+      Size = 30
+    end
+    object IBDataSetConcessionariaCPF_RENAVE: TIBStringField
+      FieldName = 'CPF_RENAVE'
+      Origin = '"CONCESSIONARIA"."CPF_RENAVE"'
+      Size = 11
     end
   end
   object IBDataSetUsuariosConcessionariaLogada: TIBDataSet

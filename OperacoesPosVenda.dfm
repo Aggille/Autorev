@@ -3009,9 +3009,10 @@ object BoxPosVenda: TBoxPosVenda
       Size = 2
     end
     object tblAtendimentoPecasDESCRICAO: TIBStringField
+      DisplayWidth = 60
       FieldName = 'DESCRICAO'
       ProviderFlags = []
-      Size = 50
+      Size = 60
     end
     object tblAtendimentoPecasCODIGO: TIBStringField
       FieldName = 'CODIGO'
@@ -5070,7 +5071,7 @@ object BoxPosVenda: TBoxPosVenda
     PrintOptions.Printer = 'Padr'#227'o'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 39945.457552870400000000
-    ReportOptions.LastChange = 39946.407256504630000000
+    ReportOptions.LastChange = 39946.407256504600000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -5353,7 +5354,7 @@ object BoxPosVenda: TBoxPosVenda
           VAlign = vaCenter
         end
         object DMPMemo14: TfrxDMPMemoView
-          Left = 556.800000000000000000
+          Left = 556.799999999999900000
           Top = 51.000000000000000000
           Width = 422.400000000000000000
           Height = 17.000000000000000000
@@ -5947,7 +5948,7 @@ object BoxPosVenda: TBoxPosVenda
       object Footer1: TfrxFooter
         FillType = ftBrush
         Height = 68.000000000000000000
-        Top = 799.000000000000000000
+        Top = 850.000000000000000000
         Width = 796.800000000000100000
         object DMPLine10: TfrxDMPLineView
           Left = -4.800000000000000000
@@ -6050,7 +6051,7 @@ object BoxPosVenda: TBoxPosVenda
       end
       object DetailData5: TfrxDetailData
         FillType = ftBrush
-        Height = 170.000000000000000000
+        Height = 221.000000000000000000
         Top = 578.000000000000000000
         Width = 796.800000000000100000
         DataSet = tblRelPessoas
@@ -6088,11 +6089,15 @@ object BoxPosVenda: TBoxPosVenda
           Left = 9.600000000000000000
           Top = 102.000000000000000000
           Width = 777.600000000000000000
-          Height = 51.000000000000000000
-          DisplayFormat.DecimalSeparator = ','
+          Height = 102.000000000000000000
           FontStyle = [fsx12cpi]
           HAlign = haCenter
           Memo.UTF8W = (
+            'Or'#231'amento feito conforme pe'#231'as solicitas pelo cliente.'
+            
+              'Sujeito a altera'#231#245'es ap'#243's desmontagem. Validade do mesmo 5(cinco' +
+              ') dias.'
+            ''
             
               'Estou(amos) de acordo com o presente or'#231'amento e autorizo(amos) ' +
               'a execu'#231#227'o'
@@ -6132,7 +6137,7 @@ object BoxPosVenda: TBoxPosVenda
         end
         object DMPMemo43: TfrxDMPMemoView
           Left = 403.200000000000000000
-          Top = 153.000000000000000000
+          Top = 204.000000000000000000
           Width = 105.600000000000000000
           Height = 17.000000000000000000
           DisplayFormat.DecimalSeparator = ','
@@ -6146,7 +6151,7 @@ object BoxPosVenda: TBoxPosVenda
         end
         object DMPMemo44: TfrxDMPMemoView
           Left = 537.600000000000000000
-          Top = 153.000000000000000000
+          Top = 204.000000000000000000
           Width = 105.600000000000000000
           Height = 17.000000000000000000
           DisplayFormat.DecimalSeparator = ','
@@ -6232,7 +6237,7 @@ object BoxPosVenda: TBoxPosVenda
       object DetailData6: TfrxDetailData
         FillType = ftBrush
         Height = 17.000000000000000000
-        Top = 765.000000000000000000
+        Top = 816.000000000000000000
         Width = 796.800000000000100000
         DataSet = tblRelAtendimentoRecebimento
         DataSetName = 'tblRelAtendimentoRecebimento'

@@ -241,7 +241,6 @@ object BoxMenu: TBoxMenu
       item
         Width = 50
       end>
-    ExplicitTop = 399
   end
   object Panel1: TPanel
     Left = 1125
@@ -250,7 +249,6 @@ object BoxMenu: TBoxMenu
     Height = 354
     Align = alRight
     TabOrder = 1
-    ExplicitHeight = 318
     DesignSize = (
       194
       354)
@@ -291,7 +289,6 @@ object BoxMenu: TBoxMenu
       AutoSize = True
       DataField = 'LOGIN'
       DataSource = DataSource1
-      ExplicitTop = 66
     end
     object Label4: TLabel
       Left = 6
@@ -670,6 +667,10 @@ object BoxMenu: TBoxMenu
         Caption = 'NF ICMS reemiss'#227'o'
         OnClick = NFICMSreemisso1Click
       end
+      object BMI1: TMenuItem
+        Caption = 'BMI'
+        OnClick = BMI1Click
+      end
     end
     object Sistema: TMenuItem
       Caption = '&Sistema'
@@ -835,7 +836,7 @@ object BoxMenu: TBoxMenu
     Left = 608
     Top = 384
     Bitmap = {
-      494C01013E004400B40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013E004400BC0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000000001000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       00000000000000000000000000005EA660000000000000000000000000000000

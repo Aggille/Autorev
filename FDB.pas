@@ -817,6 +817,8 @@ type
     IBDataSetConcessionariaFIPE: TIBStringField;
     IBDataSetConcessionariaOBRIGAR_ICMS_ST_NFE: TIBStringField;
     IBDataSetConcessionariaALIQUOTA_ICMS1: TIBBCDField;
+    IBDataSetConcessionariaEMAIL_RENAVE: TIBStringField;
+    IBDataSetConcessionariaCPF_RENAVE: TIBStringField;
     procedure FormCreate(Sender: TObject);
     procedure IBDataSetAfterDelete(DataSet: TDataSet);
     procedure IBDataSetAfterPost(DataSet: TDataSet);

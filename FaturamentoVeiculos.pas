@@ -444,6 +444,9 @@ type
     tblPedidoVeiculosRecebimentoNUMERO_CV: TIBStringField;
     tblSadaALIQ_ICMS: TIBBCDField;
     tblSadaICMS_SUBSTITUTO: TIBBCDField;
+    tblNofisaCONSUMIDOR_FINAL: TIBStringField;
+    tblNofisaPESO_BRUTO: TIBBCDField;
+    tblNofisaID_VEICULOS: TIntegerField;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormShow(Sender: TObject);
     procedure PedidoExit(Sender: TObject);
@@ -1185,17 +1188,10 @@ begin
            tblveiculos.FieldByName('Nota_ent').AsString +' de: ' +
            tblVeiculos.FieldByName('Data_ent').AsString,1,50);
      FieldByName('Dados_Ad04').AsString := Substr(DadosAd04.Text,1,50);
-
-    /// showmessage( '01 '+ inttostr( length( fieldbyname( 'dados_ad01' ).asString ) ));
-    // showmessage( '02 '+ inttostr( length( fieldbyname( 'dados_ad02' ).asString ) ));
-    // showmessage( '03 '+ inttostr( length( fieldbyname( 'dados_ad03' ).asString ) ));
-    // showmessage( '04 '+ inttostr( length( fieldbyname( 'dados_ad04' ).asString ) ));
-   //  showmessage( '05 '+ inttostr( length( fieldbyname( 'dados_ad05' ).asString ) ));
-   //  showmessage( 'obs '+ inttostr( length( Observacao.Text ) ));
-
      FieldByName('Obs').AsString := Substr( Observacao.Text,1,60 ) ;
      FieldByName('Qtde_prod').AsInteger := 1;
      FieldByName('Status').AsString := 'Processado';
+     FieldByName('id_Veiculos').AsInteger := tblVeiculos.FieldByName('id_Veiculos').AsInteger;
      Post;
   end;
 {Gravar dados da nf - sada}

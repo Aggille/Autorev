@@ -179,7 +179,7 @@ object BoxPosVendaPecas: TBoxPosVendaPecas
       OnClick = SpeedButton2Click
     end
     object CodigoPeca: TMaskEdit
-      Left = 94
+      Left = 95
       Top = 9
       Width = 118
       Height = 21

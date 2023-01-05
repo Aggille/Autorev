@@ -2,8 +2,8 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
   Left = 15
   Top = 145
   Caption = 'NFe - Gerenciamento'
-  ClientHeight = 428
-  ClientWidth = 1239
+  ClientHeight = 527
+  ClientWidth = 1180
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,23 +19,23 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 29
-    Width = 1239
-    Height = 380
+    Top = 65
+    Width = 1180
+    Height = 443
     Align = alClient
     TabOrder = 1
     object Label1: TLabel
       Left = 5
-      Top = 331
+      Top = 395
       Width = 125
       Height = 13
       Caption = 'Exibir Notas fiscais do dia:'
     end
     object DBGrid1: TDBGrid
       Left = 0
-      Top = -2
-      Width = 1222
-      Height = 315
+      Top = 0
+      Width = 1161
+      Height = 385
       DataSource = DataSourceNofisa
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -120,6 +120,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Expanded = False
           FieldName = 'NOME'
           Title.Caption = 'Nome:'
+          Width = 308
           Visible = True
         end
         item
@@ -133,7 +134,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object DataNFs: TJvDateEdit
       Left = 136
-      Top = 328
+      Top = 392
       Width = 121
       Height = 21
       ShowNullDate = False
@@ -191,8 +192,8 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       OnClick = BitBtn2Click
     end
     object Edit1: TEdit
-      Left = 1088
-      Top = 328
+      Left = 1032
+      Top = 272
       Width = 49
       Height = 21
       TabOrder = 11
@@ -240,7 +241,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox1: TCheckBox
       Left = 830
-      Top = 327
+      Top = 391
       Width = 145
       Height = 17
       Caption = 'Confere cadastro sintegra'
@@ -251,7 +252,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox2: TCheckBox
       Left = 747
-      Top = 327
+      Top = 391
       Width = 77
       Height = 17
       Caption = 'NF-e Ajuste'
@@ -299,7 +300,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox3: TCheckBox
       Left = 648
-      Top = 327
+      Top = 391
       Width = 93
       Height = 17
       Caption = 'NF-e devolu'#231#227'o'
@@ -308,7 +309,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox4: TCheckBox
       Left = 530
-      Top = 327
+      Top = 391
       Width = 112
       Height = 17
       Caption = 'NF-e complementar'
@@ -317,7 +318,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox5: TCheckBox
       Left = 354
-      Top = 327
+      Top = 391
       Width = 95
       Height = 17
       Caption = 'NF-e consumidor'
@@ -326,15 +327,15 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox6: TCheckBox
       Left = 263
-      Top = 327
+      Top = 391
       Width = 85
       Height = 17
       Caption = 'Detalhamento'
       TabOrder = 12
     end
     object CheckBox7: TCheckBox
-      Left = 975
-      Top = 327
+      Left = 488
+      Top = 414
       Width = 154
       Height = 17
       Caption = 'Reten'#231#227'o PIS/COFINS/CSLL'
@@ -342,9 +343,9 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       TabOrder = 13
     end
     object CheckBox8: TCheckBox
-      Left = 1135
-      Top = 327
-      Width = 112
+      Left = 391
+      Top = 414
+      Width = 91
       Height = 17
       Caption = 'CNPJ aut. XML'
       Checked = True
@@ -354,7 +355,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox9: TCheckBox
       Left = 455
-      Top = 327
+      Top = 391
       Width = 69
       Height = 17
       Caption = 'Comercializ.'
@@ -362,7 +363,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     end
     object CheckBox10: TCheckBox
       Left = 263
-      Top = 350
+      Top = 414
       Width = 122
       Height = 17
       Caption = 'Informar cNF dif. NF'
@@ -374,25 +375,28 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 409
-    Width = 1239
+    Top = 508
+    Width = 1180
     Height = 19
     Panels = <>
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 1239
-    Height = 29
-    ButtonHeight = 29
+    Width = 1180
+    Height = 65
+    ButtonHeight = 59
     ButtonWidth = 97
     Caption = 'ToolBar1'
     TabOrder = 0
+    DesignSize = (
+      1180
+      65)
     object BtnEnviar: TBitBtn
       Left = 0
       Top = 0
-      Width = 120
-      Height = 29
+      Width = 89
+      Height = 59
       Caption = 'Enviar NF-e'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -439,10 +443,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       OnClick = BtnEnviarClick
     end
     object BtnConsultar: TBitBtn
-      Left = 120
+      Left = 89
       Top = 0
-      Width = 120
-      Height = 29
+      Width = 114
+      Height = 59
       Caption = 'Consultar NF-e'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -512,10 +516,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       OnKeyPress = FormKeyPress
     end
     object BtnCancelar: TBitBtn
-      Left = 240
+      Left = 203
       Top = 0
-      Width = 120
-      Height = 29
+      Width = 102
+      Height = 59
       Caption = 'Cancelar NF-e'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -579,10 +583,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       OnClick = BtnCancelarClick
     end
     object BtnImprimir: TBitBtn
-      Left = 360
+      Left = 305
       Top = 0
-      Width = 120
-      Height = 29
+      Width = 104
+      Height = 59
       Caption = 'Imprimir Danfe'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -628,107 +632,11 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       TabOrder = 3
       OnClick = BtnImprimirClick
     end
-    object BtnDanfeExterno: TBitBtn
-      Left = 480
-      Top = 0
-      Width = 120
-      Height = 29
-      Caption = 'Impr. Danfe Externo'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00FF000000
-        0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
-        C000C0C0C00000000000C0C0C00000000000FF00FF00FF00FF00000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000C0C0C00000000000FF00FF0000000000C0C0
-        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00000FFFF0000FFFF0000FF
-        FF00C0C0C000C0C0C000000000000000000000000000FF00FF0000000000C0C0
-        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00080808000808080008080
-        8000C0C0C000C0C0C00000000000C0C0C00000000000FF00FF00000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000C0C0C000C0C0C0000000000000000000C0C0
-        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
-        C000C0C0C00000000000C0C0C00000000000C0C0C00000000000FF00FF000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000C0C0C00000000000C0C0C0000000000000000000FF00FF00FF00
-        FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF0000000000C0C0C00000000000C0C0C00000000000FF00FF00FF00
-        FF00FF00FF0000000000FFFFFF00000000000000000000000000000000000000
-        0000FFFFFF0000000000000000000000000000000000FF00FF00FF00FF00FF00
-        FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF0000000000FFFFFF000000000000000000000000000000
-        000000000000FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00000000000000000000000000000000000000
-        000000000000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
-      ParentFont = False
-      TabOrder = 4
-      OnClick = BtnDanfeExternoClick
-    end
-    object BitBtn1: TBitBtn
-      Left = 600
-      Top = 0
-      Width = 110
-      Height = 29
-      Caption = 'Imprimir espelho'
-      Glyph.Data = {
-        36040000424D3604000000000000360000002800000010000000100000000100
-        2000000000000004000000000000000000000000000000000000FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00FF000000
-        0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
-        C000C0C0C00000000000C0C0C00000000000FF00FF00FF00FF00000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000C0C0C00000000000FF00FF0000000000C0C0
-        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00000FFFF0000FFFF0000FF
-        FF00C0C0C000C0C0C000000000000000000000000000FF00FF0000000000C0C0
-        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00080808000808080008080
-        8000C0C0C000C0C0C00000000000C0C0C00000000000FF00FF00000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000C0C0C000C0C0C0000000000000000000C0C0
-        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
-        C000C0C0C00000000000C0C0C00000000000C0C0C00000000000FF00FF000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        000000000000C0C0C00000000000C0C0C0000000000000000000FF00FF00FF00
-        FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF0000000000C0C0C00000000000C0C0C00000000000FF00FF00FF00
-        FF00FF00FF0000000000FFFFFF00000000000000000000000000000000000000
-        0000FFFFFF0000000000000000000000000000000000FF00FF00FF00FF00FF00
-        FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF0000000000FFFFFF000000000000000000000000000000
-        000000000000FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-        FF00FFFFFF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00000000000000000000000000000000000000
-        000000000000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 5
-      OnClick = BitBtn1Click
-    end
     object Btnxml: TBitBtn
-      Left = 710
+      Left = 409
       Top = 0
-      Width = 120
-      Height = 29
+      Width = 88
+      Height = 59
       Caption = 'Enviar Xml'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -775,10 +683,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       OnClick = BtnxmlClick
     end
     object BitBtn3: TBitBtn
-      Left = 830
+      Left = 497
       Top = 0
-      Width = 110
-      Height = 29
+      Width = 91
+      Height = 59
       Caption = 'Alterar cliente'
       Glyph.Data = {
         36060000424D3606000000000000360000002800000020000000100000000100
@@ -838,10 +746,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       OnClick = BitBtn3Click
     end
     object BitBtn6: TBitBtn
-      Left = 940
+      Left = 588
       Top = 0
       Width = 110
-      Height = 29
+      Height = 59
       Caption = 'Carta de corre'#231#227'o'
       Enabled = False
       Glyph.Data = {
@@ -901,11 +809,75 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       TabOrder = 8
       OnClick = BitBtn6Click
     end
-    object BitBtn7: TBitBtn
-      Left = 1050
+    object BtnRENAVE: TBitBtn
+      Left = 698
       Top = 0
       Width = 110
-      Height = 29
+      Height = 59
+      Caption = 'Cadastrar RENAVE'
+      Glyph.Data = {
+        36060000424D3606000000000000360000002800000020000000100000000100
+        1800000000000006000000000000000000000000000000000000FF00FFFF00FF
+        6C6C6C6A6A6A6969696767676565656464646262626060605F5F5F5D5D5D5B5B
+        5B5A5A5AFF00FFFF00FFFF00FFFF00FF6C6C6C6A6A6A69696967676765656564
+        64646262626060605F5F5F5D5D5D5B5B5B5A5A5AFF00FFFF00FFFF00FFA9AAAB
+        9C9FA19C9FA19C9FA19C9FA19C9FA19C9FA19C9FA19C9FA19C9FA19C9FA19C9F
+        A15B5B5BFF00FFFF00FFFF00FFAAAAAA9E9E9E9E9E9E9E9E9E9E9E9E9E9E9E9E
+        9E9E9E9E9E9E9E9E9E9E9E9E9E9E9E9E9E5B5B5BFF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9C9F
+        A15D5D5DFF00FFFF00FFFF00FFAAAAAAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFF9E9E9E5D5D5DFF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9C9F
+        A15F5F5FFF00FFFF00FFFF00FFAAAAAAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFF9E9E9E5F5F5FFF00FFFF00FFFF00FFA9AAAB
+        FFFFFFC9C9C92D2D2D58534EC9C9C9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9C9F
+        A1606060FF00FFFF00FFFF00FFAAAAAAFFFFFFC9C9C92D2D2D535353C9C9C9FF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFF9E9E9E606060FF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFF58534E454442516061C9C9C9FFFFFFFFFFFFFFFFFFFFFFFF9C9F
+        A1626262FF00FFFF00FFFF00FFAAAAAAFFFFFFFFFFFF535353434343595959C9
+        C9C9FFFFFFFFFFFFFFFFFFFFFFFF9E9E9E626262FF00FFFF00FFFF00FFA9AAAB
+        FFFFFFC9C9C9C9C9C954777B1A9CC218556F425A94C9C9C9C9C9C9FFFFFF9C9F
+        A1646464FF00FFFF00FFFF00FFAAAAAAFFFFFFC9C9C9C9C9C96767676E6E6E43
+        43436B6B6BC9C9C9C9C9C9FFFFFF9E9E9E646464FF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFFFFFFFF54777B29799A947E751A9CC2425A94FFFFFFFFFFFF9C9F
+        A1666666FF00FFFF00FFFF00FFAAAAAAFFFFFFFFFFFFFFFFFF67676761616184
+        84846E6E6E6B6B6BFFFFFFFFFFFF9E9E9E666666FF00FFFF00FFFF00FFA9AAAB
+        FFFFFFC9C9C9C9C9C9C9C9C998B9D727D1FC04B8EC1A9CC2425A94FFFFFF9C9F
+        A1686868FF00FFFF00FFFF00FFAAAAAAFFFFFFC9C9C9C9C9C9C9C9C9B7B7B791
+        91917878786E6E6E6B6B6BFFFFFF9E9E9E686868FF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFFFFFFFFFFFFFF98B9D7ACEDFC27D1FC04B8EC1A9CC2425A949C9F
+        A1696969FF00FFFF00FFFF00FFAAAAAAFFFFFFFFFFFFFFFFFFFFFFFFB7B7B7D4
+        D4D49191917878786E6E6E6B6B6B9E9E9E696969FF00FFFF00FFFF00FFA9AAAB
+        FFFFFFC9C9C9C9C9C9C9C9C9C9C9C998B9D7ACEDFC27D1FC04B8EC1A9CC2425A
+        946B6B6BFF00FFFF00FFFF00FFAAAAAAFFFFFFC9C9C9C9C9C9C9C9C9C9C9C9B7
+        B7B7D4D4D49191917878786E6E6E6B6B6B6B6B6BFF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE98B9D7ACEDFC27D1FC04B8EC1A9C
+        C2425A94FF00FFFF00FFFF00FFAAAAAAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+        FEFEB7B7B7D4D4D49191917878786E6E6E6B6B6BFF00FFFF00FFFF00FFA9AAAB
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFEFEFE98B9D7ACEDFC27D1FC35A8
+        F5222F9B110875FF00FFFF00FFAAAAAAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+        FEFEFEFEFEB7B7B7D4D4D49191919595955E5E5E3C3B41FF00FFFF00FFA9AAAB
+        8E3E08C8C8C88E3E08C8C8C88E3E08C8C8C88E3E08C8C8C898B9D74A9EED455F
+        C4455FC4222F9B110875FF00FFAAAAAA4B4B4BC8C8C84B4B4BC8C8C84B4B4BC8
+        C8C84B4B4BC8C8C8B7B7B79B9B9B8484848484845E5E5E3C3B41FF00FFA9AAAB
+        BD5A109C9FA1BD5A109C9FA1BD5A109C9FA1BD5A109C9FA1BD5A10455FC4889F
+        E18997DF455FC4FF00FFFF00FFAAAAAA6666669E9E9E6666669E9E9E6666669E
+        9E9E6666669E9E9E666666848484B4B4B4B4B4B4848484FF00FFFF00FFFF00FF
+        FF00FFBD5A10FF00FFBD5A10FF00FFBD5A10FF00FFBD5A10FF00FFBD5A10455F
+        C4455FC4FF00FFFF00FFFF00FFFF00FFFF00FF666666FF00FF666666FF00FF66
+        6666FF00FF666666FF00FF666666848484848484FF00FFFF00FF}
+      NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      OnClick = BtnRENAVEClick
+    end
+    object BitBtn7: TBitBtn
+      Left = 808
+      Top = 0
+      Width = 110
+      Height = 59
+      Anchors = []
       Caption = 'Visualizar XML'
       Glyph.Data = {
         36060000424D3606000000000000360000002800000020000000100000000100
@@ -964,6 +936,102 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       TabOrder = 9
       OnClick = BitBtn7Click
     end
+    object BtnDanfeExterno: TBitBtn
+      Left = 918
+      Top = 0
+      Width = 120
+      Height = 59
+      Caption = 'Impr. Danfe Externo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00FF000000
+        0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+        C000C0C0C00000000000C0C0C00000000000FF00FF00FF00FF00000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000C0C0C00000000000FF00FF0000000000C0C0
+        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00000FFFF0000FFFF0000FF
+        FF00C0C0C000C0C0C000000000000000000000000000FF00FF0000000000C0C0
+        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00080808000808080008080
+        8000C0C0C000C0C0C00000000000C0C0C00000000000FF00FF00000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000C0C0C000C0C0C0000000000000000000C0C0
+        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+        C000C0C0C00000000000C0C0C00000000000C0C0C00000000000FF00FF000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000C0C0C00000000000C0C0C0000000000000000000FF00FF00FF00
+        FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000000C0C0C00000000000C0C0C00000000000FF00FF00FF00
+        FF00FF00FF0000000000FFFFFF00000000000000000000000000000000000000
+        0000FFFFFF0000000000000000000000000000000000FF00FF00FF00FF00FF00
+        FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0000000000FFFFFF000000000000000000000000000000
+        000000000000FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00000000000000000000000000000000000000
+        000000000000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+      ParentFont = False
+      TabOrder = 4
+      OnClick = BtnDanfeExternoClick
+    end
+    object BitBtn1: TBitBtn
+      Left = 1038
+      Top = 0
+      Width = 110
+      Height = 59
+      Caption = 'Imprimir espelho'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00FF000000
+        0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+        C000C0C0C00000000000C0C0C00000000000FF00FF00FF00FF00000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000C0C0C00000000000FF00FF0000000000C0C0
+        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00000FFFF0000FFFF0000FF
+        FF00C0C0C000C0C0C000000000000000000000000000FF00FF0000000000C0C0
+        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C00080808000808080008080
+        8000C0C0C000C0C0C00000000000C0C0C00000000000FF00FF00000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000C0C0C000C0C0C0000000000000000000C0C0
+        C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+        C000C0C0C00000000000C0C0C00000000000C0C0C00000000000FF00FF000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000C0C0C00000000000C0C0C0000000000000000000FF00FF00FF00
+        FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0000000000C0C0C00000000000C0C0C00000000000FF00FF00FF00
+        FF00FF00FF0000000000FFFFFF00000000000000000000000000000000000000
+        0000FFFFFF0000000000000000000000000000000000FF00FF00FF00FF00FF00
+        FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0000000000FFFFFF000000000000000000000000000000
+        000000000000FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000000FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00000000000000000000000000000000000000
+        000000000000000000000000000000000000FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+      OnClick = BitBtn1Click
+    end
   end
   object DataSourceNofisa: TDataSource
     AutoEdit = False
@@ -1012,7 +1080,9 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       
         '   VAL_FRETE, VAL_ICMS, VAL_ICMS_S, VAL_IPI, VAL_ISS, VAL_OUTROS' +
         ', VAL_SEGURO, '
-      '   VAL_SERV, VENDEDOR, XML, XML_NFSE, XML_RPS, PESO_BRUTO)'
+      
+        '   VAL_SERV, VENDEDOR, XML, XML_NFSE, XML_RPS, PESO_BRUTO, ID_VE' +
+        'ICULOS)'
       'values'
       
         '  (:CONSUMIDOR_FINAL,:ARQ_XML_NFSE, :ARQ_XML_RPS, :ARQUIVO, :BAS' +
@@ -1044,7 +1114,9 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       
         '   :VAL_ICMS, :VAL_ICMS_S, :VAL_IPI, :VAL_ISS, :VAL_OUTROS, :VAL' +
         '_SEGURO, '
-      '   :VAL_SERV, :VENDEDOR, :XML, :XML_NFSE, :XML_RPS, :PESO_BRUTO)')
+      
+        '   :VAL_SERV, :VENDEDOR, :XML, :XML_NFSE, :XML_RPS, :PESO_BRUTO,' +
+        ' :ID_VEICULOS)')
     RefreshSQL.Strings = (
       'Select '
       '  ID_NOFISA,'
@@ -1110,7 +1182,8 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       '  XML_NFSE,'
       '  XML_RPS,'
       '  CONSUMIDOR_FINAL,'
-      '  PESO_BRUTO'
+      '  PESO_BRUTO,'
+      '  ID_VEICULOS'
       'from NOFISA '
       'where'
       '  ID_NOFISA = :ID_NOFISA')
@@ -1204,7 +1277,8 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       '  XML = :XML,'
       '  XML_NFSE = :XML_NFSE,'
       '  XML_RPS = :XML_RPS,'
-      '  PESO_BRUTO = :PESO_BRUTO'
+      '  PESO_BRUTO = :PESO_BRUTO,'
+      '  ID_VEICULOS = :ID_VEICULOS'
       'where'
       '  ID_NOFISA = :OLD_ID_NOFISA')
     ParamCheck = True
@@ -1586,6 +1660,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       Origin = '"NOFISA"."PESO_BRUTO"'
       Precision = 18
       Size = 2
+    end
+    object tblNofisaID_VEICULOS: TIntegerField
+      FieldName = 'ID_VEICULOS'
+      Origin = '"NOFISA"."ID_VEICULOS"'
     end
   end
   object tblPessoas: TIBDataSet
@@ -2882,6 +2960,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     Configuracoes.WebServices.AguardarConsultaRet = 1000
     Configuracoes.WebServices.AjustaAguardaConsultaRet = True
     Configuracoes.WebServices.QuebradeLinha = '|'
+    Configuracoes.WebServices.SSLType = LT_TLSv1_2
     Configuracoes.RespTec.IdCSRT = 0
     DANFE = Danfe
     Left = 416
@@ -4049,7 +4128,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     Configuracoes.Geral.ConsultaLoteAposEnvio = False
     Configuracoes.Geral.PathIniCidades = 'C:\Autorev-SD\'
     Configuracoes.Geral.Emitente.DadosSenhaParams = <>
-    Configuracoes.Geral.Resposta = 0
     Configuracoes.Arquivos.PathSalvar = 'C:\Autorev-SD\NFS-e\'
     Configuracoes.Arquivos.OrdenacaoPath = <>
     Configuracoes.Arquivos.SepararPorMes = True
@@ -4635,7 +4713,7 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     Top = 173
   end
   object frxReport1: TfrxReport
-    Version = '6.4.11'
+    Version = '5.4.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -4678,11 +4756,8 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
-      Frame.Typ = []
-      MirrorMode = []
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
-        Frame.Typ = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -4695,13 +4770,10 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         OnBeforePrint = 'PageHeader1OnBeforePrint'
         Child = frxReport1.TomadorPrestador
         object Shape2: TfrxShapeView
-          AllowVectorExport = True
           Width = 718.110700000000000000
           Height = 79.370130000000000000
-          Frame.Typ = []
         end
         object Memo2: TfrxMemoView
-          AllowVectorExport = True
           Left = 115.842610000000000000
           Top = 4.338590000000000000
           Width = 419.527830000000000000
@@ -4713,7 +4785,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -19
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Parametros."Nome_Prefeitura"]')
@@ -4721,7 +4792,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           VAlign = vaCenter
         end
         object Memo1: TfrxMemoView
-          AllowVectorExport = True
           Top = 79.370130000000000000
           Width = 238.866141730000000000
           Height = 26.456695350000000000
@@ -4738,7 +4808,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo4: TfrxMemoView
-          AllowVectorExport = True
           Left = 239.110390000000000000
           Top = 79.370130000000000000
           Width = 239.622047240000000000
@@ -4756,7 +4825,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo5: TfrxMemoView
-          AllowVectorExport = True
           Left = 479.000310000000000000
           Top = 79.370130000000000000
           Width = 238.866141730000000000
@@ -4774,7 +4842,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo6: TfrxMemoView
-          AllowVectorExport = True
           Left = 536.693260000000000000
           Width = 181.417440000000000000
           Height = 26.456695350000000000
@@ -4791,7 +4858,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo7: TfrxMemoView
-          AllowVectorExport = True
           Left = 536.693260000000000000
           Top = 26.456710000000000000
           Width = 181.417440000000000000
@@ -4809,7 +4875,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo8: TfrxMemoView
-          AllowVectorExport = True
           Left = 536.693260000000000000
           Top = 52.913420000000000000
           Width = 181.417440000000000000
@@ -4827,7 +4892,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo9: TfrxMemoView
-          AllowVectorExport = True
           Left = 536.693260000000000000
           Top = 7.559059999999999000
           Width = 181.417440000000000000
@@ -4838,14 +4902,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."NumeroNFSe"]')
           ParentFont = False
         end
         object Memo53: TfrxMemoView
-          AllowVectorExport = True
           Left = 540.472790000000000000
           Top = 34.015770000000010000
           Width = 177.637910000000000000
@@ -4856,14 +4918,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."DataEmissao"]')
           ParentFont = False
         end
         object Memo54: TfrxMemoView
-          AllowVectorExport = True
           Left = 540.472790000000000000
           Top = 60.472480000000000000
           Width = 177.637910000000000000
@@ -4874,14 +4934,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."CodigoVerificacao"]')
           ParentFont = False
         end
         object Memo69: TfrxMemoView
-          AllowVectorExport = True
           Top = 86.929190000000010000
           Width = 238.110390000000000000
           Height = 18.897650000000000000
@@ -4891,14 +4949,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."Competencia"]')
           ParentFont = False
         end
         object Memo70: TfrxMemoView
-          AllowVectorExport = True
           Left = 240.110390000000000000
           Top = 86.929190000000010000
           Width = 238.110390000000000000
@@ -4909,14 +4965,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."Numero"]')
           ParentFont = False
         end
         object Memo71: TfrxMemoView
-          AllowVectorExport = True
           Left = 480.000310000000000000
           Top = 86.929190000000010000
           Width = 238.110390000000000000
@@ -4927,20 +4981,17 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."NFSeSubstituida"]')
           ParentFont = False
         end
         object Picture1: TfrxPictureView
-          AllowVectorExport = True
           Left = 1.779530000000000000
           Top = 1.000000000000000000
           Width = 113.385900000000000000
           Height = 75.590600000000000000
           DataField = 'LogoPrefCarregado'
-          Frame.Typ = []
           HightQuality = False
           Transparent = False
           TransparentColor = clWhite
@@ -4948,7 +4999,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
-        Frame.Typ = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -4959,7 +5009,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         Top = 767.244590000000000000
         Width = 718.110700000000000000
         object Memo23: TfrxMemoView
-          AllowVectorExport = True
           Top = 328.819109999999900000
           Width = 718.110700000000000000
           Height = 60.472480000000000000
@@ -4980,7 +5029,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo34: TfrxMemoView
-          AllowVectorExport = True
           Top = 226.771800000000000000
           Width = 718.110700000000000000
           Height = 83.149660000000000000
@@ -5000,7 +5048,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo18: TfrxMemoView
-          AllowVectorExport = True
           Top = 7.559060000000045000
           Width = 718.110700000000000000
           Height = 37.795285350000000000
@@ -5017,7 +5064,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo3: TfrxMemoView
-          AllowVectorExport = True
           Top = 177.637910000000000000
           Width = 238.866141730000000000
           Height = 26.456695350000000000
@@ -5034,7 +5080,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo32: TfrxMemoView
-          AllowVectorExport = True
           Left = 239.110390000000000000
           Top = 177.637910000000000000
           Width = 240.000000000000000000
@@ -5052,7 +5097,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo65: TfrxMemoView
-          AllowVectorExport = True
           Left = 479.000310000000000000
           Top = 177.637910000000000000
           Width = 238.866141730000000000
@@ -5070,7 +5114,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo97: TfrxMemoView
-          AllowVectorExport = True
           Top = 185.196970000000000000
           Width = 238.110390000000000000
           Height = 18.897650000000000000
@@ -5082,14 +5125,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorServicos"]')
           ParentFont = False
         end
         object Memo103: TfrxMemoView
-          AllowVectorExport = True
           Left = 240.110390000000000000
           Top = 185.196970000000000000
           Width = 238.110390000000000000
@@ -5102,14 +5143,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorLiquidoNfse"]')
           ParentFont = False
         end
         object Memo104: TfrxMemoView
-          AllowVectorExport = True
           Left = 480.000310000000000000
           Top = 185.196970000000000000
           Width = 238.110390000000000000
@@ -5122,7 +5161,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorServicos"]')
@@ -5130,7 +5168,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         end
         object Memo105: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 158.740260000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -5140,7 +5177,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -13
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -5149,7 +5185,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         end
         object Memo33: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 207.874150000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -5159,7 +5194,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -5168,7 +5202,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         end
         object Memo35: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 107.826839999999900000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -5178,7 +5211,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -13
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -5186,7 +5218,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo31: TfrxMemoView
-          AllowVectorExport = True
           Top = 45.574830000000020000
           Width = 180.283464566929000000
           Height = 26.456695350000000000
@@ -5203,7 +5234,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo44: TfrxMemoView
-          AllowVectorExport = True
           Left = 180.417440000000000000
           Top = 45.574830000000020000
           Width = 179.527559060000000000
@@ -5221,7 +5251,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo45: TfrxMemoView
-          AllowVectorExport = True
           Left = 360.055350000000000000
           Top = 45.574830000000020000
           Width = 178.393700790000000000
@@ -5239,7 +5268,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo46: TfrxMemoView
-          AllowVectorExport = True
           Left = 538.583140940000000000
           Top = 45.574830000000020000
           Width = 179.527559060000000000
@@ -5257,7 +5285,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo50: TfrxMemoView
-          AllowVectorExport = True
           Top = 128.504020000000000000
           Width = 119.433070870000000000
           Height = 26.456695350000000000
@@ -5274,7 +5301,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo51: TfrxMemoView
-          AllowVectorExport = True
           Left = 119.677319130000000000
           Top = 128.504020000000000000
           Width = 119.433070870000000000
@@ -5292,7 +5318,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo52: TfrxMemoView
-          AllowVectorExport = True
           Left = 239.110390000000000000
           Top = 128.504020000000000000
           Width = 119.811023620000000000
@@ -5310,7 +5335,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo72: TfrxMemoView
-          AllowVectorExport = True
           Left = 359.189286380000000000
           Top = 128.504020000000000000
           Width = 119.811023620000000000
@@ -5328,7 +5352,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo87: TfrxMemoView
-          AllowVectorExport = True
           Left = 479.000310000000000000
           Top = 128.504020000000000000
           Width = 119.055118110236000000
@@ -5346,7 +5369,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo88: TfrxMemoView
-          AllowVectorExport = True
           Left = 598.165740000000000000
           Top = 128.504020000000000000
           Width = 119.433070870000000000
@@ -5364,7 +5386,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo89: TfrxMemoView
-          AllowVectorExport = True
           Top = 136.063080000000000000
           Width = 117.165430000000000000
           Height = 18.897650000000000000
@@ -5376,14 +5397,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorIr"]')
           ParentFont = False
         end
         object Memo90: TfrxMemoView
-          AllowVectorExport = True
           Left = 120.944960000000000000
           Top = 136.063080000000000000
           Width = 117.165430000000000000
@@ -5396,14 +5415,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorPis"]')
           ParentFont = False
         end
         object Memo106: TfrxMemoView
-          AllowVectorExport = True
           Left = 240.110390000000000000
           Top = 136.063080000000000000
           Width = 117.165430000000000000
@@ -5416,14 +5433,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorCofins"]')
           ParentFont = False
         end
         object Memo107: TfrxMemoView
-          AllowVectorExport = True
           Left = 361.834880000000000000
           Top = 136.063080000000000000
           Width = 117.165430000000000000
@@ -5436,14 +5451,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorCsll"]')
           ParentFont = False
         end
         object Memo47: TfrxMemoView
-          AllowVectorExport = True
           Left = 479.000310000000000000
           Top = 136.063080000000000000
           Width = 117.165430000000000000
@@ -5456,14 +5469,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorInss"]')
           ParentFont = False
         end
         object Memo48: TfrxMemoView
-          AllowVectorExport = True
           Left = 600.945270000000000000
           Top = 136.063080000000000000
           Width = 117.165430000000000000
@@ -5476,14 +5487,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."OutrasRetencoes"]')
           ParentFont = False
         end
         object Memo49: TfrxMemoView
-          AllowVectorExport = True
           Top = 71.811069999999970000
           Width = 180.283464566929000000
           Height = 26.456695350000000000
@@ -5500,7 +5509,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo81: TfrxMemoView
-          AllowVectorExport = True
           Left = 180.417440000000000000
           Top = 71.811070000000200000
           Width = 179.527559060000000000
@@ -5518,7 +5526,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo82: TfrxMemoView
-          AllowVectorExport = True
           Left = 360.055350000000000000
           Top = 71.811069999999970000
           Width = 178.393700790000000000
@@ -5536,7 +5543,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo83: TfrxMemoView
-          AllowVectorExport = True
           Left = 538.583140940000000000
           Top = 71.811069999999970000
           Width = 179.527559060000000000
@@ -5554,7 +5560,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo84: TfrxMemoView
-          AllowVectorExport = True
           Top = 52.913419999999970000
           Width = 181.417440000000000000
           Height = 18.897650000000000000
@@ -5566,14 +5571,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorServicos"]')
           ParentFont = False
         end
         object Memo85: TfrxMemoView
-          AllowVectorExport = True
           Left = 181.417440000000000000
           Top = 52.913419999999970000
           Width = 177.637910000000000000
@@ -5586,14 +5589,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorDeducoes"]')
           ParentFont = False
         end
         object Memo86: TfrxMemoView
-          AllowVectorExport = True
           Left = 362.834880000000000000
           Top = 52.913419999999970000
           Width = 173.858380000000000000
@@ -5606,14 +5607,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."DescontoIncondicionado"]')
           ParentFont = False
         end
         object Memo108: TfrxMemoView
-          AllowVectorExport = True
           Left = 540.472790000000000000
           Top = 52.913419999999970000
           Width = 177.637910000000000000
@@ -5626,14 +5625,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."BaseCalculo"]')
           ParentFont = False
         end
         object Memo109: TfrxMemoView
-          AllowVectorExport = True
           Left = 540.472790000000000000
           Top = 79.370130000000030000
           Width = 177.637910000000000000
@@ -5646,14 +5643,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."DescontoCondicionado"]')
           ParentFont = False
         end
         object Memo110: TfrxMemoView
-          AllowVectorExport = True
           Left = 362.834880000000000000
           Top = 79.370130000000030000
           Width = 173.858380000000000000
@@ -5666,14 +5661,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorIssRetido"]')
           ParentFont = False
         end
         object Memo111: TfrxMemoView
-          AllowVectorExport = True
           Left = 181.417440000000000000
           Top = 79.370130000000030000
           Width = 177.637910000000000000
@@ -5686,14 +5679,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."ValorIss"]')
           ParentFont = False
         end
         object Memo112: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779530000000000000
           Top = 79.370130000000030000
           Width = 177.637910000000000000
@@ -5706,14 +5697,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Servicos."Aliquota"]')
           ParentFont = False
         end
         object Memo36: TfrxMemoView
-          AllowVectorExport = True
           Top = 310.921460000000000000
           Width = 366.614410000000000000
           Height = 18.897650000000000000
@@ -5723,13 +5712,11 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -11
           Font.Name = 'Times New Roman'
           Font.Style = []
-          Frame.Typ = []
           Memo.UTF8W = (
             'Data e Hora da Impress'#227'o: [Date #ddd/mm/yyyy]  [Time #dhh:mm:ss]')
           ParentFont = False
         end
         object Memo37: TfrxMemoView
-          AllowVectorExport = True
           Top = 14.897650000000000000
           Width = 718.110700000000000000
           Height = 30.236240000000000000
@@ -5739,13 +5726,11 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Memo.UTF8W = (
             '[Servicos."ItemListaServico"] - [Servicos."xItemListaServico"]')
           ParentFont = False
         end
         object Memo67: TfrxMemoView
-          AllowVectorExport = True
           Left = 400.630180000000000000
           Top = 309.921460000000000000
           Width = 309.921460000000000000
@@ -5756,14 +5741,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -11
           Font.Name = 'Times New Roman'
           Font.Style = []
-          Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
             '[Parametros."Sistema"]')
           ParentFont = False
         end
         object Memo68: TfrxMemoView
-          AllowVectorExport = True
           Left = 532.913730000000000000
           Top = 328.819109999999900000
           Width = 185.196970000000000000
@@ -5781,7 +5764,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo73: TfrxMemoView
-          AllowVectorExport = True
           Left = 548.031850000000000000
           Top = 351.496290000000000000
           Width = 132.283550000000000000
@@ -5792,14 +5774,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Identificacao."NumeroNFSe"]')
           ParentFont = False
         end
         object Memo75: TfrxMemoView
-          AllowVectorExport = True
           Left = 52.913420000000000000
           Top = 353.937230000000000000
           Width = 139.842610000000000000
@@ -5810,7 +5790,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -11
           Font.Name = 'Times New Roman'
           Font.Style = []
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '       /                 /           '
@@ -5818,7 +5797,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo77: TfrxMemoView
-          AllowVectorExport = True
           Left = 300.582870000000000000
           Top = 354.039579999999900000
           Width = 226.771800000000000000
@@ -5829,7 +5807,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -11
           Font.Name = 'Times New Roman'
           Font.Style = []
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '________________________________________'
@@ -5839,7 +5816,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
-        Frame.Typ = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -5852,7 +5828,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         DataSetName = 'Servicos'
         RowCount = 0
         object Memo13: TfrxMemoView
-          AllowVectorExport = True
           Top = 26.456710000000040000
           Width = 718.110700000000000000
           Height = 105.826771650000000000
@@ -5871,7 +5846,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         end
         object Memo10: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 6.559060000000045000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -5881,7 +5855,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -13
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -5889,7 +5862,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo22: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779530000000000000
           Top = 105.826771653543000000
           Width = 710.551640000000000000
@@ -5901,7 +5873,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -19
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Parametros."Mensagem0"]')
@@ -5911,7 +5882,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
       end
       object TomadorPrestador: TfrxChild
         FillType = ftBrush
-        Frame.Typ = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -5922,11 +5892,8 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         Top = 147.401670000000000000
         Width = 718.110700000000000000
         OnBeforePrint = 'TomadorPrestadorOnBeforePrint'
-        ToNRows = 0
-        ToNRowsMode = rmCount
         object Memo11: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 7.559059999999988000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -5936,7 +5903,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -13
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -5944,7 +5910,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo30: TfrxMemoView
-          AllowVectorExport = True
           Top = 26.456709999999990000
           Width = 238.866141730000000000
           Height = 26.456695350000000000
@@ -5961,7 +5926,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo55: TfrxMemoView
-          AllowVectorExport = True
           Left = 239.110390000000000000
           Top = 26.456709999999990000
           Width = 239.622047240000000000
@@ -5979,7 +5943,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo56: TfrxMemoView
-          AllowVectorExport = True
           Left = 479.000310000000000000
           Top = 26.456709999999990000
           Width = 238.866141730000000000
@@ -5997,7 +5960,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo57: TfrxMemoView
-          AllowVectorExport = True
           Top = 34.015770000000000000
           Width = 238.110390000000000000
           Height = 18.897650000000000000
@@ -6007,14 +5969,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Parametros."ExigibilidadeISS"]')
           ParentFont = False
         end
         object Memo58: TfrxMemoView
-          AllowVectorExport = True
           Left = 240.110390000000000000
           Top = 34.015770000000000000
           Width = 238.110390000000000000
@@ -6025,14 +5985,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Parametros."CodigoMunicipio"]')
           ParentFont = False
         end
         object Memo59: TfrxMemoView
-          AllowVectorExport = True
           Left = 480.000310000000000000
           Top = 34.015770000000000000
           Width = 238.110390000000000000
@@ -6043,14 +6001,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
             '[Parametros."MunicipioIncidencia"]')
           ParentFont = False
         end
         object Memo16: TfrxMemoView
-          AllowVectorExport = True
           Left = 112.385900000000000000
           Top = 129.504020000000000000
           Width = 605.480551730000000000
@@ -6068,7 +6024,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo14: TfrxMemoView
-          AllowVectorExport = True
           Left = 112.385900000000000000
           Top = 76.590599999999990000
           Width = 605.480551730000000000
@@ -6086,7 +6041,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo15: TfrxMemoView
-          AllowVectorExport = True
           Left = 112.385900000000000000
           Top = 103.047310000000000000
           Width = 605.480551730000000000
@@ -6104,7 +6058,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo17: TfrxMemoView
-          AllowVectorExport = True
           Left = 112.440944880000000000
           Top = 182.307081730000000000
           Width = 171.968418500000000000
@@ -6122,7 +6075,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo60: TfrxMemoView
-          AllowVectorExport = True
           Top = 259.126160000000000000
           Width = 718.110700000000000000
           Height = 26.456695350000000000
@@ -6139,7 +6091,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo61: TfrxMemoView
-          AllowVectorExport = True
           Top = 285.803340000000000000
           Width = 718.110700000000000000
           Height = 26.456695350000000000
@@ -6156,7 +6107,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo63: TfrxMemoView
-          AllowVectorExport = True
           Left = 186.511667010000000000
           Top = 338.754330710000000000
           Width = 184.440869210000000000
@@ -6174,7 +6124,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo62: TfrxMemoView
-          AllowVectorExport = True
           Top = 338.716535430000000000
           Width = 185.952607010000000000
           Height = 26.456695350000000000
@@ -6191,7 +6140,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo19: TfrxMemoView
-          AllowVectorExport = True
           Left = 284.188893390000000000
           Top = 182.307081730000000000
           Width = 146.267616460000000000
@@ -6210,7 +6158,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         end
         object Memo98: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 56.692950000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -6220,7 +6167,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -13
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -6229,7 +6175,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
         end
         object Memo113: TfrxMemoView
           Align = baWidth
-          AllowVectorExport = True
           Top = 211.992270000000000000
           Width = 718.110700000000000000
           Height = 18.897650000000000000
@@ -6239,7 +6184,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -13
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Fill.BackColor = clGradientInactiveCaption
           Memo.UTF8W = (
@@ -6247,19 +6191,16 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object imgPrestador: TfrxPictureView
-          AllowVectorExport = True
           Left = 0.779530000000000000
           Top = 86.929190000000010000
           Width = 109.606370000000000000
           Height = 86.929190000000000000
           DataField = 'LogoCarregado'
-          Frame.Typ = []
           HightQuality = False
           Transparent = False
           TransparentColor = clWhite
         end
         object Memo20: TfrxMemoView
-          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 83.149660000000010000
           Width = 600.945270000000000000
@@ -6270,14 +6211,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."RazaoSocial"]')
           ParentFont = False
         end
         object Memo25: TfrxMemoView
-          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 109.606370000000000000
           Width = 600.945270000000000000
@@ -6288,7 +6227,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             
@@ -6297,7 +6235,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo42: TfrxMemoView
-          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 136.063080000000000000
           Width = 600.945270000000000000
@@ -6308,14 +6245,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."xMunicipio"]')
           ParentFont = False
         end
         object Memo74: TfrxMemoView
-          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 189.535560000000000000
           Width = 166.299320000000000000
@@ -6326,14 +6261,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."Cnpj"]')
           ParentFont = False
         end
         object Memo76: TfrxMemoView
-          AllowVectorExport = True
           Left = 287.023810000000000000
           Top = 189.535560000000000000
           Width = 136.063080000000000000
@@ -6344,14 +6277,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."InscricaoMunicipal"]')
           ParentFont = False
         end
         object Memo21: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779530000000000000
           Top = 266.685220000000000000
           Width = 714.331170000000000000
@@ -6362,14 +6293,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."Endereco"], [Tomador."Numero"] [Tomador."Bairro"]')
           ParentFont = False
         end
         object Memo26: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779530000000000000
           Top = 292.362400000000000000
           Width = 714.331170000000000000
@@ -6380,14 +6309,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."xMunicipio"]')
           ParentFont = False
         end
         object Memo28: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779530000000000000
           Top = 345.897632910000000000
           Width = 177.637910000000000000
@@ -6398,14 +6325,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."CpfCnpj"]')
           ParentFont = False
         end
         object Memo40: TfrxMemoView
-          AllowVectorExport = True
           Left = 189.535560000000000000
           Top = 345.834880000000000000
           Width = 177.637910000000000000
@@ -6416,14 +6341,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."InscricaoMunicipal"]')
           ParentFont = False
         end
         object Memo24: TfrxMemoView
-          AllowVectorExport = True
           Left = 416.527830000000000000
           Top = 312.335433070000000000
           Width = 301.606299210000000000
@@ -6441,7 +6364,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo27: TfrxMemoView
-          AllowVectorExport = True
           Left = 419.307360000000000000
           Top = 319.480520000000000000
           Width = 298.582870000000000000
@@ -6452,14 +6374,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."Telefone"]')
           ParentFont = False
         end
         object Memo39: TfrxMemoView
-          AllowVectorExport = True
           Left = 112.062992130000000000
           Top = 155.960730000000000000
           Width = 304.629857800000000000
@@ -6477,7 +6397,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo64: TfrxMemoView
-          AllowVectorExport = True
           Left = 113.385900000000000000
           Top = 162.519790000000000000
           Width = 302.362400000000000000
@@ -6488,14 +6407,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."Complemento"]')
           ParentFont = False
         end
         object Memo43: TfrxMemoView
-          AllowVectorExport = True
           Top = 232.889920000000000000
           Width = 718.110700000000000000
           Height = 26.456695350000000000
@@ -6512,7 +6429,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo12: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779530000000000000
           Top = 240.448980000000000000
           Width = 714.331170000000000000
@@ -6523,14 +6439,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."RazaoSocial"]')
           ParentFont = False
         end
         object Memo29: TfrxMemoView
-          AllowVectorExport = True
           Top = 312.259842520000000000
           Width = 416.504051730000000000
           Height = 26.456695350000000000
@@ -6547,7 +6461,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo38: TfrxMemoView
-          AllowVectorExport = True
           Left = 3.779527560000000000
           Top = 319.819105110000000000
           Width = 408.189240000000000000
@@ -6558,14 +6471,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."Complemento"]')
           ParentFont = False
         end
         object Memo41: TfrxMemoView
-          AllowVectorExport = True
           Left = 416.692913390000000000
           Top = 155.960730000000000000
           Width = 301.228346460000000000
@@ -6583,7 +6494,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo66: TfrxMemoView
-          AllowVectorExport = True
           Left = 419.527830000000000000
           Top = 161.519790000000000000
           Width = 294.803340000000000000
@@ -6594,14 +6504,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."Telefone"]')
           ParentFont = False
         end
         object Memo78: TfrxMemoView
-          AllowVectorExport = True
           Left = 430.866420000000000000
           Top = 182.286614170000000000
           Width = 287.055118110000000000
@@ -6619,7 +6527,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo79: TfrxMemoView
-          AllowVectorExport = True
           Left = 433.701336610000000000
           Top = 189.645918270000000000
           Width = 279.685220000000000000
@@ -6630,14 +6537,12 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Prestador."Email"]')
           ParentFont = False
         end
         object Memo80: TfrxMemoView
-          AllowVectorExport = True
           Left = 371.187401570000000000
           Top = 338.834645670000000000
           Width = 346.960659210000000000
@@ -6655,7 +6560,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           ParentFont = False
         end
         object Memo91: TfrxMemoView
-          AllowVectorExport = True
           Left = 374.417832990000000000
           Top = 346.238249290000000000
           Width = 340.157700000000000000
@@ -6666,7 +6570,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
           Font.Height = -12
           Font.Name = 'Times New Roman'
           Font.Style = [fsBold]
-          Frame.Typ = []
           Frame.Width = 0.500000000000000000
           Memo.UTF8W = (
             '[Tomador."Email"]')
@@ -6684,7 +6587,6 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     Configuracoes.Geral.CodigoMunicipio = 0
     Configuracoes.Geral.ConsultaLoteAposEnvio = False
     Configuracoes.Geral.Emitente.DadosSenhaParams = <>
-    Configuracoes.Geral.Resposta = 0
     Configuracoes.Arquivos.OrdenacaoPath = <>
     Configuracoes.WebServices.UF = 'SP'
     Configuracoes.WebServices.AguardarConsultaRet = 0
@@ -7783,8 +7685,26 @@ object BoxNFeGerenciamento: TBoxNFeGerenciamento
     ACBrNFe = ACBrNFe1
     EspessuraBorda = 1
     BorderIcon = [biSystemMenu, biMinimize, biMaximize]
-    ThreadSafe = False
     Left = 480
     Top = 104
+  end
+  object qryVeiculos: TIBQuery
+    Database = FDB1.IBDatabase
+    Transaction = FDB1.IBTransaction
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    SQL.Strings = (
+      'Select * from Veiculos'
+      ''
+      'Where id_veiculos = :idVeiculos')
+    Left = 744
+    Top = 101
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'idVeiculos'
+        ParamType = ptUnknown
+      end>
   end
 end

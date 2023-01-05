@@ -378,6 +378,7 @@ type
     tblSadaPICMS_EFET: TIBBCDField;
     tblSadaVICMS_EFET: TIBBCDField;
     tblSadaICMS_SUBSTITUTO: TIBBCDField;
+    tblNofisaID_VEICULOS: TIntegerField;
     procedure FecharDs;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormShow(Sender: TObject);
@@ -708,7 +709,6 @@ begin
         FieldByName('Val_Icms').AsCurrency := 0;
         FieldByName('Tot_prod').AsCurrency := ValorNF;
         FieldByName('Tot_Nota').AsCurrency := ValorNF;
-//          tblVeiculos.FieldByName('Preco').AsCurrency;
         if tblPessoas.FieldByName('Estado').AsString = 'RS' then
           FieldByName('Codigo_Fiscal').AsString := CFOP1
         else
@@ -721,6 +721,7 @@ begin
         FieldByName('Dados_Ad04').AsString := Dados_ad04;
         FieldByName('Qtde_prod').AsInteger := 1;
         FieldByName('Status').AsString := 'Processado';
+        FieldByName('id_Veiculos').AsInteger := cdsveiculos.FieldByName('id_Veiculos').AsInteger;
         Post;
       end;
     with IBQuery8 do
@@ -1707,4 +1708,5 @@ begin
  end;
 
 end.
+
 

@@ -18,6 +18,7 @@ type
     BtnUsados: TBitBtn;
     BtnPecas: TBitBtn;
     BtnPecasXML: TBitBtn;
+    BitBtn1: TBitBtn;
     procedure FormShow(Sender: TObject);
     procedure BtnNovosClick(Sender: TObject);
     procedure BtnUsadosClick(Sender: TObject);
@@ -25,6 +26,7 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnPecasXMLClick(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -40,7 +42,8 @@ implementation
 
 uses FDB, Empresas, PesquisaGeral, Biblioteca, SystemException,
   OperacoesComprasNovos, OperacoesComprasPecas, OperacoesComprasUsados,
-  OperacoesComprasPecasXml, OperacoesComprasPecasXmlSimilar;
+  OperacoesComprasPecasXml, OperacoesComprasPecasXmlSimilar,
+  UBoxTransferenciaVeiculo0KM;
 
 {$R *.dfm}
 
@@ -85,6 +88,12 @@ begin
       BtnUsados.Enabled := True;
       BtnNovos.SetFocus;
     end;
+end;
+
+procedure TBoxCompras.BitBtn1Click(Sender: TObject);
+begin
+  Application.CreateForm( TBoxTransferenciaVeiculo0KM, BoxTransferenciaVeiculo0KM );
+  BoxTransferenciaVeiculo0KM.ShowModal;
 end;
 
 procedure TBoxCompras.BtnNovosClick(Sender: TObject);

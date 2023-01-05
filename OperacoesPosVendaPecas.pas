@@ -501,6 +501,7 @@ begin
         DescricaoPeca.Text := tblPecas.FieldByName('Descricao').Text;
         PrecoVenda.Text := FieldByName('Preco').Text;
         IdPeca := FieldByName('Id_Pecas').AsInteger;
+        mStatus := 'Pecas';
      end;
      if CodigoPeca.Text = '' then
      begin
@@ -519,6 +520,7 @@ begin
         SpeedButton1.Click;
         end;
       end;
+   mStatus := 'Pecas';
 end;
 
 procedure TBoxPosVendaPecas.SpeedButton2Click(Sender: TObject);

@@ -1566,7 +1566,7 @@ begin
     FieldByName('Val_Serv').AsFloat := Val_Serv;
     FieldByName('Val_ISS').AsFloat := Val_ISS;
     FieldByName('ISSQN').AsFloat := ISSQN;
-    FieldByName('Tot_Prod').AsFloat := Val_Serv;
+    FieldByName('Tot_Prod').AsFloat := 0;//Val_Serv;
     FieldByName('Tot_Nota').AsFloat := Val_Serv;
     FieldByName('Dados_Ad05').AsString := 'Sequência do cliente:'+ FieldByName('Id_Clientes').AsString;
     Post;

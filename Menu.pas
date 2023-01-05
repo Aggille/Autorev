@@ -169,6 +169,7 @@ type
     frxPDFExport1: TfrxPDFExport;
     frxJPEGExport1: TfrxJPEGExport;
     frxBMPExport1: TfrxBMPExport;
+    BMI1: TMenuItem;
     procedure FileExit1Execute(Sender: TObject);
     procedure HelpAbout1Execute(Sender: TObject);
     procedure ActionPecasExecute(Sender: TObject);
@@ -260,6 +261,7 @@ type
     procedure MenuConciliacaoCartoesClick(Sender: TObject);
     procedure ComissaovendedoresClick(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
+    procedure BMI1Click(Sender: TObject);
   private
      { Private declarations }
   public
@@ -296,7 +298,7 @@ uses SysUtils, Mapi, SistemaSobre, CadastroPecas, CadastroConcessionaria,
   RelatorioResultadoSequencia, RelEstoque, VendasDiarias, RelatorioProducaoOS,
   OperacoesSeguro, FinanceiroCaixaGeral, RelatoriosInidividualComissoes,
   uSpedBaseST, uSpedPreenchimentoBaseST, uSpedNFsErradas, CadastroCardapio,
-  FinanceiroConciliacaoCartoes, RelatorioComissoesVeiculos, UBoxRenave;
+  FinanceiroConciliacaoCartoes, RelatorioComissoesVeiculos, UBoxRenave, BMI;
 
 {$R *.dfm}
 
@@ -464,6 +466,16 @@ begin
    if not Assigned(BoxRelatorioAnomalias) then
     BoxRelatorioAnomalias := TBoxRelatorioAnomalias.Create(Self);
     BoxRelatorioAnomalias.Show;
+end;
+
+procedure TBoxMenu.BMI1Click(Sender: TObject);
+begin
+   if (FDB1.IBDataSetLoginADM.AsString = 'T') then
+   begin
+   if not Assigned(BoxBMI) then
+    BoxBMI := TBoxBMI.Create(Self);
+    BoxBMI.Show;
+   end;
 end;
 
 procedure TBoxMenu.BtnCRMClick(Sender: TObject);
@@ -779,7 +791,8 @@ end;
 
 procedure TBoxMenu.ToolButton1Click(Sender: TObject);
 begin
- if (FDB1.IBDataSetLoginADM.AsString = 'T') then
+ if (FDB1.IBDataSetLoginADM.AsString = 'T') or
+    (FDB1.IBDataSetLoginacesso140.AsString = 'T') then
   begin
    if not Assigned(BoxREnave) then
      BoxREnave := TBoxRenave.Create(Self);
@@ -1285,6 +1298,8 @@ begin
    end;
  // 99 Autoriza a faturar nf de motocicleta com valor diferente ao total do pedido.
   //100 autoriza o menu de concilicacao de cartoes
+  //140 renave basico emitir atpv
+  //141 renave total
    if (FDB1.IBDataSetLoginacesso100.AsString <> 'T') AND
       (FDB1.IBDataSetLoginADM.AsString <> 'T') then
    begin

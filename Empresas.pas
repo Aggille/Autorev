@@ -75,6 +75,8 @@ type
 //    Despachante : String;
     FIPE : Boolean;
     Obrigar_ICMS_ST_NFE : Boolean;
+    email_RENAVE : String;
+    CPF_RENAVE : String;
   end;
 
 var
@@ -218,6 +220,8 @@ begin
            Despachante.Text := DataSourceConcessionaria.Dataset.FieldByName('Despachante').Text;
            Fipe := DataSourceConcessionaria.Dataset.FieldByName('FIPE').AsBoolean;
            Obrigar_ICMS_ST_NFE := DataSourceConcessionaria.Dataset.FieldByName('Obrigar_ICMS_ST_NFE').AsBoolean;
+           email_RENAVE := DataSourceConcessionaria.Dataset.FieldByName('email_RENAVE').Text;
+           CPF_RENAVE := DataSourceConcessionaria.Dataset.FieldByName('CPF_RENAVE').Text;
            BtnOk.SetFocus;
            Exit;
          End;
@@ -278,6 +282,8 @@ begin
            Despachante.Text := DataSourceConcessionaria.Dataset.FieldByName('Despachante').Text;
            Fipe := DataSourceConcessionaria.Dataset.FieldByName('FIPE').AsBoolean;
            Obrigar_ICMS_ST_NFE := DataSourceConcessionaria.Dataset.FieldByName('Obrigar_ICMS_ST_NFE').AsBoolean;
+           email_RENAVE := DataSourceConcessionaria.Dataset.FieldByName('email_RENAVE').Text;
+           CPF_RENAVE := DataSourceConcessionaria.Dataset.FieldByName('CPF_RENAVE').Text;
            Exit;
          end;
          DataSourceConcessionaria.DataSet.Next;
@@ -336,6 +342,8 @@ begin
            Despachante.Text := DataSourceConcessionaria.Dataset.FieldByName('Despachante').Text;
            Fipe := DataSourceConcessionaria.Dataset.FieldByName('FIPE').AsBoolean;
            Obrigar_ICMS_ST_NFE := DataSourceConcessionaria.Dataset.FieldByName('Obrigar_ICMS_ST_NFE').AsBoolean;
+           email_RENAVE := DataSourceConcessionaria.Dataset.FieldByName('email_RENAVE').text;
+           CPF_RENAVE := DataSourceConcessionaria.Dataset.FieldByName('CPF_RENAVE').Text;
            Exit;
          end;
          DataSourceConcessionaria.DataSet.Next;

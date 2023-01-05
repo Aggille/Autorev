@@ -1586,6 +1586,18 @@ object BoxUsuarios: TBoxUsuarios
       ValueChecked = 'T'
       ValueUnchecked = 'F'
     end
+    object DBCheckBox123: TDBCheckBox
+      Left = 736
+      Top = 111
+      Width = 169
+      Height = 17
+      Caption = '140-Renave-b'#225'sico'
+      DataField = 'ACESSO140'
+      DataSource = DataSource1
+      TabOrder = 103
+      ValueChecked = 'T'
+      ValueUnchecked = 'F'
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -2147,7 +2159,7 @@ object BoxUsuarios: TBoxUsuarios
     Left = 368
     Top = 48
     Bitmap = {
-      494C01010A000C00180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010A000C001C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

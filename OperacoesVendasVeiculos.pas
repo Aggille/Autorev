@@ -1625,8 +1625,6 @@ begin
   IBQuery6.Parambyname('idPedidoVeiculos').AsString := IntToStr(IdPedidoVeiculos);
   IBQuery6.Open;
   ValorNF := IBQuery6.FieldByName('valor').AsCurrency;
-//  showmessage(IBQuery6.FieldByName('valor').AsString);
-//  showmessage(IntToStr(IdPedidoVeiculos));
   //Limpar todos registros ref. ao pedido
   with tblPedidoVeiculosDespachante do
   begin

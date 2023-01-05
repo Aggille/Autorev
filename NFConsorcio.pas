@@ -317,7 +317,7 @@ begin
        FieldByName('ISSQN').AsFloat := StrToFloat(BoxEmpresas.Aliquota_ISS.Text)*100; //aliq.ISSQN
        FieldByName('Val_ISS').AsFloat := FieldByName('Val_Serv').AsFloat *
         (FieldByName('ISSQN').AsFloat/100);//Valor do ISSQN
-       FieldByName('Tot_prod').AsCurrency := Valor.Value;
+ //      FieldByName('Tot_prod').AsCurrency := Valor.Value;
        FieldByName('Tot_Nota').AsCurrency := Valor.Value;
        if tblPessoas.FieldByName('Estado').AsString = 'RS' then
          FieldByName('Codigo_Fiscal').AsString := '5949'
