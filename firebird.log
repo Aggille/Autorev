@@ -2,3 +2,19 @@
 SERVERAGGILLE (Client)	Wed Aug 03 17:22:44 2022
 	INET/inet_error: connect errno = 10060
 
+
+SERVERAGGILLE (Client)	Mon Apr 17 10:04:14 2023
+	INET/inet_error: connect errno = 10061
+
+
+SERVERAGGILLE (Client)	Mon Apr 17 10:04:18 2023
+	INET/inet_error: connect errno = 10061
+
+
+SERVERAGGILLE (Client)	Mon Apr 17 10:04:26 2023
+	INET/inet_error: connect errno = 10061
+
+
+SERVERAGGILLE (Client)	Mon Apr 17 10:04:30 2023
+	INET/inet_error: connect errno = 10061
+

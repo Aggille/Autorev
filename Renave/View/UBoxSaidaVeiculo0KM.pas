@@ -37,6 +37,7 @@ type
     qryCliente: TIBQuery;
     qryNota: TIBQuery;
     RadioGroup1: TRadioGroup;
+    edtNf: TLabeledEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnConsultarClick(Sender: TObject);

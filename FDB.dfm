@@ -67,13 +67,12 @@ object FDB1: TFDB1
     Caption = 'SPC-atual.DEbitos'
   end
   object IBDatabase: TIBDatabase
-    Connected = True
     DatabaseName = 'localhost:C:\Autorev\Database\AUTOREV.FDB'
     Params.Strings = (
       'user_name=sysdba'
       'lc_ctype=ISO8859_1'
       'sql_role_name=3'
-      'password=masterkey')
+      'password=031073')
     LoginPrompt = False
     DefaultTransaction = IBTransaction
     ServerType = 'IBServer'
@@ -82,7 +81,6 @@ object FDB1: TFDB1
     Top = 8
   end
   object IBTransaction: TIBTransaction
-    Active = True
     DefaultDatabase = IBDatabase
     Params.Strings = (
       'read_committed'

@@ -62,6 +62,8 @@ uses
   UBoxCancelaTransferenciaVeiculo0KM, UBoxConsultaEstoqueVeiculos0Km,
   UBoxConsultaTransferencias;
 
+
+
 {$R *.dfm}
 
 procedure TBoxRenave.BtnAutoriz_0_TransfClick(Sender: TObject);
@@ -140,7 +142,6 @@ procedure TBoxRenave.SpeedButton6Click(Sender: TObject);
 begin
   Application.CreateForm( TBoxConsultaTransferencias, BoxConsultaTransferencias );
   BoxConsultaTransferencias.ShowModal;
-
 end;
 
 end.

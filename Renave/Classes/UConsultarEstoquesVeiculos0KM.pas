@@ -56,6 +56,8 @@ aJsonEntrada:TJSonValue;
 aRetornoEstoque:TRetornoEstoqueVeiculo0KM;
 aEntradaEstoque:TEntradaEstoqueVeiculo0KM;
 aSaidaEstoque:TSaidaEstoqueVeiculo0KM;
+auxDate:TDateTime;
+aux:String;
 begin
 
   try
@@ -99,11 +101,17 @@ begin
       aRetornoEstoque.renavam := jObject.GetValue<string>('renavam');
       aRetornoEstoque.tipoCRV:= jObject.GetValue<string>('tipoCrv');
 
+
+
       if( not aJsonEntrada.null ) then
         begin
           aEntradaEstoque.cpfOperadorResponsavel := aJsonEntrada.getValue<String>('cpfOperadorResponsavel' );
           aEntradaEstoque.chaveNotaFiscal := aJsonEntrada.getValue<String>('chaveNotaFiscalEntrada' );
-          aEntradaEstoque.dataEntradaEstoque := aJsonEntrada.getValue<TDateTime>('dataHora' );
+          aJsonEntrada.TryGetValue( 'dataHora' , auxDate );
+
+          if( auxDate > 0 ) then
+            aEntradaEstoque.dataEntradaEstoque := auxDate;
+
         end;
 
       if( not aJsonSaida.Null ) then
@@ -111,7 +119,11 @@ begin
           aSaidaEstoque.cpfOperadorResponsavel := aJsonSaida.getValue<String>('cpfOperadorResponsavel' );
           aSaidaEstoque.chaveNotaFiscal := aJsonSaida.getValue<String>('chaveNotaFiscalSaida' );
           aSaidaEstoque.Motivo := aJsonSaida.getValue<String>('motivo' );
-          aSaidaEstoque.dataVenda := aJsonSaida.getValue<TDateTime>('dataHora' );
+          aJsonSaida.TryGetValue( 'dataHora' , auxDate );
+
+          if( auxDate > 0 ) then
+            aSaidaEstoque.dataVenda := auxDate;
+
         end;
 
       FREtorno.Add( aRetornoEstoque );

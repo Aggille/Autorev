@@ -31,9 +31,10 @@ type
     procedure btnConsultarClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure EdtChassiExit(Sender: TObject);
+    procedure carregaVeiculo( aChassi:String );
   private
     { Private declarations }
-    procedure carregaVeiculo( aChassi:String );
+
   public
     { Public declarations }
   end;

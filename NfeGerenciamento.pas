@@ -448,7 +448,6 @@ type
     tblSadaDESCRICAO: TIBStringField;
     frxReport1: TfrxReport;
     ACBrNFSe1: TACBrNFSe;
-    DanfSe: TACBrNFSeDANFSeFR;
     BitBtn6: TBitBtn;
     tblSadaVBC_STRET: TIBBCDField;
     tblSadaPST: TIBBCDField;
@@ -583,6 +582,7 @@ type
     BtnRENAVE: TBitBtn;
     qryVeiculos: TIBQuery;
     tblNofisaID_VEICULOS: TIntegerField;
+    DanfSe: TACBrNFSeDANFSeFR;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure AbrirDs;
