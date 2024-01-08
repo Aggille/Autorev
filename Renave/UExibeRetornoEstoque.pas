@@ -6,7 +6,7 @@ uses
   System.Classes, UErroConsultaRenave, URetornoEstoqueVeiculo0KM,
   URetornoAutorizacaoTransferenciaVeiculo0KM, URetornoEntradaEstoqueVeiculo0KM,
   URetornoSaidaEstoqueVeiculo0KM, URetornoCancelamentoSaidaEstoqueVeiculo0KM,
-  URetornoCancelamentoTransferenciaVeiculo0KM;
+  URetornoCancelamentoTransferenciaVeiculo0KM, URetornoConsultaEntregas;
 
 type
   IExibeRetornoEstoque = interface
@@ -14,6 +14,7 @@ type
     function Strings( aValue:TStrings ):IExibeRetornoEstoque;
     function Erro( aValue:TErroConsultaRenave ):IExibeRetornoEstoque;
     function RetornoVeiculo0KM( aValue:TRetornoEstoqueVeiculo0KM ):IExibeRetornoEstoque;
+    function ExibeRetornoEntregas( aValue:TRetornoConsultaEntregas ):IExibeRetornoEstoque;
     function ExibeRetornoVeiculo0KM:IExibeRetornoEstoque;
   end;
 
@@ -37,6 +38,7 @@ type
       function Erro( aValue:TErroConsultaRenave ):IExibeRetornoEstoque;
       function RetornoVeiculo0KM( aValue:TRetornoEstoqueVeiculo0KM ):IExibeRetornoEstoque;
       function ExibeRetornoVeiculo0KM:IExibeRetornoEstoque;
+      function ExibeRetornoEntregas( aValue:TRetornoConsultaEntregas ):IExibeRetornoEstoque;
 
   end;
 
@@ -132,7 +134,6 @@ begin
     FStrings.Add( '' );
     FStrings.Add( 'ID :' + IntToStr( FRetorno0KM.id ) );
     FStrings.Add( 'CPF do Responsável: ' + FRetorno0KM.cpfOperadorResponsavel );
-
   end;
 
   if( FRetorno0KM is TRetornoAutorizacaoTransferenciaVeiculo0KM ) then ExibeRetorno( TRetornoAutorizacaoTransferenciaVeiculo0KM( FRetorno0KM ) );
@@ -189,13 +190,27 @@ begin
   if( FRetorno0KM <> nil ) then
   begin
     FStrings.Add( 'Chassi :' +   aValue.chassi );
-//    FStrings.Add( 'CNPJ Estab.Autorizador: ' + aValue.cnpjEstabelecimentoAutorizador );
-//    FStrings.Add( 'CNPJ Estab.Destino: ' + aValue.cnpjEstabelecimentoDestino );
-//    fStrings.Add( 'CPF Respons.Autorização: ' +  aValue.cpfOperadorResponsavelAutorizacao );
-//    FStrings.Add( 'Data / Hora da Autorização: ' +  FormatDateTime( 'dd/mm/yyyy hh:mm:ss',aValue.dataHoraAutorizacao  ));
-//    FStrings.Add( 'Estado da Autorização: ' + aValue.estadoAutorizacaoTransferencia );
     FStrings.Add( 'ID do Estoque: ' + IntToStr( aValue.idEntradaEstoque ) );
-//    FStrings.Add( 'Placa do veículo: ' + aValue.placaVeiculo );
+  end;
+end;
+
+function TExibeRetornoEstoque.ExibeRetornoEntregas( aValue:TRetornoConsultaEntregas ):IExibeRetornoEstoque;
+begin
+  result := self;
+  if( aValue <> nil ) then
+  begin
+    FStrings.Add( 'Chassi :' +   aValue.chassi );
+    FStrings.Add( 'CNPJ Estab.Entregador: ' + aValue.cnpjEstabelecimentoEntregador );
+    FStrings.Add( 'CNPJ Estab.Vendedor: ' + aValue.cnpjEstabelecimentoVendedor );
+    FStrings.Add( 'Status: ' + aValue.estado);
+    FStrings.Add( 'ID Entrega: ' + IntToStr( aValue.id ) );
+    FStrings.Add( 'ID ATPV: ' + aValue.idAtpv);
+    FStrings.Add( 'CPF Respons.Entrega : ' +  aValue.realizacaoEntrega.cpfResponsavel );
+    FStrings.Add( 'Data / Hora da Entrega : ' +  FormatDateTime( 'dd/mm/yyyy hh:mm:ss',aValue.realizacaoEntrega.dataHoraRegistro));
+    FStrings.Add( 'CPF Respons.Cancelamento: ' +  aValue.cancelamentoEntrega .cpfResponsavel );
+    FStrings.Add( 'Motivo Cancelamento: ' +  aValue.cancelamentoEntrega.Motivo);
+    FStrings.Add( 'Data / Hora da Cancelamento: ' +  FormatDateTime( 'dd/mm/yyyy hh:mm:ss',aValue.cancelamentoEntrega.dataHoraRegistro));
+
   end;
 end;
 

@@ -28,6 +28,7 @@ resourcestring
   StrMensagemErro = 'Mensagem : ';
   StrVeiculosDisponiveis = 'VEÍCULOS DISPONÍVEIS';
   StrResultadoConsulta = '*** RESULTADO DA CONSULTA';
+  StrNehumRegistro = 'NENHUM REGISTRO ENCONTRADO';
 
 const
   IntHttpCode200 = 200;

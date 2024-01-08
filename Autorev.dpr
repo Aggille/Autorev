@@ -209,7 +209,13 @@ uses
   URestricaoVeiculo0KM in 'Renave\Model\URestricaoVeiculo0KM.pas',
   BMI in 'BMI.pas' {BoxBMI},
   UBoxConsultaTransferencias in 'Renave\View\UBoxConsultaTransferencias.pas' {BoxConsultaTransferencias},
-  UConsultarTransferencias in 'Renave\Classes\UConsultarTransferencias.pas';
+  UConsultarTransferencias in 'Renave\Classes\UConsultarTransferencias.pas',
+  UBoxEntregas in 'Renave\View\UBoxEntregas.pas' {BoxEntregas},
+  URetornoConsultaEntregas in 'Renave\Model\URetornoConsultaEntregas.pas',
+  UConsultarEntregas in 'Renave\Classes\UConsultarEntregas.pas',
+  URealizaCancelaEntrega in 'Renave\Model\URealizaCancelaEntrega.pas',
+  UCancelarEntrega in 'Renave\Classes\UCancelarEntrega.pas',
+  URealizarEntrega in 'Renave\Classes\URealizarEntrega.pas';
 
 {$R *.RES}
 
@@ -249,6 +255,7 @@ begin
   Application.CreateForm(TBoxBMI, BoxBMI);
   Application.CreateForm(TBoxConsultaTransferencias, BoxConsultaTransferencias);
   Application.CreateForm(TBoxConsultaTransferencias, BoxConsultaTransferencias);
+  Application.CreateForm(TBoxEntregas, BoxEntregas);
   //  Application.CreateForm(TBoxReemissaoICMS, BoxForm2);
   //  Application.CreateForm(TBoxRelatorioAnomalias, BoxRelatorioAnomalias);
 //  Application.CreateForm(TBoxMeusClientes, BoxMeusClientes);

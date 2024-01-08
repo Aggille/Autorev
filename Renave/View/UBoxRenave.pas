@@ -22,7 +22,7 @@ type
     btnTransfEstab: TSpeedButton;
     Panel3: TPanel;
     Panel4: TPanel;
-    BtnCancela_0_SaidaEstoque: TSpeedButton;
+    btnEntregas: TSpeedButton;
     Panel5: TPanel;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
@@ -30,6 +30,7 @@ type
     SpeedButton4: TSpeedButton;
     SpeedButton5: TSpeedButton;
     SpeedButton6: TSpeedButton;
+    BtnCancela_0_SaidaEstoque: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVeiculos_0_PendentesClick(Sender: TObject);
     procedure BtnEntrada_0_EstoqueClick(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
     procedure SpeedButton6Click(Sender: TObject);
+    procedure btnEntregasClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,7 +62,7 @@ uses
   UBoxSaidaVeiculo0KM, UBoxCancelamentoSaidaVeiculo0KM, UBoxConsultaATPV,
   UBoxRejeitaEntradaVeiculo0KM, UBoxDevolucaoVeiculo0KM,
   UBoxCancelaTransferenciaVeiculo0KM, UBoxConsultaEstoqueVeiculos0Km,
-  UBoxConsultaTransferencias;
+  UBoxConsultaTransferencias, UBoxEntregas;
 
 
 
@@ -88,6 +90,12 @@ procedure TBoxRenave.BtnEntrada_0_EstoqueClick(Sender: TObject);
 begin
   Application.CreateForm( TBoxEntradaVeiculo0KM, BoxEntradaVeiculo0KM );
   BoxEntradaVeiculo0KM.ShowModal;
+end;
+
+procedure TBoxRenave.btnEntregasClick(Sender: TObject);
+begin
+  Application.Createform( TBoxEntregas, BoxEntregas );
+  BoxEntregas.ShowModal;
 end;
 
 procedure TBoxRenave.btnSaida_0_ConsumidorClick(Sender: TObject);

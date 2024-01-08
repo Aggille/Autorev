@@ -87,8 +87,8 @@ begin
           edtResultado.Lines.Add(StrMensagemErro + aConsulta.Erro.Mensagem );
         end;
 
-    edtResultado.SelStart:=0;
-    edtResultado.SelLength:=1;
+      edtResultado.SelStart:=0;
+      edtResultado.SelLength:=1;
 
 
     except

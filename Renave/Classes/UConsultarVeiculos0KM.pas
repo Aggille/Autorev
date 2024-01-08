@@ -78,7 +78,6 @@ begin
    result := aCodigoREtorno = 200;
   end;
 
-
 end;
 
 constructor TConsultaRVeiculos0KM.create;

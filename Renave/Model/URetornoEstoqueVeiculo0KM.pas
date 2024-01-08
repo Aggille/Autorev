@@ -16,7 +16,6 @@ type
       FPlaca: string;
       FQuilometragemOdometro: integer;
       FRenavam: String;
-//      FEntradaEstoque: TRetornoEntradaEstoqueVeiculo0KM;
       FRestricoesVeiculo: TObjectList<TRestricaoVeiculo0KM>;
       FChassi: String;
       FCodigoSegurancaCRV: string;
@@ -31,7 +30,6 @@ type
       property placa: string read FPlaca write FPlaca;
       property quilometragemOdometro: integer read FQuilometragemOdometro write FQuilometragemOdometro;
       property renavam: String read FRenavam write FRenavam;
-  //    property entradaEstoque: TRetornoEntradaEstoqueVeiculo0KM read FEntradaEstoque write FEntradaEstoque;
       property restricoesVeiculo:TObjectList<TREstricaoVeiculo0KM> read FRestricoesVeiculo write FRestricoesVeiculo;
       property chassi: String read FChassi write FChassi;
       property codigosegurancaCRV: string read FCodigoSegurancaCRV write FCodigoSegurancaCRV;
